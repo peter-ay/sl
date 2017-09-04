@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Columns Frozen="2">
+  <Column  Binding=""   Header="" Fheader="1"/>
+  <Column  Binding="LensCode" Header="镜种代码//鏡種代碼//Lens Code" Ffunction="Key" />
+  <Column  Binding="LensName" Header="镜种名称//鏡種名稱//Lens Description"  Fwidth="2"/>
+  <Column  Binding="SPHList" Header="SPH"  />
+  <Column  Binding="CYLList" Header="CYL"  />
+  <Column  Binding="X_ADDList" Header="ADD"  />
+  <Column  Binding="BrandName" Header="品牌//品牌//Brand" />
+  <Column  Binding="PCode" Header="通用代码//通用代碼//Gen Code" />
+  <Column  Binding="Material" Header="基材材料//基材材料//Material" />
+  <Column  Binding="Density" Header="密度//密度//Density" />
+  <Column  Binding="Abbe" Header="阿贝数//阿貝數//Abbe" />
+  <Column  Binding="RIndex_Measured" Header="折射率实测//折射率實測//Index Measured" />
+  <Column  Binding="UVCutOff" Header="UV吸收值//UV吸收值//UVCutOff" />
+  <!--<Column  Binding="UVCutOff" Header="阿贝数//阿貝數//UVCutOff" />-->
+  <Column  Binding="PrismAvailability" Header="棱镜度//棱鏡度//PrismAvailability" />
+  <Column  Binding="Colour" Header="颜色//顏色//Colour" />
+  <Column  Binding="Corridor" Header="渐进带//漸進帶//Corridor" Fwidth="2"/>
+  <Column  Binding="Fitting" Header="配镜高度//配鏡高度//Fitting" Fwidth="2"/>
+  <Column  Binding="F_HardCoat" Header="可否加硬//可否加硬//HardCoat" Fbool="1" />
+  <Column  Binding="F_Tintage" Header="可否染色//可否染色//Tintage" Fbool="1" />
+  <Column  Binding="F_Coating" Header="可否镀膜//可否鍍膜//Coating" Fbool="1" />
+  <Column  Binding="F_Decenter" Header="可否移心//可否移心//Decenter" Fbool="1" />
+  <Column  Binding="F_Prism" Header="可否棱镜//可否棱鏡//Prism" Fbool="1" />
+  <Column  Binding="F_Base" Header="可否面湾//可否面灣//Base" Fbool="1" />
+  <Column  Binding="F_Pur" Header="可否采购//可否採購//Purchase" Fbool="1"/>
+  <Column  Binding="Sort1" Header="分类1//分類1//Sort1" />
+  <Column  Binding="Sort2" Header="分类2//分類2//Sort2" />
+  <Column  Binding="Transmistion1" Header="投射比1//投射比1//Transmistion1" />
+  <Column  Binding="Transmistion2" Header="投射比2//投射比2//Transmistion2" />
+  <Column  Binding="Purpose" Header="用途//用途//Purpose" />
+  <Column  Binding="Criterion1" Header="执行标准1//執行標準1//Criterion1"  Fwidth="2"/>
+  <Column  Binding="Criterion2" Header="执行标准2//執行標準2//Criterion2"  Fwidth="2"/>
+  <Column  Binding="ReformulatedPower" Header="度数修正//度數修正//RefPower" Fbool="1" />
+  <Column  Binding="Ctvalue" Header="中心厚度//中心厚度//Ctvalue" Fbool="1" />
+  <Column  Binding="Modelselect" Header="镜袋色板//鏡袋色板//Modelselect" />
+  <Column  Binding="Bagcode" Header="镜袋代码//鏡袋代碼//Bagcode" />
+  <Column  Binding="Guarantee" Header="质保卡//質保卡//Guarantee" />
+
+  <Column  Binding="UsageName" Header="特殊应用//特殊應用//Usage" />
+  <Column  Binding="FocusName" Header="焦点//焦點//Focus" />
+  <Column  Binding="RIndexName" Header="折射率//折射率//Index"/>
+  <Column  Binding="DesignName" Header="工艺特点//工藝特點//Design" />
+  <Column  Binding="DefaultCoatingName" Header="默认膜层//默認膜層//DefaultCoating" />
+  <Column  Binding="MaterialsName" Header="材质//材質//Materials"/>
+  <Column  Binding="LensTypeNameUI" Header="镜片类型//鏡片類型//Lens Type"/>
+
+  <Column  Binding="F_LR" Header="区分左右//區分左右//Divides LR" Fbool="1" />
+  <Column  Binding="F_CA" Header="区分渐进//區分漸進//Divides Progressive" Fbool="1" />
+  <Column  Binding="Df_SpName" Header="默认供应商//默認供應商//Df_Supplier"/>
+  <Column  Binding="F_StopSales" Header="停售//停售//Stop"  Fbool="1"/>
+</Columns>
+
+
+
+
+
+
+
+
+
+
+
+

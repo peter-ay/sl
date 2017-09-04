@@ -1,0 +1,447 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{07D6D28A-7B9F-4A2B-B7C3-9F24786C9DD6}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ERP.Web</RootNamespace>
+    <AssemblyName>ERP.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <SilverlightApplicationList>{026CD491-960D-4443-A242-93CB43B621FB}|..\ERP\ERP.csproj|ClientBin|False</SilverlightApplicationList>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GemBox.Spreadsheet, Version=29.3.0.1055, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\GemBox.Spreadsheet.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel.DomainServices.EntityFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="System.ServiceModel.DomainServices.Hosting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.ServiceModel.DomainServices.Server, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ClientBin\ERP.xap" />
+    <Content Include="default.aspx" />
+    <Content Include="Images\hkocn.jpg" />
+    <Content Include="Images\logo.ico" />
+    <Content Include="Report\Images\CN.jpg" />
+    <Content Include="Report\Images\LJ.jpg" />
+    <Content Include="Report\Images\Pur_GZ.png" />
+    <Content Include="Report\Images\RS.jpg" />
+    <Content Include="Silverlight.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\ComExportToExcel.cs" />
+    <Compile Include="Common\ComGernerateDN.cs" />
+    <Compile Include="DomainService\Bill\Base\DSB_Material_LensClass_DefaultCoating.cs" />
+    <Compile Include="DomainService\Bill\Base\DSB_Customer_Main_AssignAccCusCode.cs" />
+    <Compile Include="DomainService\Bill\Base\DSB_Customer_Main.cs" />
+    <Compile Include="DomainService\Bill\Base\DSB_Customer_Acc.cs" />
+    <Compile Include="DomainService\Bill\Base\DSB_Material_Process.cs" />
+    <Compile Include="DomainService\Bill\Base\DSB_Material_LensClass_Design.cs" />
+    <Compile Include="DomainService\Bill\Base\DSB_Material_LensClass_Focus.cs" />
+    <Compile Include="DomainService\Bill\Base\DSB_Material_LensClass_Index.cs" />
+    <Compile Include="DomainService\Bill\Base\DSB_Material_LensClass_Materials.cs" />
+    <Compile Include="DomainService\Bill\Base\DSB_Material_LensClass_Usage.cs" />
+    <Compile Include="DomainService\Bill\Base\DSB_Material_LensClass_Brand.cs" />
+    <Compile Include="DomainService\Bill\Base\DSB_Customer_Acc_AssignCusCode.cs" />
+    <Compile Include="DomainService\Bill\Pur\DSPur_PriceContract.cs" />
+    <Compile Include="DomainService\Bill\Pur\DSPur_PriceContract_SpGroup.cs" />
+    <Compile Include="DomainService\Bill\Pur\DSPur_PriceContract_Frame.cs" />
+    <Compile Include="DomainService\Bill\Pur\DSPur_PriceContract_FrameSet.cs" />
+    <Compile Include="DomainService\Bill\Pur\DSPur_PriceContract_Lens.cs" />
+    <Compile Include="DomainService\Bill\Pur\DSPur_PriceContract_Lens_ProCost.cs" />
+    <Compile Include="DomainService\Bill\Pur\DSPur_Quote.cs" />
+    <Compile Include="DomainService\Bill\Sale\DSSale_Quote.cs" />
+    <Compile Include="DomainService\Bill\Sale\DSSale_PriceContract_CusGroup.cs" />
+    <Compile Include="DomainService\Bill\Sale\DSSale_PriceContract_FrameSet.cs" />
+    <Compile Include="DomainService\Bill\Sale\DSSale_PriceContract_Frame.cs" />
+    <Compile Include="DomainService\Bill\Sale\DSSale_PriceContract_Lens_ProCost.cs" />
+    <Compile Include="DomainService\Bill\Sale\DSSale_PriceContract_Lens.cs" />
+    <Compile Include="DomainService\Bill\Sale\DSSale_PriceContract.cs" />
+    <Compile Include="DomainService\Bill\Base\DSB_Frame.cs" />
+    <Compile Include="DomainService\Bill\Base\DSB_Area.cs" />
+    <Compile Include="DomainService\Bill\Base\DSB_Customer.cs" />
+    <Compile Include="DomainService\Bill\Base\DSB_Department.cs" />
+    <Compile Include="DomainService\Bill\Base\DSB_Material_Lens.cs" />
+    <Compile Include="DomainService\Bill\Base\DSB_Person.cs" />
+    <Compile Include="DomainService\Bill\Base\DSB_Supplier.cs" />
+    <Compile Include="DomainService\Bill\Base\DSB_Warehouse.cs" />
+    <Compile Include="DomainService\Bill\Man\DSM_UserGroup.cs" />
+    <Compile Include="DomainService\Bill\Man\DSM_Log.cs" />
+    <Compile Include="DomainService\Bill\Man\DSM_User.cs" />
+    <Compile Include="DomainService\Bill\Sale\DSSale_Order.cs" />
+    <Compile Include="DomainService\Bill\Ware\DSWare_Bill_Count.cs" />
+    <Compile Include="DomainService\Bill\Ware\DSWare_Bill_Transfer.cs" />
+    <Compile Include="DomainService\Bill\Ware\DSWare_Stocks_Base_Lens.cs" />
+    <Compile Include="DomainService\Bill\Ware\DSWare_Bill.cs" />
+    <Compile Include="DomainService\Common\DSDelete.cs" />
+    <Compile Include="DomainService\Common\Export\DSExport.cs" />
+    <Compile Include="DomainService\Common\DSGetDefaultSpCode.cs" />
+    <Compile Include="DomainService\Common\DSGetIP.cs" />
+    <Compile Include="DomainService\Common\Export\DSExportToFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DomainService\Common\DSReport.cs" />
+    <Compile Include="DomainService\Common\Import\ImportBaseBID.cs" />
+    <Compile Include="DomainService\Common\Import\DSImport.cs" />
+    <Compile Include="DomainService\Common\Import\ImportBase.cs" />
+    <Compile Include="DomainService\Common\Import\ImportB_Area.cs" />
+    <Compile Include="DomainService\Common\Import\ImportB_Customer.cs" />
+    <Compile Include="DomainService\Common\Import\ImportB_Customer_Acc.cs" />
+    <Compile Include="DomainService\Common\Import\ImportB_Customer_Main.cs" />
+    <Compile Include="DomainService\Common\Import\ImportB_Department.cs" />
+    <Compile Include="DomainService\Common\Import\ImportB_Material_Frame.cs" />
+    <Compile Include="DomainService\Common\Import\ImportB_Material_Lens1.cs" />
+    <Compile Include="DomainService\Common\Import\ImportB_Material_Lens2.cs" />
+    <Compile Include="DomainService\Common\Import\ImportB_Material_LensClass_Brand.cs" />
+    <Compile Include="DomainService\Common\Import\ImportB_Material_LensClass_DefaultCoating.cs" />
+    <Compile Include="DomainService\Common\Import\ImportB_Material_LensClass_Design.cs" />
+    <Compile Include="DomainService\Common\Import\ImportB_Material_LensClass_Focus.cs" />
+    <Compile Include="DomainService\Common\Import\ImportB_Material_LensClass_Index.cs" />
+    <Compile Include="DomainService\Common\Import\ImportB_Material_LensClass_Materials.cs" />
+    <Compile Include="DomainService\Common\Import\ImportB_Material_LensClass_Usage.cs" />
+    <Compile Include="DomainService\Common\Import\ImportB_Material_Process.cs" />
+    <Compile Include="DomainService\Common\Import\ImportB_Person.cs" />
+    <Compile Include="DomainService\Common\Import\ImportB_Process.cs" />
+    <Compile Include="DomainService\Common\Import\ImportB_ProcessControl.cs" />
+    <Compile Include="DomainService\Common\Import\ImportB_Supplier.cs" />
+    <Compile Include="DomainService\Common\Import\ImportB_Warehouse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DomainService\Common\Import\ImportSale_Base_Note.cs" />
+    <Compile Include="DomainService\Common\Import\ImportSale_Base_ReOrderReason.cs" />
+    <Compile Include="DomainService\Common\Import\ImportSale_PriceContract_CusGroup.cs" />
+    <Compile Include="DomainService\Common\Import\ImportSale_PriceContract_CusGroup_CusCode.cs" />
+    <Compile Include="DomainService\Common\Import\ImportSale_PriceContract_Frame.cs" />
+    <Compile Include="DomainService\Common\Import\ImportSale_PriceContract_FrameSet.cs" />
+    <Compile Include="DomainService\Common\Import\ImportSale_PriceContract_Lens.cs" />
+    <Compile Include="DomainService\Common\Import\ImportSale_PriceContract_Lens_ProCost.cs" />
+    <Compile Include="DomainService\Erp\Base\DSV_B_Material_LensClass_DefaultCoating.cs" />
+    <Compile Include="DomainService\Erp\Base\DSV_B_Customer_Main.cs" />
+    <Compile Include="DomainService\Erp\Base\DSV_B_Customer_Acc.cs" />
+    <Compile Include="DomainService\Erp\Base\DSV_B_Material_Process.cs" />
+    <Compile Include="DomainService\Erp\Base\DSV_B_Frame.cs" />
+    <Compile Include="DomainService\Erp\Base\DSV_B_Material_LensClass_Materials.cs" />
+    <Compile Include="DomainService\Erp\Base\DSV_B_Material_LensClass_Design.cs" />
+    <Compile Include="DomainService\Erp\Base\DSV_B_Material_LensClass_Index.cs" />
+    <Compile Include="DomainService\Erp\Base\DSV_B_Material_LensClass_Focus.cs" />
+    <Compile Include="DomainService\Erp\Base\DSV_B_Material_LensClass_Brand.cs" />
+    <Compile Include="DomainService\Erp\Base\DSV_B_Material_LensClass_Usage.cs" />
+    <Compile Include="DomainService\Erp\Base\DSV_B_Warehouse.cs" />
+    <Compile Include="DomainService\Erp\Base\DSV_B_Material_Lens.cs" />
+    <Compile Include="DomainService\Erp\Base\DSV_B_Supplier.cs" />
+    <Compile Include="DomainService\Erp\Base\DSV_B_Area.cs" />
+    <Compile Include="DomainService\Erp\Base\DSV_B_Person.cs" />
+    <Compile Include="DomainService\Erp\Base\DSV_B_Department.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DomainService\Erp\Base\DSV_B_Customer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DomainService\Erp\DSErp.cs" />
+    <Compile Include="DomainService\Erp\DSErp.metadata.cs" />
+    <Compile Include="DomainService\Erp\Ex\Ex.cs" />
+    <Compile Include="DomainService\Erp\Ex\ExReport.cs" />
+    <Compile Include="DomainService\Erp\Ex\ExExport.cs" />
+    <Compile Include="DomainService\Erp\HelpWindows\DSV_B_Frame.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DomainService\Erp\HelpWindows\DSV_B_Lens.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DomainService\Erp\HelpWindows\DSV_B_Supplier.cs" />
+    <Compile Include="DomainService\Erp\HelpWindows\DSV_Sale_Base_Note.cs" />
+    <Compile Include="DomainService\Erp\HelpWindows\DSV_B_Process.cs" />
+    <Compile Include="DomainService\Erp\HelpWindows\DSV_B_CustomerSmartBrowseRight.cs" />
+    <Compile Include="DomainService\Erp\Pur\DSV_Pur_Order_Lens.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DomainService\Erp\Pur\DSV_Pur_PriceContract.cs" />
+    <Compile Include="DomainService\Erp\Pur\DSV_Pur_PriceContract_SpGroup.cs" />
+    <Compile Include="DomainService\Erp\Pur\DSV_Pur_PriceContract_SpGroup_SpCode.cs" />
+    <Compile Include="DomainService\Erp\Pur\DSV_Pur_PriceContract_Frame.cs" />
+    <Compile Include="DomainService\Erp\Pur\DSV_Pur_PriceContract_FrameSet.cs" />
+    <Compile Include="DomainService\Erp\Pur\DSV_Pur_PriceContract_Lens.cs" />
+    <Compile Include="DomainService\Erp\Pur\DSV_Pur_PriceContract_Lens_ProCost.cs" />
+    <Compile Include="DomainService\Erp\Pur\DSV_Pur_Quote.cs" />
+    <Compile Include="DomainService\Erp\Sale\DSV_Sale_Report_CGSD.cs" />
+    <Compile Include="DomainService\Erp\Sale\DSV_Sale_Report_Lens.cs" />
+    <Compile Include="DomainService\Erp\Sale\DSV_Sale_Report_Order.cs" />
+    <Compile Include="DomainService\Erp\Sale\DSV_Sale_Order_Status.cs" />
+    <Compile Include="DomainService\Erp\Sale\DSV_Sale_Base_Note.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DomainService\Erp\Sale\DSV_Sale_Base_ReOrderReason.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DomainService\Erp\Sale\DSV_Sale_Delivery_Lens.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DomainService\Erp\Sale\DSV_Sale_Order_FD.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DomainService\Erp\Sale\DSV_Sale_Order_Frame.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DomainService\Erp\Sale\DSV_Sale_Order_Lens.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DomainService\Erp\Sale\DSV_Sale_PriceContract.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DomainService\Erp\Sale\DSV_Sale_PriceContract_CusGroup.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DomainService\Erp\Sale\DSV_Sale_PriceContract_CusGroup_CusCode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DomainService\Erp\Sale\DSV_Sale_PriceContract_Frame.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DomainService\Erp\Sale\DSV_Sale_PriceContract_FrameSet.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DomainService\Erp\Sale\DSV_Sale_PriceContract_Lens.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DomainService\Erp\Sale\DSV_Sale_PriceContract_Lens_ProCost.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DomainService\Erp\Sale\DSV_Sale_Quote.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DomainService\Erp\Ware\DSV_Ware_Bill_SO_Pre_Lens.cs" />
+    <Compile Include="DomainService\Erp\Ware\DSV_Ware_Bill_Count_Lens.cs" />
+    <Compile Include="DomainService\Erp\Ware\DSV_Ware_Bill_Transfer_Lens.cs" />
+    <Compile Include="DomainService\Erp\Ware\DSV_Ware_Bill_Lens.cs" />
+    <Compile Include="DomainService\Erp\Ware\DSV_Ware_Report_IO_Lens.cs" />
+    <Compile Include="DomainService\Erp\Ware\DSV_Ware_Suspend_Lens.cs" />
+    <Compile Include="DomainService\Erp\Ware\DSV_Ware_Stocks_Base_Lens.cs" />
+    <Compile Include="DomainService\Erp\Ware\DSV_Ware_Report_Stocks_Lens_XY.cs" />
+    <Compile Include="DomainService\Erp\Ware\DSV_Ware_Report_Stocks_Lens_Detail.cs" />
+    <Compile Include="DomainService\Erp\Ware\DSV_Ware_Bill_SO_Pending_PD.cs" />
+    <Compile Include="DomainService\Erp\Ware\DSV_Ware_Bill_SO_Lens.cs" />
+    <Compile Include="DomainService\Man\DSMan.cs" />
+    <Compile Include="DomainService\Man\DSMan.metadata.cs" />
+    <Compile Include="DomainService\Man\DS\DSV_U_ProcessClass.cs" />
+    <Compile Include="DomainService\Man\DS\DSUser_Group_Assign.cs" />
+    <Compile Include="DomainService\Man\DS\DSV_S_Function.cs" />
+    <Compile Include="DomainService\Man\DS\DSV_S_User_GroupDataBase.cs" />
+    <Compile Include="DomainService\Man\DS\DSV_S_Log.cs" />
+    <Compile Include="DomainService\Man\DS\DSV_S_DataBase.cs" />
+    <Compile Include="DomainService\Man\DS\DSV_S_UserGroup.cs" />
+    <Compile Include="DomainService\Man\DS\DSV_S_User.cs" />
+    <Compile Include="DomainService\Man\DS\DSUserGroup_User_Assign.cs" />
+    <Compile Include="DomainService\Man\DS\DSUserGroup_DataBase_Assign.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DomainService\Man\DS\DSUserGroup_Rights_Assign.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DomainService\Man\DS\DSManUserInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity\Extend\EntitiesChangeDataBase.cs" />
+    <Compile Include="Entity\ModelErp.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelErp.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\ModelErpPartial.cs" />
+    <Compile Include="Entity\ModelMan.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelMan.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\ModelManPartial.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ClientBin\System.ComponentModel.DataAnnotations.zip" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ClientBin\System.ServiceModel.DomainServices.Client.zip" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ClientBin\System.ServiceModel.DomainServices.Client.Web.zip" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ClientBin\System.ServiceModel.Web.Extensions.zip" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="SplashScreen.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Entity\ModelErp.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelErp.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ClientBin\System.Windows.Controls.Data.zip" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ClientBin\System.Windows.Controls.Data.Input.zip" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ClientBin\System.Windows.Controls.DomainServices.zip" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ClientBin\System.Windows.Data.zip" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="ADOX">
+      <Guid>{00000600-0000-0010-8000-00AA006D2EA4}</Guid>
+      <VersionMajor>6</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ERP.Web.BLL\ERP.Web.BLL.csproj">
+      <Project>{52DB8C3A-61F9-43E5-A8C8-072E7A1E5FBB}</Project>
+      <Name>ERP.Web.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ERP.Web.Common\ERP.Web.Common.csproj">
+      <Project>{5D513428-FD9E-491A-BB51-D53BDC781094}</Project>
+      <Name>ERP.Web.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ERP.Web.DAL\ERP.Web.DAL.csproj">
+      <Project>{4DCB21B1-13A5-486A-ABD0-33F97F3F8B80}</Project>
+      <Name>ERP.Web.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ERP.Web.DBUtility\ERP.Web.DBUtility.csproj">
+      <Project>{54B7E80F-F9EB-4234-83B4-32D99DA699DD}</Project>
+      <Name>ERP.Web.DBUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ERP.Web.Interface\ERP.Web.Interface.csproj">
+      <Project>{E07E8C76-82F0-4E5A-8293-C9F333856D2F}</Project>
+      <Name>ERP.Web.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ERP.Web.Model\ERP.Web.Model.csproj">
+      <Project>{FFFB764C-8136-49F6-BDB2-9B37042F9592}</Project>
+      <Name>ERP.Web.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ClientBin\System.Windows.Controls.zip" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ClientBin\System.Windows.Controls.Input.zip" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ClientBin\System.Windows.Controls.Toolkit.zip" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ClientBin\System.Xml.Linq.zip" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Entity\ModelMan.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelMan.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Report\Template\CGSD.rdlc" />
+    <EmbeddedResource Include="Report\Template\XSSDHKOP.rdlc" />
+    <EmbeddedResource Include="Report\Template\XSSD.rdlc" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>8178</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

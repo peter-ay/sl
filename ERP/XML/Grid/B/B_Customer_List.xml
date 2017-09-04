@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Columns Frozen="2">
+  <Column  Binding=""   Header="" Fheader="1"/>
+  <Column  Binding="CusCode"   Header="客户代码//客戶代碼//CusCode" Ffunction="Key"/>
+  <Column  Binding="CusName" Header="客户名称//客戶名稱//CusName"  Fwidth="2"/>
+  <Column  Binding="BarCode" Header="数字代号//數字代號//BarCode"/>
+  <Column  Binding="PCode" Header="對賬账户//對賬賬戶//AccCode"/>
+  <Column  Binding="CusAddress" Header="门店地址//門店地址//Address"  Fwidth="2"/>
+  <Column  Binding="AreaName"  Header="地区名称//地區名稱//Area" />
+  <Column  Binding="DAddress" Header="送货地址//送貨地址//DeliveryAddress"  Fwidth="2"/>
+  <Column  Binding="DpCode" Header="部门//部門//DeptCode"/>
+  <Column  Binding="DpName" Header="部门名称//部門名稱//Department"/>
+  <Column  Binding="DpCodeCX" Header="裁型部门//裁型部門//DepartmentCX"/>
+  <Column  Binding="DpNameCX" Header="裁型部门名称//裁型部門名稱//DepartmentVC"/>
+  <Column  Binding="PersonCodeList"  Header="销售//銷售//Sales"/>
+  <Column  Binding="ContactPerson" Header="联系人//聯繫人//ContactPerson"/>
+  <Column  Binding="Tel"  Header="电话//電話//Phone"  Fwidth="2"/>
+  <Column  Binding="Email" Header="EMail"/>
+  <Column  Binding="Fax" Header="Fax" />
+  <Column  Binding="F_NoticeRepeatOBill" Header="客户订单号重复提示//客戶訂單號重複提示//Notice Repeat BillNum" Fbool="1"/>
+  <Column  Binding="F_Stop" Header="停用//停用//Stop" Fbool="1"/>
+</Columns>
+
+

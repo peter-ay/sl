@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="ERP.View.TitleErp"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <UserControl.Resources>
+        <Style x:Key="styleTextBlockTitle" TargetType="TextBlock">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <!--<Setter Property="Foreground" Value="#FF1F3269"></Setter>-->
+            <Setter Property="FontWeight" Value="Bold"></Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid Background="{StaticResource DocumentTabHotBackgroundBrush}" Height="23">
+        <TextBlock Text="{Binding Title}" Style="{StaticResource styleTextBlockTitle}" />
+    </Grid>
+</UserControl>

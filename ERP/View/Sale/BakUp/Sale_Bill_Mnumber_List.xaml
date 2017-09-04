@@ -1,0 +1,133 @@
+﻿<ex:UserControlErp
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"
+x:Class="ERP.View.Sale_Bill_Mnumber_List" 
+xmlns:ex="clr-namespace:ERP.View"
+mc:Ignorable="d" 
+DataContext="{Binding Sale_Bill_Mnumber_List, Mode=OneWay, Source={StaticResource Locator}}">
+    <Grid Background="{StaticResource FloatingWindowBackgroundBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <!--Title-->
+        <ex:TitleErp/>
+        <!--SearchBar-->
+        <Grid  Grid.Row="1">
+            <toolkit:Expander  Margin="0,0,0,0" HorizontalAlignment="Stretch" 
+                                      Style="{StaticResource GridSearchTitleBar}" VerticalContentAlignment="Stretch" 
+                                      VerticalAlignment="Stretch" ExpandDirection="Down" IsExpanded="False">
+                <toolkit:Expander.Header>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="58"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="71"/>
+                            <ColumnDefinition Width="71"/>
+                            <ColumnDefinition Width="65"/>
+                            <ColumnDefinition Width="65"/>
+                            <ColumnDefinition Width="65"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Text="{Binding UIText[ERP_BillDate]}"/>
+                        <ex:DatePickerD1D2 Grid.Column="1"/>
+                        <TextBlock Text="{Binding UIText[ERP_CusCode]}" Grid.Column="2"/>
+                        <ex:TBCusCodeList TabIndex="0" Grid.Column="3"/>
+                        <ex:ButtonSearch TabIndex="14" Grid.Column="4" HorizontalAlignment="Right"/>
+                        <ex:ButtonClear TabIndex="15" Grid.Column="5" HorizontalAlignment="Right"/>
+                        <ex:ButtonExit TabIndex="16" Grid.Column="6" HorizontalAlignment="Right"/>
+                    </Grid>
+                </toolkit:Expander.Header>
+                <!-- ScrollViewer containing the source code -->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="58"/>
+                        <ColumnDefinition Width="151"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="151"/>
+                        <ColumnDefinition Width="71"/>
+                        <ColumnDefinition Width="70"/>
+                        <ColumnDefinition Width="240"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="24"/>
+                        <RowDefinition Height="24"/>
+                        <RowDefinition Height="24"/>
+                        <RowDefinition Height="24"/>
+                        <RowDefinition Height="24"/>
+                        <RowDefinition Height="24"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="{Binding UIText[ERP_BillCode]}" />
+                    <ex:TBBillCodeList1 Width="150" Grid.Column="1" TabIndex="1" />
+                    <TextBlock Text="--" Grid.Column="2"/>
+                    <ex:TBBillCodeList2 Width="150" Grid.Column="3" TabIndex="2" />
+
+                    <TextBlock Text="{Binding UIText[ERP_DeliveryNum]}" Grid.Row="1" />
+                    <ex:TBDeliveryNumList1 Width="150" Grid.Column="1" Grid.Row="1" TabIndex="4"/>
+                    <TextBlock Text="--" Grid.Column="2" Grid.Row="1"/>
+                    <ex:TBDeliveryNumList2 Width="150" Grid.Column="3" Grid.Row="1" TabIndex="5" />
+
+                    <TextBlock Text="{Binding UIText[ERP_SerialNum]}" Grid.Row="3" />
+                    <ex:TBSerialNumList Width="150" Grid.Column="1" Grid.Row="3" TabIndex="9"/>
+
+                    <TextBlock Text="{Binding UIText[ERP_OBillCode]}" Grid.Row="2"/>
+                    <ex:TBOBillCodeList Width="150" Grid.Row="2" Grid.Column="1" TabIndex="7"/>
+
+                    <TextBlock Text="{Binding UIText[ERP_Mnumber]}" Grid.Row="4"/>
+                    <ex:TBMnumberList Width="150" Grid.Row="4" Grid.Column="1" TabIndex="11"/>
+
+                    <TextBlock Text="{Binding UIText[ERP_FromBillCode]}" Grid.Row="5"/>
+                    <ex:TBFromBillCodeList Width="150" Grid.Row="5" Grid.Column="1" TabIndex="11"/>
+
+                    <TextBlock Text="{Binding UIText[ERP_DeptCode]}" Grid.Column="4" />
+                    <ex:TBDeptCodeList Grid.Column="5" TabIndex="3"/>
+
+                    <TextBlock Text="{Binding UIText[ERP_SupplierCode]}" Grid.Column="4" Grid.Row="1" />
+                    <ex:TBSupplierCodeList Grid.Column="5" Grid.Row="1" TabIndex="6"/>
+
+                    <TextBlock Text="{Binding UIText[ERP_Checker]}" Grid.Column="4" Grid.Row="2"/>
+                    <ex:TBCheckerList Grid.Column="5" Grid.Row="2" TabIndex="8"/>
+
+                    <TextBlock Text="{Binding UIText[ERP_Maker]}" Grid.Column="4" Grid.Row="3" />
+                    <ex:TBMakerList Grid.Column="5" Grid.Row="3" TabIndex="10"/>
+
+                    <ex:RBConditionCheck Grid.Column="6" Margin="5,0,0,0" />
+                    <ex:RBConditionDelivery Grid.Row="1"  Grid.Column="6" Margin="5,0,0,0" />
+                    <ex:RBConditionExport Grid.Row="2"  Grid.Column="6" Margin="5,0,0,0" />
+                    <ex:RBConditionOutGood Grid.Row="3"  Grid.Column="6" Margin="5,0,0,0" />
+
+                </Grid>
+            </toolkit:Expander>
+        </Grid>
+        <StackPanel Height="25" Grid.Row="2" Background="{StaticResource DocumentTabNormalBackgroundBrush}" Orientation="Horizontal">
+            <StackPanel Orientation="Horizontal" Margin=" 0,0,0,0">
+                <TextBlock Text="{Binding UIText[ERP_Type]}" Margin="9,0,0,3"/>
+                <ex:RadioButtonBillTypeALL IsChecked="{Binding IsTypeAll, Mode=TwoWay}"/>
+                <ex:RadioButtonBillTypeXSSD/>
+                <ex:RadioButtonBillTypeXSPD/>
+                <ex:RadioButtonBillTypeXSBS/>
+                <ex:RadioButtonBillTypeXSSH/>
+                <TextBlock Text="||" Margin="3,0,0,3" Foreground="DimGray"/>
+                <TextBlock Text="{Binding UIText[ERP_CX]}" Margin="3,0,0,3"/>
+                <ex:RadioButtonCXALL IsChecked="{Binding IsCXAll, Mode=TwoWay}"/>
+                <ex:RadioButtonCX/>
+                <ex:RadioButtonUnCX/>
+            </StackPanel>
+
+        </StackPanel>
+        <!-- GridList -->
+        <ex:DataGridListErp Grid.Row="3"/>
+    </Grid>
+</ex:UserControlErp>

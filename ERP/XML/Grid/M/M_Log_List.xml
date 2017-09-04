@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Columns Frozen="0">
+  <Column Header="操作时间//操作時間//Operating Time" Binding="LogTime" Ftime="2"/>
+  <Column Header="用户代码//用戶代碼//UserCode" Binding="UserCode" />
+  <Column Header="用户名称//用戶名稱//UserName" Binding="UserName"/>
+  <Column Header="帐套代码//帳套代碼//Operating DatabaseCode" Binding="DBCode"/>
+  <Column Header="帐套名称//帳套名稱//Operating DatabaseName" Binding="DBNameUI"/>
+  <Column Header="操作功能//操作功能//Operation" Binding="FunCode"/>
+  <Column Header="功能名称//功能名稱//OperationName" Binding="FunNameUI"/>
+  <Column Header="IP" Binding="IP"/>
+</Columns>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Columns Frozen="0">
+  <Column  Binding=""   Header="" Fheader="1"/>
+  <Column  Binding="F_Set" Header="组合//組合//Set" Fbool="1" />
+  <Column  Binding="LensCode" Header="镜种代码//鏡種代碼//Lens" />
+  <Column  Binding="InvTitle" Header="发票名称//發票名稱//Inv Title"  />
+  <Column  Binding="P1" Header="片计//片計//Price1"  />
+  <Column  Binding="P2" Header="副计//副計//Price2"  /> 
+  <Column  Binding="JY" Header="加硬//加硬//Hard Coat" Fbool="1"/>
+  <Column  Binding="UV" Header="UV" Fbool="1"/>
+  <Column  Binding="JS" Header="焗色//焗色//COATING"  />
+  <Column  Binding="RS" Header="染色//染色//TINTAGE"  />
+  <Column  Binding="CS" Header="茶色//茶色//BROWN"  />
+  <Column  Binding="SY" Header="水银//水銀//MERCURY"  />
+  <Column  Binding="CB" Header="彩边//彩邊//BASE"  />
+  <Column  Binding="ChB" Header="车边//車邊//EDGING"  />
+  <Column  Binding="KK" Header="开坑//開坑//SUPRA"  />
+  <Column  Binding="ZK" Header="钻孔//鑽孔//RIMLESS"  />
+  <Column  Binding="PiH" Header="直径//直徑//Dia"  />
+  <Column  Binding="PG" Header="抛光//拋光//POLISH"  />
+  <Column  Binding="JJ" Header="镜架//鏡架//Frame"  />
+  <Column  Binding="OP" Header="其他//其他//Other"  />
+</Columns>
+
+
+
+
+
+
+
+
+
+
+
+

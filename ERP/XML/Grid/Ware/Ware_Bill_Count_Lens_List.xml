@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Columns Frozen="2">
+  <Column  Binding=""   Header="" Fheader="1"/>
+  <Column  Binding="BCode" Header="盘点单号//盤點單號//BCode" Ffunction="ID"/>
+  <Column  Binding="BDate" Header="盘点日期//盤點日期//Bill Date" Ftime="1"/>
+  <Column  Binding="WhCodeIn" Header="盘点仓库//盤點仓库//WhCode"/>
+  <Column  Binding="LensCode" Header="盘点镜种//盤點鏡種//Lens"  />
+  <Column  Binding="SumQty" Header="差异数量//差異數量//SumQty"  />
+  <Column  Binding="Remark" Header="备注//備註//Remark"  Fwidth="2"/>
+  <Column  Binding="StartTime" Header="开始时间//開始時間//StartTime" Ftime="2"/>
+  <Column  Binding="EndTime" Header="结束时间//結束時間//EndTime" Ftime="2"/>
+  <Column  Binding="Maker" Header="盘点//盤點//Maker"  />
+  <Column  Binding="StNameUI" Header="状态//狀態//State"  />
+  <Column  Binding="WhName" Header="仓库名称//倉庫名稱//WhName"/>
+  <Column  Binding="LensName" Header="镜种名称//鏡種名稱//Lens Name"  Fwidth="2"/>
+
+  <!--<Column  Binding="BTypeNameUI" Header="单据类型//單據類型//Type"  />-->
+</Columns>
+
+
+
+
+
+
+

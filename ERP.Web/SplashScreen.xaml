@@ -1,0 +1,34 @@
+﻿<Grid xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid VerticalAlignment="Top">
+        <Grid>
+            <Rectangle Fill="#FF7E99C8" Height="5" x:Name="progressBar">
+                <Rectangle.RenderTransform>
+                    <ScaleTransform x:Name="progressBarScale" />
+                </Rectangle.RenderTransform>
+            </Rectangle>
+        </Grid>
+    </Grid>
+    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal" Margin="0,0,0,25">
+        <Image Source="Images/hkocn.jpg"  Stretch="None" />
+        <TextBlock Margin="8,0,0,0" Text="ERP V2.0" Foreground="#FF4D6ED6" FontSize="13" FontFamily="Verdana" VerticalAlignment="Center"/>
+    </StackPanel>
+    <!--Foreground="#FF4D6ED6" -->
+    <StackPanel VerticalAlignment="Bottom">
+        <Grid HorizontalAlignment="Right">
+            <TextBlock x:Name="progressText" Text="0%" FontSize="50" Margin="0,0,10,10" Opacity="0.1" VerticalAlignment="Bottom" FontFamily="Verdana"/>
+        </Grid>
+    </StackPanel>
+    <Grid.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="#EDF3FC" Offset="0.1" />
+            <GradientStop Offset="0.861" Color="#C6DDF7" />
+            <GradientStop Offset="1" Color="#99C6EE" />
+            <GradientStop Color="#D9E9F9" Offset="1" />
+            <GradientStop Color="White" Offset="0.435"/>
+            <GradientStop Color="#FFF9FBFE" Offset="0.509"/>
+            <GradientStop Color="#FFFBFCFE" Offset="0.243"/>
+            <GradientStop Color="#FFFDFDFE" Offset="0.283"/>
+        </LinearGradientBrush>
+    </Grid.Background>
+</Grid>

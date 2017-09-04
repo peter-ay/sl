@@ -1,0 +1,66 @@
+﻿<ex:ChildWindowErp 
+xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit" 
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls" 
+xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" 
+x:Class="ERP.View.B_Customer_Main" 
+xmlns:ex="clr-namespace:ERP.View"
+xmlns:bhv="clr-namespace:ERP.Behavior"
+mc:Ignorable="d">
+    <ex:ChildWindowErp.DataContext>
+        <Binding Mode="OneWay" Path="B_Customer_Main" Source="{StaticResource Locator}"/>
+    </ex:ChildWindowErp.DataContext>
+    <ex:BusyIndicatorErp>
+        <Grid x:Name="LayoutRoot" Margin="0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" VerticalAlignment="Top" Background="{StaticResource DocumentTabNormalBackgroundBrush}" Margin="0">
+                <ex:ButtonNew Margin="4,2"/>
+                <ex:ButtonSave Margin="4,2"/>
+                <ex:ButtonEdit Margin="4,2"/>
+                <ex:ButtonDelete Margin="4,2"/>
+                <ex:ButtonDrop Margin="4,2"/>
+                <ex:ButtonPrevious Margin="4,2"/>
+                <ex:ButtonNext Margin="4,2"/>
+                <ex:ButtonExit Margin="4,2"/>
+            </StackPanel>
+            <Grid Background="{StaticResource FloatingWindowBackgroundBrush}"  Grid.Row="1" Margin="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="24"/>
+                    <RowDefinition Height="24"/>
+                    <RowDefinition Height="24"/>
+                    <RowDefinition Height="24"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="95"/>
+                        <ColumnDefinition  Width="150"/>
+                        <ColumnDefinition  Width="85"/>
+                        <ColumnDefinition  Width="150"/>
+                        <ColumnDefinition  Width="105"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="{Binding UIText[ERP_MainCusCode]}" />
+                    <ex:TBMainCusCode  IsReadOnly="{Binding IsReadOnlyID}"  Grid.Column="1" x:Name="TB_Falg_ID" TabIndex="0" bhv:BhFocusTBox.IsFocused="{Binding IsFocusID}"  Width="100" HorizontalAlignment="Left"/>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="95"/>
+                        <ColumnDefinition  Width="150"/>
+                        <ColumnDefinition  Width="85"/>
+                        <ColumnDefinition  Width="150"/>
+                        <ColumnDefinition  Width="105"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="{Binding UIText[ERP_MainCusName]}" />
+                    <ex:TBMainCusName x:Name="TB_Falg_RO"   IsReadOnly="{Binding IsReadOnlyMain}" Grid.Column="1" TabIndex="1" bhv:BhFocusTBox.IsFocused="{Binding IsFocusMain}" Grid.ColumnSpan="2" />
+                </Grid>
+            </Grid>
+            <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" VerticalAlignment="Top" Background="{StaticResource DocumentTabNormalBackgroundBrush}" Grid.Row="2" Height="27"/>
+        </Grid>
+    </ex:BusyIndicatorErp>
+</ex:ChildWindowErp>

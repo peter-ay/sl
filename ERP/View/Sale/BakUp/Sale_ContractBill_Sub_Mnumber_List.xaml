@@ -1,0 +1,27 @@
+﻿<ex:ChildWindowErp
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+xmlns:ex="clr-namespace:ERP.View"
+x:Class="ERP.View.Sale_ContractBill_Sub_Mnumber_List"
+HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+Margin="10"
+DataContext="{Binding Sale_ContractBill_Sub_Mnumber_List, Mode=OneWay, Source={StaticResource Locator}}">
+    <Grid x:Name="LayoutRoot" Background="{StaticResource FloatingWindowBackgroundBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,0,1">
+            <TextBlock Text="{Binding UIText[ERP_Mnumber]}"  Margin="5,2,0,0"  VerticalAlignment="Center"/>
+            <ex:TextBoxKeyCode Width="150" />
+            <ex:ButtonSearch Margin="3,0,0,0"/>
+            <ex:ButtonNew Margin="3,0,0,0"/>
+            <ex:ButtonDelete Margin="3,0,0,0"/>
+            <ex:ButtonExit Margin="3,0,0,0"/>
+        </StackPanel>
+
+        <ex:DataGridListErp Grid.Row="2"/>
+    </Grid>
+</ex:ChildWindowErp>

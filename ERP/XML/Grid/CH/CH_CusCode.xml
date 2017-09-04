@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Columns Frozen="0">
+  <Column  Binding="CusCode"   Header="代码//代碼//Code"/>
+  <Column  Binding="CusName" Header="名称//名稱//Name"/>
+  <!--<Column  Binding="DpCode" Header="部門"/>
+  <Column  Binding="DpName" Header="部門名稱"/>-->
+  <Column  Binding="CusAddress" Header="門店地址"/>
+</Columns>

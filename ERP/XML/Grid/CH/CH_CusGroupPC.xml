@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Columns Frozen="0">
+  <Column Binding="GpCode" Header="编码//編碼//Code"  />
+  <Column Binding="GpName" Header="名称//名稱用//Name"  />
+  <Column Binding="SumCusCode" Header="客户数量//客戶數量//Count" />
+</Columns>

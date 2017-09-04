@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Columns Frozen="2">
+  <Column  Binding=""   Header="" Fheader="1"/>
+  <Column Binding="SpCode" Header="代码//代碼//Code" Ffunction="Key" />
+  <Column Binding="SpName" Header="名称//名稱//Name"   Fwidth="2"/>
+  <Column Binding="AreaCodeList" Header="所属地区//所屬地區//Area"  />
+  <Column Binding="ContactPerson" Header="联系人//聯繫人//ContactPerson"  />
+  <Column Binding="EMail" Header="EMail"  />
+  <Column Binding="Fax" Header="Fax"  />
+  <Column Binding="Phone" Header="联系电话// 聯繫電話//Phone"  />
+  <Column Binding="SpAddress" Header="联系地址//聯繫地址//Address"   Fwidth="2"/>
+  <Column  Binding="F_Semifinished" Header="毛坯供应//毛坯供應//Semifinished"  Fbool="1"/>
+  <Column  Binding="F_Garages" Header="车房片供应//車房片供應//Garages" Fbool="1" />
+  <Column  Binding="F_Cutting_Type" Header="裁型装配//裁型裝配//Cutting" Fbool="1" />
+  <Column  Binding="F_Stock" Header="库存片供应//庫存片供應//Stock" Fbool="1" />
+  <Column  Binding="F_Comprehensive" Header="综合供应//綜合供應//Comprehensive" Fbool="1" />
+  <!--<Column  Binding="Shipping_Confirmation" Header="//需要發貨通知//" Fbool="1" />-->
+  <Column  Binding="Default_Priority" Header="默认优先级别//默認優先級別//Priority"  />
+  <Column  Binding="F_Stop" Header="停用标志//停用標誌//Stop" Fbool="1" />
+</Columns>
+
+
+
+
+
+

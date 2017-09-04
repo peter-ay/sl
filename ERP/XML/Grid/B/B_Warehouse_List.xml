@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Columns Frozen="2">
+  <Column  Binding=""   Header="" Fheader="1"/>
+  <Column  Binding="WhCode" Header="仓库代码//倉庫代碼//WhCode"  Ffunction="Key" />
+  <Column  Binding="WhName" Header="仓库名称//倉庫名稱//WhName"  Fwidth="2" />
+  <Column  Binding="DeptCodeList" Header="部门//部門//Department"  />
+  <Column  Binding="Tel" Header="电话//電話//Phone"  />
+  <!--<Column  Binding="WarehouseAttribute" Header="倉庫屬性"  />-->
+  <Column  Binding="WhAddress" Header="仓库地址//倉庫地址//Address"  Fwidth="2" />
+  <Column  Binding="ManageMan" Header="负责人//負責人//Employee Name"  />
+  <!--<Column  Binding="MoneyRation" Header="資金定額"  />
+  <Column  Binding="PriceMode" Header="計價方式"  />
+  <Column  Binding="WhProfix" Header="倉庫前綴"  />-->
+  <Column  Binding="Remark" Header="备注//備註//Remark"   Fwidth="2"/>
+  <!--<Column  Binding="EndDealFlagChhs" Header="參與存貨核算" Fbool="1" />
+  <Column  Binding="Ishqgl" Header="貨區管理" Fbool="1" />
+  <Column  Binding="IsJoinMRP" Header="參與MRP"  Fbool="1"/>
+  <Column  Binding="IsRepertory" Header="儲備預警" Fbool="1" />-->
+  <Column  Binding="F_Stop" Header="停用//停用//Stop" Fbool="1" />
+</Columns>
+
+
+
+
+
+
+
+
+

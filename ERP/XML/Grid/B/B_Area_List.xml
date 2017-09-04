@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Columns Frozen="2">
+  <Column Binding=""   Header="" Fheader="1"/>
+  <Column Binding="AreaCode" Header="编码//編碼//Code"  Ffunction="Key"/>
+  <Column Binding="AreaName" Header="名称//名稱//Name"  />
+  <Column Binding="PCode" Header="父级代码//父級代碼//ParentCode"   />
+</Columns>
+
+
+
+
+

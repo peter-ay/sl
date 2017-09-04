@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Columns Frozen="2">
+  <Column Binding=""   Header="" Fheader="1"/>
+  <Column Binding="AccCusCode" Header="编码//編碼//Code"  Ffunction="Key"/>
+  <Column Binding="AccCusName" Header="名称//名稱//Name"  />
+  <Column Binding="AccEndDate" Header="记账日//記賬日//Settle Date"  />
+  <Column Binding="AccLimit" Header="额度//額度//Limit"  />
+  <Column Binding="PCode" Header="父級代碼"   />
+  <Column Binding="SumCusCode" Header="客户数量//客戶數量//Count"  />
+</Columns>
+
+
+
+
+

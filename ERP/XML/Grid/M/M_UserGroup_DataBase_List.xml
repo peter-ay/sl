@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Columns Frozen="0">
+  <Column Header="用户组代码//用戶組代碼//GroupCode" Binding="GroupCode"/>
+  <Column Header="用户组名称//用戶组名稱//GroupName" Binding="GroupName"/>
+  <Column Header="帐套代号//帳套代號//DataBaseCode" Binding="DBCode"/>
+  <Column Header="帐套名称//帳套名稱//DataBaseName" Binding="DBNameUI"/>
+</Columns>
+
+

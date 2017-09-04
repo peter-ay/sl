@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Columns Frozen="2">
+  <Column  Binding=""   Header="" Fheader="1"/>
+  <Column  Binding="BCode" Header="订单號//訂單號//ID"  Ffunction="ID"/>
+  <Column  Binding="BDate" Header="订单日期//訂單日期//Order Date" Ftime="1"/>
+  <Column  Binding="OBCode" Header="客户单号//客戶單號//Original Code" />
+  <Column  Binding="CusCode" Header="客户代码//客戶代碼//CusCode"/>
+  <Column  Binding="WhCode" Header="仓库代码//仓库代碼//WhCode"/>
+  <Column  Binding="LensCode" Header="订单镜种//訂單鏡種//Lens"  />
+  <Column  Binding="SumQty" Header="订单总数量//訂單總數量//Sum Qty"  />
+  <Column  Binding="SumQtySO" Header="已出库数量//已出庫數量//Sum Out"  />
+  <Column  Binding="SumQtyUnSO" Header="待出库数量//待出庫數量//Sum Remain"  />
+  <Column  Binding="Remark" Header="备注//備註//Remark"  Fwidth="2"/>
+  <Column  Binding="CusName" Header="客户名称//客戶名稱//CusName"/>
+  <Column  Binding="WhName" Header="仓库名称//倉庫名稱//WhName"/>
+  <Column  Binding="LensName" Header="镜种名称//鏡種名稱//Lens Name"  Fwidth="2"/>
+</Columns>
+
+
+
+
+
+
+

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Columns Frozen="2">
+  <Column  Binding=""   Header="" Fheader="1"/>
+  <Column  Binding="FrameCode" Header="鏡架代碼"  />
+  <Column  Binding="InvoiceTitle" Header="發票顯示名稱" />
+  <Column  Binding="Price" Header="單價"  />
+</Columns>
+
+
+
+
+
+

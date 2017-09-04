@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Columns Frozen="1">
+  <Column  Binding="LensCode" Header="代码//代碼//Code" />
+  <Column  Binding="LensName" Header="名称//名稱//Name"  />
+  <Column  Binding="SPH1" Header="SPH1"  />
+  <Column  Binding="SPH2" Header="SPH2"  />
+  <Column  Binding="CYL1" Header="CYL1"  />
+  <Column  Binding="CYL2" Header="CYL2"  />
+  <Column  Binding="ADD1" Header="ADD1"  />
+  <Column  Binding="ADD2" Header="ADD2"  />
+  <!--<Column  Binding="ApplyName" Header="特殊应用//特殊應用"  />
+  <Column  Binding="BrandName" Header="品牌//品牌"  />
+  <Column  Binding="FocusName" Header="焦点//焦點分類"  />
+  <Column  Binding="RefractionName" Header="//折射率"  />
+  <Column  Binding="TechnologyName" Header="//工藝特點"  />
+  <Column  Binding="TexturesName" Header="//材質"  />-->
+  <Column  Binding="F_CF" Header="镜片类型//鏡片類型//Lens Type" />
+</Columns>
+
+
+
+
+
+
+
+
+
+
+
+

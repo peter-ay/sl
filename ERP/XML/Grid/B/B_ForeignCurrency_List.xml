@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Columns Frozen="2">
+  <Column  Binding="" Header=""  Fheader="1"/>
+  <Column Binding="ForeignCurrCode" Header="幣種代碼"  />
+  <Column  Binding="ForeignCurrName" Header="幣種名稱"   />
+  <Column  Binding="Acc_Rate" Header="記帳匯率"   />
+  <Column  Binding="Adjust_Rate" Header="調整匯率"  />
+  <Column  Binding="Decimal_Digtal" Header="小數位數"   />
+  <Column Binding="StandardFlag" Header="本位幣"   Fbool="1"/>
+</Columns>
+
+
+
+
+
+
+

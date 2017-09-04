@@ -1,0 +1,39 @@
+﻿using ERP.Utility;
+using ERP.ViewModel;
+using GalaSoft.MvvmLight.Messaging;
+using System;
+using ERP.Common;
+using System.Linq;
+
+namespace ERP.Web.Entity
+{
+    partial class V_Ware_Report_IO_Lens
+    {
+        private bool _IsSelected;
+        public bool IsSelected
+        {
+            get { return _IsSelected; }
+            set
+            {
+                _IsSelected = value;
+                this.RaisePropertyChanged("IsSelected");
+                Messenger.Default.Send<USelectedBillCodes>(
+                    new USelectedBillCodes()
+                    {
+                        IsAdd = value,
+                        SelectedBillCode = this.ID,
+                        VMName = this.GetType().Name.Substring(2)
+                    }, USysMessages.UpdateSelectedCode);
+            }
+        }
+
+        public string OpTypeNameUI
+        {
+            get
+            {
+                return this.OpTypeName.UIStr();
+            }
+        } 
+
+    }
+}

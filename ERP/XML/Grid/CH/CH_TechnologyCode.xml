@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Columns Frozen="0">
+  <Column Binding="KeyCode" Header="编码//編碼//Code"  />
+  <Column Binding="KeyName" Header="工艺特点//工藝特點//Technology"  />
+</Columns>

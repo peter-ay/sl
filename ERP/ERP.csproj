@@ -1,0 +1,2338 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{026CD491-960D-4443-A242-93CB43B621FB}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ERP</RootNamespace>
+    <AssemblyName>ERP</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>zh-Hans;en-US;zh-Hant</SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>ERP.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>ERP.App</SilverlightAppEntry>
+    <TestPageFileName>ERPTestPage.html</TestPageFileName>
+    <CreateTestPage>true</CreateTestPage>
+    <ValidateXaml>true</ValidateXaml>
+    <EnableOutOfBrowser>false</EnableOutOfBrowser>
+    <OutOfBrowserSettingsFile>Properties\OutOfBrowserSettings.xml</OutOfBrowserSettingsFile>
+    <UsePlatformExtensions>true</UsePlatformExtensions>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <LinkedServerProject>..\ERP.Web\ERP.Web.csproj</LinkedServerProject>
+    <InBrowserSettingsFile>Properties\InBrowserSettings.xml</InBrowserSettingsFile>
+    <RequireInBrowserElevation>true</RequireInBrowserElevation>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.AgDataGrid.v8.2, Version=8.2.9.0, Culture=neutral, PublicKeyToken=79868b8147b5eae4, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.AgMenu.v8.2, Version=8.2.9.0, Culture=neutral, PublicKeyToken=79868b8147b5eae4, processorArchitecture=MSIL" />
+    <Reference Include="GalaSoft.MvvmLight, Version=5.1.1.35063, Culture=neutral, PublicKeyToken=69ff1c9caf797bd5, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.1.1.0\lib\SL5\GalaSoft.MvvmLight.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras, Version=5.1.1.35064, Culture=neutral, PublicKeyToken=cefbae954c1725ae, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.1.1.0\lib\SL5\GalaSoft.MvvmLight.Extras.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="mscorlib" />
+    <Reference Include="System.ComponentModel.DataAnnotations, Version=5.0.5.0, Culture=neutral, PublicKeyToken=ddd0da4d3e678217, processorArchitecture=MSIL" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.DomainServices.Client, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.ServiceModel.DomainServices.Client.Web, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.ServiceModel.Web.Extensions, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Controls, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Data, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="System.Windows.Controls.Data.Input, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="System.Windows.Controls.DomainServices, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="System.Windows.Controls.Input, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Toolkit, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Interactivity, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.1.1.0\lib\SL5\System.Windows.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Windows.Browser" />
+    <Reference Include="System.Xml.Linq, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Controls, Version=2010.2.924.1040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Controls.Navigation, Version=2010.2.924.1040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Behavior\BhFocus.cs" />
+    <Compile Include="Common\Com\ComAddViewMethods.cs" />
+    <Compile Include="Common\Com\ComCloseWin.cs" />
+    <Compile Include="Common\Com\ComColorConstants.cs" />
+    <Compile Include="Common\Com\ComColumnFactory.cs" />
+    <Compile Include="Common\Com\ComCopyProperties.cs" />
+    <Compile Include="Common\Com\ComDataGridColumnSet.cs" />
+    <Compile Include="Common\Com\ComDataGridSelectionAdapter.cs" />
+    <Compile Include="Common\Com\ComDDSFactory.cs" />
+    <Compile Include="Common\Com\ComDDsInfo.cs" />
+    <Compile Include="Common\Com\ComDSFactory.cs" />
+    <Compile Include="Common\Com\ComExport.cs" />
+    <Compile Include="Common\Com\ComImport.cs" />
+    <Compile Include="Common\Com\ComInitSystem.cs" />
+    <Compile Include="Common\Com\ComLanguage.cs" />
+    <Compile Include="Common\Com\ComLanguageResourceManage.cs" />
+    <Compile Include="Common\Com\ComLogin.cs" />
+    <Compile Include="Common\Com\ComMoveCenterSoure.cs" />
+    <Compile Include="Common\Com\ComOpenWins.cs" />
+    <Compile Include="Common\Com\ComPassword.cs" />
+    <Compile Include="Common\Com\ComPrint.cs" />
+    <Compile Include="Common\Com\ComProcessCodeKey.cs" />
+    <Compile Include="Common\Com\ComSubGridColumnUpdate.cs" />
+    <Compile Include="Common\Com\ComSunGridColumnInfo.cs" />
+    <Compile Include="Common\Com\ComUserLogiinInfoManage.cs" />
+    <Compile Include="Common\Com\ComUserModel.cs" />
+    <Compile Include="Common\Com\ComWinFactory.cs" />
+    <Compile Include="Common\Com\ComWinsInfo.cs" />
+    <Compile Include="Common\Com\ComXYInputDataSource.cs" />
+    <Compile Include="Common\Com\ComInitGridColumns.cs" />
+    <Compile Include="Common\Com\ComAssignWins.cs" />
+    <Compile Include="Common\Com\ComOpenURL.cs" />
+    <Compile Include="Common\Com\ComUploadFile.cs" />
+    <Compile Include="Common\Com\ComBarCodeLens.cs" />
+    <Compile Include="Common\Help\ComHelp.cs" />
+    <Compile Include="Common\Help\ComHelpCusCode.cs" />
+    <Compile Include="Common\Help\ComHelpFrameCode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Help\ComHelpLensCode.cs" />
+    <Compile Include="Common\Help\ComHelpProCode.cs" />
+    <Compile Include="Common\Help\ComHelpSale_Base_Note.cs" />
+    <Compile Include="Common\Help\ComHelpDBCode.cs" />
+    <Compile Include="Common\Help\ComHelpGpCode.cs" />
+    <Compile Include="Common\Help\ComHelpDpCode.cs" />
+    <Compile Include="Common\Help\ComHelpAreaCode.cs" />
+    <Compile Include="Common\Help\ComHelpPersonCode.cs" />
+    <Compile Include="Common\Help\ComHelpWhCode.cs" />
+    <Compile Include="Common\Help\ComHelpSpCode.cs" />
+    <Compile Include="Common\Help\ComHelpLensClass.cs" />
+    <Compile Include="Common\Help\ComHelpCusGroup.cs" />
+    <Compile Include="Common\Help\ComHelpSpGroup.cs" />
+    <Compile Include="Converters\ConvertToVisible.cs" />
+    <Compile Include="Converters\DateStringU.cs" />
+    <Compile Include="Converters\FormatDateTimeString.cs" />
+    <Compile Include="Converters\ReadOnlyToEnable.cs" />
+    <Compile Include="Converters\ToShortDataString.cs" />
+    <Compile Include="Extend\Methods\ExStrToIn32.cs" />
+    <Compile Include="Extend\Methods\ExMMessagerMethods.cs" />
+    <Compile Include="Extend\Methods\ExMStringMethods.cs" />
+    <Compile Include="Extend\Methods\ExHandleSBC_DBCCase.cs" />
+    <Compile Include="Extend\Methods\ExHanldeErrMsg.cs" />
+    <Compile Include="Model\Base\MV_B_Customer_Main.cs" />
+    <Compile Include="Model\Base\MV_B_Customer_Acc.cs" />
+    <Compile Include="Model\Base\MV_B_Material_Process.cs" />
+    <Compile Include="Model\Base\MV_B_Material_LensClass_Focus.cs" />
+    <Compile Include="Model\Base\MV_B_Material_LensClass_Index.cs" />
+    <Compile Include="Model\Base\MV_B_Material_LensClass_Materials.cs" />
+    <Compile Include="Model\Base\MV_B_Material_LensClass_Usage.cs" />
+    <Compile Include="Model\Base\MV_B_Material_LensClass_Design.cs" />
+    <Compile Include="Model\Base\MV_B_Material_LensClass_Brand.cs" />
+    <Compile Include="Model\Base\MV_B_WareHouse.cs" />
+    <Compile Include="Model\Base\MV_B_Frame.cs" />
+    <Compile Include="Model\Base\MV_B_Area.cs" />
+    <Compile Include="Model\Base\MV_B_Customer.cs" />
+    <Compile Include="Model\Base\MV_B_Department.cs" />
+    <Compile Include="Model\Base\MV_B_Material_Lens.cs" />
+    <Compile Include="Model\Base\MV_B_Person.cs" />
+    <Compile Include="Model\Base\MV_B_Supplier.cs" />
+    <Compile Include="Model\Man\MV_U_ProcessClass.cs" />
+    <Compile Include="Model\Man\MV_S_Function.cs" />
+    <Compile Include="Model\Man\MV_S_DataBase.cs" />
+    <Compile Include="Model\Man\MV_S_UserGroup.cs" />
+    <Compile Include="Model\Man\MV_S_User.cs" />
+    <Compile Include="Model\Man\MV_S_User_GroupDataBase.cs" />
+    <Compile Include="Model\Man\MV_S_Log.cs" />
+    <Compile Include="Model\Pur\MV_Pur_PriceContract.cs" />
+    <Compile Include="Model\Pur\MV_Pur_PriceContract_CusGroup.cs" />
+    <Compile Include="Model\Pur\MV_Pur_PriceContract_Frame.cs" />
+    <Compile Include="Model\Pur\MV_Pur_PriceContract_FrameSet.cs" />
+    <Compile Include="Model\Pur\MV_Pur_PriceContract_Lens.cs" />
+    <Compile Include="Model\Pur\MV_Pur_PriceContract_Lens_ProCost.cs" />
+    <Compile Include="Model\Pur\MV_Pur_Quote.cs" />
+    <Compile Include="Model\Sale\MV_Sale_Delivery_Lens.cs" />
+    <Compile Include="Model\Sale\MV_Sale_Order_Status.cs" />
+    <Compile Include="Model\Ware\MV_Ware_Bill_SO_Pre_Lens.cs" />
+    <Compile Include="Model\Ware\MV_Ware_Bill_SO_Pre_SD.cs" />
+    <Compile Include="Model\Ware\MV_Ware_Bill_Count_PD.cs" />
+    <Compile Include="Model\Ware\MV_Ware_Bill_Transfer_PD.cs" />
+    <Compile Include="Model\Ware\MV_Ware_Bill_Lens.cs" />
+    <Compile Include="Model\Ware\MV_Ware_Bill_PD.cs" />
+    <Compile Include="Model\Ware\MV_Ware_Bill_SO_Lens.cs" />
+    <Compile Include="Model\Ware\MV_Ware_Report_IO_Lens.cs" />
+    <Compile Include="Model\Ware\MV_Ware_Stocks_Base_Lens.cs" />
+    <Compile Include="Model\Ware\MV_Ware_Report_Stocks_Lens_XY.cs" />
+    <Compile Include="Model\Ware\MV_Ware_Bill_SO_PD.cs" />
+    <Compile Include="Model\Ware\MV_Ware_Bill_SO_SD.cs" />
+    <Compile Include="Model\Sale\MV_Sale_Order_FD.cs" />
+    <Compile Include="Model\Sale\MV_Sale_Order_Frame.cs" />
+    <Compile Include="Model\Sale\MV_Sale_Order_PD.cs" />
+    <Compile Include="Model\Sale\MV_Sale_Order_Lens.cs" />
+    <Compile Include="Model\Sale\MV_Sale_Order_SD.cs" />
+    <Compile Include="Model\Sale\MV_Sale_Quote.cs" />
+    <Compile Include="Model\Sale\MV_Sale_PriceContract_CusGroup.cs" />
+    <Compile Include="Model\Sale\MV_Sale_PriceContract_FrameSet.cs" />
+    <Compile Include="Model\Sale\MV_Sale_PriceContract_Frame.cs" />
+    <Compile Include="Model\Sale\MV_Sale_PriceContract_Lens_ProCost.cs" />
+    <Compile Include="Model\Sale\MV_Sale_PriceContract.cs" />
+    <Compile Include="Model\Sale\MV_Sale_PriceContract_Lens.cs" />
+    <Compile Include="Model\Sale\MV_Sale_Base_Note.cs" />
+    <Compile Include="Model\Sale\MV_Sale_Base_ReOrderReason.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resource\Languages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Languages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\UID.cs" />
+    <Compile Include="Utility\UReportID.cs" />
+    <Compile Include="Utility\UXYTable.cs" />
+    <Compile Include="Utility\UDataTime.cs" />
+    <Compile Include="Utility\USptstr.cs" />
+    <Compile Include="Utility\UDSMethods.cs" />
+    <Compile Include="Utility\URight.cs" />
+    <Compile Include="Utility\UImagePaths.cs" />
+    <Compile Include="Utility\USelectedBillCodes.cs" />
+    <Compile Include="Utility\USysControls.cs" />
+    <Compile Include="Utility\USysEnum .cs" />
+    <Compile Include="Utility\USysFlag.cs" />
+    <Compile Include="Utility\USysInfo.cs" />
+    <Compile Include="Utility\USysMessages.cs" />
+    <Compile Include="Utility\USysTabs.cs" />
+    <Compile Include="Utility\USysTemp.cs" />
+    <Compile Include="ViewModel\Base\VMB_Material_LensClass_DefaultCoating.cs" />
+    <Compile Include="ViewModel\Base\VMB_Material_LensClass_DefaultCoating_List.cs" />
+    <Compile Include="ViewModel\Base\VMB_Supplier_Default_ProCode.cs" />
+    <Compile Include="ViewModel\Base\VMB_Supplier_Default_Lens.cs" />
+    <Compile Include="ViewModel\Base\VMB_Supplier_Default_List.cs" />
+    <Compile Include="ViewModel\Base\VMB_Customer_Main.cs" />
+    <Compile Include="ViewModel\Base\VMB_Customer_Acc.cs" />
+    <Compile Include="ViewModel\Base\VMB_Customer_Acc_List.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ViewModel\Base\VMB_Customer_Main_List.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ViewModel\Base\VMB_Material_Process.cs" />
+    <Compile Include="ViewModel\Base\VMB_Warehouse_Right_Use.cs" />
+    <Compile Include="ViewModel\Base\VMB_Warehouse_Right_Browse.cs" />
+    <Compile Include="ViewModel\Base\VMB_Customer_Right_Browse.cs" />
+    <Compile Include="ViewModel\Base\VMB_Supplier_Right_Browse.cs" />
+    <Compile Include="ViewModel\Base\VMB_Material_Lens_Sale.cs" />
+    <Compile Include="ViewModel\Base\VMB_Material_Lens_Sale_List.cs" />
+    <Compile Include="ViewModel\Base\VMB_Material_Lens.cs" />
+    <Compile Include="ViewModel\Base\VMB_Material_LensClass_Brand.cs" />
+    <Compile Include="ViewModel\Base\VMB_Material_LensClass_Design.cs" />
+    <Compile Include="ViewModel\Base\VMB_Material_LensClass_Focus.cs" />
+    <Compile Include="ViewModel\Base\VMB_Material_LensClass_Index.cs" />
+    <Compile Include="ViewModel\Base\VMB_Material_LensClass_Materials.cs" />
+    <Compile Include="ViewModel\Base\VMB_Material_LensClass_Usage.cs" />
+    <Compile Include="ViewModel\Base\VMB_Material_LensClass_Brand_List.cs" />
+    <Compile Include="ViewModel\Base\VMB_Material_LensClass_Focus_List.cs" />
+    <Compile Include="ViewModel\Base\VMB_Material_LensClass_Usage_List.cs" />
+    <Compile Include="ViewModel\Base\VMB_Material_LensClass_Design_List.cs" />
+    <Compile Include="ViewModel\Base\VMB_Material_LensClass_Materials_List.cs" />
+    <Compile Include="ViewModel\Base\VMB_Material_LensClass_Index_List.cs" />
+    <Compile Include="ViewModel\Base\VMB_Area.cs" />
+    <Compile Include="ViewModel\Base\VMB_Area_List.cs" />
+    <Compile Include="ViewModel\Base\VMB_Customer.cs" />
+    <Compile Include="ViewModel\Base\VMB_Customer_List.cs" />
+    <Compile Include="ViewModel\Base\VMB_Material_Frame.cs" />
+    <Compile Include="ViewModel\Base\VMB_Material_Frame_List.cs" />
+    <Compile Include="ViewModel\Base\VMB_Material_Lens_List.cs" />
+    <Compile Include="ViewModel\Base\VMB_Person.cs" />
+    <Compile Include="ViewModel\Base\VMB_Person_List.cs" />
+    <Compile Include="ViewModel\Base\VMB_Material_Process_List.cs" />
+    <Compile Include="ViewModel\Base\VMB_Supplier.cs" />
+    <Compile Include="ViewModel\Base\VMB_Supplier_List.cs" />
+    <Compile Include="ViewModel\Base\VMB_Warehouse.cs" />
+    <Compile Include="ViewModel\Base\VMB_Warehouse_List.cs" />
+    <Compile Include="ViewModel\Base\VMB_Department.cs" />
+    <Compile Include="ViewModel\Base\VMB_Department_List.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ViewModel\Base\VMB_Department_Right_Browse.cs" />
+    <Compile Include="ViewModel\Base\VMB_Supplier_Default_CusCode.cs" />
+    <Compile Include="ViewModel\CH\VMCH_LensCodePur.cs" />
+    <Compile Include="ViewModel\CH\VMCH_SpGroupPC.cs" />
+    <Compile Include="ViewModel\CH\VMCH_PDChoose.cs" />
+    <Compile Include="ViewModel\CH\VMCH_WhCodeOut.cs" />
+    <Compile Include="ViewModel\CH\VMCH_WhCodeIn.cs" />
+    <Compile Include="ViewModel\CH\VMCH_CusGroupPC.cs" />
+    <Compile Include="ViewModel\CH\VMCH_FrameCode.cs" />
+    <Compile Include="ViewModel\CH\VMCH_LensCodeSale.cs" />
+    <Compile Include="ViewModel\CH\VMCH_ApplyCode.cs" />
+    <Compile Include="ViewModel\CH\VMCH_AreaCode.cs" />
+    <Compile Include="ViewModel\CH\VMCH_BrandCode.cs" />
+    <Compile Include="ViewModel\CH\VMCH_CusCode.cs" />
+    <Compile Include="ViewModel\CH\VMCH_CusMnumber.cs" />
+    <Compile Include="ViewModel\CH\VMCH_DataBase.cs" />
+    <Compile Include="ViewModel\CH\VMCH_DeptCode.cs" />
+    <Compile Include="ViewModel\CH\VMCH_FocusCode.cs" />
+    <Compile Include="ViewModel\CH\VMCH_ForeignCurrency.cs" />
+    <Compile Include="ViewModel\CH\VMCH_LensCode.cs" />
+    <Compile Include="ViewModel\CH\VMCH_PayWay.cs" />
+    <Compile Include="ViewModel\CH\VMCH_Person.cs" />
+    <Compile Include="ViewModel\CH\VMCH_RefractionCode.cs" />
+    <Compile Include="ViewModel\CH\VMCH_SupplierCode.cs" />
+    <Compile Include="ViewModel\CH\VMCH_TechnologyCode.cs" />
+    <Compile Include="ViewModel\CH\VMCH_TextureCode.cs" />
+    <Compile Include="ViewModel\CH\VMCH_TradeWay.cs" />
+    <Compile Include="ViewModel\CH\VMCH_TransferWay.cs" />
+    <Compile Include="ViewModel\CH\VMCH_WhCodeBrowse.cs" />
+    <Compile Include="ViewModel\Locator\VMLocatorPur.cs" />
+    <Compile Include="ViewModel\Locator\VMLocatorWare.cs" />
+    <Compile Include="ViewModel\Locator\VMLocatoMan.cs" />
+    <Compile Include="ViewModel\Locator\VMLocator.cs" />
+    <Compile Include="ViewModel\Locator\VMLocatorBase.cs" />
+    <Compile Include="ViewModel\Locator\VMLocatorCH.cs" />
+    <Compile Include="ViewModel\Locator\VMLocatorLogin.cs" />
+    <Compile Include="ViewModel\Locator\VMLocatorSale.cs" />
+    <Compile Include="ViewModel\Login\VMLogin.cs" />
+    <Compile Include="ViewModel\Login\VMLoginHome.cs" />
+    <Compile Include="ViewModel\Login\VMLoginTab.cs" />
+    <Compile Include="ViewModel\Login\VMLoginUserInfo.cs" />
+    <Compile Include="ViewModel\Login\VMLoginUserLogin.cs" />
+    <Compile Include="ViewModel\Login\VMLoginUserLogined.cs" />
+    <Compile Include="ViewModel\Man\VMM_UserGroup.cs" />
+    <Compile Include="ViewModel\Man\VMM_UserGroup_DataBase_List.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ViewModel\Man\VMM_UserGroup_List.cs" />
+    <Compile Include="ViewModel\Man\VMM_UserGroup_Rights_List.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ViewModel\Man\VMM_Log_List.cs" />
+    <Compile Include="ViewModel\Man\VMM_User.cs" />
+    <Compile Include="ViewModel\Man\VMM_UserGroup_User_List.cs" />
+    <Compile Include="ViewModel\Man\VMM_User_List.cs" />
+    <Compile Include="ViewModel\Pur\VMPur_Order_Lens_List.cs" />
+    <Compile Include="ViewModel\Pur\VMPur_PriceContract_SpGroup_List.cs" />
+    <Compile Include="ViewModel\Pur\VMPur_PriceContract.cs" />
+    <Compile Include="ViewModel\Pur\VMPur_PriceContract_SpCode.cs" />
+    <Compile Include="ViewModel\Pur\VMPur_PriceContract_SpGroup.cs" />
+    <Compile Include="ViewModel\Pur\VMPur_PriceContract_Frame.cs" />
+    <Compile Include="ViewModel\Pur\VMPur_PriceContract_FrameSet.cs" />
+    <Compile Include="ViewModel\Pur\VMPur_PriceContract_FrameSet_List.cs" />
+    <Compile Include="ViewModel\Pur\VMPur_PriceContract_Frame_List.cs" />
+    <Compile Include="ViewModel\Pur\VMPur_PriceContract_Lens.cs" />
+    <Compile Include="ViewModel\Pur\VMPur_PriceContract_Lens_List.cs" />
+    <Compile Include="ViewModel\Pur\VMPur_PriceContract_Lens_ProCost.cs" />
+    <Compile Include="ViewModel\Pur\VMPur_PriceContract_Lens_ProCost_List.cs" />
+    <Compile Include="ViewModel\Pur\VMPur_PriceContract_List.cs" />
+    <Compile Include="ViewModel\Pur\VMPur_Quote.cs" />
+    <Compile Include="ViewModel\Sale\VMSale_Order_SD_PrintPreView.cs" />
+    <Compile Include="ViewModel\Sale\VMSale_Order_SD_ReOrder.cs" />
+    <Compile Include="ViewModel\Sale\VMSale_Delivery_ScanPrint_List.cs" />
+    <Compile Include="ViewModel\Sale\VMSale_Order_JM_List.cs" />
+    <Compile Include="ViewModel\Sale\VMSale_Order_JM.cs" />
+    <Compile Include="ViewModel\Sale\VMSale_Rec_PD.cs" />
+    <Compile Include="ViewModel\Sale\VMSale_Order_Status_List.cs" />
+    <Compile Include="ViewModel\Sale\VMSale_Invoice_SD.cs" />
+    <Compile Include="ViewModel\Sale\VMSale_Delivery_Lens_List.cs" />
+    <Compile Include="ViewModel\Sale\VMSale_Order_Frame_List.cs" />
+    <Compile Include="ViewModel\Sale\VMSale_Order_FD.cs" />
+    <Compile Include="ViewModel\Sale\VMSale_Order_Lens_List.cs" />
+    <Compile Include="ViewModel\Sale\VMSale_Order_PD.cs" />
+    <Compile Include="ViewModel\Sale\VMSale_Quote.cs" />
+    <Compile Include="ViewModel\Sale\VMSale_Order_SD.cs" />
+    <Compile Include="ViewModel\Sale\VMSale_PriceContract_CusGroup.cs" />
+    <Compile Include="ViewModel\Sale\VMSale_PriceContract_FrameSet.cs" />
+    <Compile Include="ViewModel\Sale\VMSale_PriceContract_FrameSet_List.cs" />
+    <Compile Include="ViewModel\Sale\VMSale_PriceContract_Frame.cs" />
+    <Compile Include="ViewModel\Sale\VMSale_PriceContract_Frame_List.cs" />
+    <Compile Include="ViewModel\Sale\VMSale_PriceContract_Lens_ProCost.cs" />
+    <Compile Include="ViewModel\Sale\VMSale_PriceContract_Lens_ProCost_List.cs" />
+    <Compile Include="ViewModel\Sale\VMSale_PriceContract_Lens.cs" />
+    <Compile Include="ViewModel\Sale\VMSale_PriceContract_Lens_List.cs" />
+    <Compile Include="ViewModel\Sale\VMSale_PriceContract_List.cs" />
+    <Compile Include="ViewModel\Sale\VMSale_PriceContract_CusGroup_List.cs" />
+    <Compile Include="ViewModel\Sale\VMSale_PriceContract.cs" />
+    <Compile Include="ViewModel\Sale\VMSale_PriceContract_CusCode.cs" />
+    <Compile Include="ViewModel\Sale\VMSale_Base_Note_List.cs" />
+    <Compile Include="ViewModel\Sale\VMSale_Base_ReOrderReason_List.cs" />
+    <Compile Include="ViewModel\Sale\VMSale_Rec_Lens_List.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\CMD\ReOrder.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\CMD\KeyDownWhCode.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\CMD\KeyDownTempDeptCode.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\CMD\KeyDownNotes.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\CMD\DropDownClosedNotesAC.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\CMD\Save.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\CMD\Delete.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\CMD\UnCheck.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\CMD\Check.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\CMD\Edit.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\CMD\Drop.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\CMD\Previous.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\CMD\Next.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\Methods\ChangeBillSate.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\Methods\CallKeyCodeEnter.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\Methods\FixEditACBug.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\Methods\OnIDChange.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\Methods\ViewOnLoad.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\Methods\ResetHBIsVisibility.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\Methods\ResetDPIsVisibility.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\Methods\PrepareDContextMain.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\Methods\LoadBillMain.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\Methods\RefreshMain.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\Methods\LoadBill.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\Methods\ResetACIsVisibility.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\Methods\ResetTBIsVisibility.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\Property\ACMinimumPrefixLength.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\Property\IsEnableCannel.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\Property\IsEnableLocate.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\Property\IsReadOnlyEdit.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\Property\IsShowHB.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\Property\IsShowDP.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\Property\IsShowAC.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\Property\IsShowTB.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\Property\IsFocusNotesAC.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\Property\IsFocusNotes.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\Property\CurrentIDCode.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\Property\CurrentModel.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\Property\IsEnableReOrder.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\Property\IsEnablePrevious.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\Property\IsEnableNext.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\Property\IsEnablePrintToFactory.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\Property\IsEnablePrint.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\Property\IsEnableExport.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\Property\IsEnableUnLock.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\Property\IsEnableDrop.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\Property\IsEnableUnCheck.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\Property\IsEnableCheck.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\Property\IsEnableDelete.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\Property\IsEnableEdit.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\Property\IsEnableSave.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\Property\IsEnableNew.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\Property\IsReadOnlyID.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\Property\IsReadOnlyMain.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\Property\SIDCode.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\Property\EditMode.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\VMBill.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\VMBillDDsMain.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\VMBillPD.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\VMBillPDDDsSub.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\Property\IsCheckYN.cs" />
+    <Compile Include="ViewModel\VMErp\ChildWindow\VMChildWindow.cs" />
+    <Compile Include="ViewModel\VMErp\Bill\CMD\New.cs" />
+    <Compile Include="ViewModel\VMErp\ErpSimple\CMD\CmdViewOnLoad.cs" />
+    <Compile Include="ViewModel\VMErp\ErpSimple\CMD\CmdViewKeyDown.cs" />
+    <Compile Include="ViewModel\VMErp\ErpSimple\Methods\OnImportCompleted.cs" />
+    <Compile Include="ViewModel\VMErp\ErpSimple\Property\VMName.cs" />
+    <Compile Include="ViewModel\VMErp\ErpSimple\Property\IsBusy.cs" />
+    <Compile Include="ViewModel\VMErp\ErpSimple\Property\IsFocusReturn.cs" />
+    <Compile Include="ViewModel\VMErp\ErpSimple\Property\IsFocusID.cs" />
+    <Compile Include="ViewModel\VMErp\ErpSimple\Property\IsFocusOnTabItemReturn.cs" />
+    <Compile Include="ViewModel\VMErp\ErpSimple\Property\IsFocusTabItemReturn.cs" />
+    <Compile Include="ViewModel\VMErp\ErpSimple\Property\IsFocusTabItem.cs" />
+    <Compile Include="ViewModel\VMErp\ErpSimple\Property\IsFocusMain.cs" />
+    <Compile Include="ViewModel\VMErp\ErpSimple\Property\UIText.cs" />
+    <Compile Include="ViewModel\VMErp\Erp\CMD\Cancel.cs" />
+    <Compile Include="ViewModel\VMErp\Erp\CMD\Assign.cs" />
+    <Compile Include="ViewModel\VMErp\Erp\CMD\AllAssign.cs" />
+    <Compile Include="ViewModel\VMErp\Erp\CMD\AllUnAssign.cs" />
+    <Compile Include="ViewModel\VMErp\Erp\CMD\ComBDataBaseChange.cs" />
+    <Compile Include="ViewModel\VMErp\Erp\CMD\ComBGpCodeChange.cs" />
+    <Compile Include="ViewModel\VMErp\Erp\CMD\ExportList.cs" />
+    <Compile Include="ViewModel\VMErp\Erp\CMD\Export2.cs" />
+    <Compile Include="ViewModel\VMErp\Erp\CMD\Quote.cs" />
+    <Compile Include="ViewModel\VMErp\Erp\CMD\Load.cs" />
+    <Compile Include="ViewModel\VMErp\Erp\CMD\Refresh2.cs" />
+    <Compile Include="ViewModel\VMErp\Erp\CMD\CopyRights.cs" />
+    <Compile Include="ViewModel\VMErp\Erp\CMD\PrintToFactory.cs" />
+    <Compile Include="ViewModel\VMErp\Erp\CMD\Import.cs" />
+    <Compile Include="ViewModel\VMErp\Erp\CMD\Export.cs" />
+    <Compile Include="ViewModel\VMErp\Erp\CMD\Exit.cs" />
+    <Compile Include="ViewModel\VMErp\Erp\CMD\Search.cs" />
+    <Compile Include="ViewModel\VMErp\Erp\CMD\ViewBindingValidationError.cs" />
+    <Compile Include="ViewModel\VMErp\Erp\CMD\OK.cs" />
+    <Compile Include="ViewModel\VMErp\Erp\HelpWindows\SpGroupPC.cs" />
+    <Compile Include="ViewModel\VMErp\Erp\HelpWindows\WhCodeBrowse.cs" />
+    <Compile Include="ViewModel\VMErp\Erp\HelpWindows\WhCodeOut.cs" />
+    <Compile Include="ViewModel\VMErp\Erp\HelpWindows\WhCodeIn.cs" />
+    <Compile Include="ViewModel\VMErp\Erp\HelpWindows\CusCode.cs" />
+    <Compile Include="ViewModel\VMErp\Erp\HelpWindows\CusGroupPC.cs" />
+    <Compile Include="ViewModel\VMErp\Erp\HelpWindows\FrameCode.cs" />
+    <Compile Include="ViewModel\VMErp\Erp\HelpWindows\LensCode.cs" />
+    <Compile Include="ViewModel\VMErp\Erp\Print\CGSD.cs" />
+    <Compile Include="ViewModel\VMErp\Erp\Print\XSSD.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ViewModel\VMErp\Erp\Property\DDsInfoList2.cs" />
+    <Compile Include="ViewModel\VMErp\Erp\Property\DContextList2.cs" />
+    <Compile Include="ViewModel\VMErp\Erp\Property\WrapPanelHeigh.cs" />
+    <Compile Include="ViewModel\VMErp\Erp\Property\DDsInfoSub.cs" />
+    <Compile Include="ViewModel\VMErp\Erp\Property\DDsInfoList.cs" />
+    <Compile Include="ViewModel\VMErp\Erp\Property\DDsInfoMain.cs" />
+    <Compile Include="ViewModel\VMErp\Erp\Property\VMNameAuthority.cs" />
+    <Compile Include="ViewModel\VMErp\Erp\Property\Xmlpath.cs" />
+    <Compile Include="ViewModel\VMErp\Erp\Property\IsChildWindow.cs" />
+    <Compile Include="ViewModel\VMErp\Erp\Property\IDCode.cs" />
+    <Compile Include="ViewModel\VMErp\Erp\Property\ModelName.cs" />
+    <Compile Include="ViewModel\VMErp\Erp\Property\IsShowExport.cs" />
+    <Compile Include="ViewModel\VMErp\Erp\Property\IsShowImport.cs" />
+    <Compile Include="ViewModel\VMErp\Erp\Property\DContextSub.cs" />
+    <Compile Include="ViewModel\VMErp\Erp\Property\DContextList.cs" />
+    <Compile Include="ViewModel\VMErp\Erp\Property\DContextMain.cs" />
+    <Compile Include="ViewModel\VMErp\Erp\Property\Title.cs" />
+    <Compile Include="ViewModel\VMErp\List\CMD\AssignItemCheckClick.cs" />
+    <Compile Include="ViewModel\VMErp\List\CMD\Check.cs" />
+    <Compile Include="ViewModel\VMErp\List\CMD\GridListClickKey.cs" />
+    <Compile Include="ViewModel\VMErp\List\CMD\GridListClick5.cs" />
+    <Compile Include="ViewModel\VMErp\List\CMD\GridListClick4.cs" />
+    <Compile Include="ViewModel\VMErp\List\CMD\GridListClickEdit.cs" />
+    <Compile Include="ViewModel\VMErp\List\CMD\GridListClickID.cs" />
+    <Compile Include="ViewModel\VMErp\List\CMD\GridListClick3.cs" />
+    <Compile Include="ViewModel\VMErp\List\CMD\GridListClick2.cs" />
+    <Compile Include="ViewModel\VMErp\List\CMD\Import.cs" />
+    <Compile Include="ViewModel\VMErp\List\CMD\RBCdiInclude.cs" />
+    <Compile Include="ViewModel\VMErp\List\CMD\RBCdiCheck.cs" />
+    <Compile Include="ViewModel\VMErp\List\CMD\Delete.cs" />
+    <Compile Include="ViewModel\VMErp\List\CMD\New.cs" />
+    <Compile Include="ViewModel\VMErp\List\CMD\GridListClick1.cs" />
+    <Compile Include="ViewModel\VMErp\List\CMD\GridHeadCheck.cs" />
+    <Compile Include="ViewModel\VMErp\List\CMD\Clear.cs" />
+    <Compile Include="ViewModel\VMErp\Erp\VMErp.cs" />
+    <Compile Include="ViewModel\VMErp\Erp\CMD\Print.cs" />
+    <Compile Include="ViewModel\VMErp\Erp\VMErpPartialHelpWindows.cs" />
+    <Compile Include="ViewModel\VMErp\ErpSimple\VMErpSimple.cs" />
+    <Compile Include="ViewModel\VMErp\List\Methods\SelectedItemChangeed.cs" />
+    <Compile Include="ViewModel\VMErp\List\Methods\LoadList2.cs" />
+    <Compile Include="ViewModel\VMErp\List\Property\BCode.cs" />
+    <Compile Include="ViewModel\VMErp\List\Property\F_SCTime.cs" />
+    <Compile Include="ViewModel\VMErp\List\VMListDDsList.cs" />
+    <Compile Include="ViewModel\VMErp\List\Methods\InitColumns.cs" />
+    <Compile Include="ViewModel\VMErp\List\Property\Checker.cs" />
+    <Compile Include="ViewModel\VMErp\List\Property\GridListSelectedCodes.cs" />
+    <Compile Include="ViewModel\VMErp\List\Property\CurrentIDCode.cs" />
+    <Compile Include="ViewModel\VMErp\List\Property\SKeyCode.cs" />
+    <Compile Include="ViewModel\VMErp\List\Property\SKeyName.cs" />
+    <Compile Include="ViewModel\VMErp\List\Property\IsTypeAll.cs" />
+    <Compile Include="ViewModel\VMErp\List\Property\IsCheckAll.cs" />
+    <Compile Include="ViewModel\VMErp\List\Property\Maker.cs" />
+    <Compile Include="ViewModel\VMErp\List\Property\D2.cs" />
+    <Compile Include="ViewModel\VMErp\List\Property\D1.cs" />
+    <Compile Include="ViewModel\VMErp\List\Property\SelectedItem.cs" />
+    <Compile Include="ViewModel\VMErp\List\Property\GridSelectedItem.cs" />
+    <Compile Include="ViewModel\VMErp\List\Property\LocatorPath.cs" />
+    <Compile Include="ViewModel\VMErp\List\VMList.cs" />
+    <Compile Include="ViewModel\VMErp\List\VMListCH.cs" />
+    <Compile Include="ViewModel\VMErp\List\VMListDDsList2.cs" />
+    <Compile Include="ViewModel\VMErp\VMMessageWindowErp.cs" />
+    <Compile Include="ViewModel\VMErp\VMXYInput.cs" />
+    <Compile Include="ViewModel\VMMainPage.cs" />
+    <Compile Include="ViewModel\Ware\VMWare_Bill_SO_Pre_SD.cs" />
+    <Compile Include="ViewModel\Ware\VMWare_Bill_SO_Pre_Lens_List.cs" />
+    <Compile Include="ViewModel\Ware\VMWare_Bill_Count_Lens.cs" />
+    <Compile Include="ViewModel\Ware\VMWare_Bill_Count_Lens_List.cs" />
+    <Compile Include="ViewModel\Ware\VMWare_Bill_Transfer_Lens_List.cs" />
+    <Compile Include="ViewModel\Ware\VMWare_Bill_Transfer_Lens.cs" />
+    <Compile Include="ViewModel\Ware\VMWare_Bill_BCI_Lens_List.cs" />
+    <Compile Include="ViewModel\Ware\VMWare_Bill_OI_Lens_List.cs" />
+    <Compile Include="ViewModel\Ware\VMWare_Bill_OI_Lens.cs" />
+    <Compile Include="ViewModel\Ware\VMWare_Report_IO_Lens_List.cs" />
+    <Compile Include="ViewModel\Ware\VMWare_Suspend_Lens_List.cs" />
+    <Compile Include="ViewModel\Ware\VMWare_Stocks_Base_Lens.cs" />
+    <Compile Include="ViewModel\Ware\VMWare_Stocks_Base_Lens_List.cs" />
+    <Compile Include="ViewModel\Ware\VMWare_Report_Stocks_Lens_XY_List.cs" />
+    <Compile Include="ViewModel\Ware\VMWare_Report_Stocks_Lens_Detail_List.cs" />
+    <Compile Include="ViewModel\Ware\VMWare_Bill_SO_PD.cs" />
+    <Compile Include="ViewModel\Ware\VMWare_Bill_SO_Pending_PD_List.cs" />
+    <Compile Include="ViewModel\Ware\VMWare_Bill_SO_SD.cs" />
+    <Compile Include="ViewModel\Ware\VMWare_Bill_SO_Lens_List.cs" />
+    <Compile Include="View\Base\B_Area.xaml.cs">
+      <DependentUpon>B_Area.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\B_Area_List.xaml.cs">
+      <DependentUpon>B_Area_List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\B_Department.xaml.cs">
+      <DependentUpon>B_Department.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\B_Department_List.xaml.cs">
+      <DependentUpon>B_Department_List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\B_Customer.xaml.cs">
+      <DependentUpon>B_Customer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\B_Customer_List.xaml.cs">
+      <DependentUpon>B_Customer_List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\B_Material_Frame.xaml.cs">
+      <DependentUpon>B_Material_Frame.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\B_Material_Frame_List.xaml.cs">
+      <DependentUpon>B_Material_Frame_List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\B_Material_Lens.xaml.cs">
+      <DependentUpon>B_Material_Lens.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\B_Material_Lens_List.xaml.cs">
+      <DependentUpon>B_Material_Lens_List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\B_Material_LensClass_Index_List.xaml.cs">
+      <DependentUpon>B_Material_LensClass_Index_List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\B_Person.xaml.cs">
+      <DependentUpon>B_Person.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\B_Person_List.xaml.cs">
+      <DependentUpon>B_Person_List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\B_Supplier.xaml.cs">
+      <DependentUpon>B_Supplier.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\B_Supplier_List.xaml.cs">
+      <DependentUpon>B_Supplier_List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\B_Warehouse.xaml.cs">
+      <DependentUpon>B_Warehouse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\B_Warehouse_List.xaml.cs">
+      <DependentUpon>B_Warehouse_List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\B_Material_LensClass_Brand_List.xaml.cs">
+      <DependentUpon>B_Material_LensClass_Brand_List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\B_Material_LensClass_Focus_List.xaml.cs">
+      <DependentUpon>B_Material_LensClass_Focus_List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\B_Material_LensClass_Usage_List.xaml.cs">
+      <DependentUpon>B_Material_LensClass_Usage_List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\B_Material_LensClass_Design_List.xaml.cs">
+      <DependentUpon>B_Material_LensClass_Design_List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\B_Material_LensClass_Materials_List.xaml.cs">
+      <DependentUpon>B_Material_LensClass_Materials_List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\B_Material_LensClass_Brand.xaml.cs">
+      <DependentUpon>B_Material_LensClass_Brand.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\B_Material_LensClass_Focus.xaml.cs">
+      <DependentUpon>B_Material_LensClass_Focus.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\B_Material_LensClass_Index.xaml.cs">
+      <DependentUpon>B_Material_LensClass_Index.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\B_Material_LensClass_Design.xaml.cs">
+      <DependentUpon>B_Material_LensClass_Design.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\B_Material_LensClass_Materials.xaml.cs">
+      <DependentUpon>B_Material_LensClass_Materials.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\B_Material_LensClass_Usage.xaml.cs">
+      <DependentUpon>B_Material_LensClass_Usage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\B_Material_Lens_Sale.xaml.cs">
+      <DependentUpon>B_Material_Lens_Sale.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\B_Material_Lens_Sale_List.xaml.cs">
+      <DependentUpon>B_Material_Lens_Sale_List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\B_Department_Right_Browse.xaml.cs">
+      <DependentUpon>B_Department_Right_Browse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\B_Supplier_Right_Browse.xaml.cs">
+      <DependentUpon>B_Supplier_Right_Browse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\B_Customer_Right_Browse.xaml.cs">
+      <DependentUpon>B_Customer_Right_Browse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\B_Warehouse_Right_Browse.xaml.cs">
+      <DependentUpon>B_Warehouse_Right_Browse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\B_Warehouse_Right_Use.xaml.cs">
+      <DependentUpon>B_Warehouse_Right_Use.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\B_Material_Process_List.xaml.cs">
+      <DependentUpon>B_Material_Process_List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\B_Material_Process.xaml.cs">
+      <DependentUpon>B_Material_Process.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\B_Customer_Acc_List.xaml.cs">
+      <DependentUpon>B_Customer_Acc_List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\B_Customer_Main_List.xaml.cs">
+      <DependentUpon>B_Customer_Main_List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\B_Customer_Acc.xaml.cs">
+      <DependentUpon>B_Customer_Acc.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\B_Customer_Main.xaml.cs">
+      <DependentUpon>B_Customer_Main.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\B_Supplier_Default_List.xaml.cs">
+      <DependentUpon>B_Supplier_Default_List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\B_Supplier_Default_CusCode.xaml.cs">
+      <DependentUpon>B_Supplier_Default_CusCode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\B_Supplier_Default_Lens.xaml.cs">
+      <DependentUpon>B_Supplier_Default_Lens.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\B_Supplier_Default_ProCode.xaml.cs">
+      <DependentUpon>B_Supplier_Default_ProCode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\B_Material_LensClass_DefaultCoating_List.xaml.cs">
+      <DependentUpon>B_Material_LensClass_DefaultCoating_List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\B_Material_LensClass_DefaultCoating.xaml.cs">
+      <DependentUpon>B_Material_LensClass_DefaultCoating.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CH\CH_ApplyCode.xaml.cs">
+      <DependentUpon>CH_ApplyCode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CH\CH_AreaCode.xaml.cs">
+      <DependentUpon>CH_AreaCode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CH\CH_BrandCode.xaml.cs">
+      <DependentUpon>CH_BrandCode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CH\CH_CusCode.xaml.cs">
+      <DependentUpon>CH_CusCode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CH\CH_CusMnumber.xaml.cs">
+      <DependentUpon>CH_CusMnumber.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CH\CH_DataBase.xaml.cs">
+      <DependentUpon>CH_DataBase.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CH\CH_DeptCode.xaml.cs">
+      <DependentUpon>CH_DeptCode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CH\CH_FocusCode.xaml.cs">
+      <DependentUpon>CH_FocusCode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CH\CH_ForeignCurrency.xaml.cs">
+      <DependentUpon>CH_ForeignCurrency.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CH\CH_LensCode.xaml.cs">
+      <DependentUpon>CH_LensCode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CH\CH_PayWay.xaml.cs">
+      <DependentUpon>CH_PayWay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CH\CH_Person.xaml.cs">
+      <DependentUpon>CH_Person.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CH\CH_RefractionCode.xaml.cs">
+      <DependentUpon>CH_RefractionCode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CH\CH_SupplierCode.xaml.cs">
+      <DependentUpon>CH_SupplierCode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CH\CH_TechnologyCode.xaml.cs">
+      <DependentUpon>CH_TechnologyCode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CH\CH_TextureCode.xaml.cs">
+      <DependentUpon>CH_TextureCode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CH\CH_TradeWay.xaml.cs">
+      <DependentUpon>CH_TradeWay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CH\CH_TransferWay.xaml.cs">
+      <DependentUpon>CH_TransferWay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CH\CH_WhCodeBrowse.xaml.cs">
+      <DependentUpon>CH_WhCodeBrowse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CH\CH_LensCodeSale.xaml.cs">
+      <DependentUpon>CH_LensCodeSale.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CH\CH_FrameCode.xaml.cs">
+      <DependentUpon>CH_FrameCode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CH\CH_CusGroupPC.xaml.cs">
+      <DependentUpon>CH_CusGroupPC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CH\CH_WhCodeIn.xaml.cs">
+      <DependentUpon>CH_WhCodeIn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CH\CH_WhCodeOut.xaml.cs">
+      <DependentUpon>CH_WhCodeOut.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CH\CH_PDChoose.xaml.cs">
+      <DependentUpon>CH_PDChoose.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CH\CH_SpGroupPC.xaml.cs">
+      <DependentUpon>CH_SpGroupPC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CH\CH_LensCodePur.xaml.cs">
+      <DependentUpon>CH_LensCodePur.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ERPView\AC\ACBoxWhCode.cs" />
+    <Compile Include="View\ERPView\AC\ACBoxLensClass.cs" />
+    <Compile Include="View\ERPView\AC\ACBoxAreaCode.cs" />
+    <Compile Include="View\ERPView\AC\ACBoxPersonCode.cs" />
+    <Compile Include="View\ERPView\AC\CusCode\ACBoxCusCodeBrowseErp.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="View\ERPView\AC\ACBoxDBCode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="View\ERPView\AC\DpCode\ACBoxDpCode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="View\ERPView\AC\ACBoxErp.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="View\ERPView\AC\FrameCode\ACBoxFrameCodeErp.cs" />
+    <Compile Include="View\ERPView\AC\FrameCode\ACBoxFrameCodeBill.cs" />
+    <Compile Include="View\ERPView\AC\FrameCode\ACBoxFrameCodeList.cs" />
+    <Compile Include="View\ERPView\AC\FrameCode\ACBoxCusFrameCodeBill.cs" />
+    <Compile Include="View\ERPView\AC\FrameCode\ACBoxCusFrameCode1.cs" />
+    <Compile Include="View\ERPView\AC\FrameCode\ACBoxCusFrameCode3.cs" />
+    <Compile Include="View\ERPView\AC\FrameCode\ACBoxCusFrameCode2.cs" />
+    <Compile Include="View\ERPView\AC\FrameCode\ACBoxCusFrameCode4.cs" />
+    <Compile Include="View\ERPView\AC\FrameCode\ACBoxCusFrameCode5.cs" />
+    <Compile Include="View\ERPView\AC\FrameCode\ACBoxCusFrameCode6.cs" />
+    <Compile Include="View\ERPView\AC\FrameCode\ACBoxCusFrameCode7.cs" />
+    <Compile Include="View\ERPView\AC\FrameCode\ACBoxCusFrameCode8.cs" />
+    <Compile Include="View\ERPView\AC\FrameCode\ACBoxCusFrameCode9.cs" />
+    <Compile Include="View\ERPView\AC\FrameCode\ACBoxCusFrameCode10.cs" />
+    <Compile Include="View\ERPView\AC\LensCode\ACBoxLensCodeErp.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="View\ERPView\AC\LensCode\ACBoxCusLensCodeBillSDR.cs" />
+    <Compile Include="View\ERPView\AC\LensCode\ACBoxCusLensCodeBillSDL.cs" />
+    <Compile Include="View\ERPView\AC\LensCode\ACBoxCusLensCodeBillSDRR.cs" />
+    <Compile Include="View\ERPView\AC\LensCode\ACBoxCusLensCodeBillSDRL.cs" />
+    <Compile Include="View\ERPView\AC\LensCode\ACBoxCusLensCodeBill.cs" />
+    <Compile Include="View\ERPView\AC\LensCode\ACBoxLensCodeBillPDR.cs" />
+    <Compile Include="View\ERPView\AC\LensCode\ACBoxLensCodeBillSOR.cs" />
+    <Compile Include="View\ERPView\AC\LensCode\ACBoxLensCodeBillSOL.cs" />
+    <Compile Include="View\ERPView\AC\LensCode\ACBoxSpLensCodeBillQuote.cs" />
+    <Compile Include="View\ERPView\AC\MC\ACBoxMCs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="View\ERPView\AC\Note\ACBoxNotes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="View\ERPView\AC\Process\ACBoxProClass.cs" />
+    <Compile Include="View\ERPView\AC\Process\ACBoxProcessBill.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="View\ERPView\AC\Process\ACBoxProcessErp.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="View\ERPView\AC\Process\ACBoxProcessBillCF.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="View\ERPView\AC\Process\ACBoxProcessBillKF.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="View\ERPView\AC\CusCode\ACBoxCusCodeBrowseBill.cs" />
+    <Compile Include="View\ERPView\AC\CusCode\ACBoxCusCodeBrowseList.cs" />
+    <Compile Include="View\ERPView\AC\LensCode\ACBoxLensCodeBill.cs" />
+    <Compile Include="View\ERPView\AC\LensCode\ACBoxLensCodeList.cs" />
+    <Compile Include="View\ERPView\AC\LensCode\ACBoxCusLensCodeBillQuote.cs" />
+    <Compile Include="View\ERPView\AC\Process\ACBoxProcessList.cs" />
+    <Compile Include="View\ERPView\AC\SpCode\ACBoxSpCodeBrowseBill.cs" />
+    <Compile Include="View\ERPView\AC\SpCode\ACBoxSpCodeBrowseErp.cs" />
+    <Compile Include="View\ERPView\AC\SpCode\ACBoxSpCodeBrowseList.cs" />
+    <Compile Include="View\ERPView\BillBottom.xaml.cs">
+      <DependentUpon>BillBottom.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ERPView\BillSeparator.xaml.cs">
+      <DependentUpon>BillSeparator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ERPView\BusyIndicator\BusyIndicatorErp.cs" />
+    <Compile Include="View\ERPView\Button\ButtonErp.cs" />
+    <Compile Include="View\ERPView\Button\ButtonFun.cs" />
+    <Compile Include="View\ERPView\Button\ButtonFuns.cs" />
+    <Compile Include="View\ERPView\Button\ButtonHelp.cs" />
+    <Compile Include="View\ERPView\Button\ButtonHelps.cs" />
+    <Compile Include="View\ERPView\Button\HelpWindows\WhCodeOut.cs" />
+    <Compile Include="View\ERPView\Button\HelpWindows\WhCodeIn.cs" />
+    <Compile Include="View\ERPView\Button\LoginHome\ButtonHome.cs" />
+    <Compile Include="View\ERPView\Button\LoginHome\ButtonHome_Ar.cs" />
+    <Compile Include="View\ERPView\Button\LoginHome\ButtonHome_Pur.cs" />
+    <Compile Include="View\ERPView\Button\LoginHome\ButtonHome_Sale.cs" />
+    <Compile Include="View\ERPView\Button\LoginHome\ButtonHome_Ware.cs" />
+    <Compile Include="View\ERPView\CheckBox\CBErp.cs" />
+    <Compile Include="View\ERPView\CheckBox\CheckBoxErp.cs" />
+    <Compile Include="View\ERPView\ChildWindowErp.cs" />
+    <Compile Include="View\ERPView\ComBox\ComBoxDataBase.cs" />
+    <Compile Include="View\ERPView\ComBox\ComBoxErp.cs" />
+    <Compile Include="View\ERPView\ComBox\ComBoxGroup.cs" />
+    <Compile Include="View\ERPView\ComBox\ComBoxWhCode.cs" />
+    <Compile Include="View\ERPView\ComBox\ComBoxDpCode.cs" />
+    <Compile Include="View\ERPView\DataGrid\DataGridListErp2.xaml.cs">
+      <DependentUpon>DataGridListErp2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ERPView\DataGrid\DataGridErp.cs" />
+    <Compile Include="View\ERPView\DataGrid\DataGridListErp.xaml.cs">
+      <DependentUpon>DataGridListErp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ERPView\DataGrid\DataGridListSubErp.xaml.cs">
+      <DependentUpon>DataGridListSubErp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ERPView\DataGrid\XYDataGrid.cs" />
+    <Compile Include="View\ERPView\DataPagerErp.cs" />
+    <Compile Include="View\ERPView\DatePicker\DatePickerD1D2.xaml.cs">
+      <DependentUpon>DatePickerD1D2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ERPView\DatePicker\DatePickerErp.cs" />
+    <Compile Include="View\ERPView\Menu\MenuErp.cs" />
+    <Compile Include="View\ERPView\Menu\MenuItemErp.cs" />
+    <Compile Include="View\ERPView\Menu\MenuItemsErp.cs" />
+    <Compile Include="View\ERPView\Menu\MenuSeparatorErp.cs" />
+    <Compile Include="View\ERPView\MessageErp.cs" />
+    <Compile Include="View\ERPView\MessageWindowErp.xaml.cs">
+      <DependentUpon>MessageWindowErp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ERPView\RadioButton\RadioButtonPrintBigFromatYN.cs" />
+    <Compile Include="View\ERPView\RadioButton\RadioButtonPrintPriceYN.cs" />
+    <Compile Include="View\ERPView\RadioButton\RadioButtonBarCodeScan.cs" />
+    <Compile Include="View\ERPView\RadioButton\RadioButtonRType.cs" />
+    <Compile Include="View\ERPView\RadioButton\RadioButtonIOType.cs" />
+    <Compile Include="View\ERPView\RadioButton\RadioButtonExportModel.cs" />
+    <Compile Include="View\ERPView\RadioButton\RadioButtonOG.cs" />
+    <Compile Include="View\ERPView\RadioButton\RadioButtonPCPriority.cs" />
+    <Compile Include="View\ERPView\RadioButton\RadioButtonPriceContractType.cs" />
+    <Compile Include="View\ERPView\RadioButton\RadioButtonPriceContractPriority.cs" />
+    <Compile Include="View\ERPView\RadioButton\RadioButtonLensType.cs" />
+    <Compile Include="View\ERPView\RadioButton\RadioButtonUrgentDegree.cs" />
+    <Compile Include="View\ERPView\RadioButton\RBConditionYN.xaml.cs">
+      <DependentUpon>RBConditionYN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ERPView\RadioButton\RadioButtonYN.cs" />
+    <Compile Include="View\ERPView\RadioButton\RadioButtonBillType.cs" />
+    <Compile Include="View\ERPView\RadioButton\RadioButtonCheck.cs" />
+    <Compile Include="View\ERPView\RadioButton\RadioButtonContractType.cs" />
+    <Compile Include="View\ERPView\RadioButton\RadioButtonCX.cs" />
+    <Compile Include="View\ERPView\RadioButton\RadioButtonDelivery.cs" />
+    <Compile Include="View\ERPView\RadioButton\RadioButtonErp.cs" />
+    <Compile Include="View\ERPView\RadioButton\RadioButtonExport.cs" />
+    <Compile Include="View\ERPView\RadioButton\RadioButtonInclude.cs" />
+    <Compile Include="View\ERPView\RadioButton\RadioButtonPType.cs" />
+    <Compile Include="View\ERPView\RadioButton\RBConditionCheck.xaml.cs">
+      <DependentUpon>RBConditionCheck.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ERPView\RadioButton\RBConditionDelivery.xaml.cs">
+      <DependentUpon>RBConditionDelivery.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ERPView\RadioButton\RBConditionExport.xaml.cs">
+      <DependentUpon>RBConditionExport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ERPView\TextBox\ERP\AccLimit.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\AccEndDate.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\RIndex_Measured.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\Stocks.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\KeyCode.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\GpCode.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\PCode.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\Freight.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\ReportView.cs" />
+    <Compile Include="View\ERPView\TextBox\TBReadOnlyEdit.cs" />
+    <Compile Include="View\ERPView\TextBox\TBReadOnlyMaiin.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\Address.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\ContactPerson.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\BankAccount.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\AreaCode.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\BarCode.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\Bridge.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\ContractCode.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\Checker.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\BCode.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\AccCode.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\Canceler.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\Date.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\Price.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\CT.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\OdDate.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\PrintCode.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\F_LR.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\UpdateMoney.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\Qty.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\Dia.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\Notes.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\Out_Good.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\PDPH.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\Delivery.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\SerialNum.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\StateName.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\TypeName.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\Maker.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\ManageMan.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\WhCode.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\Default_Priority.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\Size.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\Supplier.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\LensClass.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\SafeQuan.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\SPHCYLADD.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\LensCode.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\Origin.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\Family.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\Leg_Length.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\Heigh.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\Width.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\FrameCode.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\Invoice.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\Phone.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\Person.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\ForeignCurrCode.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\TransferWay.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\TradeWay.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\PayWay.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\Fax.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\EMail.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\CusCode.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\Incharge.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\Telephone.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\Remark.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\DBCode.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\UserCode.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\DpCode.cs" />
+    <Compile Include="View\ERPView\TextBox\ERP\Process.cs" />
+    <Compile Include="View\ERPView\TextBox\TBFocus.cs" />
+    <Compile Include="View\ERPView\TextBox\TextBoxErp.cs" />
+    <Compile Include="View\ERPView\TextBox\TextBoxKeys.cs" />
+    <Compile Include="View\ERPView\TitleErp.xaml.cs">
+      <DependentUpon>TitleErp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ERPView\UserControlErp.cs" />
+    <Compile Include="View\ERPView\XYInput.xaml.cs">
+      <DependentUpon>XYInput.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Login\Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Login\LoginHome.xaml.cs">
+      <DependentUpon>LoginHome.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Login\LoginTab.xaml.cs">
+      <DependentUpon>LoginTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Login\LoginUserInfo.xaml.cs">
+      <DependentUpon>LoginUserInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Login\LoginUserLogin.xaml.cs">
+      <DependentUpon>LoginUserLogin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Login\LoginUserLogined.xaml.cs">
+      <DependentUpon>LoginUserLogined.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Man\M_UserGroup_Rights_List.xaml.cs">
+      <DependentUpon>M_UserGroup_Rights_List.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="View\Man\M_UserGroup_User_List.xaml.cs">
+      <DependentUpon>M_UserGroup_User_List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Man\M_UserGroup.xaml.cs">
+      <DependentUpon>M_UserGroup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Man\M_UserGroup_List.xaml.cs">
+      <DependentUpon>M_UserGroup_List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Man\M_Log_List.xaml.cs">
+      <DependentUpon>M_Log_List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Man\M_UserGroup_DataBase_List.xaml.cs">
+      <DependentUpon>M_UserGroup_DataBase_List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Man\M_User.xaml.cs">
+      <DependentUpon>M_User.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Man\M_User_List.xaml.cs">
+      <DependentUpon>M_User_List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pur\Pur_Order_Lens_List.xaml.cs">
+      <DependentUpon>Pur_Order_Lens_List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pur\Pur_PriceContract_SpGroup_List.xaml.cs">
+      <DependentUpon>Pur_PriceContract_SpGroup_List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pur\Pur_PriceContract_SpCode.xaml.cs">
+      <DependentUpon>Pur_PriceContract_SpCode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pur\Pur_PriceContract_SpGroup.xaml.cs">
+      <DependentUpon>Pur_PriceContract_SpGroup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pur\Pur_PriceContract_Frame.xaml.cs">
+      <DependentUpon>Pur_PriceContract_Frame.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pur\Pur_PriceContract_FrameSet.xaml.cs">
+      <DependentUpon>Pur_PriceContract_FrameSet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pur\Pur_PriceContract_FrameSet_List.xaml.cs">
+      <DependentUpon>Pur_PriceContract_FrameSet_List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pur\Pur_PriceContract_Frame_List.xaml.cs">
+      <DependentUpon>Pur_PriceContract_Frame_List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pur\Pur_PriceContract_Lens.xaml.cs">
+      <DependentUpon>Pur_PriceContract_Lens.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pur\Pur_PriceContract_Lens_List.xaml.cs">
+      <DependentUpon>Pur_PriceContract_Lens_List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pur\Pur_PriceContract_Lens_ProCost.xaml.cs">
+      <DependentUpon>Pur_PriceContract_Lens_ProCost.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pur\Pur_PriceContract_Lens_ProCost_List.xaml.cs">
+      <DependentUpon>Pur_PriceContract_Lens_ProCost_List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pur\Pur_PriceContract.xaml.cs">
+      <DependentUpon>Pur_PriceContract.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pur\Pur_PriceContract_List.xaml.cs">
+      <DependentUpon>Pur_PriceContract_List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pur\Pur_Quote.xaml.cs">
+      <DependentUpon>Pur_Quote.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Sale\Sale_Order_SD_PrintPreView.xaml.cs">
+      <DependentUpon>Sale_Order_SD_PrintPreView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Sale\Sale_Order_SD_ReOrder.xaml.cs">
+      <DependentUpon>Sale_Order_SD_ReOrder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Sale\Sale_Delivery_ScanPrint_List.xaml.cs">
+      <DependentUpon>Sale_Delivery_ScanPrint_List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Sale\Sale_Order_JM_List.xaml.cs">
+      <DependentUpon>Sale_Order_JM_List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Sale\Sale_Order_JM.xaml.cs">
+      <DependentUpon>Sale_Order_JM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Sale\Sale_Order_Status_List.xaml.cs">
+      <DependentUpon>Sale_Order_Status_List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Sale\Sale_Invoice_SD.xaml.cs">
+      <DependentUpon>Sale_Invoice_SD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Sale\Sale_Delivery_Lens_List.xaml.cs">
+      <DependentUpon>Sale_Delivery_Lens_List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Sale\Sale_Order_Frame_List.xaml.cs">
+      <DependentUpon>Sale_Order_Frame_List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Sale\Sale_Order_FD.xaml.cs">
+      <DependentUpon>Sale_Order_FD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Sale\Sale_Order_PD.xaml.cs">
+      <DependentUpon>Sale_Order_PD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Sale\Sale_Order_Lens_List.xaml.cs">
+      <DependentUpon>Sale_Order_Lens_List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Sale\Sale_Quote.xaml.cs">
+      <DependentUpon>Sale_Quote.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Sale\Sale_PriceContract_CusGroup.xaml.cs">
+      <DependentUpon>Sale_PriceContract_CusGroup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Sale\Sale_PriceContract_FrameSet.xaml.cs">
+      <DependentUpon>Sale_PriceContract_FrameSet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Sale\Sale_PriceContract_FrameSet_List.xaml.cs">
+      <DependentUpon>Sale_PriceContract_FrameSet_List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Sale\Sale_PriceContract_Frame.xaml.cs">
+      <DependentUpon>Sale_PriceContract_Frame.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Sale\Sale_PriceContract_Frame_List.xaml.cs">
+      <DependentUpon>Sale_PriceContract_Frame_List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Sale\Sale_PriceContract_Lens_ProCost.xaml.cs">
+      <DependentUpon>Sale_PriceContract_Lens_ProCost.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Sale\Sale_PriceContract_Lens_ProCost_List.xaml.cs">
+      <DependentUpon>Sale_PriceContract_Lens_ProCost_List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Sale\Sale_PriceContract_Lens.xaml.cs">
+      <DependentUpon>Sale_PriceContract_Lens.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Sale\Sale_PriceContract_Lens_List.xaml.cs">
+      <DependentUpon>Sale_PriceContract_Lens_List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Sale\Sale_PriceContract_List.xaml.cs">
+      <DependentUpon>Sale_PriceContract_List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Sale\Sale_PriceContract_CusGroup_List.xaml.cs">
+      <DependentUpon>Sale_PriceContract_CusGroup_List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Sale\Sale_PriceContract.xaml.cs">
+      <DependentUpon>Sale_PriceContract.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Sale\Sale_PriceContract_CusCode.xaml.cs">
+      <DependentUpon>Sale_PriceContract_CusCode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Sale\Sale_Base_Note_List.xaml.cs">
+      <DependentUpon>Sale_Base_Note_List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Sale\Sale_Base_ReOrderReason_List.xaml.cs">
+      <DependentUpon>Sale_Base_ReOrderReason_List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Sale\Sale_Order_SD.xaml.cs">
+      <DependentUpon>Sale_Order_SD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Sale\Sale_Rec_PD.xaml.cs">
+      <DependentUpon>Sale_Rec_PD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Sale\Sale_Rec_Lens_List.xaml.cs">
+      <DependentUpon>Sale_Rec_Lens_List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Ware\Ware_Bill_SO_Pre_SD.xaml.cs">
+      <DependentUpon>Ware_Bill_SO_Pre_SD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Ware\Ware_Bill_SO_Pre_Lens_List.xaml.cs">
+      <DependentUpon>Ware_Bill_SO_Pre_Lens_List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Ware\Ware_Bill_Count_Lens.xaml.cs">
+      <DependentUpon>Ware_Bill_Count_Lens.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Ware\Ware_Bill_Count_Lens_List.xaml.cs">
+      <DependentUpon>Ware_Bill_Count_Lens_List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Ware\Ware_Bill_Transfer_Lens_List.xaml.cs">
+      <DependentUpon>Ware_Bill_Transfer_Lens_List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Ware\Ware_Bill_Transfer_Lens.xaml.cs">
+      <DependentUpon>Ware_Bill_Transfer_Lens.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Ware\Ware_Bill_BCI_Lens_List.xaml.xaml.cs">
+      <DependentUpon>Ware_Bill_BCI_Lens_List.xaml.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Ware\Ware_Bill_OI_Lens_List.xaml.xaml.cs">
+      <DependentUpon>Ware_Bill_OI_Lens_List.xaml.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Ware\Ware_Bill_OI_Lens.xaml.cs">
+      <DependentUpon>Ware_Bill_OI_Lens.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Ware\Ware_Report_IO_Lens_List.xaml.cs">
+      <DependentUpon>Ware_Report_IO_Lens_List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Ware\Ware_Suspend_Lens_List.xaml.cs">
+      <DependentUpon>Ware_Suspend_Lens_List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Ware\Ware_Stocks_Base_Lens.xaml.cs">
+      <DependentUpon>Ware_Stocks_Base_Lens.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Ware\Ware_Stocks_Base_Lens_List.xaml.cs">
+      <DependentUpon>Ware_Stocks_Base_Lens_List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Ware\Ware_Report_Stocks_Lens_XY_List.xaml.cs">
+      <DependentUpon>Ware_Report_Stocks_Lens_XY_List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Ware\Ware_Report_Stocks_Lens_Detail_List.xaml.cs">
+      <DependentUpon>Ware_Report_Stocks_Lens_Detail_List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Ware\Ware_Bill_SO_PD.xaml.cs">
+      <DependentUpon>Ware_Bill_SO_PD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Ware\Ware_Bill_SO_Pending_PD_List.xaml.cs">
+      <DependentUpon>Ware_Bill_SO_Pending_PD_List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Ware\Ware_Bill_SO_SD.xaml.cs">
+      <DependentUpon>Ware_Bill_SO_SD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Ware\Ware_Bill_SO_Lens_List.xaml.cs">
+      <DependentUpon>Ware_Bill_SO_Lens_List.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Properties\AppManifest.xml" />
+    <None Include="Properties\DataSources\ERP.Web.DomainService.Erp.DSErp.datasource" />
+    <None Include="Properties\DataSources\ERP.Web.DomainService.Man.DSMan.datasource" />
+    <None Include="Properties\DataSources\ERP.Web.DS.DSErp.datasource" />
+    <None Include="Properties\DataSources\ERP.Web.DS.DSMan.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\InBrowserSettings.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="View\ERPView\PrintPreView\" />
+    <Folder Include="XML\Grid\B\BakUp\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Skins\ACBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Skins\ColorBrushs.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Skins\RButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Skins\Skin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Base\B_Area.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Base\B_Area_List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Base\B_Department.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Base\B_Department_List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Base\B_Customer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Base\B_Customer_List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Base\B_Material_Frame.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Base\B_Material_Frame_List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Base\B_Material_Lens.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Base\B_Material_Lens_List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Base\B_Material_LensClass_Index_List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Base\B_Person.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Base\B_Person_List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Base\B_Supplier.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Base\B_Supplier_List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Base\B_Warehouse.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Base\B_Warehouse_List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Base\B_Material_LensClass_Brand_List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Base\B_Material_LensClass_Focus_List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Base\B_Material_LensClass_Usage_List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Base\B_Material_LensClass_Design_List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Base\B_Material_LensClass_Materials_List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Base\B_Material_LensClass_Brand.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Base\B_Material_LensClass_Focus.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Base\B_Material_LensClass_Index.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Base\B_Material_LensClass_Design.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Base\B_Material_LensClass_Materials.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Base\B_Material_LensClass_Usage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Base\B_Material_Lens_Sale.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Base\B_Material_Lens_Sale_List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Base\B_Department_Right_Browse.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Base\B_Supplier_Right_Browse.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Base\B_Customer_Right_Browse.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Base\B_Warehouse_Right_Browse.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Base\B_Warehouse_Right_Use.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Base\B_Material_Process_List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Base\B_Material_Process.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Base\B_Customer_Acc_List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Base\B_Customer_Main_List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Base\B_Customer_Acc.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Base\B_Customer_Main.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Base\B_Supplier_Default_List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Base\B_Supplier_Default_CusCode.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Base\B_Supplier_Default_Lens.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Base\B_Supplier_Default_ProCode.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Base\B_Material_LensClass_DefaultCoating_List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Base\B_Material_LensClass_DefaultCoating.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\CH\CH_ApplyCode.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\CH\CH_AreaCode.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\CH\CH_BrandCode.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\CH\CH_CusCode.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\CH\CH_CusMnumber.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\CH\CH_DataBase.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\CH\CH_DeptCode.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\CH\CH_FocusCode.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\CH\CH_ForeignCurrency.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\CH\CH_LensCode.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\CH\CH_PayWay.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\CH\CH_Person.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\CH\CH_RefractionCode.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\CH\CH_SupplierCode.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\CH\CH_TechnologyCode.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\CH\CH_TextureCode.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\CH\CH_TradeWay.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\CH\CH_TransferWay.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\CH\CH_WhCodeBrowse.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\CH\CH_LensCodeSale.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\CH\CH_FrameCode.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\CH\CH_CusGroupPC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\CH\CH_WhCodeIn.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\CH\CH_WhCodeOut.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\CH\CH_PDChoose.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\CH\CH_SpGroupPC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\CH\CH_LensCodePur.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ERPView\BillBottom.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ERPView\BillSeparator.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ERPView\DataGrid\DataGridListErp2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ERPView\DataGrid\DataGridListErp.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ERPView\DataGrid\DataGridListSubErp.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ERPView\DatePicker\DatePickerD1D2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ERPView\MessageWindowErp.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ERPView\RadioButton\RBConditionYN.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ERPView\RadioButton\RBConditionCheck.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ERPView\RadioButton\RBConditionDelivery.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ERPView\RadioButton\RBConditionExport.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ERPView\TitleErp.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ERPView\XYInput.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Login\Login.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Login\LoginHome.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Login\LoginTab.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Login\LoginUserInfo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Login\LoginUserLogin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Login\LoginUserLogined.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Man\M_UserGroup_Rights_List.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Man\M_UserGroup_User_List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Man\M_UserGroup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Man\M_UserGroup_List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Man\M_Log_List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Man\M_UserGroup_DataBase_List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Man\M_User.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Man\M_User_List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Pur\Pur_Order_Lens_List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Pur\Pur_PriceContract_SpGroup_List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Pur\Pur_PriceContract_SpCode.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Pur\Pur_PriceContract_SpGroup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Pur\Pur_PriceContract_Frame.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Pur\Pur_PriceContract_FrameSet.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Pur\Pur_PriceContract_FrameSet_List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Pur\Pur_PriceContract_Frame_List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Pur\Pur_PriceContract_Lens.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Pur\Pur_PriceContract_Lens_List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Pur\Pur_PriceContract_Lens_ProCost.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Pur\Pur_PriceContract_Lens_ProCost_List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Pur\Pur_PriceContract.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Pur\Pur_PriceContract_List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Pur\Pur_Quote.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Sale\Sale_Order_SD_PrintPreView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Sale\Sale_Order_SD_ReOrder.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Sale\Sale_Delivery_ScanPrint_List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Sale\Sale_Order_JM_List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Sale\Sale_Order_JM.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Sale\Sale_Order_Status_List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Sale\Sale_Invoice_SD.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Sale\Sale_Delivery_Lens_List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Sale\Sale_Order_Frame_List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Sale\Sale_Order_FD.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Sale\Sale_Order_PD.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Sale\Sale_Order_Lens_List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Sale\Sale_Quote.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Sale\Sale_PriceContract_CusGroup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Sale\Sale_PriceContract_FrameSet.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Sale\Sale_PriceContract_FrameSet_List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Sale\Sale_PriceContract_Frame.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Sale\Sale_PriceContract_Frame_List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Sale\Sale_PriceContract_Lens_ProCost.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Sale\Sale_PriceContract_Lens_ProCost_List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Sale\Sale_PriceContract_Lens.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Sale\Sale_PriceContract_Lens_List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Sale\Sale_PriceContract_List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Sale\Sale_PriceContract_CusGroup_List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Sale\Sale_PriceContract.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Sale\Sale_PriceContract_CusCode.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Sale\Sale_Base_Note_List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Sale\Sale_Base_ReOrderReason_List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Sale\Sale_Order_SD.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Sale\Sale_Rec_PD.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Sale\Sale_Rec_Lens_List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Ware\Ware_Bill_SO_Pre_SD.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Ware\Ware_Bill_SO_Pre_Lens_List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Ware\Ware_Bill_Count_Lens.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Ware\Ware_Bill_Count_Lens_List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Ware\Ware_Bill_Transfer_Lens_List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Ware\Ware_Bill_Transfer_Lens.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Ware\Ware_Bill_BCI_Lens_List.xaml.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Ware\Ware_Bill_OI_Lens_List.xaml.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Ware\Ware_Bill_OI_Lens.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Ware\Ware_Report_IO_Lens_List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Ware\Ware_Suspend_Lens_List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Ware\Ware_Stocks_Base_Lens.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Ware\Ware_Stocks_Base_Lens_List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Ware\Ware_Report_Stocks_Lens_XY_List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Ware\Ware_Report_Stocks_Lens_Detail_List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Ware\Ware_Bill_SO_PD.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Ware\Ware_Bill_SO_Pending_PD_List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Ware\Ware_Bill_SO_SD.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Ware\Ware_Bill_SO_Lens_List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\197.png" />
+    <Resource Include="Images\arrow_000_small.png" />
+    <Resource Include="Images\arrow_315_small.png" />
+    <Resource Include="Images\arrow_circle_225.png" />
+    <Resource Include="Images\arrow_circle_315.png" />
+    <Resource Include="Images\arrow_circle_double.png" />
+    <Resource Include="Images\arrow_circle_double_135.png" />
+    <Resource Include="Images\arrow_skip.png" />
+    <Resource Include="Images\arrow_skip_090.png" />
+    <Resource Include="Images\arrow_skip_180.png" />
+    <Resource Include="Images\arrow_skip_270.png" />
+    <Resource Include="Images\arrow_stop.png" />
+    <Resource Include="Images\arrow_stop_180.png" />
+    <Resource Include="Images\balloons_arrow.png" />
+    <Resource Include="Images\scanbarcode.png" />
+    <Resource Include="Images\chain_unchain.png" />
+    <Resource Include="Images\CWin\info.png" />
+    <Resource Include="Images\CWin\question.png" />
+    <Resource Include="Images\CWin\warning.png" />
+    <Resource Include="Images\database_arrow.png" />
+    <Resource Include="Images\disk.png" />
+    <Resource Include="Images\disks.png" />
+    <Resource Include="Images\disks_black.png" />
+    <Resource Include="Images\disk__minus.png" />
+    <Resource Include="Images\disk__pencil.png" />
+    <Resource Include="Images\disk__plus.png" />
+    <Resource Include="Images\gear.png" />
+    <Resource Include="Images\hkocn_title.png" />
+    <Resource Include="Images\key__arrow.png" />
+    <Resource Include="Images\key__exclamation.png" />
+    <Resource Include="Images\magnifier_left.png" />
+    <Resource Include="Images\minus_circle.png" />
+    <Resource Include="Images\minus_circle_frame.png" />
+    <Resource Include="Images\plus_circle.png" />
+    <Resource Include="Images\plus_circle_frame.png" />
+    <Resource Include="Images\printer.png" />
+    <Resource Include="Images\printer__arrow.png" />
+    <Resource Include="Images\slash.png" />
+    <Resource Include="Images\table.png" />
+    <Resource Include="Images\tables.png" />
+    <Resource Include="Images\tick_circle_frame.png" />
+    <Resource Include="Images\user.png" />
+    <Resource Include="Images\user_head.jpg" />
+    <Resource Include="XML\Grid\B\B_Area_List.xml" />
+    <Resource Include="XML\Grid\B\B_Customer_List.xml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="XML\Grid\B\B_Department_List.xml" />
+    <Resource Include="XML\Grid\B\B_ForeignCurrency_List.xml" />
+    <Resource Include="XML\Grid\B\B_Material_Frame_List.xml" />
+    <Resource Include="XML\Grid\B\B_Material_Lens_List.xml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="XML\Grid\B\B_Material_LensClass_Index_List.xml" />
+    <Resource Include="XML\Grid\B\B_Person_List.xml" />
+    <Resource Include="XML\Grid\B\B_ProcessControl_List.xml" />
+    <Resource Include="XML\Grid\B\B_Process_List.xml" />
+    <Resource Include="XML\Grid\B\B_Supplier_List.xml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="XML\Grid\B\B_Warehouse_List.xml" />
+    <Resource Include="XML\Grid\CH\CH_ApplyCode.xml" />
+    <Resource Include="XML\Grid\CH\CH_AreaCode.xml" />
+    <Resource Include="XML\Grid\CH\CH_BrandCode.xml" />
+    <Resource Include="XML\Grid\CH\CH_CusCode.xml" />
+    <Resource Include="XML\Grid\CH\CH_CusLensCode.xml" />
+    <Resource Include="XML\Grid\CH\CH_DataBase.xml" />
+    <Resource Include="XML\Grid\CH\CH_DeptCode.xml" />
+    <Resource Include="XML\Grid\CH\CH_FocusCode.xml" />
+    <Resource Include="XML\Grid\CH\CH_ForeignCurrency.xml" />
+    <Resource Include="XML\Grid\CH\CH_LensCode.xml" />
+    <Resource Include="XML\Grid\CH\CH_PayWay.xml" />
+    <Resource Include="XML\Grid\CH\CH_Person.xml" />
+    <Resource Include="XML\Grid\CH\CH_RefractionCode.xml" />
+    <Resource Include="XML\Grid\CH\CH_SupplierCode.xml" />
+    <Resource Include="XML\Grid\CH\CH_TechnologyCode.xml" />
+    <Resource Include="XML\Grid\CH\CH_TextureCode.xml" />
+    <Resource Include="XML\Grid\CH\CH_TradeWay.xml" />
+    <Resource Include="XML\Grid\CH\CH_TransferWay.xml" />
+    <Resource Include="XML\Grid\CH\CH_WHCodeBrowse.xml" />
+    <Resource Include="XML\Grid\M\M_UserGroup_List.xml" />
+    <Resource Include="XML\Grid\M\M_Log_List.xml" />
+    <Resource Include="XML\Grid\M\M_UserGroup_DataBase_List.xml" />
+    <Resource Include="XML\Grid\M\M_UserGroup_User_List.xml" />
+    <Resource Include="XML\Grid\M\M_User_List.xml" />
+    <Resource Include="XML\Grid\Sale\Sale_Base_Note_List.xml" />
+    <Resource Include="XML\Grid\Sale\Sale_Base_ReOrderReason_List.xml" />
+    <Resource Include="XML\Grid\Sale\Sale_Order_Lens_List.xml" />
+    <Resource Include="XML\Grid\Sale\Sale_Order_PDSub.xml" />
+    <Resource Include="XML\Grid\Sale\Sale_PriceContract_List.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resource\Languages.en-US.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\Languages.zh-Hans.resx" />
+    <EmbeddedResource Include="Resource\Languages.zh-Hant.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\Languages.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Languages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="XML\Grid\CH\CH_LensCodeSale.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="XML\Grid\Sale\Sale_PriceContract_CusGroup_List.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="XML\Grid\Sale\Sale_PriceContract_Lens_List.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="XML\Grid\Sale\Sale_PriceContract_Lens_ProCost_List.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="XML\Grid\Sale\Sale_PriceContract_Frame_List.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="XML\Grid\CH\CH_FrameCode.xml">
+      <SubType>Designer</SubType>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="XML\Grid\Sale\Sale_PriceContract_FrameSet_List.xml">
+      <SubType>Designer</SubType>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="XML\Grid\CH\CH_CusGroupPC.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="XML\Grid\Sale\Sale_Order_Frame_List.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="XML\Grid\Ware\Ware_Bill_SO_Lens_List.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="XML\Grid\Ware\Ware_Bill_SO_Pending_PD_List.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="XML\Grid\Ware\Ware_Bill_SO_PDSub.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\list2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="XML\Grid\Sale\Sale_Delivery_Lens_List.xml">
+      <SubType>Designer</SubType>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\folder2.png" />
+    <Resource Include="Images\folder_open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="XML\Grid\Pur\Pur_Order_Lens_List.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="XML\Grid\Ware\Ware_Report_Stocks_Lens_Detail_List.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="XML\Grid\Ware\Ware_Stocks_Base_Lens_List.xml">
+      <SubType>Designer</SubType>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="XML\Grid\Ware\Ware_Stocks_Base_LensSub.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="XML\Grid\Ware\Ware_Suspend_Lens_List.xml">
+      <SubType>Designer</SubType>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="XML\Grid\Ware\Ware_Report_IO_Lens_List.xml">
+      <SubType>Designer</SubType>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\arrow_stop_270.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\PreViewSD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="XML\Grid\B\B_Material_LensClass_Materials_List.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="XML\Grid\B\B_Material_LensClass_Brand_List.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="XML\Grid\B\B_Material_LensClass_Focus_List.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="XML\Grid\B\B_Material_LensClass_Usage_List.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="XML\Grid\B\B_Material_LensClass_Design_List.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="XML\Grid\B\B_Material_Lens_Sale_List.xml">
+      <SubType>Designer</SubType>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="XML\Grid\B\B_Material_Process_List.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="XML\Grid\Sale\Sale_Order_Status_List.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\wrench_screwdriver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="XML\Grid\Ware\Ware_Bill_OI_LensSub.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="XML\Grid\Ware\Ware_Bill_OI_Lens_List.xml">
+      <SubType>Designer</SubType>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="XML\Grid\Ware\Ware_Bill_BCI_Lens_List.xml">
+      <SubType>Designer</SubType>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="XML\Grid\Ware\Ware_Bill_Transfer_LensSub.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="XML\Grid\Ware\Ware_Bill_Transfer_Lens_List.xml">
+      <SubType>Designer</SubType>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="XML\Grid\CH\CH_WHCodeIn.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="XML\Grid\CH\CH_WHCodeOut.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="XML\Grid\Ware\Ware_Bill_Count_LensSub.xml">
+      <SubType>Designer</SubType>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="XML\Grid\Ware\Ware_Bill_Count_Lens_List.xml">
+      <SubType>Designer</SubType>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="XML\Grid\Ware\Ware_Bill_SO_Pre_Lens_List.xml">
+      <SubType>Designer</SubType>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="XML\Grid\Sale\Sale_Rec_PDSub.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="XML\Grid\Sale\Sale_Rec_Lens_List.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="XML\Grid\Pur\Pur_PriceContract_SpGroup_List.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="XML\Grid\Pur\Pur_PriceContract_List.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="XML\Grid\Pur\Pur_PriceContract_Frame_List.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="XML\Grid\Pur\Pur_PriceContract_FrameSet_List.xml">
+      <SubType>Designer</SubType>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="XML\Grid\Pur\Pur_PriceContract_Lens_List.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="XML\Grid\Pur\Pur_PriceContract_Lens_ProCost_List.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="XML\Grid\CH\CH_SpGroupPC.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="XML\Grid\CH\Copy of CH_LensCodeSale.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="XML\Grid\B\B_Customer_Main_List.xml">
+      <SubType>Designer</SubType>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="XML\Grid\B\B_Customer_Acc_List.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="XML\Grid\B\B_Supplier_Default_List.xml">
+      <SubType>Designer</SubType>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="XML\Grid\Sale\Sale_Order_JM_List.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="XML\Grid\Sale\Sale_Order_JMSub.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="XML\Grid\Sale\Sale_Delivery_ScanPrint_List.xml">
+      <SubType>Designer</SubType>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="XML\Grid\B\B_Material_LensClass_DefaultCoating_List.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

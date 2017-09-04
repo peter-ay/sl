@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FFFB764C-8136-49F6-BDB2-9B37042F9592}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ERP.Web.Model</RootNamespace>
+    <AssemblyName>ERP.Web.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\MB_Material_LensClass_DefaultCoating.cs" />
+    <Compile Include="Base\MB_Customer_Main.cs" />
+    <Compile Include="Base\MB_Customer_Acc.cs" />
+    <Compile Include="Base\MB_Area.cs" />
+    <Compile Include="Base\MB_Customer.cs" />
+    <Compile Include="Base\MB_Department.cs" />
+    <Compile Include="Base\MB_ForeignCurrency.cs" />
+    <Compile Include="Base\MB_Frame.cs" />
+    <Compile Include="Base\MB_Material_Lens.cs" />
+    <Compile Include="Base\MB_Material_LensClass_Brand.cs" />
+    <Compile Include="Base\MB_Material_LensClass_Usage.cs" />
+    <Compile Include="Base\MB_Material_LensClass_Materials.cs" />
+    <Compile Include="Base\MB_Material_LensClass_Index.cs" />
+    <Compile Include="Base\MB_Material_LensClass_Focus.cs" />
+    <Compile Include="Base\MB_Material_LensClass_Design.cs" />
+    <Compile Include="Base\MB_PayWay.cs" />
+    <Compile Include="Base\MB_Person.cs" />
+    <Compile Include="Base\MB_Material_Process.cs" />
+    <Compile Include="Base\MB_ProcessControl.cs" />
+    <Compile Include="Base\MB_Supplier.cs" />
+    <Compile Include="Base\MB_TradeWay.cs" />
+    <Compile Include="Base\MB_TransferWay.cs" />
+    <Compile Include="Base\MB_Warehouse.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Pur\MPur_PriceContract.cs" />
+    <Compile Include="Pur\MPur_PriceContract_SpGroup.cs" />
+    <Compile Include="Pur\MPur_PriceContract_Frame.cs" />
+    <Compile Include="Pur\MPur_PriceContract_FrameSet.cs" />
+    <Compile Include="Pur\MPur_PriceContract_Lens.cs" />
+    <Compile Include="Pur\MPur_PriceContract_Lens_ProCost.cs" />
+    <Compile Include="Pur\MPur_Quote.cs" />
+    <Compile Include="Pur\MPur_Quote_SD.cs" />
+    <Compile Include="Pur\MPur_Quote_SD_Process.cs" />
+    <Compile Include="Sale\MSale_Order_ADD.cs" />
+    <Compile Include="Sale\MSale_Order_Extend.cs" />
+    <Compile Include="Sale\MSale_Quote_SD_Process.cs" />
+    <Compile Include="Sale\MSale_Quote_SD.cs" />
+    <Compile Include="Sale\MSale_Quote.cs" />
+    <Compile Include="Sale\MSale_PriceContract_Lens_ProCost.cs" />
+    <Compile Include="Sale\MSale_PriceContract_Lens.cs" />
+    <Compile Include="Sale\MSale_PriceContract_FrameSet.cs" />
+    <Compile Include="Sale\MSale_PriceContract_Frame.cs" />
+    <Compile Include="Sale\MSale_PriceContract_CusGroup.cs" />
+    <Compile Include="Sale\MSale_Order.cs" />
+    <Compile Include="Sale\MSale_Order_FD_Detail.cs" />
+    <Compile Include="Sale\MSale_Order_PD.cs" />
+    <Compile Include="Sale\MSale_Order_PD_Detail.cs" />
+    <Compile Include="Sale\MSale_Order_SD.cs" />
+    <Compile Include="Sale\MSale_Order_SD_Process.cs" />
+    <Compile Include="Sale\MSale_PriceContract.cs" />
+    <Compile Include="Man\MS_UserGroup.cs" />
+    <Compile Include="Man\MS_Log.cs" />
+    <Compile Include="Man\MS_User.cs" />
+    <Compile Include="Ware\MWare_Bill_ADD.cs" />
+    <Compile Include="Ware\MWare_Bill_Count_PD_Detail2.cs" />
+    <Compile Include="Ware\MWare_Bill_Count_PD_Detail1.cs" />
+    <Compile Include="Ware\MWare_Bill_Count_Extend.cs" />
+    <Compile Include="Ware\MWare_Bill_Count.cs" />
+    <Compile Include="Ware\MWare_Bill_Transfer.cs" />
+    <Compile Include="Ware\MWare_Stocks_Base_Lens_Detail.cs" />
+    <Compile Include="Ware\MWare_Stocks_Base_Lens.cs" />
+    <Compile Include="Ware\MWare_Bill_Extend.cs" />
+    <Compile Include="Ware\MWare_Bill_PD_Detail.cs" />
+    <Compile Include="Ware\MWare_Bill_PD.cs" />
+    <Compile Include="Ware\MWare_Bill_SD.cs" />
+    <Compile Include="Ware\MWare_Bill.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Columns Frozen="2">
+  <Column  Binding=""   Header="" Fheader="1"/>
+  <Column  Binding="BCode" Header="采购单号//採購單號//ID" Ffunction="ID"/>
+  <Column  Binding="BDate" Header="订单日期//訂單日期//Bill Date" Ftime="1"/>
+  <!--<Column  Binding="CsDate" Header="拟收货日期//擬收貨日期//RecDate" Ftime="1"/>-->
+  <Column  Binding="SpCode" Header="供应商//供應商//Supplier"  />
+  <Column  Binding="StNameUI" Header="状态//狀態//State"  />
+  <Column  Binding="BCodeSale" Header="销售单号//銷售單號//Sale ID" />
+  <Column  Binding="OBCodeSale" Header="销售客户单号//銷售客戶單號//Sale Original Code" />
+  <Column  Binding="CusCodeSale" Header="销售客户代码//銷售客戶代碼//Sale CusCode"/>
+  <Column  Binding="CusNameSale" Header="客户名称//客戶名稱//CusName"/>
+  <Column  Binding="LensCodeR" Header="订单镜种R//訂單鏡種R//Lens R"  />
+  <Column  Binding="LensCodeL" Header="订单镜种L//訂單鏡種L//Lens L"  />
+  <Column  Binding="SumQty" Header="订单总数量//訂單總數量//SumQty"  />
+  <!--<Column  Binding="DN" Header="交收单//交收單//DN"  Fwidth="3"/>
+  <Column  Binding="DDate" Header="交收日期//交收日期//DN Date"  Ftime="1"/>-->
+  <Column  Binding="Maker" Header="制单//制單//Maker"  />
+  <Column  Binding="Checker" Header="审核//審核//Checker"  />
+  <Column  Binding="Notes" Header="销售特别说明//銷售特別說明//Note"  Fwidth="2"/>
+  <Column  Binding="Remark" Header="销售备注//銷售備註//Remark"  Fwidth="2"/>
+  <!--<Column  Binding="SPHR" Header="SPHR"  />
+  <Column  Binding="CYLR" Header="CYLR"  />
+  <Column  Binding="X_ADDR" Header="ADDR"  />
+  <Column  Binding="QtyR" Header="订单数量R//訂單數量R//Qty R"  />-->
+  <Column  Binding="LensNameR" Header="镜种名称R//鏡種名稱R//Lens Name R"  Fwidth="2"/>
+  <Column  Binding="LensNameL" Header="镜种名称L//鏡種名稱L//Lens Name L"  Fwidth="2"/>
+  <!--<Column  Binding="SPHL" Header="SPHL"  />
+  <Column  Binding="CYLL" Header="CYLL"  />
+  <Column  Binding="X_ADDL" Header="ADDL"  />-->
+  <!--<Column  Binding="QtyL" Header="订单数量L//訂單數量L//Qty L"  />-->
+  <Column  Binding="BTypeNameUI" Header="订单类型//訂單類型//Type"  />
+</Columns>
+
+
+
+
+
+
+

@@ -1,0 +1,62 @@
+﻿<ex:ChildWindowErp
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+mc:Ignorable="d" x:Class="ERP.View.LoginUserInfo"
+xmlns:ex="clr-namespace:ERP.View"
+xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"
+Width="403" Height="203" HasCloseButton="False"
+DataContext="{Binding LoginUserInfo, Mode=OneWay, Source={StaticResource Locator}}">
+    <ex:BusyIndicatorErp>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid Background="{StaticResource FloatingWindowBackgroundBrush}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Grid>
+                    <Image Source="/ERP;component/Images/User_Head.jpg" Width="100" />
+                </Grid>
+
+                <Grid Grid.Column="1" VerticalAlignment="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="85"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="24"/>
+                        <RowDefinition Height="24"/>
+                        <RowDefinition Height="24"/>
+                        <RowDefinition Height="24"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="{Binding UIText[ERP_UserCode]}" Margin="0,0,2,2" />
+                    <ex:TextBoxErp x:Name="TB_Falg_RO" TextAlignment="Left" Text="{Binding UserCode}" IsReadOnly="True" Grid.Column="1"/>
+
+                    <TextBlock Text="{Binding UIText[ERP_UserName]}" Grid.Row="1" Margin="0,0,2,2"/>
+                    <ex:TextBoxErp TextAlignment="Left"  Text="{Binding UserName}" IsReadOnly="True" Grid.Row="1" Grid.Column="1"/>
+
+                    <TextBlock Text="{Binding UIText[ERP_Remark]}" Grid.Row="2" Margin="0,0,2,2"/>
+                    <ex:TextBoxErp  TextAlignment="Left"  Text="{Binding Remark, Mode=OneWay}" IsReadOnly="True" Grid.Row="2" Grid.Column="1"/>
+
+                    <TextBlock Text="{Binding UIText[ERP_CreateDate]}" Grid.Row="3" Margin="0,0,2,2"/>
+                    <ex:TextBoxErp TextAlignment="Left"   Text="{Binding CreateDate}" IsReadOnly="True" Grid.Row="3" Grid.Column="1"/>
+
+
+                </Grid>
+
+
+            </Grid>
+            <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,3,0,0">
+                <ex:ButtonUpdateCache Margin="5,0,0,0" Width="Auto"/>
+                <ex:ButtonUpdatePassword Margin="5,0,0,0"/>
+                <ex:ButtonExit Margin="5,0,0,0"/>
+            </StackPanel>
+        </Grid>
+    </ex:BusyIndicatorErp>
+</ex:ChildWindowErp>

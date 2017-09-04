@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Columns Frozen="2">
+  <Column  Binding=""   Header="" Fheader="1"/>
+  <Column  Binding="SubID" Header="ID"  />
+  <Column  Binding="Mnumber" Header="鏡種代碼"  />
+  <Column  Binding="Price" Header="單價"   />
+  <Column  Binding="ProcessSet" Header="組合" Fbool="1"/>
+  <Column  Binding="InvoiceTitle" Header="發票顯示名稱" />
+  <Column  Binding="ChaSe" Header="茶色"   />
+  <Column  Binding="JuSe" Header="焗色" />
+  <Column  Binding="ShuiYin" Header="水銀"   />
+  <Column  Binding="RanSe" Header="染色" />
+  <Column  Binding="UV" Header="UV"   Fbool="1"/>
+  <Column  Binding="JingJia" Header="鏡架" />
+  <Column  Binding="JiaYing" Header="加硬"  Fbool="1" />
+  <Column  Binding="PaoGuang" Header="拋光" />
+  <Column  Binding="CaiBian" Header="彩邊" />
+  <Column  Binding="CheBian" Header="車邊"   />
+  <Column  Binding="KaiKeng" Header="開坑" />
+  <Column  Binding="PiHua" Header="批花" />
+  <Column  Binding="DaoBian" Header="刀邊"   />
+  <Column  Binding="MianWan" Header="面彎" />
+  <Column  Binding="ZuanKong" Header="鑽孔"   />
+  <Column  Binding="OtherProcess" Header="其他加工" />
+  <Column  Binding="ExtraProcess" Header="額外加工" />
+</Columns>
+
+
+
+
+
+

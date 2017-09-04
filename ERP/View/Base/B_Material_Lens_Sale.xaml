@@ -1,0 +1,465 @@
+﻿<ex:ChildWindowErp
+xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+xmlns:ex="clr-namespace:ERP.View"
+xmlns:bhv="clr-namespace:ERP.Behavior"
+xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+xmlns:Custom="http://www.galasoft.ch/mvvmlight"  
+xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" 
+x:Class="ERP.View.B_Material_Lens_Sale"  
+HasCloseButton="True"
+mc:Ignorable="d" DataContext="{Binding B_Material_Lens_Sale, Mode=OneWay, Source={StaticResource Locator}}">
+    <ex:BusyIndicatorErp>
+        <ex:BusyIndicatorProgress>
+            <Grid x:Name="LayoutRoot" Margin="0" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" VerticalAlignment="Top" Background="{StaticResource DocumentTabNormalBackgroundBrush}" Margin="0">
+                    <ex:ButtonNew Margin="4,2"/>
+                    <ex:ButtonSave Margin="4,2"/>
+                    <ex:ButtonEdit Margin="4,2"/>
+                    <ex:ButtonDelete Margin="4,2"/>
+                    <ex:ButtonDrop Margin="4,2"/>
+                    <ex:ButtonPrevious Margin="4,2"/>
+                    <ex:ButtonNext Margin="4,2"/>
+                    <ex:ButtonExit Margin="4,2"/>
+                </StackPanel>
+                <Grid Background="{StaticResource FloatingWindowBackgroundBrush}"  Margin="0" Grid.Row="1" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="24"/>
+                        <RowDefinition Height="24"/>
+                        <RowDefinition Height="24"/>
+                        <RowDefinition Height="24"/>
+                        <RowDefinition Height="24"/>
+                        <RowDefinition Height="24"/>
+                        <RowDefinition Height="24"/>
+                        <RowDefinition Height="24"/>
+                        <RowDefinition Height="24"/>
+                        <RowDefinition Height="24"/>
+                        <RowDefinition Height="24"/>
+                        <RowDefinition Height="24"/>
+                        <RowDefinition Height="24"/>
+                        <RowDefinition Height="24"/>
+                        <RowDefinition Height="24"/>
+                        <RowDefinition Height="24"/>
+                        <RowDefinition Height="24"/>
+                        <RowDefinition Height="24"/>
+                        <RowDefinition Height="24"/>
+                        <RowDefinition Height="24"/>
+                        <RowDefinition Height="24"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="85"/>
+                            <ColumnDefinition  Width="150"/>
+                            <ColumnDefinition  Width="85"/>
+                            <ColumnDefinition  Width="150"/>
+                            <ColumnDefinition  Width="85"/>
+                            <ColumnDefinition  Width="150"/>
+                            <ColumnDefinition  Width="85"/>
+                            <ColumnDefinition  Width="150"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding UIText[ERP_LensCodeGeneral]}"  />
+                        <ex:TBPCode Grid.Column="1" TabIndex="0" bhv:BhFocusTBox.IsFocused="{Binding IsFocusID}" x:Name="TB_Falg_ID"  />
+                        <TextBlock Text="{Binding UIText[ERP_Brand]}" Grid.Column="2"  />
+                        <Grid  Grid.Column="3">
+                            <ex:ACBoxBrandCode TabIndex="1"/>
+                            <ex:TBBrandRO/>
+                        </Grid>
+                        <TextBlock Text="{Binding UIText[ERP_BrandName]}" Grid.Column="4"/>
+                        <ex:TBBrandNameRO Grid.Column="5"/>
+                        <!--<TextBlock Text=". . . . . . ." Grid.Column="2" FontFamily="{StaticResource FFV}" FontSize="{StaticResource FSV}" HorizontalAlignment="Left" VerticalAlignment="Center" Visibility="{Binding IsShowLoadingPCode}"/>-->
+                    </Grid>
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="85"/>
+                            <ColumnDefinition  Width="100"/>
+                            <ColumnDefinition  Width="85"/>
+                            <ColumnDefinition  Width="150"/>
+                            <ColumnDefinition  Width="85"/>
+                            <ColumnDefinition  Width="100"/>
+                            <ColumnDefinition  Width="85"/>
+                            <ColumnDefinition  Width="150"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding UIText[ERP_Focus]}" Grid.Column="0"  />
+                        <Grid  Grid.Column="1">
+                            <ex:ACBoxFocusCode  TabIndex="2" bhv:BhFocusACBox.IsFocused="{Binding IsFocusID}"/>
+                            <ex:TBFocusCodeRO/>
+                        </Grid>
+                        <TextBlock Text="{Binding UIText[ERP_FocusName]}" Grid.Column="2"/>
+                        <ex:TBFocusNameRO Grid.Column="3"/>
+                        <TextBlock Text="{Binding UIText[ERP_Index]}" Grid.Column="4" />
+                        <Grid  Grid.Column="5">
+                            <ex:ACBoxRIndexCode  TabIndex="3"/>
+                            <ex:TBRIndexRO/>
+                        </Grid>
+                        <TextBlock Text="{Binding UIText[ERP_IndexName]}" Grid.Column="6"/>
+                        <ex:TBRIndexNameRO Grid.Column="7"/>
+                        <!--<TextBlock Text="{Binding UIText[ERP_Design]}" Grid.Column="4" />
+                        <Grid  Grid.Column="5">
+                            <ex:ACBoxDesignCode  TabIndex="10"/>
+                            <ex:TBDesignRO TabIndex="9"/>
+                        </Grid>
+                        <TextBlock Text="{Binding UIText[ERP_DesignName]}" Grid.Column="6"/>
+                        <ex:TBDesignNameRO Grid.Column="7"/>-->
+                    </Grid>
+                    <Grid Grid.Row="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="85"/>
+                            <ColumnDefinition  Width="100"/>
+                            <ColumnDefinition  Width="85"/>
+                            <ColumnDefinition  Width="150"/>
+                            <ColumnDefinition  Width="85"/>
+                            <ColumnDefinition  Width="100"/>
+                            <ColumnDefinition  Width="85"/>
+                            <ColumnDefinition  Width="150"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding UIText[ERP_Design]}"  />
+                        <Grid  Grid.Column="1">
+                            <ex:ACBoxDesignCode  TabIndex="4"/>
+                            <ex:TBDesignRO/>
+                        </Grid>
+                        <TextBlock Text="{Binding UIText[ERP_DesignName]}" Grid.Column="2"/>
+                        <ex:TBDesignNameRO Grid.Column="3"/>
+                        <TextBlock Text="{Binding UIText[ERP_DefaultCoating]}" Grid.Column="4" />
+                        <Grid  Grid.Column="5">
+                            <ex:ACBoxDefaultCoatingCode  TabIndex="5"/>
+                            <ex:TBDefaultCoatingRO/>
+                        </Grid>
+                        <TextBlock Text="{Binding UIText[ERP_DefaultCoatingName]}" Grid.Column="6"/>
+                        <ex:TBDefaultCoatingNameRO Grid.Column="7"/>
+                    </Grid>
+                    <Grid Grid.Row="4">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="85"/>
+                            <ColumnDefinition  Width="100"/>
+                            <ColumnDefinition  Width="85"/>
+                            <ColumnDefinition  Width="150"/>
+                            <ColumnDefinition  Width="85"/>
+                            <ColumnDefinition  Width="100"/>
+                            <ColumnDefinition  Width="85"/>
+                            <ColumnDefinition  Width="150"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding UIText[ERP_Usage]}"  Grid.Column="0"  />
+                        <Grid  Grid.Column="1">
+                            <ex:ACBoxUsageCode  TabIndex="6"/>
+                            <ex:TBUsageRO/>
+                        </Grid>
+                        <TextBlock Text="{Binding UIText[ERP_UsageName]}" Grid.Column="2"/>
+                        <ex:TBUsageNameRO Grid.Column="3"/>
+                        <TextBlock Text="{Binding UIText[ERP_Material]}" Grid.Column="4" />
+                        <Grid  Grid.Column="5">
+                            <ex:ACBoxMaterialsCode  TabIndex="7"/>
+                            <ex:TBMaterialsRO/>
+                        </Grid>
+                        <TextBlock Text="{Binding UIText[ERP_MaterialsName]}" Grid.Column="6"/>
+                        <ex:TBMaterialsNameRO Grid.Column="7"/>
+                    </Grid>
+                    <Grid Grid.Row="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition  Width="85"/>
+                            <ColumnDefinition  Width="150"/>
+                            <ColumnDefinition  Width="85"/>
+                            <ColumnDefinition  Width="150"/>
+                            <ColumnDefinition  Width="85"/>
+                            <ColumnDefinition  Width="150"/>
+                            <ColumnDefinition  Width="85"/>
+                            <ColumnDefinition  Width="150"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding UIText[ERP_LensType]}" Grid.Column="0" />
+                        <Border Style="{StaticResource BorderTitle}" Grid.Column="1">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <ex:RadioButtonLensTypeST Grid.Column="0" TabIndex="8"/>
+                                <ex:RadioButtonLensTypeRX Grid.Column="1"/>
+                                <ex:RadioButtonLensTypeOT Grid.Column="2"/>
+                            </Grid>
+                        </Border>
+                        <TextBlock Text="{Binding UIText[ERP_RIndex_Measured]}" Grid.Column="2"/>
+                        <ex:TBRIndex_Measured Grid.Column="3" TabIndex="9"/>
+                    </Grid>
+
+                    <Grid Grid.Row="7">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="85"/>
+                            <ColumnDefinition  Width="150"/>
+                            <ColumnDefinition  Width="85"/>
+                            <ColumnDefinition  Width="385"/>
+                            <ColumnDefinition  Width="85"/>
+                            <ColumnDefinition  Width="20"/>
+                            <ColumnDefinition  Width="135"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding UIText[ERP_LensCodeSale1]}"  />
+                        <!--IsReadOnly="{Binding IsReadOnlyID}"  x:Name="TB_Falg_ID" TabIndex="0" bhv:BhFocusTBox.IsFocused="{Binding IsFocusID}"-->
+                        <ex:TBLensCode Grid.Column="1"  IsReadOnly="{Binding IsReadOnlyID}" TabIndex="10" />
+                        <TextBlock Text="{Binding UIText[ERP_LensName]}" Grid.Column="2"/>
+                        <ex:TBLensName x:Name="TB_Falg_RO" IsReadOnly="{Binding IsReadOnlyMain}" Grid.Column="3" TabIndex="11" bhv:BhFocusTBox.IsFocused="{Binding IsFocusMain}" />
+
+
+                    </Grid>
+                    <Grid Grid.Row="8">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="85"/>
+                            <ColumnDefinition  Width="150"/>
+                            <ColumnDefinition  Width="85"/>
+                            <ColumnDefinition  Width="150"/>
+                            <ColumnDefinition  Width="85"/>
+                            <ColumnDefinition  Width="150"/>
+                            <ColumnDefinition  Width="85"/>
+                            <ColumnDefinition  Width="85"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="SPH:" />
+                        <StackPanel Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Left">
+                            <ex:TBSPH1 Width="70" TabIndex="12" />
+                            <TextBlock Text=":" VerticalAlignment="Bottom" Margin="0" HorizontalAlignment="Center" FontFamily="Verdana" Padding="0,0,1,3" Width="10"   />
+                            <ex:TBSPH2 Width="70" TabIndex="13" />
+                        </StackPanel>
+                        <TextBlock Text="CYL:" Grid.Column="2"/>
+                        <StackPanel Orientation="Horizontal" Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Left">
+                            <ex:TBCYL1 Width="70" TabIndex="14" />
+                            <TextBlock Text=":" VerticalAlignment="Bottom" Margin="0" Width="10" HorizontalAlignment="Center" FontFamily="Verdana" Padding="0,0,1,3"   />
+                            <ex:TBCYL2 Width="70" TabIndex="15" />
+                        </StackPanel>
+                        <TextBlock Text="ADD:" Grid.Column="4"/>
+                        <StackPanel Orientation="Horizontal" Grid.Column="5" Grid.ColumnSpan="2" HorizontalAlignment="Left">
+                            <ex:TBX_ADD1 Width="70" TabIndex="16" />
+                            <TextBlock Text=":" VerticalAlignment="Bottom" Margin="0" Width="10" HorizontalAlignment="Center" FontFamily="Verdana" Padding="0,0,1,3"   />
+                            <ex:TBX_ADD2 Width="70" TabIndex="17" />
+                        </StackPanel>
+                    </Grid>
+
+                    <Grid Grid.Row="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="85"/>
+                            <ColumnDefinition  Width="100"/>
+                            <ColumnDefinition  Width="85"/>
+                            <ColumnDefinition  Width="100"/>
+                            <ColumnDefinition  Width="85"/>
+                            <ColumnDefinition  Width="100"/>
+                            <ColumnDefinition  Width="85"/>
+                            <ColumnDefinition  Width="100"/>
+                            <ColumnDefinition  Width="85"/>
+                            <ColumnDefinition  Width="100"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding UIText[ERP_LensMaterials]}" Grid.Column="0"/>
+                        <ex:TBMaterial Grid.Column="1" TabIndex="18"/>
+                        <TextBlock Text="{Binding UIText[ERP_Density]}" Grid.Column="2"/>
+                        <ex:TBDensity Grid.Column="3" TabIndex="19"/>
+                        <TextBlock Text="{Binding UIText[ERP_Abbe]}" Grid.Column="4"/>
+                        <ex:TBAbbe Grid.Column="5" TabIndex="20"/>
+                        <TextBlock Text="{Binding UIText[ERP_UVCutOff]}" Grid.Column="6"/>
+                        <ex:TBUVCutOff Grid.Column="7" TabIndex="21"/>
+                        <TextBlock Text="{Binding UIText[ERP_LensPrism]}" Grid.Column="8"/>
+                        <ex:TBPrismAvailability Grid.Column="9" TabIndex="22"/>
+                    </Grid>
+                    <Grid Grid.Row="11">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="85"/>
+                            <ColumnDefinition  Width="100"/>
+                            <ColumnDefinition  Width="85"/>
+                            <ColumnDefinition  Width="100"/>
+                            <ColumnDefinition  Width="85"/>
+                            <ColumnDefinition  Width="100"/>
+                            <ColumnDefinition  Width="85"/>
+                            <ColumnDefinition  Width="100"/>
+                            <ColumnDefinition  Width="85"/>
+                            <ColumnDefinition  Width="100"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding UIText[ERP_Colour]}"/>
+                        <ex:TBColour Grid.Column="1" TabIndex="23"/>
+                        <TextBlock Text="{Binding UIText[ERP_CorridorLength]}" Grid.Column="2"/>
+                        <ex:TBCorridor Grid.Column="3" TabIndex="24"/>
+                        <TextBlock Text="{Binding UIText[ERP_FittingHeight]}" Grid.Column="4"/>
+                        <ex:TBFitting Grid.Column="5" TabIndex="25"/>
+                        <TextBlock Text="{Binding UIText[ERP_Sort1]}" Grid.Column="6"/>
+                        <ex:TBSort1 Grid.Column="7" TabIndex="26"/>
+                        <TextBlock Text="{Binding UIText[ERP_Sort2]}" Grid.Column="8"/>
+                        <ex:TBSort2 Grid.Column="9" TabIndex="27"/>
+                    </Grid>
+                    <Grid Grid.Row="12">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="85"/>
+                            <ColumnDefinition  Width="100"/>
+                            <ColumnDefinition  Width="85"/>
+                            <ColumnDefinition  Width="100"/>
+                            <ColumnDefinition  Width="85"/>
+                            <ColumnDefinition  Width="100"/>
+                            <ColumnDefinition  Width="85"/>
+                            <ColumnDefinition  Width="100"/>
+                            <ColumnDefinition  Width="85"/>
+                            <ColumnDefinition  Width="100"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding UIText[ERP_Transmistion1]}"/>
+                        <ex:TBTransmistion1 Grid.Column="1" TabIndex="28"/>
+                        <TextBlock Text="{Binding UIText[ERP_Transmistion2]}" Grid.Column="2"/>
+                        <ex:TBTransmistion2 Grid.Column="3" TabIndex="29"/>
+                        <TextBlock Text="{Binding UIText[ERP_Purpose]}" Grid.Column="4"/>
+                        <ex:TBPurpose Grid.Column="5" TabIndex="30"/>
+                        <TextBlock Text="{Binding UIText[ERP_ReformulatedPower]}" Grid.Column="6"/>
+                        <Border Style="{StaticResource BorderTitle}" Grid.Column="7">
+                            <ex:CBF_ReformulatedPower VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0" TabIndex="31"/>
+                        </Border>
+                        <TextBlock Text="{Binding UIText[ERP_Ctvalue]}" Grid.Column="8"/>
+                        <Border Style="{StaticResource BorderTitle}" Grid.Column="9">
+                            <ex:CBF_Ctvalue VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0" TabIndex="32"/>
+                        </Border>
+                    </Grid>
+                    <Grid Grid.Row="13">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="85"/>
+                            <ColumnDefinition  Width="470"/>
+                            <ColumnDefinition  Width="85"/>
+                            <ColumnDefinition  Width="285"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding UIText[ERP_Criterion1]}"/>
+                        <ex:TBCriterion1 Grid.Column="1" TabIndex="33"/>
+                        <TextBlock Text="{Binding UIText[ERP_Criterion2]}" Grid.Column="2"/>
+                        <ex:TBCriterion2 Grid.Column="3" TabIndex="34"/>
+                    </Grid>
+
+                    <Grid Grid.Row="15">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="85"/>
+                            <ColumnDefinition  Width="20"/>
+                            <ColumnDefinition  Width="80"/>
+                            <ColumnDefinition  Width="20"/>
+                            <ColumnDefinition  Width="80"/>
+                            <ColumnDefinition  Width="20"/>
+                            <ColumnDefinition  Width="80"/>
+                            <ColumnDefinition  Width="20"/>
+                            <ColumnDefinition  Width="80"/>
+                            <ColumnDefinition  Width="20"/>
+                            <ColumnDefinition  Width="80"/>
+                            <ColumnDefinition  Width="20"/>
+                            <ColumnDefinition  Width="80"/>
+                            <ColumnDefinition  Width="20"/>
+                            <ColumnDefinition  Width="80"/>
+                            <ColumnDefinition  Width="20"/>
+                            <ColumnDefinition  Width="80"/>
+                            <ColumnDefinition  Width="20"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding UIText[ERP_LR_Flag]}" Grid.Column="0"  />
+                        <ex:CBF_LR Grid.Column="1" TabIndex="35"  />
+                        <TextBlock Text="{Binding UIText[ERP_CA_Flag]}"  Grid.Column="2"  />
+                        <ex:CBF_CA Grid.Column="3" TabIndex="36"  />
+                        <TextBlock Text="{Binding UIText[ERP_F_HardCoat]}" Grid.Column="4"  />
+                        <ex:CBF_HardCoat Grid.Column="5" TabIndex="37" />
+                        <TextBlock Text="{Binding UIText[ERP_F_Tintage]}" Grid.Column="6"  />
+                        <ex:CBF_Tintage Grid.Column="7" TabIndex="38" />
+                        <TextBlock Text="{Binding UIText[ERP_F_Coating]}" Grid.Column="8"  />
+                        <ex:CBF_Coating Grid.Column="9" TabIndex="39" />
+                        <TextBlock Text="{Binding UIText[ERP_F_Decenter]}" Grid.Column="10"  />
+                        <ex:CBF_Decenter Grid.Column="11" TabIndex="40" />
+                        <TextBlock Text="{Binding UIText[ERP_F_Prism]}" Grid.Column="12"  />
+                        <ex:CBF_Prism Grid.Column="13" TabIndex="41" />
+                        <TextBlock Text="{Binding UIText[ERP_F_Base]}" Grid.Column="14"  />
+                        <ex:CBF_Base Grid.Column="15" TabIndex="42" />
+                        <TextBlock Text="{Binding UIText[ERP_F_Pur]}" Grid.Column="16"  />
+                        <ex:CBF_Pur Grid.Column="17" TabIndex="43" />
+                    </Grid>
+                    <Grid Grid.Row="16">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="85"/>
+                            <ColumnDefinition  Width="20"/>
+                            <ColumnDefinition  Width="80"/>
+                            <ColumnDefinition  Width="20"/>
+                            <ColumnDefinition  Width="80"/>
+                            <ColumnDefinition  Width="20"/>
+                            <ColumnDefinition  Width="80"/>
+                            <ColumnDefinition  Width="20"/>
+                            <ColumnDefinition  Width="80"/>
+                            <ColumnDefinition  Width="20"/>
+                            <ColumnDefinition  Width="80"/>
+                            <ColumnDefinition  Width="20"/>
+                            <ColumnDefinition  Width="80"/>
+                            <ColumnDefinition  Width="20"/>
+                            <ColumnDefinition  Width="80"/>
+                            <ColumnDefinition  Width="20"/>
+                            <ColumnDefinition  Width="80"/>
+                            <ColumnDefinition  Width="20"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding UIText[ERP_F_Stop]}" Grid.Column="0"  />
+                        <ex:CBF_Stop Grid.Column="1" TabIndex="44" />
+                    </Grid>
+                    <Grid Grid.Row="17" Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="85"/>
+                            <ColumnDefinition  Width="auto"/>
+                            <ColumnDefinition Width="85"/>
+                            <ColumnDefinition  Width="auto"/>
+                            <ColumnDefinition Width="85"/>
+                            <ColumnDefinition  Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                        <HyperlinkButton Content="{Binding UIText[ERP_UpLoadImage1]}" Grid.Column="0" VerticalAlignment="Bottom" HorizontalAlignment="Right" FontWeight="Bold" Visibility="{Binding IsShowUploadImage}">
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="Click">
+                                    <Custom:EventToCommand Command="{Binding CmdUploadImage, Mode=OneWay}" CommandParameterValue="1"/>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </HyperlinkButton>
+                        <HyperlinkButton Grid.Column="1" Visibility="{Binding IsShowUploadImage}">
+                            <Grid>
+                                <Image Width="160" Height="100" Source="{Binding ImageSource1}"/>
+                            </Grid>
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="Click">
+                                    <Custom:EventToCommand Command="{Binding CmdGetImage, Mode=OneWay}" CommandParameterValue="1"/>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </HyperlinkButton>
+                        <HyperlinkButton Content="{Binding UIText[ERP_UpLoadImage2]}" Grid.Column="2" VerticalAlignment="Bottom" HorizontalAlignment="Right" FontWeight="Bold" Visibility="{Binding IsShowUploadImage}">
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="Click">
+                                    <Custom:EventToCommand Command="{Binding CmdUploadImage, Mode=OneWay}" CommandParameterValue="2"/>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </HyperlinkButton>
+                        <HyperlinkButton Grid.Column="3" Visibility="{Binding IsShowUploadImage}">
+                            <Grid>
+                                <Image Width="160" Height="100" Source="{Binding ImageSource2}" />
+                            </Grid>
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="Click">
+                                    <Custom:EventToCommand Command="{Binding CmdGetImage, Mode=OneWay}" CommandParameterValue="2"/>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </HyperlinkButton>
+                        <HyperlinkButton Content="{Binding UIText[ERP_UpLoadImage3]}" Grid.Column="4" VerticalAlignment="Bottom" FontWeight="Bold" HorizontalAlignment="Right" Visibility="{Binding IsShowUploadImage}">
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="Click">
+                                    <Custom:EventToCommand Command="{Binding CmdUploadImage, Mode=OneWay}" CommandParameterValue="3"/>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </HyperlinkButton>
+                        <HyperlinkButton Grid.Column="5" Visibility="{Binding IsShowUploadImage}">
+                            <Grid>
+                                <Image Width="160" Height="100" Source="{Binding ImageSource3}"/>
+                            </Grid>
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="Click">
+                                    <Custom:EventToCommand Command="{Binding CmdGetImage, Mode=OneWay}" CommandParameterValue="3"/>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </HyperlinkButton>
+                    </Grid>
+                </Grid>
+                <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" VerticalAlignment="Top" Background="{StaticResource DocumentTabNormalBackgroundBrush}" Margin="0" Grid.Row="2" Height="24">
+
+                </StackPanel>
+                <ex:TBFocusCycle TabIndex="46"/>
+            </Grid>
+        </ex:BusyIndicatorProgress>
+    </ex:BusyIndicatorErp>
+</ex:ChildWindowErp>

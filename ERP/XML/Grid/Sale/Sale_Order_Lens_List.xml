@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Columns Frozen="2">
+  <Column  Binding=""   Header="" Fheader="1"/>
+  <Column  Binding="BCode" Header="订单号//訂單號//ID" Ffunction="ID"/>
+  <Column  Binding="BDate" Header="订单日期//訂單日期//Bill Date" Ftime="1"/>
+  <!--<Column  Binding="CsDate" Header="拟出货日期//擬出貨日期//Consign Date" Ftime="1"/>-->
+  <Column  Binding="OBCode" Header="客户单号//客戶單號//Original Code" />
+  <Column  Binding="CusCode" Header="客户代码//客戶代碼//CusCode"/>
+  <Column  Binding="CusName" Header="客户名称//客戶名稱//CusName"/>
+  <Column  Binding="BTypeNameUI" Header="订单类型//訂單類型//Type"  />
+  <!--<Column  Binding="UDNameUI" Header="紧急程度//緊急程度//Urgen"  />-->
+  <Column  Binding="StNameUI" Header="状态//狀態//State"  />
+  <Column  Binding="SumQty" Header="数量//數量//Qty"  />
+  <Column  Binding="LensCodeRList" Header="订单镜种R//訂單鏡種R//Lens R"  />
+  <Column  Binding="LensCodeLList" Header="订单镜种L//訂單鏡種L//Lens L"  />
+  <Column  Binding="LensType" Header="镜片类型//鏡片類型//Lens Type"  />
+  <!--<Column  Binding="DN" Header="交收单//交收單//DN"  Fwidth="3"/>
+  <Column  Binding="DDate" Header="交收日期//交收日期//DN Date"  Ftime="1"/>-->
+  <Column  Binding="SpCode" Header="外购供应商//外購供應商//Supplier"  />
+  <Column  Binding="SN" Header="采购流水号//採購流水號//SN"  Fwidth="3"/>
+  <Column  Binding="WhCode" Header="仓库//倉庫//Warehouse"  />
+  <Column  Binding="Notes" Header="特别说明//特別說明//Note"  Fwidth="2"/>
+  <Column  Binding="Remark" Header="备注//備註//Remark"  Fwidth="2"/>
+  <Column  Binding="Maker" Header="制单//制單//Maker"  />
+  <Column  Binding="Checker" Header="审核//審核//Checker"  />
+  <Column  Binding="LensNameR" Header="镜种名称R//鏡種名稱R//Lens Name R"  Fwidth="2"/>
+  <!--<Column  Binding="QtyR" Header="订单数量R//訂單數量R//Qty R"  />-->
+  <Column  Binding="LensNameL" Header="镜种名称L//鏡種名稱L//Lens Name L"  Fwidth="2"/>
+  <!--<Column  Binding="QtyL" Header="订单数量L//訂單數量L//Qty L"  />-->
+
+</Columns>
+
+
+
+
+
+
+

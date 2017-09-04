@@ -1,0 +1,44 @@
+﻿<ex:ChildWindowErp
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+xmlns:ex="clr-namespace:ERP.View" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" 
+x:Class="ERP.View.MessageWindowErp"
+Width="385" Height="200" 
+BorderThickness="0" Background="White"
+DataContext="{Binding MessageWindowErp, Mode=OneWay, Source={StaticResource Locator}}">
+    <Grid Background="#FFE4E7EA">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Border x:Name="MessageBorder" BorderThickness="1" BorderBrush="#FFA1ADBF" >
+            <Grid x:Name="LayoutRoot" Margin="1" Background="White">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="65" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Image x:Name="MessageIcon" Stretch="Uniform" VerticalAlignment="Center" HorizontalAlignment="Right" Source="/ERP;component/Images/CWin/info.png" Margin="0" Height="62" Width="56" />
+                <Border BorderBrush="{x:Null}" BorderThickness="1" Margin="0,0,10,0" x:Name="TextBlockBorder" Grid.Column="1">
+                    <!---->
+                    <TextBlock TextWrapping="Wrap" x:Name="TextBlock" VerticalAlignment="Center" TextAlignment="Left" Text="Message" Padding="0" FontFamily="{StaticResource FFV}" FontSize="{StaticResource FSTitle}"  FontWeight="Normal" Margin="15,0,0,0" />
+                </Border>
+                <ex:TextBoxErp Grid.Column="1" Height="21" HorizontalAlignment="Left" Margin="20,0,0,0" 
+                    x:Name="InputTextBox" VerticalAlignment="Center" Width="270"
+                    Text="{Binding Input, Mode=TwoWay, ValidatesOnNotifyDataErrors=False}" 
+                    Visibility="Collapsed"/>
+                <ex:ComBoxErp Grid.Column="1" Height="23" HorizontalAlignment="Left" x:Name="InputComboBox" VerticalAlignment="Center" Width="286" 
+                     Padding="5,0,0,0" FontFamily="Verdana" FontSize="12"
+                     SelectedItem="{Binding Input, Mode=TwoWay, ValidatesOnNotifyDataErrors=False}" Margin="15,0,0,0" Visibility="Collapsed"/>
+            </Grid>
+        </Border>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.ColumnSpan="2" 
+                    x:Name="ButtonStack" HorizontalAlignment="Right" VerticalAlignment="Bottom" >
+            <ex:ButtonErp x:Name="Btn_OK" x:FieldModifier="public" FontWeight="Normal"
+                          Content="{Binding UIText[ERP_Btn_OK]}"  Width="60" Margin="0,1,1,1"/>
+            <ex:ButtonErp x:Name="Btn_Cancel" Content="{Binding UIText[ERP_Btn_Cancel]}" FontWeight="Normal"
+                          x:FieldModifier="public" Width="60" Margin="5,1,1,1" Visibility="Collapsed"/>
+        </StackPanel>
+    </Grid>
+</ex:ChildWindowErp>

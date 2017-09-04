@@ -1,0 +1,102 @@
+﻿<ex:ChildWindowErp 
+xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls" 
+xmlns:ex="clr-namespace:ERP.View"
+xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" 
+x:Class="ERP.View.M_GroupAssign" 
+xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+xmlns:Command="clr-namespace:GalaSoft.MvvmLight.Command;assembly=GalaSoft.MvvmLight.Extras"
+HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10,10">
+    <ex:ChildWindowErp.Resources>
+        <DataTemplate x:Key="LBTemplate_Include" >
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="{Binding GroupCode}" />
+                <TextBlock Text=":" Grid.Column="1"/>
+                <TextBlock Text="{Binding GroupName}" Grid.Column="2"/>
+            </Grid>
+        </DataTemplate>
+        <DataTemplate x:Key="Template_DataBase" >
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="{Binding DBCode}" />
+                <TextBlock Text=":" Grid.Column="1"/>
+                <TextBlock Text="{Binding DBNameUI}" Grid.Column="2"/>
+            </Grid>
+        </DataTemplate>
+    </ex:ChildWindowErp.Resources>
+    <ex:ChildWindowErp.DataContext>
+        <Binding Mode="OneWay" Path="M_GroupAssign" Source="{StaticResource Locator}"/>
+    </ex:ChildWindowErp.DataContext>
+    <ex:BusyIndicatorErp>
+        <Grid x:Name="LayoutRoot" Margin="2" Background="{StaticResource FloatingWindowBackgroundBrush}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <ListBox x:Name="LB_In" SelectionMode="Extended" Canvas.Left="46" Canvas.Top="69" ItemTemplate="{StaticResource LBTemplate_Include}" FontFamily="Verdana" FontSize="13" Grid.Row="2" ItemsSource="{Binding SourceGroupIn}" />
+            <ListBox x:Name="LB_Out" SelectionMode="Extended" Canvas.Left="354" Canvas.Top="69" ItemTemplate="{StaticResource LBTemplate_Include}" FontFamily="Verdana" FontSize="13" Grid.Row="2" Grid.Column="2" ItemsSource="{Binding SourceGroupOut}" />
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="3">
+                <TextBlock Canvas.Left="45" Canvas.Top="17" Text="{Binding UIText[ERP_SelectDataBaseCode]}" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,2,0,0" Foreground="{StaticResource NormalBrush}"/>
+                <ex:ComBoxErp x:Name="CB_DataBase" ItemTemplate="{StaticResource Template_DataBase}" Canvas.Left="114" Canvas.Top="13" Height="23" MinWidth="170"  FontFamily="Verdana" FontSize="13" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" ItemsSource="{Binding SourceDB}">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="SelectionChanged">
+                            <Command:EventToCommand Command="{Binding CmdDataBaseChange, Mode=OneWay}" CommandParameter="{Binding SelectedItem, ElementName=CB_DataBase}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </ex:ComBoxErp>
+                <TextBlock Text="{Binding UIText[ERP_Loading]}" Foreground="DarkBlue" Visibility="{Binding MsgDBLoad}" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                <ex:ButtonExit Margin="5,0,0,0"/>
+            </StackPanel>
+            <StackPanel Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <ex:ButtonErp Canvas.Left="261" Canvas.Top="143" Content="{Binding UIText[ERP_AllTo]}" Height="23" Width="75" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,20" FontWeight="Bold" Foreground="Darkred" >
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                            <Command:EventToCommand Command="{Binding CmdOut, Mode=OneWay}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </ex:ButtonErp>
+                <ex:ButtonErp Canvas.Left="261" Canvas.Top="190" Content="{Binding UIText[ERP_SingleTo]}" Height="23" Width="75" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,20" FontWeight="Bold" Foreground="Darkred"  >
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                            <Command:EventToCommand Command="{Binding CmdOutSingle, Mode=OneWay}" CommandParameter="{Binding SelectedItems, ElementName=LB_In}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </ex:ButtonErp>
+                <ex:ButtonErp Canvas.Left="261" Canvas.Top="238" Content="{Binding UIText[ERP_SingleTo2]}" Height="23" Width="75" Grid.Row="2" Grid.Column="1" Margin="0,0,0,20" FontWeight="Bold" Foreground="{StaticResource NormalBrush}"  >
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                            <Command:EventToCommand Command="{Binding CmdInSingle, Mode=OneWay}" CommandParameter="{Binding SelectedItems, ElementName=LB_Out}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </ex:ButtonErp>
+                <ex:ButtonErp Canvas.Left="261" Canvas.Top="287" Content="{Binding UIText[ERP_AllTo2]}" Height="23" Width="75" Grid.Row="2" Grid.Column="1" FontWeight="Bold" Foreground="{StaticResource NormalBrush}" >
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                            <Command:EventToCommand Command="{Binding CmdIn, Mode=OneWay}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </ex:ButtonErp>
+            </StackPanel>
+            <TextBlock Canvas.Left="45" Canvas.Top="50" Text="{Binding UIText[ERP_IncludeGroup]}" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{StaticResource NormalBrush}"/>
+            <TextBlock Canvas.Left="353" Canvas.Top="50" Text="{Binding UIText[ERP_UnIncludeGroup]}" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Darkred"/>
+        </Grid>
+    </ex:BusyIndicatorErp>
+</ex:ChildWindowErp>

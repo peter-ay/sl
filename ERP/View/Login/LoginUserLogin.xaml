@@ -1,0 +1,90 @@
+﻿<ex:ChildWindowErp
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+xmlns:ex="clr-namespace:ERP.View" 
+xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+xmlns:Command="clr-namespace:GalaSoft.MvvmLight.Command;assembly=GalaSoft.MvvmLight.Extras"
+xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+xmlns:bh="clr-namespace:ERP.Behavior"
+mc:Ignorable="d"
+x:Class="ERP.View.LoginUserLogin" BorderThickness="0"
+DataContext="{Binding LoginUserLogin, Mode=OneWay, Source={StaticResource Locator}}">
+    <ex:BusyIndicatorErp>
+        <Grid x:Name="LayoutRoot">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Right" Margin="0,0,0,0">
+                <ex:ButtonErp x:Name="Btn_OK" Content="{Binding UIText[LoginUserLogin_Login]}"  TabIndex="2" Grid.Row="5" Grid.Column="2" Width="60" Margin="0,1,0,0"/>
+            </StackPanel>
+            <Border BorderBrush="{StaticResource DisabledBackgroundBrush}" BorderThickness="1" Margin="0"  Background="{StaticResource DefaultBackgroundBrush}" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="13"/>
+                        <RowDefinition Height="29"/>
+                        <RowDefinition Height="29"/>
+                        <RowDefinition Height="29"/>
+                        <RowDefinition Height="29"/>
+                        <RowDefinition Height="11"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="117"/>
+                        <ColumnDefinition  Width="6"/>
+                        <ColumnDefinition  Width="140"/>
+                        <ColumnDefinition  Width="20"/>
+                        <ColumnDefinition  Width="90"/>
+                        <ColumnDefinition  Width="5"/>
+                    </Grid.ColumnDefinitions>
+                    <!--UpdateSourceTrigger=PropertyChanged-->
+                    <ex:TextBoxErp Height="25" x:Name="TB_Falg_RO"
+                        Grid.Column="2" Grid.Row="2" 
+						bh:BhFocusTBox.IsFocused="{Binding IsFocusMain}" 
+						HorizontalAlignment="Stretch" MaxLength="10" TabIndex="0" 
+						Text="{Binding DSource.UserCode, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+
+                    <PasswordBox Grid.Row="3" Grid.Column="2" Height="25"
+                        MaxLength="15" TabIndex="1" 
+                        Password="{Binding DSource.Password, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+                        Padding="0,0,0,2" FontFamily="{StaticResource FFV}" FontSize="14"/>
+
+                    <TextBlock Text="{Binding UIText[LoginUserLogin_User]}"  Grid.Row="2" VerticalAlignment="Center" Margin="0" />
+                    <TextBlock Text="{Binding UIText[LoginUserLogin_Password]}"  Grid.Row="3" VerticalAlignment="Center" Margin="0"/>
+                    <ex:ComBoxErp 
+						SelectedItem="{Binding LanguageSelected, Mode=TwoWay}"
+						SelectedIndex="{Binding LanguageIndex, Mode=TwoWay}" ItemsSource="{Binding LanguageList}" 
+                        Height="25" Grid.Column="2" HorizontalAlignment="Stretch" Grid.Row="1">
+                        <ex:ComBoxErp.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <Image Source="{Binding ImagePath}" Stretch="None"/>
+                                    <TextBlock Text="{Binding LanguageName}" VerticalAlignment="Center" Margin="3,2,0,0"  FontWeight="Bold" HorizontalAlignment="Center"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ex:ComBoxErp.ItemTemplate>
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="SelectionChanged">
+                                <Command:EventToCommand Command="{Binding RcdChangLanguage, Mode=OneWay}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </ex:ComBoxErp>
+                    <ex:ComBoxErp Height="25" Grid.Row="4" Grid.Column="2" ItemsSource="{Binding LoginList}" SelectedIndex="{Binding LoginIndex, Mode=TwoWay}" HorizontalAlignment="Stretch" TabIndex="4">
+                        <ex:ComBoxErp.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding LoginMode}" VerticalAlignment="Center" Margin="3,3,0,0"  FontWeight="Bold"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ex:ComBoxErp.ItemTemplate>
+                    </ex:ComBoxErp>
+                    <TextBlock Text="{Binding UIText[LoginUserLogin_Language]}"  Grid.Row="1" VerticalAlignment="Center" Margin="0"/>
+                    <TextBlock Text="{Binding UIText[LoginUserLogin_Remember]}"  Grid.Row="2" Grid.Column="4" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0" />
+                    <ex:CheckBoxErp IsChecked="{Binding DSource.IsRemember, Mode=TwoWay}" Grid.Row="2" Grid.Column="3" TabIndex="3" />
+                    <TextBlock Text="{Binding UIText[LoginUserLogin_LoginMode]}"  Grid.Row="4" VerticalAlignment="Center" Margin="0" />
+
+                </Grid>
+            </Border>
+        </Grid>
+    </ex:BusyIndicatorErp>
+</ex:ChildWindowErp>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Columns Frozen="2">
+  <Column Header="" Binding="" Fheader="1"/>
+  <Column Header="用户代码//用戶代碼//UserCode" Binding="UserCode" Ffunction="1"/>
+  <Column Header="用户名称//用戶名稱//UserName" Binding="UserName"/>
+  <Column Header="用户说明//用戶說明//Remark" Binding="UserExplain"/>
+  <!--<Column Header="创建时间//創建時間//Create Date" Binding="MakeDate" Ftime="1"/>-->
+  <Column Header="管理员//管理員//Admin" Binding="F_Admin" Fbool="1"/>
+  <Column Header="超级管理员//超級管理員//Super" Binding="F_Super" Fbool="1"/>
+  <Column Header="停用标志//停用標誌//Stop" Binding="F_Stop" Fbool="1"/>
+</Columns>

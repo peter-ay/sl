@@ -1,0 +1,44 @@
+﻿<ex:UserControlErp
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"
+        x:Class="ERP.View.Sale_Order_Status_List" 
+        xmlns:ex="clr-namespace:ERP.View"
+        mc:Ignorable="d" 
+        DataContext="{Binding Sale_Order_Status_List, Mode=OneWay, Source={StaticResource Locator}}">
+    <Grid Background="{StaticResource FloatingWindowBackgroundBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <!--Title-->
+        <ex:TitleErp/>
+        <!--SearchBar-->
+        <Grid  Grid.Row="1">
+            <toolkit:Expander  Margin="0,0,0,0" HorizontalAlignment="Stretch" 
+                                      Style="{StaticResource GridSearchTitleBar}" VerticalContentAlignment="Stretch" 
+                                      VerticalAlignment="Stretch" ExpandDirection="Down" IsExpanded="False">
+                <toolkit:Expander.Header>
+                    <StackPanel Height="25" Orientation="Horizontal">
+                        <TextBlock Text="{Binding UIText[ERP_OrderCode]}" Width="85"/>
+                        <ex:TBBCodeList Width="150"/>
+                        <TextBlock Text="{Binding UIText[ERP_OBillCode]}" Width="85"/>
+                        <ex:TBOBCodeList Width="150"/>
+                        <ex:ButtonSearch Margin="10,0,0,0"/>
+                        <ex:ButtonClear Margin="10,0,0,0"/>
+                        <ex:ButtonExit Margin="5,0,0,0"/>
+                    </StackPanel>
+                </toolkit:Expander.Header>
+                <!-- ScrollViewer containing the source code -->
+                <Grid>
+                </Grid>
+            </toolkit:Expander>
+        </Grid>
+        <!-- GridList -->
+        <ex:DataGridListErp Grid.Row="2"/>
+    </Grid>
+</ex:UserControlErp>

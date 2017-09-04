@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Columns  >
+  <Column  FieldName="SubID" HeaderContent="序号//序號//No." Fsum="1" Title="项数//項數//Sum"/>
+  <Column  FieldName="SPH" HeaderContent="SPH" />
+  <Column  FieldName="CYL" HeaderContent="CYL"/>
+  <Column  FieldName="X_ADD" HeaderContent="ADD"/>
+  <Column  FieldName="Qty" HeaderContent="订单数量//訂單數量//Qty" Fsum="1" Title = "合计//合計//Sum"/>
+  <Column  FieldName="QtyCs" HeaderContent="发货数量//發貨數量//Consign" Fsum="1" Title = "合计//合計//Sum"/>
+  <!--<Column  FieldName="QtyUnCs" HeaderContent="未发货数量//未發貨數量//Unconsign" Fsum="1" Title = "合计//合計//Sum"/>-->
+  <Column  FieldName="QtyRt" HeaderContent="退货数量//退貨數量//Return" Fsum="1" Title = "合计//合計//Sum"/>
+</Columns>
+
+
+
+
+
+
+

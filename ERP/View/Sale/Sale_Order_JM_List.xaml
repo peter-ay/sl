@@ -1,0 +1,160 @@
+﻿<ex:UserControlErp
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"
+        x:Class="ERP.View.Sale_Order_JM_List" 
+        xmlns:ex="clr-namespace:ERP.View"
+        mc:Ignorable="d" 
+        DataContext="{Binding Sale_Order_JM_List, Mode=OneWay, Source={StaticResource Locator}}">
+    <Grid Background="{StaticResource FloatingWindowBackgroundBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <!--Title-->
+        <ex:TitleErp/>
+        <!--SearchBar-->
+        <Grid  Grid.Row="1">
+            <toolkit:Expander  Margin="0,0,0,0" HorizontalAlignment="Stretch" 
+                                      Style="{StaticResource GridSearchTitleBar}" VerticalContentAlignment="Stretch" 
+                                      VerticalAlignment="Stretch" ExpandDirection="Down" IsExpanded="False">
+                <toolkit:Expander.Header>
+                    <Grid Height="25">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="85"/>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition Width="20"/>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition Width="20"/>
+                            <ColumnDefinition Width="85"/>
+                            <ColumnDefinition Width="105"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding UIText[ERP_MakeDate]}" Grid.Column="0"/>
+                        <ex:DatePickerD1 Grid.Column="1" IsEnabled="{Binding IsChecked, ElementName=CB_SCTime}"/>
+                        <TextBlock Text="--" Grid.Column="2" HorizontalAlignment="Center"/>
+                        <ex:DatePickerD2 Grid.Column="3" IsEnabled="{Binding IsChecked, ElementName=CB_SCTime}"/>
+                        <ex:CBF_SCTime x:Name="CB_SCTime" Grid.Column="4" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{Binding UIText[ERP_CusCode]}" Grid.Column="5"/>
+                        <ex:TBCusCodeList Grid.Column="6"/>
+                        <ex:ButtonSearch  Grid.Column="7" Margin="20,0,0,0"/>
+                        <ex:ButtonClear  Grid.Column="8" Margin="10,0,0,0"/>
+                        <!--<ex:ButtonNewListSD Grid.Column="8" Margin="10,0,0,0"/>
+                        <ex:ButtonNewListPD Grid.Column="9" Margin="10,0,0,0"/>-->
+                        <!--<ex:ButtonListDelete Grid.Column="10" Margin="10,0,0,0"/>-->
+                        <!--<ex:ButtonExport2 Grid.Column="10" Margin="10,0,0,0"/>-->
+                        <ex:ButtonExit Grid.Column="11" Margin="10,0,0,0"/>
+                    </Grid>
+                </toolkit:Expander.Header>
+                <!-- ScrollViewer containing the source code -->
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="24"/>
+                        <RowDefinition Height="24"/>
+                        <RowDefinition Height="24"/>
+                    </Grid.RowDefinitions>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="86"/>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition Width="85"/>
+                            <ColumnDefinition Width="105"/>
+                            <ColumnDefinition Width="85"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding UIText[ERP_OrderCode]}" Grid.Column="0"/>
+                        <ex:TBBCodeList Grid.Column="1"/>
+                        <TextBlock Text="{Binding UIText[ERP_Maker]}" Grid.Column="2"/>
+                        <ex:TBMakerList Grid.Column="3"/>
+                        <TextBlock Text="{Binding UIText[ERP_Checker]}" Grid.Column="4"/>
+                        <StackPanel Orientation="Horizontal"  Grid.Column="5">
+                            <ex:RadioButtonCheckALL IsChecked="{Binding IsCheckAll, Mode=TwoWay}"/>
+                            <ex:RadioButtonCheck/>
+                            <ex:RadioButtonUnCheck/>
+                        </StackPanel>
+                    </Grid>
+
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="86"/>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition Width="85"/>
+                            <ColumnDefinition Width="105"/>
+                            <ColumnDefinition Width="85"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding UIText[ERP_OBillCode]}" Grid.Column="0"/>
+                        <ex:TBOBCodeList Grid.Column="1"/>
+                        <TextBlock Text="{Binding UIText[ERP_SpCode]}" Grid.Column="2"/>
+                        <ex:TBSpCodeList Grid.Column="3"/>
+                        <TextBlock Text="{Binding UIText[ERP_LensType]}" Grid.Column="4"/>
+                        <StackPanel Orientation="Horizontal" Grid.Column="5" VerticalAlignment="Bottom">
+                            <ex:RadioButtonLensTypeALL/>
+                            <ex:RadioButtonLensTypeST/>
+                            <ex:RadioButtonLensTypeRX/>
+                        </StackPanel>
+                    </Grid>
+
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="86"/>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition Width="85"/>
+                            <ColumnDefinition Width="105"/>
+                            <ColumnDefinition Width="85"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding UIText[ERP_LensCodeSale]}" Grid.Column="0"/>
+                        <ex:TBLensCodeList Grid.Column="1"/>
+                        <TextBlock Text="{Binding UIText[ERP_WhCode]}" Grid.Column="2"/>
+                        <ex:TBWhCodeList Grid.Column="3"/>
+                        <TextBlock Text="{Binding UIText[ERP_OGType]}" Grid.Column="4"/>
+                        <StackPanel Orientation="Horizontal" Grid.Column="5" VerticalAlignment="Bottom">
+                            <ex:RadioButtonOGALL/>
+                            <ex:RadioButtonOG1/>
+                            <ex:RadioButtonOG2/>
+                        </StackPanel>
+                    </Grid>
+
+                </Grid>
+            </toolkit:Expander>
+        </Grid>
+        <Grid Grid.Row="2"  Background="{StaticResource DocumentTabNormalBackgroundBrush}" Grid.Column="1" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="711"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Height="25" Orientation="Horizontal">
+                <!--<StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                    <TextBlock Text="{Binding UIText[ERP_UrgencyDegree]}" VerticalAlignment="Center" Width="92" Margin="0"/>
+                    <ex:RadioButtonUDAll/>
+                    <ex:RadioButtonUD1/>
+                    <ex:RadioButtonUD2/>
+                    <ex:RadioButtonUD3/>
+                </StackPanel>-->
+            </StackPanel>
+
+
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Grid.Column="1">
+
+
+                <!--<ex:ButtonPrint/>-->
+                <!--<ex:ButtonNewListSD Margin="7,0,0,0"/>
+                <ex:ButtonNewListPD Margin="10,0,0,0"/>-->
+            </StackPanel>
+        </Grid>
+        <!-- GridList -->
+        <ex:DataGridListErp Grid.Row="3"/>
+    </Grid>
+</ex:UserControlErp>

@@ -1,0 +1,78 @@
+﻿<ex:ChildWindowErp
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"
+xmlns:ex="clr-namespace:ERP.View"
+xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:Command="clr-namespace:GalaSoft.MvvmLight.Command;assembly=GalaSoft.MvvmLight.Extras" x:Name="childWindowErp"
+x:Class="ERP.View.Sale_ContractBill_Sub_CusCode"
+Margin="10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+DataContext="{Binding Sale_ContractBill_Sub_CusCode, Mode=OneWay, Source={StaticResource Locator}}" >
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="LayoutUpdated">
+            <Command:EventToCommand Command="{Binding CmdLayOutUpdate, Mode=OneWay}" CommandParameter="{Binding Height, ElementName=childWindowErp}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <Grid x:Name="LayoutRoot" Background="{StaticResource FloatingWindowBackgroundBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,0,1">
+            <TextBlock Text="{Binding UIText[ERP_CusCode]}"  Margin="5,2,0,0"  VerticalAlignment="Center"/>
+            <ex:TextBoxKeyCode Width="100" />
+            <TextBlock Text="{Binding UIText[ERP_CusName]}"  Margin="5,2,0,0"  VerticalAlignment="Center"/>
+            <ex:TextBoxKeyName Width="150" />
+            <TextBlock Text="{Binding UIText[ERP_Assign]}" Margin="2,2,0,0"  VerticalAlignment="Center"/>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0,2,0,0">
+                <ex:RadioButtonIncludeALL IsChecked="{Binding IsIncludeAll, Mode=TwoWay}"/>
+                <ex:RadioButtonInclude/>
+                <ex:RadioButtonUnclude/>
+            </StackPanel>
+            <ex:ButtonSearch Margin="3,0,0,0"/>
+            <ex:ButtonExit Margin="3,0,0,0"/>
+        </StackPanel>
+
+        <ex:BusyIndicatorErp Grid.Row="1">
+            <ListBox FontFamily="Verdana" FontSize="13" HorizontalAlignment="Stretch"
+				VerticalAlignment="Stretch"  ItemsSource="{Binding DContextMain}">
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <!--WrapPanel的Height除以CheckBox的Height决定每列的行数-->
+                        <!--暂未找到可以设置WrapPanel折行数量的属性-->
+                        <!--Orientation设置纵向或横向排列,横向的话需要用Width设置-->
+                        <toolkit:WrapPanel Height="{Binding WrapPanelHeigh}"  Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <CheckBox IsChecked="{Binding IsSelected, Mode=TwoWay}" Height="16" >
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="Click">
+                                        <Command:EventToCommand Command="{Binding Sale_ContractBill_Sub_CusCode.CmdCusCodeCheckClick, Mode=OneWay, Source={StaticResource Locator}}" CommandParameter="{Binding}"/>
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </CheckBox>
+                            <TextBlock  Text="{Binding CusCode}"  />
+                            <TextBlock  Text=":" />
+                            <TextBlock  Text="{Binding CusName}"  />
+                            <TextBlock  Text="{Binding Msg}"  Foreground="DarkBlue"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </ex:BusyIndicatorErp>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Height="23">
+            <ex:ButtonExport/>
+            <ex:ButtonImport Margin="5,0,0,0" />
+            <ex:ButtonAllAssignPanel Margin="10,0,0,0"/>
+            <ex:ButtonAllUnAssignPanel Margin="5,0,0,0"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Center" Orientation="Horizontal">
+            <TextBlock Style="{StaticResource styleTextBlockResult}" Text="{Binding ResultInfoTime}"/>
+            <TextBlock Style="{StaticResource styleTextBlockResult}" Text="{Binding ResultInfoCount}"/>
+            <ex:DataPagerErp/>
+        </StackPanel>
+    </Grid>
+</ex:ChildWindowErp>

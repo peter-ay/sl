@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Columns Frozen="2">
+  <Column Header="" Binding="" Fheader="1"/>
+  <Column Header="组别代码//組別代碼//GroupCode" Binding="GpCode" Ffunction="1"/>
+  <Column Header="组别名称//組別名稱//GroupName" Binding="GpName"/>
+  <Column Header="组别说明//組別說明//GroupExplain" Binding="GpExplain"/>
+  <Column Header="所属帐套//所屬帳套//DBCode" Binding="DBCode"/>
+  <Column Header="所属帐套名称//所屬帳套名稱//DBName" Binding="DBNameUI"/>
+  <Column Header="客户浏览//客戶瀏覽//Browse Customer" Binding="F_RBCusCode" Fbool="1"/>
+  <Column Header="仓库浏览//倉庫瀏覽//Browse Warehouse" Binding="F_RBWhCode" Fbool="1"/>
+  <Column Header="仓库使用//倉庫使用//Use Warehouse" Binding="F_RUWhCode" Fbool="1"/>
+  <Column Header="部门浏览//部門瀏覽//Browse Department" Binding="F_RBDpCode" Fbool="1"/>
+  <Column Header="供应商浏览//供應商瀏覽//Browse Supplier" Binding="F_RBSpCode" Fbool="1"/>
+</Columns>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Columns Frozen="0"> 
+  <Column  Binding="WhCode" Header="仓库代码//仓库代碼//WhCode"/>
+  <Column  Binding="WhName" Header="仓库名称//倉庫名稱//WhName"/>
+  <Column  Binding="LensCode" Header="镜种//鏡種//Lens"  />
+  <Column  Binding="LensName" Header="镜种名称//名稱//Lens Name"  Fwidth="2"/>
+  <Column  Binding="F_LR" Header="左右//左右//LR"  />
+  <Column  Binding="Stocks" Header="现存量//現存量//Stock"  />
+  <Column  Binding="SO" Header="出库挂起数量//出庫掛起數量//Suspend Out Number"  />
+  <Column  Binding="SI" Header="入库挂起数量//入庫掛起數量//Suspend In Number"  />
+  <Column  Binding="SumStocks" Header="总数量//總數量//Sum Number"  />
+</Columns>
+
+
+
+
+
+
+

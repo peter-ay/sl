@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Columns Frozen="0">
+  <Column Binding="AreaCode" Header="代码//代碼//Code"/>
+  <Column Binding="AreaName" Header="名称//名稱//Name"/>
+</Columns>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Columns Frozen="1">
+  <Column Binding="SpCode" Header="代码//代碼//Code" />
+  <Column Binding="SpName" Header="名称//名稱//Name"   Fwidth="2"/>
+  <Column Binding="SumCusCode" Header="包含客户//包含客戶//Include CusCode" Ffunction="1"/>
+  <Column Binding="SumLensCode" Header="包含镜片//包含鏡片//Include Les" Ffunction="2"/>
+  <Column Binding="SumProCode" Header="排除工序//排除工序//Exclude ProCode" Ffunction="3"/>
+</Columns>
+
+
+
+
+
+

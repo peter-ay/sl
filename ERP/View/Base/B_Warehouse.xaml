@@ -1,0 +1,97 @@
+﻿<ex:ChildWindowErp  
+xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  
+xmlns:d="http://schemas.microsoft.com/expression/blend/2008"   
+x:Class="ERP.View.B_Warehouse" 
+xmlns:ex="clr-namespace:ERP.View"
+xmlns:bhv="clr-namespace:ERP.Behavior"
+mc:Ignorable="d">
+    <ex:ChildWindowErp.DataContext>
+        <Binding Mode="OneWay" Path="B_Warehouse" Source="{StaticResource Locator}"/>
+    </ex:ChildWindowErp.DataContext>
+    <ex:BusyIndicatorErp>
+        <Grid x:Name="LayoutRoot" Margin="0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" VerticalAlignment="Top" Background="{StaticResource DocumentTabNormalBackgroundBrush}" Margin="0">
+                <ex:ButtonNew Margin="4,2"/>
+                <ex:ButtonSave Margin="4,2"/>
+                <ex:ButtonEdit Margin="4,2"/>
+                <ex:ButtonDelete Margin="4,2"/>
+                <ex:ButtonDrop Margin="4,2"/>
+                <ex:ButtonPrevious Margin="4,2"/>
+                <ex:ButtonNext Margin="4,2"/>
+                <ex:ButtonExit Margin="4,2"/>
+            </StackPanel>
+            <Grid Background="{StaticResource FloatingWindowBackgroundBrush}"  Grid.Row="1" Margin="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition  Width="480"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="24"/>
+                    <RowDefinition Height="24"/>
+                    <RowDefinition Height="24"/>
+                    <RowDefinition Height="24"/>
+                    <RowDefinition Height="24"/>
+                    <RowDefinition Height="24"/>
+                    <RowDefinition Height="24"/>
+                    <RowDefinition Height="24"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="{Binding UIText[ERP_WhCode]}" Grid.Row="1"/>
+                <StackPanel  Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+                    <ex:TBWhCode  IsReadOnly="{Binding IsReadOnlyID}"    x:Name="TB_Falg_ID" TabIndex="0" bhv:BhFocusTBox.IsFocused="{Binding IsFocusID}" Width="100"/>
+                    <TextBlock Text="{Binding UIText[ERP_F_Stop]}"    Grid.Row="6" Grid.Column="6" Margin="0,0,0,2" Width="85"/>
+                    <ex:CBF_Stop Grid.Row="6" Grid.Column="7" TabIndex="7"  />
+                </StackPanel>
+
+                <TextBlock Text="{Binding UIText[ERP_WhName]}"  Grid.Row="2"/>
+                <StackPanel  Grid.Row="2" Grid.Column="1" Orientation="Horizontal">
+                    <ex:TBWhName x:Name="TB_Falg_RO" IsReadOnly="{Binding IsReadOnlyMain}" Grid.Column="3" TabIndex="1" bhv:BhFocusTBox.IsFocused="{Binding IsFocusMain}" Grid.ColumnSpan="3" Grid.Row="1" Width="150"/>
+                </StackPanel>
+
+
+                <TextBlock Text="{Binding UIText[ERP_DpCode]}"    Grid.Row="3"/>
+                <StackPanel  Grid.Row="3" Grid.Column="1" Orientation="Horizontal">
+                    <Grid Grid.Column="1" Grid.Row="5" Width="100">
+                        <ex:TBDpCodeRO />
+                        <ex:ACBoxDpCode TabIndex="2" />
+                    </Grid>
+                    <!--<StackPanel Grid.Column="1" Grid.Row="5" Orientation="Horizontal" Width="100">
+                        <ex:TBDpCode Width="80" TabIndex="2" />
+                        <ex:ButtonHelpDpCode/>
+                    </StackPanel>-->
+                    <TextBlock Text="{Binding UIText[ERP_DpName]}"    Grid.Row="5" Grid.Column="2" Width="85"/>
+                    <ex:TBDpNameRO Grid.Column="3" MaxLength="10"  Grid.Row="5" Width="150"/>
+                </StackPanel>
+
+                <TextBlock Text="{Binding UIText[ERP_Address]}"    Grid.Row="5"/>
+                <StackPanel  Grid.Row="5" Grid.Column="1" Orientation="Horizontal">
+                    <ex:TBWhAddress  Grid.Column="5" TabIndex="5" Grid.Row="5" Grid.ColumnSpan="3" Width="335" />
+                </StackPanel>
+
+                <TextBlock Text="{Binding UIText[ERP_ManageMan]}"    Grid.Row="4"/>
+                <StackPanel  Grid.Row="4" Grid.Column="1" Orientation="Horizontal">
+                    <ex:TBManageMan  Grid.Column="1" TabIndex="3" Grid.Row="6" Width="100" />
+                    <TextBlock Text="{Binding UIText[ERP_Phone]}"    Grid.Column="6" Grid.Row="1" Width="85"/>
+                    <ex:TBTelephone  Grid.Column="7"   MaxLength="20" TabIndex="4" Grid.Row="1" Width="150"  />
+                </StackPanel>
+
+
+                <TextBlock Text="{Binding UIText[ERP_Remark]}"    Grid.Row="6"/>
+                <StackPanel  Grid.Row="6" Grid.Column="1" Orientation="Horizontal">
+                    <ex:TBRemark1 Grid.Column="3" TabIndex="6" Grid.Row="6" Grid.ColumnSpan="3" Width="335" />
+                </StackPanel>
+
+
+            </Grid>
+            <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" VerticalAlignment="Top" Background="{StaticResource DocumentTabNormalBackgroundBrush}" Grid.Row="2" Height="27"/>
+
+        </Grid>
+    </ex:BusyIndicatorErp>
+</ex:ChildWindowErp>

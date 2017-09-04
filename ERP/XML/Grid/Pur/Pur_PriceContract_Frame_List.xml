@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Columns Frozen="0">
+  <Column  Binding=""   Header="" Fheader="1"/>
+  <!--<Column  Binding="EditUI" Header=""   Ffunction="Edit"/>-->
+  <Column  Binding="FrameCode" Header="镜架代码//鏡架代碼//Frame" />
+  <Column  Binding="Price" Header="单价//單價//Price"  /> 
+  <Column  Binding="InvTitle" Header="交收单显示//交收單顯示//InvTitle"  Fwidth="2"/>
+</Columns>
+
+
+
+
+
+
+
+
+
+
+
+

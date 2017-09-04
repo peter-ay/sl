@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Columns Frozen="2">
+  <Column  Binding=""   Header="" Fheader="1"/>
+  <Column Binding="BCode" Header="发货单号//發貨單號//ID" Ffunction="1"/>
+  <Column Binding="CusCode" Header="客户代码//客戶代碼//CusCode"/>
+  <Column Binding="OBCodeSale" Header="客户订单号//客戶訂單號//Origin No." Fwidth="3"/>
+  <Column Binding="BCodeSale" Header="订单号//訂單號//Order Code" Ffunction="2"/>
+  <Column Binding="BDateSale" Header="订单日期//訂單日期//Order Date" Ftime="1"/>
+  <Column Binding="CsDateSale" Header="拟出货日期//擬出貨日期//Consign Date" Ftime="1"/>
+  <Column Binding="DDate" Header="交收日期//交收日期//Delivery Date" Ftime="1"/>
+  <Column Binding="DN" Header="交收单//交收單//DN" />
+  <!--<Column Binding="ENo" Header="快递单号//快遞單號//Express No." />-->
+  <Column  Binding="PriceR" Header="单价R//單價R//Price R"  />
+  <Column  Binding="ProCostR" Header="加工费R//加工費R//ProCost R"  />
+  <Column  Binding="QtyR" Header="发货数量R//發貨數量R//Qty R"  />
+  <Column  Binding="PriceL" Header="单价L//單價L//Price L"  />
+  <Column  Binding="ProCostL" Header="加工费L//加工費L//ProCost L"  />
+  <Column  Binding="QtyL" Header="发货数量R//發貨數量R//Qty L"  />
+  <Column Binding="SumQty" Header="发货数量//發貨數量//SumQty"  />
+  <Column Binding="SumMoney" Header="发货金额//發貨金額//SumMoney"  />
+  <Column Binding="LensCodeRList" Header="订单镜种R//訂單鏡種R//Lens R"  />
+  <Column Binding="LensCodeLList" Header="订单镜种L//訂單鏡種L//Lens L"  />
+  <Column Binding="LensNameR" Header="镜种名称R//鏡種名稱R//Lens Name R"  Fwidth="2"/>
+  <Column Binding="LensNameL" Header="镜种名称L//鏡種名稱L//Lens Name L"  Fwidth="2"/>
+  <Column Binding="CusName" Header="客户名称//客戶名稱//CusName"/>
+  <!--<Column Binding="ECCode" Header="快递公司//快遞公司//Express" />-->
+  <!--<Column Binding="EMaker" Header="快递记录//快遞記錄//Express Operator" />-->
+</Columns>
+
+
+
+

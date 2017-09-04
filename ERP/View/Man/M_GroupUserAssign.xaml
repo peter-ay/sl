@@ -1,0 +1,83 @@
+﻿<ex:ChildWindowErp
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"
+xmlns:ex="clr-namespace:ERP.View"
+xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+xmlns:Command="clr-namespace:GalaSoft.MvvmLight.Command;assembly=GalaSoft.MvvmLight.Extras" x:Name="childWindowErp"
+x:Class="ERP.View.M_GroupUserAssign"
+Margin="10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+DataContext="{Binding M_GroupUserAssign, Mode=OneWay, Source={StaticResource Locator}}" >
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="LayoutUpdated">
+            <Command:EventToCommand Command="{Binding CmdLayOutUpdate, Mode=OneWay}" CommandParameter="{Binding Height, ElementName=childWindowErp}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <Grid x:Name="LayoutRoot" Background="{StaticResource FloatingWindowBackgroundBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="280"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="28" />
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="{Binding UIText[ERP_SelectGroupCode]}" HorizontalAlignment="Right"/>
+            <ex:ComBoxGroup x:Name="CB_Group" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5,0,0,0" Grid.Column="1">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectionChanged">
+                        <Command:EventToCommand Command="{Binding CmdComBGroupChange, Mode=OneWay}" CommandParameter="{Binding SelectedItem, ElementName=CB_Group}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </ex:ComBoxGroup>
+            <ex:ButtonExit Margin="3,0,0,0" Grid.Column="2" HorizontalAlignment="Left"/>
+
+        </Grid>
+        <ex:BusyIndicatorErp Grid.Row="1">
+            <ListBox FontFamily="Verdana" FontSize="13" HorizontalAlignment="Stretch"
+				VerticalAlignment="Stretch"  ItemsSource="{Binding DContextMain}">
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <!--WrapPanel的Height除以CheckBox的Height决定每列的行数-->
+                        <!--暂未找到可以设置WrapPanel折行数量的属性-->
+                        <!--Orientation设置纵向或横向排列,横向的话需要用Width设置-->
+                        <toolkit:WrapPanel Height="{Binding WrapPanelHeigh}"  Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <CheckBox IsChecked="{Binding IsSelected, Mode=TwoWay}" Height="16" >
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="Click">
+                                        <Command:EventToCommand Command="{Binding M_GroupUserAssign.AssignItemCheckClick, Mode=OneWay, Source={StaticResource Locator}}" CommandParameter="{Binding}"/>
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </CheckBox>
+                            <TextBlock  Text="{Binding UserCode}"  />
+                            <TextBlock  Text=":" />
+                            <TextBlock  Text="{Binding UserName}"  />
+                            <TextBlock  Text="{Binding Msg}"  Foreground="DarkBlue"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </ex:BusyIndicatorErp>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Height="23">
+            <ex:ButtonAllAssignPanel Margin="5,0,0,0"/>
+            <ex:ButtonAllUnAssignPanel Margin="5,0,0,0"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Center" Orientation="Horizontal">
+            <TextBlock Style="{StaticResource styleTextBlockResult}" Text="{Binding ResultInfoTime}"/>
+            <TextBlock Style="{StaticResource styleTextBlockResult}" Text="{Binding ResultInfoCount}"/>
+            <ex:DataPagerErp/>
+        </StackPanel>
+    </Grid>
+</ex:ChildWindowErp>

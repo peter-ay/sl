@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Columns Frozen="2">
+  <Column  Binding="" Header=""  Fheader="1"/>
+  <Column  Binding="DpCode" Header="部门代码//部門代碼//DeptCode"  Ffunction="Key"/>
+  <Column  Binding="DpName" Header="部门名称//部門名稱//DeptName"  />
+  <Column  Binding="DpProperty" Header="部门属性//部門屬性//DeptProperty"  />
+  <Column  Binding="Incharge" Header="负责人//負責人//In Charge"  />
+  <Column  Binding="Remark" Header="备注//備註//Remarks"  Fwidth="2" />
+  <Column  Binding="Tel" Header="电话//電話//Telephone" />
+  <Column  Binding="F_CX" Header="裁型//裁型//For cutting"  Fbool="1"/>
+  <Column  Binding="DpAddress" Header="地址//地址//Address"  Fwidth="2" />
+  <Column  Binding="PCode" Header="父级代码//父級代碼//ParentCode" />
+</Columns>
+
+
+
+
+

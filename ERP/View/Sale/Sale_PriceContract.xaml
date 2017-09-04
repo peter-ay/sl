@@ -1,0 +1,261 @@
+﻿<ex:UserControlErp 
+x:Class="ERP.View.Sale_PriceContract"
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+xmlns:ignore="http://www.ignore.com" 
+xmlns:ex="clr-namespace:ERP.View"
+xmlns:bhv="clr-namespace:ERP.Behavior" 
+mc:Ignorable="d"
+VerticalAlignment="Top" HorizontalAlignment="Center"           
+DataContext="{Binding Sale_PriceContract, Mode=OneWay, Source={StaticResource Locator}}">
+    <ex:BusyIndicatorErp>
+        <Border Padding="1,1,1,1" Background="{StaticResource DisabledBackgroundBrush}">
+            <Grid Background="{StaticResource FloatingWindowBackgroundBrush}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <!--0-->
+                    <RowDefinition Height="Auto" />
+                    <!--1-->
+                    <RowDefinition Height="Auto" />
+                    <!--2-->
+                    <RowDefinition Height="Auto" />
+                    <!--3-->
+                    <RowDefinition Height="Auto" />
+                    <!--4-->
+                    <RowDefinition Height="Auto" />
+                    <!--5-->
+                    <RowDefinition Height="Auto" />
+                    <!--6-->
+                    <RowDefinition Height="Auto" />
+                    <!--7-->
+                    <RowDefinition Height="Auto" />
+                    <!--8-->
+                    <RowDefinition Height="Auto" />
+                    <!--9-->
+                    <RowDefinition Height="Auto" />
+                    <!--10-->
+                    <RowDefinition Height="Auto" />
+                    <!--11-->
+                    <RowDefinition Height="Auto" />
+                    <!--12-->
+                    <RowDefinition Height="Auto" />
+                    <!--13-->
+                    <RowDefinition Height="Auto" />
+                    <!--14-->
+                    <RowDefinition Height="Auto" />
+                    <!--15-->
+                    <RowDefinition Height="Auto" />
+                    <!--16-->
+                    <RowDefinition Height="Auto" />
+                    <!--17-->
+                    <RowDefinition Height="Auto" />
+                    <!--18-->
+                    <RowDefinition Height="Auto" />
+                    <!--19-->
+                </Grid.RowDefinitions>
+                <!--0Title-->
+                <ex:TitleErp/>
+                <!--1menu-->
+                <!--<ex:MenuErp Grid.Row="1">
+                    <ex:MenuItemFile />
+                    <ex:MenuItemTools />
+                    <ex:MenuItemOthers />
+                </ex:MenuErp>-->
+                <!-- 2button  -->
+                <StackPanel Grid.Row="2" Orientation="Horizontal" Background="{StaticResource DocumentTabNormalBackgroundBrush}" Height="30">
+                    <ex:ButtonNew Margin="4,0"/>
+                    <ex:ButtonSave Margin="4,0"/>
+                    <ex:ButtonEdit Margin="4,0"/>
+                    <ex:ButtonDrop Margin="4,0"/>
+                    <ex:ButtonCheck Margin="4,0"/>
+                    <ex:ButtonUnCheck Margin="4,0"/>
+                    <ex:ButtonPrevious Margin="4,0"/>
+                    <ex:ButtonNext Margin="4,0"/>
+                    <ex:ButtonDelete Margin="4,0"/>
+                    <ex:ButtonExit Margin="4,0"/>
+                </StackPanel>
+                <!-- 3-->
+                <Grid Grid.Row="3" Height="24">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="{Binding UIText[Sale_PriceContract_1]}" Foreground="{StaticResource SelectedBackgroundBrush}" TextAlignment="Left"/>
+                </Grid>
+                <!--4 -->
+                <ex:BillSeparator Grid.Row="4"/>
+                <!--5 -->
+                <Grid Grid.Row="5" Margin="0,0,1,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="24"/>
+                        <RowDefinition Height="24"/>
+                        <RowDefinition Height="24"/>
+                        <RowDefinition Height="0"/>
+                        <RowDefinition Height="24"/>
+                        <RowDefinition Height="24"/>
+                        <RowDefinition Height="24"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="24"/>
+                        <RowDefinition Height="24"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="85" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding UIText[Sale_PriceContract_Priority]}"/>
+                        <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+                            <ex:RadioButtonPCP1 Margin="0,3,0,0"/>
+                            <ex:RadioButtonPCP2 Margin="6,3,0,0"/>
+                            <ex:RadioButtonPCP3 Margin="6,3,0,0"/>
+                            <ex:RadioButtonPCP4 Margin="6,3,0,0"/>
+                        </StackPanel>
+                    </Grid>
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="90" />
+                            <ColumnDefinition Width="160" />
+                            <ColumnDefinition Width="90" />
+                            <ColumnDefinition Width="160" />
+                            <ColumnDefinition Width="90" />
+                            <ColumnDefinition Width="160" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding UIText[ERP_ContractCode]}" Grid.Column="0"/>
+                        <ex:TBBCodeRO Grid.Column="1"/>
+                        <TextBlock Text="{Binding UIText[ERP_BillDate]}" Grid.Column="2"/>
+                        <ex:TBBDateRO Grid.Column="3"/>
+                        <TextBlock Text="{Binding UIText[ERP_StateName]}" Grid.Column="4" />
+                        <ex:TBStateNameUI Grid.Column="5" />
+                    </Grid>
+                    <!--<ex:BillSeparator Grid.Row="3"/>-->
+                    <Grid Grid.Row="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="90" />
+                            <ColumnDefinition Width="160" />
+                            <ColumnDefinition Width="90" />
+                            <ColumnDefinition Width="160" />
+                            <ColumnDefinition Width="90" />
+                            <ColumnDefinition Width="160" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Text="{Binding UIText[ERP_OBCode]}"  Grid.Column="0"  />
+                        <ex:TBOBCode Grid.Column="1" bhv:BhFocusTBox.IsFocused="{Binding IsFocusMain}" TabIndex="0"  />
+                        <TextBlock Text="{Binding UIText[ERP_BegDate]}" Grid.Column="2"  />
+                        <ex:DatePickerBegDate Grid.Column="3"  />
+                        <ex:TBBegDateRO Grid.Column="3"/>
+                        <TextBlock Text="{Binding UIText[ERP_EndDate]}"  Grid.Column="4"  />
+                        <ex:DatePickerEndDate Grid.Column="5" />
+                        <ex:TBEndDateRO Grid.Column="5"/>
+                    </Grid>
+                    <Grid Grid.Row="6">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="90" />
+                            <ColumnDefinition Width="160" />
+                            <ColumnDefinition Width="90" />
+                            <ColumnDefinition Width="160" />
+                            <ColumnDefinition Width="90" />
+                            <ColumnDefinition Width="160" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding UIText[ERP_CusGroup]}" Grid.Column="0" />
+                        <Grid Grid.Column="1"  >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
+                            <ex:TBCusGroup Grid.Column="0"/>
+                            <ex:ButtonHelpCusGroupPC Grid.Column="1"/>
+                        </Grid>
+                        <TextBlock Text="{Binding UIText[ERP_GpName]}" Grid.Column="2"  />
+                        <ex:TBCusGpNameRO Grid.Column="3" />
+                    </Grid>
+                    <Grid Grid.Row="7" Visibility="{Binding IsShowNewGroup}" Height="24">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="90" />
+                            <ColumnDefinition Width="160" />
+                            <ColumnDefinition Width="90" />
+                            <ColumnDefinition Width="160" />
+                            <ColumnDefinition Width="90" />
+                            <ColumnDefinition Width="160" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding UIText[ERP_OrNewCusGroup]}" Grid.Column="0" />
+                        <ex:TextBoxErp  Grid.Column="1" Text="{Binding GpCodeNew, Mode=TwoWay}" />
+                        <TextBlock Text="{Binding UIText[ERP_GpName]}" Grid.Column="2"  />
+                        <ex:TextBoxErp Grid.Column="3" Text="{Binding DContextMain.GpNameNew, Mode=TwoWay}" />
+                    </Grid>
+                    <Grid Grid.Row="8">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="90" />
+                            <ColumnDefinition Width="660" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding UIText[ERP_Remark]}" Grid.Column="0"  />
+                        <ex:TBRemark Grid.Column="1" />
+                    </Grid>
+                </Grid>
+                <!--6 -->
+                <Canvas Grid.Row="6" Height="24">
+                    <TextBlock Text="{Binding UIText[Sale_PriceContract_2]}" Foreground="{StaticResource SelectedBackgroundBrush}" Canvas.Top="9"/>
+                </Canvas>
+                <!-- 7-->
+                <ex:BillSeparator Grid.Row="7"/>
+                <!--8 -->
+                <Grid Grid.Row="8">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="24" />
+                        <RowDefinition Height="28" />
+                        <RowDefinition Height="24" />
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="1"  Background="{StaticResource DocumentTabNormalBackgroundBrush}">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <ex:ButtonEditPriceContractCusCode Margin="0" />
+                            <ex:ButtonEditPriceContractLens  Margin="10,0,0,0" />
+                            <ex:ButtonEditPriceContractProCost  Margin="10,0,0,0" />
+                            <ex:ButtonEditPriceContractFrame  Margin="10,0,0,0" />
+                            <ex:ButtonEditPriceContractFrameSet Margin="10,0,0,0" />
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+                <!-- 9-->
+                <!-- 10-->
+                <!-- 11-->
+                <!-- 12-->
+                <!-- 13-->
+                <!-- 14-->
+                <!-- 15-->
+                <!-- 16-->
+                <!-- 17-->
+                <!-- 18-->
+                <!-- 19-->
+                <!-- 20-->
+                <ex:BillBottom  Grid.Row="18"/>
+                <!--<Grid Grid.Row="19"  Background="{StaticResource DocumentTabNormalBackgroundBrush}" Height="28">
+                    <Grid HorizontalAlignment="Right">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="55" />
+                            <ColumnDefinition Width="92" />
+                            <ColumnDefinition Width="55" />
+                            <ColumnDefinition Width="92" />
+                            <ColumnDefinition Width="55" />
+                            <ColumnDefinition Width="92" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding UIText[ERP_Canceler]}" Grid.Column="0"/>
+                        <ex:TBCancelerRO Grid.Column="1"/>
+                        <TextBlock Text="{Binding UIText[ERP_Checker]}" Grid.Column="2"/>
+                        <ex:TBCheckerRO Grid.Column="3"/>
+                        <TextBlock Text="{Binding UIText[ERP_Maker]}" Grid.Column="4"/>
+                        <ex:TBMakerRO Grid.Column="5" />
+                    </Grid>
+                </Grid>-->
+                <ex:TBFocusCycle />
+                <ex:TBReadOnlyMain x:Name="TB_Falg_RO"/>
+                <ex:TBReadOnlyEdit x:Name="TB_Falg_ROEdit"/>
+            </Grid>
+        </Border>
+    </ex:BusyIndicatorErp>
+</ex:UserControlErp>

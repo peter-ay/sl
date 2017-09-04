@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Columns Frozen="2">
+  <Column  Binding=""   Header="" Fheader="1"/>
+  <Column Binding="PersonCode" Header="职员代码//職員代碼//Employee Code" Ffunction="Key"/>
+  <Column Binding="PersonName" Header="职员名称//職員名稱//Employee Name" />
+  <Column Binding="DpCodeList" Header="所属部门//所屬部門//DeptCode" />
+  <Column Binding="PersonProperty" Header="职员说明//職員說明//Designation" />
+</Columns>
+
+
+
+
+
+
+

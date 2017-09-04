@@ -1,0 +1,86 @@
+﻿<ex:ChildWindowErp
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"
+xmlns:ex="clr-namespace:ERP.View"
+xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:Command="clr-namespace:GalaSoft.MvvmLight.Command;assembly=GalaSoft.MvvmLight.Extras" x:Name="childWindowErp"
+x:Class="ERP.View.B_Supplier_Default_Lens" HasCloseButton="True"
+Margin="10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+DataContext="{Binding B_Supplier_Default_Lens, Mode=OneWay, Source={StaticResource Locator}}" >
+    <Grid x:Name="LayoutRoot" Background="{StaticResource FloatingWindowBackgroundBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="24"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="85"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="85"/>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="{Binding UIText[ERP_LensCode]}"/>
+            <ex:TextBoxKeyCode Grid.Column="1"/>
+            <TextBlock Text="{Binding UIText[ERP_LensName]}" Grid.Column="2"/>
+            <ex:TextBoxKeyName Grid.Column="3"/>
+            <TextBlock Text="{Binding UIText[ERP_Assign]}" Grid.Column="4" VerticalAlignment="Center" Margin="10,0,0,0"/>
+            <StackPanel Orientation="Horizontal"  Grid.Column="5" >
+                <ex:RadioButtonIncludeALL IsChecked="{Binding IsIncludeAll, Mode=TwoWay}"/>
+                <ex:RadioButtonInclude/>
+                <ex:RadioButtonUnclude/>
+            </StackPanel>
+            <ex:ButtonSearch Grid.Column="6" HorizontalAlignment="Right" Margin="10,0,0,0"/>
+            <ex:ButtonExit Grid.Column="7" HorizontalAlignment="Right" Margin="10,0,0,0"/>
+        </Grid>
+
+        <ex:BusyIndicatorErp Grid.Row="1">
+            <ListBox FontFamily="Verdana" FontSize="13" HorizontalAlignment="Stretch"
+				VerticalAlignment="Stretch"  ItemsSource="{Binding DContextList}">
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <!--WrapPanel的Height除以CheckBox的Height决定每列的行数-->
+                        <!--暂未找到可以设置WrapPanel折行数量的属性-->
+                        <!--Orientation设置纵向或横向排列,横向的话需要用Width设置-->
+                        <toolkit:WrapPanel Height="{Binding WrapPanelHeigh}"  Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <CheckBox IsChecked="{Binding IsSelected, Mode=TwoWay}" Height="16" >
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="Click">
+                                        <Command:EventToCommand Command="{Binding B_Supplier_Default_Lens.CmdLensCodeCheckClick, Mode=OneWay, Source={StaticResource Locator}}" CommandParameter="{Binding}"/>
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </CheckBox>
+                            <TextBlock  Text="{Binding LensCode}"  />
+                            <TextBlock  Text=":" />
+                            <TextBlock  Text="{Binding LensName}"  />
+                            <TextBlock  Text="{Binding Msg}"  Foreground="DarkBlue"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </ex:BusyIndicatorErp>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Height="23">
+            <ex:ButtonExport/>
+            <ex:ButtonImport Margin="5,0,0,0" />
+            <ex:ButtonAllAssignPanel Margin="10,0,0,0"/>
+            <ex:ButtonAllUnAssignPanel Margin="5,0,0,0"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Center" Orientation="Horizontal">
+            <TextBlock Style="{StaticResource styleTextBlockResult}" Text="{Binding ResultInfoTime}"/>
+            <TextBlock Style="{StaticResource styleTextBlockResult}" Text="{Binding ResultInfoCount}"/>
+            <ex:DataPagerErp/>
+        </StackPanel>
+    </Grid>
+</ex:ChildWindowErp>

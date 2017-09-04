@@ -1,0 +1,93 @@
+﻿<ex:ChildWindowErp 
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+  xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls" 
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+  x:Class="ERP.View.Base_ProcessControl" 
+                    xmlns:ex="clr-namespace:ERP.View"
+                    xmlns:bhv="clr-namespace:ERP.Behavior"
+                 mc:Ignorable="d">
+    <ex:ChildWindowErp.DataContext>
+        <Binding Mode="OneWay" Path="Base_ProcessControl" Source="{StaticResource Locator}"/>
+    </ex:ChildWindowErp.DataContext>
+    <ex:BusyIndicatorErp>
+        <Grid x:Name="LayoutRoot" Margin="0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackPanel  HorizontalAlignment="Stretch" Orientation="Horizontal" VerticalAlignment="Top" Background="{StaticResource DocumentTabNormalBackgroundBrush}" Margin="0">
+                <ex:ButtonNew Margin="4,2"/>
+                <ex:ButtonSave Margin="4,2"/>
+                <ex:ButtonEdit Margin="4,2"/>
+                <ex:ButtonDelete Margin="4,2"/>
+                <ex:ButtonDrop Margin="4,2"/>
+                <ex:ButtonPrevious Margin="4,2"/>
+                <ex:ButtonNext Margin="4,2"/>
+                <ex:ButtonExit Margin="4,2"/>
+            </StackPanel>
+            <Grid Background="{StaticResource FloatingWindowBackgroundBrush}"  Grid.Row="1" Margin="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80"/>
+                    <ColumnDefinition  Width="160"/>
+                    <ColumnDefinition  Width="80"/>
+                    <ColumnDefinition  Width="160"/>
+                    <ColumnDefinition  Width="80"/>
+                    <ColumnDefinition  Width="160"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="27"/>
+                    <RowDefinition Height="24"/>
+                    <RowDefinition Height="24"/>
+                    <RowDefinition Height="24"/>
+                    <RowDefinition Height="24"/>
+                    <RowDefinition Height="24"/>
+                </Grid.RowDefinitions>
+                <ex:TextBoxErp Text="{Binding DContextMain.SubID,Mode=TwoWay, ValidatesOnNotifyDataErrors=False}" Visibility="Collapsed"/>
+                <TextBlock Text="鏡種代碼:"    />
+                <ex:TBLensCode  IsReadOnly="{Binding IsReadOnlyMain}" Grid.Column="1"  x:Name="TB_Falg_RO" TabIndex="0" bhv:BhFocusTBox.IsFocused="{Binding IsFocusMain}"/>
+                <TextBlock Text="彩邊:"    Grid.Column="2"/>
+                <ex:TextBoxErp  IsReadOnly="{Binding IsReadOnly, ElementName=TB_Falg_RO}"   Text="{Binding CaiBian, Mode=TwoWay, ValidatesOnNotifyDataErrors=False}" Grid.Column="3"  MaxLength="30" TabIndex="1"/>
+                <TextBlock Text="茶色:"    Grid.Column="4"/>
+                <ex:TextBoxErp   IsReadOnly="{Binding IsReadOnly, ElementName=TB_Falg_RO}"   Text="{Binding ChaSe, Mode=TwoWay, ValidatesOnNotifyDataErrors=False}"  MaxLength="30" TabIndex="2" Grid.Column="5" />
+
+                <TextBlock Text="車邊:"    Grid.Row="1"/>
+                <ex:TextBoxErp   IsReadOnly="{Binding IsReadOnly, ElementName=TB_Falg_RO}"   Text="{Binding CheBian, Mode=TwoWay, ValidatesOnNotifyDataErrors=False}"  MaxLength="30" TabIndex="3" Grid.Row="1" Grid.Column="1" />
+                <TextBlock Text="刀邊:"    Grid.Row="1" Grid.Column="2"/>
+                <ex:TextBoxErp   IsReadOnly="{Binding IsReadOnly, ElementName=TB_Falg_RO}"   Text="{Binding DaoBian, Mode=TwoWay, ValidatesOnNotifyDataErrors=False}"  MaxLength="30" TabIndex="4" Grid.Row="1" Grid.Column="3" />
+                <TextBlock Text="鏡架:"    Grid.Row="1" Grid.Column="4"/>
+                <ex:TextBoxErp   IsReadOnly="{Binding IsReadOnly, ElementName=TB_Falg_RO}"   Text="{Binding JingJia, Mode=TwoWay, ValidatesOnNotifyDataErrors=False}"  MaxLength="30" TabIndex="5" Grid.Row="1" Grid.Column="5" />
+
+                <TextBlock Text="焗色:"    Grid.Row="2"/>
+                <ex:TextBoxErp   IsReadOnly="{Binding IsReadOnly, ElementName=TB_Falg_RO}"   Text="{Binding JuSe, Mode=TwoWay, ValidatesOnNotifyDataErrors=False}"  MaxLength="30" TabIndex="6" Grid.Row="2" Grid.Column="1" />
+                <TextBlock Text="開坑:"    Grid.Row="2" Grid.Column="2"/>
+                <ex:TextBoxErp   IsReadOnly="{Binding IsReadOnly, ElementName=TB_Falg_RO}"   Text="{Binding KaiKeng, Mode=TwoWay, ValidatesOnNotifyDataErrors=False}"  MaxLength="30" TabIndex="7" Grid.Row="2" Grid.Column="3" />
+                <TextBlock Text="面湾:"    Grid.Row="2" Grid.Column="4"/>
+                <ex:TextBoxErp   IsReadOnly="{Binding IsReadOnly, ElementName=TB_Falg_RO}"   Text="{Binding MianWan, Mode=TwoWay, ValidatesOnNotifyDataErrors=False}"  MaxLength="30" TabIndex="8" Grid.Row="2" Grid.Column="5" />
+
+                <TextBlock Text="拋光:"    Grid.Row="3"/>
+                <ex:TextBoxErp   IsReadOnly="{Binding IsReadOnly, ElementName=TB_Falg_RO}"   Text="{Binding PaoGuang, Mode=TwoWay, ValidatesOnNotifyDataErrors=False}"  MaxLength="30" TabIndex="9" Grid.Row="3" Grid.Column="1" />
+                <TextBlock Text="染色:"    Grid.Row="3" Grid.Column="2"/>
+                <ex:TextBoxErp   IsReadOnly="{Binding IsReadOnly, ElementName=TB_Falg_RO}"   Text="{Binding RanSe, Mode=TwoWay, ValidatesOnNotifyDataErrors=False}"  MaxLength="30" TabIndex="10" Grid.Row="3" Grid.Column="3" />
+                <TextBlock Text="水銀:"    Grid.Row="3" Grid.Column="4"/>
+                <ex:TextBoxErp   IsReadOnly="{Binding IsReadOnly, ElementName=TB_Falg_RO}"   Text="{Binding ShuiYin, Mode=TwoWay, ValidatesOnNotifyDataErrors=False}"  MaxLength="30" TabIndex="11" Grid.Row="3" Grid.Column="5" />
+
+                <TextBlock Text="鑽孔:"    Grid.Row="4"/>
+                <ex:TextBoxErp   IsReadOnly="{Binding IsReadOnly, ElementName=TB_Falg_RO}"   Text="{Binding ZuanKong, Mode=TwoWay, ValidatesOnNotifyDataErrors=False}"  MaxLength="30" TabIndex="12" Grid.Row="4" Grid.Column="1" />
+                <TextBlock Text="其他加工:"    Grid.Row="4" Grid.Column="2"/>
+                <ex:TextBoxErp   IsReadOnly="{Binding IsReadOnly, ElementName=TB_Falg_RO}"   Text="{Binding OtherProcess, Mode=TwoWay, ValidatesOnNotifyDataErrors=False}"  MaxLength="30" TabIndex="13" Grid.Row="4" Grid.Column="3" />
+                <TextBlock Text="額外加工:"    Grid.Row="4" Grid.Column="4"/>
+                <ex:TextBoxErp   IsReadOnly="{Binding IsReadOnly, ElementName=TB_Falg_RO}"   Text="{Binding ExtraProcess, Mode=TwoWay, ValidatesOnNotifyDataErrors=False}"  MaxLength="30" TabIndex="14" Grid.Row="4" Grid.Column="5" />
+
+                <TextBlock Text="加硬:"    Grid.Row="5"/>
+                <CheckBox VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="5" Grid.Column="1" Padding="0" Margin="0,3,0,0" IsChecked="{Binding Hardened, Mode=TwoWay, ValidatesOnNotifyDataErrors=False}"  TabIndex="15"  />
+                <TextBlock Text="UV:"    Grid.Row="5" Grid.Column="2"/>
+                <CheckBox VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="5" Grid.Column="3" Padding="0" Margin="0,3,0,0" IsChecked="{Binding UV, Mode=TwoWay, ValidatesOnNotifyDataErrors=False}"  TabIndex="16"  />
+                <TextBlock Text="強制標誌:"    Grid.Row="5" Grid.Column="4"/>
+                <CheckBox VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="5" Grid.Column="5" Padding="0" Margin="0,3,0,0" IsChecked="{Binding IsForce, Mode=TwoWay, ValidatesOnNotifyDataErrors=False}"  TabIndex="17"  />
+            </Grid>
+        </Grid>
+    </ex:BusyIndicatorErp>
+</ex:ChildWindowErp>

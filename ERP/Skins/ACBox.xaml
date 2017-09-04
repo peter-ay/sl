@@ -1,0 +1,561 @@
+﻿<ResourceDictionary
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+xmlns:samples="clr-namespace:ERP.Common"
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+xmlns:data="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data"
+xmlns:input="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input" 
+xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit" >
+    <Style x:Key="ACTemplateCusCode" TargetType="input:AutoCompleteBox">
+        <Setter Property="Background" Value="#FF1F3B53"/>
+        <Setter Property="Height" Value="23"></Setter>
+        <Setter Property="MinimumPrefixLength" Value="1"></Setter>
+        <Setter Property="BorderBrush">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFA3AEB9" Offset="0"/>
+                    <GradientStop Color="#FF8399A9" Offset="0.375"/>
+                    <GradientStop Color="#FF718597" Offset="0.375"/>
+                    <GradientStop Color="#FF617584" Offset="1"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="input:AutoCompleteBox">
+                    <Grid Margin="0">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="PopupStates">
+                                <VisualStateGroup.Transitions>
+                                    <VisualTransition GeneratedDuration="0:0:0.2" To="PopupOpened" />
+                                    <VisualTransition GeneratedDuration="0:0:0.5" To="PopupClosed" />
+                                </VisualStateGroup.Transitions>
+                                <VisualState x:Name="PopupOpened">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="PopupBorder" Storyboard.TargetProperty="Opacity" To="1.0" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="PopupClosed">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="PopupBorder" Storyboard.TargetProperty="Opacity" To="0.0" />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <TextBox  x:Name="Text" Style="{TemplateBinding TextBoxStyle}" Margin="0" TextAlignment="Left" Padding="1,4,1,1" MaxLength="50"/>
+                        <Popup x:Name="Popup">
+                            <Border x:Name="PopupBorder" HorizontalAlignment="Stretch" Opacity="0.0" BorderThickness="0" CornerRadius="3">
+                                <Border.RenderTransform>
+                                    <TranslateTransform X="2" Y="2" />
+                                </Border.RenderTransform>
+                                <Border.Background>
+                                    <SolidColorBrush Color="#11000000" />
+                                </Border.Background>
+                                <Border HorizontalAlignment="Stretch" BorderThickness="0" CornerRadius="3">
+                                    <Border.Background>
+                                        <SolidColorBrush Color="#11000000" />
+                                    </Border.Background>
+                                    <Border.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform />
+                                            <SkewTransform />
+                                            <RotateTransform />
+                                            <TranslateTransform X="-1" Y="-1" />
+                                        </TransformGroup>
+                                    </Border.RenderTransform>
+                                    <Border HorizontalAlignment="Stretch" Opacity="1.0" Padding="1" BorderThickness="1" BorderBrush="{TemplateBinding BorderBrush}" CornerRadius="3">
+                                        <Border.RenderTransform>
+                                            <TransformGroup>
+                                                <ScaleTransform />
+                                                <SkewTransform />
+                                                <RotateTransform />
+                                                <TranslateTransform X="-2" Y="-2" />
+                                            </TransformGroup>
+                                        </Border.RenderTransform>
+                                        <Border.Background>
+                                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                <GradientStop Color="#FFDDDDDD" Offset="0"/>
+                                                <GradientStop Color="#AADDDDDD" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Border.Background>
+                                        <samples:ComDataGridSelectionAdapter Width="710"
+                                                x:Name="SelectionAdapter" 
+                                                AutoGenerateColumns="False">
+                                            <samples:ComDataGridSelectionAdapter.Columns>
+                                                <data:DataGridTextColumn Header="" FontSize="{StaticResource FSV}" FontFamily="{StaticResource FFV}"  FontWeight="Normal" Foreground="#CC000000" Binding="{Binding CusCode}" />
+                                                <data:DataGridTextColumn Header="" FontSize="{StaticResource FSV}" FontFamily="{StaticResource FFV}" FontWeight="Normal" Binding="{Binding CusName}" />
+                                                <data:DataGridTextColumn Header="" FontSize="{StaticResource FSV}" FontFamily="{StaticResource FFV}" FontWeight="Normal" Binding="{Binding CusAddress}" />
+                                            </samples:ComDataGridSelectionAdapter.Columns>
+                                        </samples:ComDataGridSelectionAdapter>
+                                    </Border>
+                                </Border>
+                            </Border>
+                        </Popup>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ACTemplateSpCode" TargetType="input:AutoCompleteBox">
+        <Setter Property="Background" Value="#FF1F3B53"/>
+        <Setter Property="Height" Value="23"></Setter>
+        <Setter Property="MinimumPrefixLength" Value="1"></Setter>
+        <Setter Property="BorderBrush">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFA3AEB9" Offset="0"/>
+                    <GradientStop Color="#FF8399A9" Offset="0.375"/>
+                    <GradientStop Color="#FF718597" Offset="0.375"/>
+                    <GradientStop Color="#FF617584" Offset="1"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="input:AutoCompleteBox">
+                    <Grid Margin="0">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="PopupStates">
+                                <VisualStateGroup.Transitions>
+                                    <VisualTransition GeneratedDuration="0:0:0.2" To="PopupOpened" />
+                                    <VisualTransition GeneratedDuration="0:0:0.5" To="PopupClosed" />
+                                </VisualStateGroup.Transitions>
+                                <VisualState x:Name="PopupOpened">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="PopupBorder" Storyboard.TargetProperty="Opacity" To="1.0" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="PopupClosed">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="PopupBorder" Storyboard.TargetProperty="Opacity" To="0.0" />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <TextBox  x:Name="Text" Style="{TemplateBinding TextBoxStyle}" Margin="0" TextAlignment="Left" Padding="1,4,1,1" MaxLength="50"/>
+                        <Popup x:Name="Popup">
+                            <Border x:Name="PopupBorder" HorizontalAlignment="Stretch" Opacity="0.0" BorderThickness="0" CornerRadius="3">
+                                <Border.RenderTransform>
+                                    <TranslateTransform X="2" Y="2" />
+                                </Border.RenderTransform>
+                                <Border.Background>
+                                    <SolidColorBrush Color="#11000000" />
+                                </Border.Background>
+                                <Border HorizontalAlignment="Stretch" BorderThickness="0" CornerRadius="3">
+                                    <Border.Background>
+                                        <SolidColorBrush Color="#11000000" />
+                                    </Border.Background>
+                                    <Border.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform />
+                                            <SkewTransform />
+                                            <RotateTransform />
+                                            <TranslateTransform X="-1" Y="-1" />
+                                        </TransformGroup>
+                                    </Border.RenderTransform>
+                                    <Border HorizontalAlignment="Stretch" Opacity="1.0" Padding="1" BorderThickness="1" BorderBrush="{TemplateBinding BorderBrush}" CornerRadius="3">
+                                        <Border.RenderTransform>
+                                            <TransformGroup>
+                                                <ScaleTransform />
+                                                <SkewTransform />
+                                                <RotateTransform />
+                                                <TranslateTransform X="-2" Y="-2" />
+                                            </TransformGroup>
+                                        </Border.RenderTransform>
+                                        <Border.Background>
+                                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                <GradientStop Color="#FFDDDDDD" Offset="0"/>
+                                                <GradientStop Color="#AADDDDDD" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Border.Background>
+                                        <samples:ComDataGridSelectionAdapter Width="350"
+                                                x:Name="SelectionAdapter" 
+                                                AutoGenerateColumns="False">
+                                            <samples:ComDataGridSelectionAdapter.Columns>
+                                                <data:DataGridTextColumn Header="" FontSize="{StaticResource FSV}" FontFamily="{StaticResource FFV}"  FontWeight="Normal" Foreground="#CC000000" Binding="{Binding SpCode}" />
+                                                <data:DataGridTextColumn Header="" FontSize="{StaticResource FSV}" FontFamily="{StaticResource FFV}" FontWeight="Normal" Binding="{Binding SpName}" />
+                                            </samples:ComDataGridSelectionAdapter.Columns>
+                                        </samples:ComDataGridSelectionAdapter>
+                                    </Border>
+                                </Border>
+                            </Border>
+                        </Popup>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ACTemplateLensCode" TargetType="input:AutoCompleteBox">
+        <Setter Property="Background" Value="#FF1F3B53"/>
+        <Setter Property="Height" Value="23"></Setter>
+        <Setter Property="MinimumPrefixLength" Value="1"></Setter>
+        <Setter Property="BorderBrush">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFA3AEB9" Offset="0"/>
+                    <GradientStop Color="#FF8399A9" Offset="0.375"/>
+                    <GradientStop Color="#FF718597" Offset="0.375"/>
+                    <GradientStop Color="#FF617584" Offset="1"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="input:AutoCompleteBox">
+                    <Grid Margin="0">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="PopupStates">
+                                <VisualStateGroup.Transitions>
+                                    <VisualTransition GeneratedDuration="0:0:0.2" To="PopupOpened" />
+                                    <VisualTransition GeneratedDuration="0:0:0.5" To="PopupClosed" />
+                                </VisualStateGroup.Transitions>
+                                <VisualState x:Name="PopupOpened">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="PopupBorder" Storyboard.TargetProperty="Opacity" To="1.0" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="PopupClosed">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="PopupBorder" Storyboard.TargetProperty="Opacity" To="0.0" />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <TextBox  x:Name="Text" Style="{TemplateBinding TextBoxStyle}" Margin="0" TextAlignment="Left" Padding="1,4,1,1" MaxLength="50"/>
+                        <Popup x:Name="Popup">
+                            <Border x:Name="PopupBorder" HorizontalAlignment="Stretch" Opacity="0.0" BorderThickness="0" CornerRadius="3">
+                                <Border.RenderTransform>
+                                    <TranslateTransform X="2" Y="2" />
+                                </Border.RenderTransform>
+                                <Border.Background>
+                                    <SolidColorBrush Color="#11000000" />
+                                </Border.Background>
+                                <Border HorizontalAlignment="Stretch" BorderThickness="0" CornerRadius="3">
+                                    <Border.Background>
+                                        <SolidColorBrush Color="#11000000" />
+                                    </Border.Background>
+                                    <Border.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform />
+                                            <SkewTransform />
+                                            <RotateTransform />
+                                            <TranslateTransform X="-1" Y="-1" />
+                                        </TransformGroup>
+                                    </Border.RenderTransform>
+                                    <Border HorizontalAlignment="Stretch" Opacity="1.0" Padding="1" BorderThickness="1" BorderBrush="{TemplateBinding BorderBrush}" CornerRadius="3">
+                                        <Border.RenderTransform>
+                                            <TransformGroup>
+                                                <ScaleTransform />
+                                                <SkewTransform />
+                                                <RotateTransform />
+                                                <TranslateTransform X="-2" Y="-2" />
+                                            </TransformGroup>
+                                        </Border.RenderTransform>
+                                        <Border.Background>
+                                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                <GradientStop Color="#FFDDDDDD" Offset="0"/>
+                                                <GradientStop Color="#AADDDDDD" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Border.Background>
+                                        <samples:ComDataGridSelectionAdapter Width="803"
+                                                x:Name="SelectionAdapter" 
+                                                AutoGenerateColumns="False"
+                                                >
+                                            <samples:ComDataGridSelectionAdapter.Columns>
+                                                <data:DataGridTextColumn Header="" FontSize="{StaticResource FSV}" FontFamily="{StaticResource FFV}"  FontWeight="Normal" Foreground="#CC000000" Binding="{Binding LensCode}" />
+                                                <data:DataGridTextColumn Header="SPH1" FontSize="{StaticResource FSV}" FontFamily="{StaticResource FFV}" FontWeight="Normal" Binding="{Binding SPH1}" />
+                                                <data:DataGridTextColumn Header="SPH2" FontSize="{StaticResource FSV}" FontFamily="{StaticResource FFV}" FontWeight="Normal" Binding="{Binding SPH2}" />
+                                                <data:DataGridTextColumn Header="CYL1" FontSize="{StaticResource FSV}" FontFamily="{StaticResource FFV}" FontWeight="Normal" Binding="{Binding CYL1}" />
+                                                <data:DataGridTextColumn Header="CYL2" FontSize="{StaticResource FSV}" FontFamily="{StaticResource FFV}" FontWeight="Normal" Binding="{Binding CYL2}" />
+                                                <data:DataGridTextColumn Header="ADD1" FontSize="{StaticResource FSV}" FontFamily="{StaticResource FFV}" FontWeight="Normal" Binding="{Binding X_ADD1}" />
+                                                <data:DataGridTextColumn Header="ADD2" FontSize="{StaticResource FSV}" FontFamily="{StaticResource FFV}" FontWeight="Normal" Binding="{Binding X_ADD2}" />
+                                                <data:DataGridTextColumn Header="" FontSize="{StaticResource FSV}" FontFamily="{StaticResource FFV}" FontWeight="Normal" Binding="{Binding LensName}" />
+                                            </samples:ComDataGridSelectionAdapter.Columns>
+                                        </samples:ComDataGridSelectionAdapter>
+                                    </Border>
+                                </Border>
+                            </Border>
+                        </Popup>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ACTemplateFrameCode" TargetType="input:AutoCompleteBox">
+        <Setter Property="Background" Value="#FF1F3B53"/>
+        <Setter Property="Height" Value="23"></Setter>
+        <Setter Property="MinimumPrefixLength" Value="1"></Setter>
+        <Setter Property="BorderBrush">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFA3AEB9" Offset="0"/>
+                    <GradientStop Color="#FF8399A9" Offset="0.375"/>
+                    <GradientStop Color="#FF718597" Offset="0.375"/>
+                    <GradientStop Color="#FF617584" Offset="1"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="input:AutoCompleteBox">
+                    <Grid Margin="0">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="PopupStates">
+                                <VisualStateGroup.Transitions>
+                                    <VisualTransition GeneratedDuration="0:0:0.2" To="PopupOpened" />
+                                    <VisualTransition GeneratedDuration="0:0:0.5" To="PopupClosed" />
+                                </VisualStateGroup.Transitions>
+                                <VisualState x:Name="PopupOpened">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="PopupBorder" Storyboard.TargetProperty="Opacity" To="1.0" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="PopupClosed">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="PopupBorder" Storyboard.TargetProperty="Opacity" To="0.0" />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <TextBox  x:Name="Text" Style="{TemplateBinding TextBoxStyle}" Margin="0" TextAlignment="Left" Padding="1,4,1,1" MaxLength="50"/>
+                        <Popup x:Name="Popup">
+                            <Border x:Name="PopupBorder" HorizontalAlignment="Stretch" Opacity="0.0" BorderThickness="0" CornerRadius="3">
+                                <Border.RenderTransform>
+                                    <TranslateTransform X="2" Y="2" />
+                                </Border.RenderTransform>
+                                <Border.Background>
+                                    <SolidColorBrush Color="#11000000" />
+                                </Border.Background>
+                                <Border HorizontalAlignment="Stretch" BorderThickness="0" CornerRadius="3">
+                                    <Border.Background>
+                                        <SolidColorBrush Color="#11000000" />
+                                    </Border.Background>
+                                    <Border.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform />
+                                            <SkewTransform />
+                                            <RotateTransform />
+                                            <TranslateTransform X="-1" Y="-1" />
+                                        </TransformGroup>
+                                    </Border.RenderTransform>
+                                    <Border HorizontalAlignment="Stretch" Opacity="1.0" Padding="1" BorderThickness="1" BorderBrush="{TemplateBinding BorderBrush}" CornerRadius="3">
+                                        <Border.RenderTransform>
+                                            <TransformGroup>
+                                                <ScaleTransform />
+                                                <SkewTransform />
+                                                <RotateTransform />
+                                                <TranslateTransform X="-2" Y="-2" />
+                                            </TransformGroup>
+                                        </Border.RenderTransform>
+                                        <Border.Background>
+                                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                <GradientStop Color="#FFDDDDDD" Offset="0"/>
+                                                <GradientStop Color="#AADDDDDD" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Border.Background>
+                                        <samples:ComDataGridSelectionAdapter Width="503"
+                                                x:Name="SelectionAdapter" 
+                                                AutoGenerateColumns="False"
+                                                >
+                                            <samples:ComDataGridSelectionAdapter.Columns>
+                                                <data:DataGridTextColumn Header="" FontSize="{StaticResource FSV}" FontFamily="{StaticResource FFV}"  FontWeight="Normal" Foreground="#CC000000" Binding="{Binding FrameCode}" />
+                                                <data:DataGridTextColumn Header="" FontSize="{StaticResource FSV}" FontFamily="{StaticResource FFV}" FontWeight="Normal" Binding="{Binding FrameName}" />
+                                            </samples:ComDataGridSelectionAdapter.Columns>
+                                        </samples:ComDataGridSelectionAdapter>
+                                    </Border>
+                                </Border>
+                            </Border>
+                        </Popup>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <DataTemplate x:Key="ACDataTemplateNotes">
+        <Border BorderThickness="1" BorderBrush="DimGray" Width="240">
+            <Grid >
+                <StackPanel Orientation="Horizontal" >
+                    <TextBlock Width="auto" Text="{Binding KeyCode}" FontSize="{StaticResource FSV}" FontFamily="{StaticResource FFV}"  />
+                    <TextBlock Width="auto" Text=": " FontSize="{StaticResource FSV}" FontFamily="{StaticResource FFV}"  />
+                    <TextBlock Width="auto" Text="{Binding KeyName}" FontSize="{StaticResource FSV}" FontFamily="{StaticResource FFV}"  />
+                </StackPanel>
+            </Grid>
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate x:Key="ACDataTemplateProcess">
+        <Border BorderThickness="1" BorderBrush="DimGray" Width="214">
+            <Grid >
+                <StackPanel Orientation="Horizontal" >
+                    <TextBlock Width="auto" Text="{Binding ProCode}" FontSize="{StaticResource FSV}" FontFamily="{StaticResource FFV}"  />
+                    <TextBlock Width="auto" Text=": " FontSize="{StaticResource FSV}" FontFamily="{StaticResource FFV}"  />
+                    <TextBlock Width="auto" Text="{Binding ProName}" FontSize="{StaticResource FSV}" FontFamily="{StaticResource FFV}"  />
+                </StackPanel>
+            </Grid>
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate x:Key="ACDataTemplateDataBase">
+        <Border BorderThickness="1" BorderBrush="DimGray" Width="414">
+            <Grid >
+                <StackPanel Orientation="Horizontal" >
+                    <TextBlock Width="auto" Text="{Binding DBCode}" FontSize="{StaticResource FSV}" FontFamily="{StaticResource FFV}"  />
+                    <TextBlock Width="auto" Text=": " FontSize="{StaticResource FSV}" FontFamily="{StaticResource FFV}"  />
+                    <TextBlock Width="auto" Text="{Binding DBNameUI}" FontSize="{StaticResource FSV}" FontFamily="{StaticResource FFV}"  />
+                </StackPanel>
+            </Grid>
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate x:Key="ACDataTemplateDpCode">
+        <Border BorderThickness="1" BorderBrush="DimGray">
+            <Grid >
+                <StackPanel Orientation="Horizontal" >
+                    <TextBlock Width="auto" Text="{Binding DpCode}" FontSize="{StaticResource FSV}" FontFamily="{StaticResource FFV}"  />
+                    <TextBlock Width="auto" Text=": " FontSize="{StaticResource FSV}" FontFamily="{StaticResource FFV}"  />
+                    <TextBlock Width="auto" Text="{Binding DpName}" FontSize="{StaticResource FSV}" FontFamily="{StaticResource FFV}"  />
+                </StackPanel>
+            </Grid>
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate x:Key="ACDataTemplateSpCode">
+        <Border BorderThickness="1" BorderBrush="DimGray">
+            <Grid >
+                <StackPanel Orientation="Horizontal" >
+                    <TextBlock Width="auto" Text="{Binding SpCode}" FontSize="{StaticResource FSV}" FontFamily="{StaticResource FFV}"  />
+                    <TextBlock Width="auto" Text=": " FontSize="{StaticResource FSV}" FontFamily="{StaticResource FFV}"  />
+                    <TextBlock Width="auto" Text="{Binding SpName}" FontSize="{StaticResource FSV}" FontFamily="{StaticResource FFV}"  />
+                </StackPanel>
+            </Grid>
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate x:Key="ACDataTemplateAreaCode">
+        <Border BorderThickness="1" BorderBrush="DimGray">
+            <Grid >
+                <StackPanel Orientation="Horizontal" >
+                    <TextBlock Width="auto" Text="{Binding AreaCode}" FontSize="{StaticResource FSV}" FontFamily="{StaticResource FFV}"  />
+                    <TextBlock Width="auto" Text=": " FontSize="{StaticResource FSV}" FontFamily="{StaticResource FFV}"  />
+                    <TextBlock Width="auto" Text="{Binding AreaName}" FontSize="{StaticResource FSV}" FontFamily="{StaticResource FFV}"  />
+                </StackPanel>
+            </Grid>
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate x:Key="ACDataTemplatePersonCode">
+        <Border BorderThickness="1" BorderBrush="DimGray">
+            <Grid >
+                <StackPanel Orientation="Horizontal" >
+                    <TextBlock Width="auto" Text="{Binding PersonCode}" FontSize="{StaticResource FSV}" FontFamily="{StaticResource FFV}"  />
+                    <TextBlock Width="auto" Text=": " FontSize="{StaticResource FSV}" FontFamily="{StaticResource FFV}"  />
+                    <TextBlock Width="auto" Text="{Binding PersonName}" FontSize="{StaticResource FSV}" FontFamily="{StaticResource FFV}"  />
+                </StackPanel>
+            </Grid>
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate x:Key="ACDataTemplateWhCode">
+        <Border BorderThickness="1" BorderBrush="DimGray">
+            <Grid >
+                <StackPanel Orientation="Horizontal" >
+                    <TextBlock Width="auto" Text="{Binding WhCode}" FontSize="{StaticResource FSV}" FontFamily="{StaticResource FFV}"  />
+                    <TextBlock Width="auto" Text=": " FontSize="{StaticResource FSV}" FontFamily="{StaticResource FFV}"  />
+                    <TextBlock Width="auto" Text="{Binding WhName}" FontSize="{StaticResource FSV}" FontFamily="{StaticResource FFV}"  />
+                </StackPanel>
+            </Grid>
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate x:Key="ACDataTemplateLensClass">
+        <Border BorderThickness="1" BorderBrush="DimGray">
+            <Grid >
+                <StackPanel Orientation="Horizontal" >
+                    <TextBlock Width="auto" Text="{Binding KeyCode}" FontSize="{StaticResource FSV}" FontFamily="{StaticResource FFV}"  />
+                    <TextBlock Width="auto" Text=": " FontSize="{StaticResource FSV}" FontFamily="{StaticResource FFV}"  />
+                    <TextBlock Width="auto" Text="{Binding KeyName}" FontSize="{StaticResource FSV}" FontFamily="{StaticResource FFV}"  />
+                </StackPanel>
+            </Grid>
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate x:Key="ACDataTemplateProClass">
+        <Border BorderThickness="1" BorderBrush="DimGray">
+            <Grid >
+                <StackPanel Orientation="Horizontal" >
+                    <TextBlock Width="auto" Text="{Binding KeyCode}" FontSize="{StaticResource FSV}" FontFamily="{StaticResource FFV}"  />
+                    <TextBlock Width="auto" Text=": " FontSize="{StaticResource FSV}" FontFamily="{StaticResource FFV}"  />
+                    <TextBlock Width="auto" Text="{Binding KeyNameUI}" FontSize="{StaticResource FSV}" FontFamily="{StaticResource FFV}"  />
+                </StackPanel>
+            </Grid>
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate x:Key="ACDataTemplateForeignCurrCode">
+        <Border BorderThickness="1" BorderBrush="DimGray" Width="414">
+            <Grid >
+                <StackPanel Orientation="Horizontal" >
+                    <TextBlock Width="auto" Text="{Binding ForeignCurrCode}" FontSize="{StaticResource FSV}" FontFamily="{StaticResource FFV}"  />
+                    <TextBlock Width="auto" Text=": " FontSize="{StaticResource FSV}" FontFamily="{StaticResource FFV}"  />
+                    <TextBlock Width="auto" Text="{Binding ForeignCurrName}" FontSize="{StaticResource FSV}" FontFamily="{StaticResource FFV}"  />
+                </StackPanel>
+            </Grid>
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate x:Key="Template_DataBase" >
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="{Binding DBCode}" />
+            <TextBlock Text=":" Grid.Column="1"/>
+            <TextBlock Text="{Binding DBNameUI}" Grid.Column="2"/>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="Template_Group" >
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="{Binding GpCode}" />
+            <TextBlock Text=":" Grid.Column="1"/>
+            <TextBlock Text="{Binding GpName}" Grid.Column="2"/>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="Template_WhCode" >
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="{Binding WhCode}" />
+            <TextBlock Text=":" Grid.Column="1"/>
+            <TextBlock Text="{Binding WhName}" Grid.Column="2"/>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="Template_DpCode" >
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="{Binding DpCode}" />
+            <TextBlock Text=":" Grid.Column="1"/>
+            <TextBlock Text="{Binding DpName}" Grid.Column="2"/>
+        </Grid>
+    </DataTemplate>
+
+</ResourceDictionary>

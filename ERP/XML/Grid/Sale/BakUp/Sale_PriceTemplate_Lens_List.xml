@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Columns Frozen="0">
+  <Column  Binding=""   Header="" Fheader="1"/>
+  <Column  Binding="SPH1" Header="SPH1"  />
+  <Column  Binding="SPH2" Header="SPH2"  />
+  <Column  Binding="CYL1" Header="CYL1"  />
+  <Column  Binding="CYL2" Header="CYL2"  />
+  <Column  Binding="ADD1" Header="ADD1"  />
+  <Column  Binding="ADD2" Header="ADD2"  />
+  <Column  Binding="Dia" Header="直径//直徑//Dia"  />
+  <Column  Binding="P1" Header="片计//片計//Price1"  />
+  <Column  Binding="P2" Header="副计//副計//Price2"  />
+</Columns>
+
+
+
+
+
+
+
+
+
+
+
+

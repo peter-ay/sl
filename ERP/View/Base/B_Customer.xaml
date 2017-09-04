@@ -1,0 +1,273 @@
+﻿<ex:ChildWindowErp 
+xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit" 
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls" 
+xmlns:d="http://schemas.microsoft.com/expression/blend/2008"  
+xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" 
+x:Class="ERP.View.B_Customer" 
+xmlns:ex="clr-namespace:ERP.View"
+xmlns:bhv="clr-namespace:ERP.Behavior">
+    <ex:ChildWindowErp.DataContext>
+        <Binding Mode="OneWay" Path="B_Customer" Source="{StaticResource Locator}"/>
+    </ex:ChildWindowErp.DataContext>
+    <ex:BusyIndicatorErp>
+        <Grid x:Name="LayoutRoot" Margin="0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" VerticalAlignment="Top" Background="{StaticResource DocumentTabNormalBackgroundBrush}" Margin="0">
+                <ex:ButtonNew Margin="8,1,4,1"/>
+                <ex:ButtonSave Margin="4,1"/>
+                <ex:ButtonEdit Margin="4,1"/>
+                <ex:ButtonDelete Margin="4,1"/>
+                <ex:ButtonDrop Margin="4,1"/>
+                <ex:ButtonPrevious Margin="4,1"/>
+                <ex:ButtonNext Margin="4,1"/>
+                <ex:ButtonExit Margin="4,1"/>
+            </StackPanel>
+            <Grid Background="{StaticResource FloatingWindowBackgroundBrush}"  Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="24"/>
+                    <RowDefinition Height="24"/>
+                    <RowDefinition Height="24"/>
+                    <RowDefinition Height="24"/>
+                    <RowDefinition Height="24"/>
+                    <RowDefinition Height="24"/>
+                    <RowDefinition Height="24"/>
+                    <RowDefinition Height="24"/>
+                    <RowDefinition Height="24"/>
+                    <RowDefinition Height="24"/>
+                    <RowDefinition Height="24"/>
+                    <RowDefinition Height="24"/>
+                    <RowDefinition Height="24"/>
+                    <RowDefinition Height="24"/>
+                    <RowDefinition Height="24"/>
+                    <RowDefinition Height="24"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="1" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="125"/>
+                        <ColumnDefinition  Width="150"/>
+                        <ColumnDefinition  Width="105"/>
+                        <ColumnDefinition  Width="150"/>
+                        <ColumnDefinition  Width="105"/>
+                        <ColumnDefinition  Width="150"/>
+                        <ColumnDefinition  Width="105"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="{Binding UIText[ERP_CusCode]}" />
+                    <ex:TBCusCode IsReadOnly="{Binding IsReadOnlyID}" Grid.Column="1" x:Name="TB_Falg_ID" TabIndex="0" bhv:BhFocusTBox.IsFocused="{Binding IsFocusID}" />
+                    <TextBlock Text="{Binding UIText[ERP_CusName]}" Grid.Column="2"/>
+                    <ex:TBCusName x:Name="TB_Falg_RO"   IsReadOnly="{Binding IsReadOnlyMain}" Grid.Column="3" TabIndex="1" bhv:BhFocusTBox.IsFocused="{Binding IsFocusMain}" Grid.ColumnSpan="2"/>
+                </Grid>
+                <Grid Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="125"/>
+                        <ColumnDefinition  Width="150"/>
+                        <ColumnDefinition  Width="105"/>
+                        <ColumnDefinition  Width="150"/>
+                        <ColumnDefinition  Width="105"/>
+                        <ColumnDefinition  Width="150"/>
+                        <ColumnDefinition  Width="105"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="{Binding UIText[ERP_Address]}" />
+                    <ex:TBCusAddress Grid.Column="1"  TabIndex="3" Grid.ColumnSpan="3"  />
+                </Grid>
+                <Grid Grid.Row="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="125"/>
+                        <ColumnDefinition  Width="150"/>
+                        <ColumnDefinition  Width="105"/>
+                        <ColumnDefinition  Width="150"/>
+                        <ColumnDefinition  Width="105"/>
+                        <ColumnDefinition  Width="150"/>
+                        <ColumnDefinition  Width="105"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="{Binding UIText[ERP_DeliveryAddress]}" />
+                    <ex:TBDAddress Grid.Column="1" TabIndex="4" Grid.ColumnSpan="3"  />
+                </Grid>
+                <Grid Grid.Row="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="125"/>
+                        <ColumnDefinition  Width="150"/>
+                        <ColumnDefinition  Width="105"/>
+                        <ColumnDefinition  Width="150"/>
+                        <ColumnDefinition  Width="105"/>
+                        <ColumnDefinition  Width="150"/>
+                        <ColumnDefinition  Width="105"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="{Binding UIText[ERP_AccCode]}" Grid.Column="2"/>
+                    <ex:TBPCode Grid.Column="3" TabIndex="6"/>
+                    <TextBlock Text="{Binding UIText[ERP_BarCode]}"/>
+                    <ex:TBBarCode Grid.Column="1" TabIndex="5"/>
+                </Grid>
+                <Grid Grid.Row="6">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="125"/>
+                        <ColumnDefinition  Width="150"/>
+                        <ColumnDefinition  Width="105"/>
+                        <ColumnDefinition  Width="150"/>
+                        <ColumnDefinition  Width="105"/>
+                        <ColumnDefinition  Width="150"/>
+                        <ColumnDefinition  Width="105"/>
+                    </Grid.ColumnDefinitions>
+
+                </Grid>
+                <Grid Grid.Row="7">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="125"/>
+                        <ColumnDefinition  Width="150"/>
+                        <ColumnDefinition  Width="105"/>
+                        <ColumnDefinition  Width="150"/>
+                        <ColumnDefinition  Width="105"/>
+                        <ColumnDefinition  Width="150"/>
+                        <ColumnDefinition  Width="105"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="{Binding UIText[ERP_ContactPerson]}" />
+                    <ex:TBContactPerson Grid.Column="1" TabIndex="7"  />
+                    <TextBlock Text="{Binding UIText[ERP_Phone]}" Grid.Column="2"/>
+                    <ex:TBTelephone Grid.Column="3" TabIndex="8"  />
+                </Grid>
+                <Grid Grid.Row="8">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="125"/>
+                        <ColumnDefinition  Width="150"/>
+                        <ColumnDefinition  Width="105"/>
+                        <ColumnDefinition  Width="150"/>
+                        <ColumnDefinition  Width="105"/>
+                        <ColumnDefinition  Width="150"/>
+                        <ColumnDefinition  Width="105"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="{Binding UIText[ERP_Email]}" />
+                    <ex:TBEmail Grid.Column="1" TabIndex="9"  />
+                    <TextBlock Text="{Binding UIText[ERP_Fax]}" Grid.Column="2"/>
+                    <ex:TBFax Grid.Column="3" TabIndex="10"  />
+                </Grid>
+                <Grid Grid.Row="9">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="125"/>
+                        <ColumnDefinition  Width="150"/>
+                        <ColumnDefinition  Width="105"/>
+                        <ColumnDefinition  Width="150"/>
+                        <ColumnDefinition  Width="105"/>
+                        <ColumnDefinition  Width="150"/>
+                        <ColumnDefinition  Width="105"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="{Binding UIText[ERP_AreaCode]}" />
+                    <Grid Grid.Column="1" >
+                        <ex:TBAreaCodeRO/>
+                        <ex:ACBoxAreaCode TabIndex="11"/>
+                    </Grid>
+                    <TextBlock Text="{Binding UIText[ERP_AreaName]}" Grid.Column="2"/>
+                    <ex:TBAreaNameRO Grid.Column="3"  />
+                </Grid>
+                <Grid Grid.Row="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="125"/>
+                        <ColumnDefinition  Width="150"/>
+                        <ColumnDefinition  Width="105"/>
+                        <ColumnDefinition  Width="150"/>
+                        <ColumnDefinition  Width="105"/>
+                        <ColumnDefinition  Width="150"/>
+                        <ColumnDefinition  Width="105"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="{Binding UIText[ERP_PersonCode]}"/>
+                    <Grid Grid.Column="1" >
+                        <ex:TBPersonCodeRO/>
+                        <ex:ACBoxPersonCode TabIndex="12"/>
+                    </Grid>
+                    <TextBlock Text="{Binding UIText[ERP_PersonName]}" Grid.Column="2"/>
+                    <ex:TBPersonNameRO Grid.Column="3"  />
+                </Grid>
+                <Grid Grid.Row="11">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="125"/>
+                        <ColumnDefinition  Width="150"/>
+                        <ColumnDefinition  Width="105"/>
+                        <ColumnDefinition  Width="150"/>
+                        <ColumnDefinition  Width="105"/>
+                        <ColumnDefinition  Width="150"/>
+                        <ColumnDefinition  Width="105"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="{Binding UIText[ERP_DpCode]}" />
+                    <Grid Grid.Column="1">
+                        <ex:TBDpCodeRO/>
+                        <ex:ACBoxDpCode TabIndex="13"/>
+                    </Grid>
+                    <TextBlock Text="{Binding UIText[ERP_DpName]}" Grid.Column="2"/>
+                    <ex:TBDpNameRO Grid.Column="3" />
+                </Grid>
+                <Grid Grid.Row="12">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="125"/>
+                        <ColumnDefinition  Width="150"/>
+                        <ColumnDefinition  Width="105"/>
+                        <ColumnDefinition  Width="150"/>
+                        <ColumnDefinition  Width="105"/>
+                        <ColumnDefinition  Width="150"/>
+                        <ColumnDefinition  Width="105"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="{Binding UIText[ERP_DpCodeCX]}" />
+                    <Grid Grid.Column="1">
+                        <ex:TBDpCodeCXRO/>
+                        <ex:ACBoxDpCodeCX TabIndex="14"/>
+                    </Grid>
+                    <TextBlock Text="{Binding UIText[ERP_DpNameCX]}" Grid.Column="2"/>
+                    <ex:TBDpNameCXRO Grid.Column="3" />
+                </Grid>
+                <Grid Grid.Row="13">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="125"/>
+                        <ColumnDefinition  Width="150"/>
+                        <ColumnDefinition  Width="105"/>
+                        <ColumnDefinition  Width="150"/>
+                        <ColumnDefinition  Width="105"/>
+                        <ColumnDefinition  Width="150"/>
+                        <ColumnDefinition  Width="105"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="{Binding UIText[ERP_Remark]}"/>
+                    <ex:TBRemark1 Grid.Column="1" Grid.ColumnSpan="3" TabIndex="15"/>
+                </Grid>
+                <Grid Grid.Row="14">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="125"/>
+                        <ColumnDefinition  Width="150"/>
+                        <ColumnDefinition  Width="105"/>
+                        <ColumnDefinition  Width="150"/>
+                        <ColumnDefinition  Width="105"/>
+                        <ColumnDefinition  Width="150"/>
+                        <ColumnDefinition  Width="105"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="{Binding UIText[ERP_PrintCode]}" />
+                    <ex:TBPrintCode Grid.Column="1" Width="100" HorizontalAlignment="Left" TabIndex="16"/>
+                    <TextBlock Text="{Binding UIText[ERP_IsPrintShowPrice]}" Grid.Column="2" />
+                    <ex:RBConditionYN Grid.Column="3" />
+                    <StackPanel  Grid.Column="4" Orientation="Horizontal" Grid.ColumnSpan="2">
+                        <TextBlock  Text="{Binding UIText[ERP_IsNoticeForRepeat]}"/>
+                        <ex:CBIsNoticeForRepeat  TabIndex="17" />
+                        <TextBlock Width="6"/>
+                        <TextBlock  Text="{Binding UIText[ERP_F_Stop]}"/>
+                        <ex:CBF_Stop  TabIndex="18"/>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="15">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="125"/>
+                        <ColumnDefinition  Width="150"/>
+                        <ColumnDefinition  Width="105"/>
+                        <ColumnDefinition  Width="150"/>
+                        <ColumnDefinition  Width="105"/>
+                        <ColumnDefinition  Width="150"/>
+                        <ColumnDefinition  Width="105"/>
+                    </Grid.ColumnDefinitions>
+
+                </Grid>
+            </Grid>
+            <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" VerticalAlignment="Top" Background="{StaticResource DocumentTabNormalBackgroundBrush}" Margin="0" Grid.Row="2" Height="27">
+
+            </StackPanel>
+        </Grid>
+    </ex:BusyIndicatorErp>
+</ex:ChildWindowErp>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Columns Frozen="2">
+  <!--<Column  Binding=""   Header="" Fheader="1"/>-->
+  <Column  Binding="LensCode" Header="镜种代码//鏡種代碼//Lens" />
+  <Column  Binding="LensName" Header="镜种名称//鏡種名稱//LensName"  Fwidth="2"/>
+  <Column  Binding="P1" Header="价格模板//價格模板//Price Count" Ffunction="2" />
+  <Column  Binding="P2" Header="加工模板//加工模板//Pro Cost Count" Ffunction="3" />
+</Columns>
+
+
+
+
+

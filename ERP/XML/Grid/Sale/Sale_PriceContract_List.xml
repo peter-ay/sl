@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Columns Frozen="1">
+  <Column Header="合同编号//合同編號//ID" Binding="BCode" Ffunction="ID"/>
+  <Column Header="制作日期//製作日期//Make Date" Binding="BDate" Ftime="1"/>
+  <Column Header="客户组别//客戶組別//Group" Binding="CusGroupList"/>
+  <!--<Column Header="组别名称//組別名稱//Group Name" Binding="CusGpName"/>-->
+  <Column Header="原合同号//原合同號//Origin No." Binding="OBCode"  Fwidth="3"/>
+  <Column Header="对应客户//對應客戶//CusCode" Binding="SumCusCode" Ffunction="1"/>
+  <Column Header="镜片价格//鏡片價格//Lens Price" Binding="SumLens" Ffunction="2"/>
+  <Column Header="加工价格//加工價格//ProCost" Binding="SumLensProCost" Ffunction="3"/>
+  <Column Header="镜架价格//鏡架價格//Frame" Binding="SumFrame" Ffunction="4"/>
+  <Column Header="镜架套餐//鏡架套餐//Frame Set" Binding="SumFrameSet" Ffunction="5"/>
+
+  <Column Header="开始日期//開始日期//Begin Date" Binding="BegDate" Ftime="1"/>
+  <Column Header="结束日期//結束日期//End Date" Binding="EndDate" Ftime="1"/>
+  <Column Header="制单//制單//Make" Binding="Maker" />
+  <Column Header="审核//審核//Check" Binding="Checker" />
+  <Column Header="合同状态//合同狀態//State" Binding="StNameUI" />
+  <!--<Column Header="有效//有效//Availiable" Binding="IsExcute" />-->
+  <Column Header="优先级//優先級//Priority" Binding="PriNameUI" />
+  <!--<Column Header="合同类型//合同類型//ContractType" Binding="TypeNameUI" />-->
+  <Column Header="备注//備註//Remark" Binding="Remark" Fwidth="2"/>
+</Columns>
+
+
+
+

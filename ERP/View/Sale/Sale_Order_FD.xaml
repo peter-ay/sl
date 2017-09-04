@@ -1,0 +1,477 @@
+﻿<ex:UserControlErp x:Class="ERP.View.Sale_Order_FD"
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"
+xmlns:ignore="http://www.ignore.com"
+xmlns:ex="clr-namespace:ERP.View"
+xmlns:bhv="clr-namespace:ERP.Behavior"
+mc:Ignorable="d"
+DataContext="{Binding Sale_Order_FD, Mode=OneWay, Source={StaticResource Locator}}">
+    <ex:BusyIndicatorErp>
+        <Border BorderThickness="1" BorderBrush="{StaticResource DisabledBackgroundBrush}" Width="978" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <Grid Background="{StaticResource FloatingWindowBackgroundBrush}" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <!--0Title-->
+                <ex:TitleErp/>
+                <!--1-->
+                <StackPanel Grid.Row="1"  Orientation="Horizontal"  Background="{StaticResource DocumentTabNormalBackgroundBrush}" Height="26">
+                    <ex:ButtonNew Margin="4,0"/>
+                    <ex:ButtonSave Margin="4,0" />
+                    <ex:ButtonEdit Margin="4,0" />
+                    <ex:ButtonDrop Margin="4,0"  />
+                    <ex:ButtonCheck Margin="4,0"/>
+                    <ex:ButtonUnCheck Margin="4,0"/>
+                    <ex:ButtonDelete Margin="4,0" TabIndex="77"/>
+                    <ex:ButtonPrevious Margin="4,0"/>
+                    <ex:ButtonNext Margin="4,0"  TabIndex="76"/>
+                    <!--<ex:ButtonUnLock Margin="4,0" TabIndex="78"/>-->
+                    <!--<ex:ButtonReOrder Margin="4,0" TabIndex="79"/>-->
+                    <ex:ButtonExit Margin="4,0"  TabIndex="80"/>
+                </StackPanel>
+                <!-- 2  -->
+                <Grid Grid.Row="2" Margin="0,3,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="24"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="24"/>
+                            <RowDefinition Height="24"/>
+                            <RowDefinition Height="24"/>
+                            <RowDefinition Height="24"/>
+                        </Grid.RowDefinitions>
+                        <StackPanel Orientation="Horizontal" >
+                            <TextBlock Text="{Binding UIText[Sale_Order_FD1]}" Foreground="{StaticResource SelectedBackgroundBrush}" HorizontalAlignment="Left" Margin="2,0,0,2" Width="100" TextAlignment="Left"/>
+                        </StackPanel>
+                        <ex:BillSeparator Grid.Row="1"/>
+                        <Grid Grid.Row="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="89"/>
+                                <ColumnDefinition Width="52"/>
+                                <ColumnDefinition Width="52"/>
+                                <ColumnDefinition Width="52"/>
+                                <ColumnDefinition Width="86"/>
+                                <ColumnDefinition Width="156"/>
+                                <ColumnDefinition Width="86"/>
+                                <ColumnDefinition Width="156"/>
+                                <ColumnDefinition Width="86"/>
+                                <ColumnDefinition Width="156"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="{Binding UIText[ERP_UrgencyDegree]}" Grid.Column="0"/>
+                            <ex:RadioButtonUD1 Margin="0,3,0,0" Grid.Column="1"/>
+                            <ex:RadioButtonUD2 Margin="0,3,0,0" Grid.Column="2"/>
+                            <ex:RadioButtonUD3 Margin="0,3,0,0" Grid.Column="3"/>
+                            <TextBlock Text="{Binding UIText[ERP_OrderCode]}" Grid.Column="4"/>
+                            <ex:TBBCodeRO  Grid.Column="5"/>
+                            <TextBlock Text="{Binding UIText[ERP_OrderDate]}" Grid.Column="6"/>
+                            <ex:TBBDateRO Grid.Column="7"/>
+                            <TextBlock Text="{Binding UIText[ERP_ConsignDate]}"  Grid.Column="8"/>
+                            <ex:TBCsDate Grid.Column="9" />
+                            <ex:DatePickerCsDate Grid.Column="10"/>
+                        </Grid>
+                        <Grid Grid.Row="3">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="89"/>
+                                <ColumnDefinition Width="156"/>
+                                <ColumnDefinition Width="86"/>
+                                <ColumnDefinition Width="156"/>
+                                <ColumnDefinition Width="86"/>
+                                <ColumnDefinition Width="156"/>
+                                <ColumnDefinition Width="86"/>
+                                <ColumnDefinition Width="156"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="{Binding UIText[ERP_OBillCode]}" Grid.Column="0"/>
+                            <ex:TBOBCode bhv:BhFocusTBox.IsFocused="{Binding IsFocusMain}" TabIndex="0" Grid.Column="1"/>
+                            <TextBlock Text="{Binding UIText[ERP_CusCode]}" Grid.Column="2"/>
+                            <StackPanel Orientation="Horizontal"  Grid.Column="3">
+                                <ex:TBCusCodeRO  Width="156"/>
+                                <ex:ACBoxCusCodeBrowseBill  Width="136" TabIndex="1" />
+                                <ex:ButtonHelpCusCode/>
+                            </StackPanel>
+                            <TextBlock Text="{Binding UIText[ERP_CusName]}" Grid.Column="4"/>
+                            <ex:TBCusNameRO Grid.Column="5"/>
+                            <TextBlock Text="{Binding UIText[ERP_FromBillCode]}" Grid.Column="6"/>
+                            <ex:TBFBCodeRO Grid.Column="7"/>
+                        </Grid>
+                        <Grid Grid.Row="4">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="89"/>
+                                <ColumnDefinition Width="398"/>
+                                <ColumnDefinition Width="86"/>
+                                <ColumnDefinition Width="156"/>
+                                <ColumnDefinition Width="86"/>
+                                <ColumnDefinition Width="156"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="{Binding UIText[ERP_Notes]}" Grid.Column="0"/>
+                            <StackPanel HorizontalAlignment="Center" Grid.Column="1">
+                                <ex:TBNotes Width="398" TabIndex="2"/>
+                                <ex:ACBoxNotes Width="398"/>
+                            </StackPanel>
+                            <TextBlock Text="{Binding UIText[ERP_Freight]}" Grid.Column="2"/>
+                            <ex:TBFreight  Grid.Column="3"/>
+                            <TextBlock Text="{Binding UIText[ERP_OrderStateName]}" Grid.Column="4"/>
+                            <ex:TBStateNameUI  Grid.Column="5"/>
+                        </Grid>
+                        <Grid Grid.Row="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="89"/>
+                                <ColumnDefinition Width="398"/>
+                                <ColumnDefinition Width="86"/>
+                                <ColumnDefinition Width="156"/>
+                                <ColumnDefinition Width="86"/>
+                                <ColumnDefinition Width="156"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="{Binding UIText[ERP_OrderRemark]}" Grid.Column="0"/>
+                            <ex:TBRemark TabIndex="3" Grid.Column="1"/>
+                            <TextBlock Text="{Binding UIText[ERP_KFSOStateName]}" Grid.Column="2"/>
+                            <ex:TBKFSOStateNameUI  Grid.Column="3"/>
+                            <TextBlock Text="{Binding UIText[ERP_CGDDStateName]}" Grid.Column="4"/>
+                            <ex:TBCGDDStateNameUI  Grid.Column="5"/>
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="24"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="24"/>
+                            <RowDefinition Height="24"/>
+                            <RowDefinition Height="24"/>
+                            <RowDefinition Height="24"/>
+                            <RowDefinition Height="24"/>
+                            <RowDefinition Height="24"/>
+                            <RowDefinition Height="24"/>
+                            <RowDefinition Height="24"/>
+                            <RowDefinition Height="24"/>
+                            <RowDefinition Height="24"/>
+                            <RowDefinition Height="24"/>
+                            <RowDefinition Height="24"/>
+                        </Grid.RowDefinitions>
+                        <StackPanel Orientation="Horizontal" >
+                            <TextBlock Text="{Binding UIText[Sale_Order_FD2]}" Foreground="{StaticResource SelectedBackgroundBrush}" HorizontalAlignment="Left" Margin="2,0,0,2" Width="100" TextAlignment="Left"/>
+                        </StackPanel>
+                        <ex:BillSeparator Grid.Row="1"/>
+                        <Grid Grid.Row="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="66"/>
+                                <ColumnDefinition Width="23"/>
+                                <ColumnDefinition Width="156"/>
+                                <ColumnDefinition Width="156"/>
+                                <ColumnDefinition Width="156" />
+                                <ColumnDefinition Width="156" />
+                                <ColumnDefinition Width="258" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="" Grid.Column="1"/>
+                            <Border Style="{StaticResource BorderTitle}" Grid.Column="2">
+                                <TextBlock Text="{Binding UIText[ERP_FrameCode1]}" HorizontalAlignment="Center"/>
+                            </Border>
+                            <Border Style="{StaticResource BorderTitle}" Grid.Column="3">
+                                <TextBlock Text="{Binding UIText[ERP_Qty]}" HorizontalAlignment="Center"/>
+                            </Border>
+                            <Border Style="{StaticResource BorderTitle}" Grid.Column="4">
+                                <TextBlock Text="{Binding UIText[ERP_Qty]}" HorizontalAlignment="Center"/>
+                            </Border>
+                            <Border Style="{StaticResource BorderTitle}" Grid.Column="5">
+                                <TextBlock Text="{Binding UIText[ERP_Qty]}" HorizontalAlignment="Center"/>
+                            </Border>
+                            <Border Style="{StaticResource BorderTitle}" Grid.Column="6">
+                                <TextBlock Text="{Binding UIText[ERP_Qty]}" HorizontalAlignment="Center"/>
+                            </Border>
+                            <Border Style="{StaticResource BorderTitle}" Grid.Column="7">
+                                <TextBlock Text="{Binding UIText[ERP_FrameName1]}" HorizontalAlignment="Center"/>
+                            </Border>
+                        </Grid>
+                        <Grid Grid.Row="3">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="66"/>
+                                <ColumnDefinition Width="23"/>
+                                <ColumnDefinition Width="156"/>
+                                <ColumnDefinition Width="156"/>
+                                <ColumnDefinition Width="156" />
+                                <ColumnDefinition Width="156" />
+                                <ColumnDefinition Width="258" />
+                            </Grid.ColumnDefinitions>
+                            <Border Style="{StaticResource BorderTitle}" Grid.Column="1">
+                                <TextBlock Text="1" FontFamily="Verdana" FontSize="11" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0"/>
+                            </Border>
+                            <StackPanel Grid.Column="2" Orientation="Horizontal">
+                                <ex:ACBoxCusFrameCode1 Width="136"/>
+                                <ex:ButtonHelpAreaCode/>
+                            </StackPanel>
+                            <ex:TBFrameCode1RO Grid.Column="2"/>
+                            <ex:TBQty1 Grid.Column="3"/>
+                            <ex:TBQtyCs1RO Grid.Column="4"/>
+                            <ex:TBQtyRt1RO Grid.Column="5"/>
+                            <ex:TBFrameName1RO Grid.Column="6"/>
+                        </Grid>
+                        <Grid Grid.Row="4">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="66"/>
+                                <ColumnDefinition Width="23"/>
+                                <ColumnDefinition Width="156"/>
+                                <ColumnDefinition Width="156"/>
+                                <ColumnDefinition Width="156" />
+                                <ColumnDefinition Width="156" />
+                                <ColumnDefinition Width="258" />
+                            </Grid.ColumnDefinitions>
+                            <Border Style="{StaticResource BorderTitle}" Grid.Column="1">
+                                <TextBlock Text="2" FontFamily="Verdana" FontSize="11" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0"/>
+                            </Border>
+                            <StackPanel Grid.Column="2" Orientation="Horizontal">
+                                <ex:ACBoxCusFrameCode2 Width="136"/>
+                                <ex:ButtonHelpAreaCode/>
+                            </StackPanel>
+                            <ex:TBFrameCode2RO Grid.Column="2"/>
+                            <ex:TBQty2 Grid.Column="3"/>
+                            <ex:TBQtyCs2RO Grid.Column="4"/>
+                            <ex:TBQtyRt2RO Grid.Column="5"/>
+                            <ex:TBFrameName2RO Grid.Column="6"/>
+                        </Grid>
+                        <Grid Grid.Row="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="66"/>
+                                <ColumnDefinition Width="23"/>
+                                <ColumnDefinition Width="156"/>
+                                <ColumnDefinition Width="156"/>
+                                <ColumnDefinition Width="156" />
+                                <ColumnDefinition Width="156" />
+                                <ColumnDefinition Width="258" />
+                            </Grid.ColumnDefinitions>
+                            <Border Style="{StaticResource BorderTitle}" Grid.Column="1">
+                                <TextBlock Text="3" FontFamily="Verdana" FontSize="11" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0"/>
+                            </Border>
+                            <StackPanel Grid.Column="2" Orientation="Horizontal">
+                                <ex:ACBoxCusFrameCode3 Width="136"/>
+                                <ex:ButtonHelpAreaCode/>
+                            </StackPanel>
+                            <ex:TBFrameCode3RO Grid.Column="2"/>
+                            <ex:TBQty3 Grid.Column="3"/>
+                            <ex:TBQtyCs3RO Grid.Column="4"/>
+                            <ex:TBQtyRt3RO Grid.Column="5"/>
+                            <ex:TBFrameName3RO Grid.Column="6"/>
+                        </Grid>
+                        <Grid Grid.Row="6">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="66"/>
+                                <ColumnDefinition Width="23"/>
+                                <ColumnDefinition Width="156"/>
+                                <ColumnDefinition Width="156"/>
+                                <ColumnDefinition Width="156" />
+                                <ColumnDefinition Width="156" />
+                                <ColumnDefinition Width="258" />
+                            </Grid.ColumnDefinitions>
+                            <Border Style="{StaticResource BorderTitle}" Grid.Column="1">
+                                <TextBlock Text="4" FontFamily="Verdana" FontSize="11" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0"/>
+                            </Border>
+                            <StackPanel Grid.Column="2" Orientation="Horizontal">
+                                <ex:ACBoxCusFrameCode4 Width="136"/>
+                                <ex:ButtonHelpAreaCode/>
+                            </StackPanel>
+                            <ex:TBFrameCode4RO Grid.Column="2"/>
+                            <ex:TBQty4 Grid.Column="3"/>
+                            <ex:TBQtyCs4RO Grid.Column="4"/>
+                            <ex:TBQtyRt4RO Grid.Column="5"/>
+                            <ex:TBFrameName4RO Grid.Column="6"/>
+                        </Grid>
+                        <Grid Grid.Row="7">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="66"/>
+                                <ColumnDefinition Width="23"/>
+                                <ColumnDefinition Width="156"/>
+                                <ColumnDefinition Width="156"/>
+                                <ColumnDefinition Width="156" />
+                                <ColumnDefinition Width="156" />
+                                <ColumnDefinition Width="258" />
+                            </Grid.ColumnDefinitions>
+                            <Border Style="{StaticResource BorderTitle}" Grid.Column="1">
+                                <TextBlock Text="5" FontFamily="Verdana" FontSize="11" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0"/>
+                            </Border>
+                            <StackPanel Grid.Column="2" Orientation="Horizontal">
+                                <ex:ACBoxCusFrameCode5 Width="136"/>
+                                <ex:ButtonHelpAreaCode/>
+                            </StackPanel>
+                            <ex:TBFrameCode5RO Grid.Column="2"/>
+                            <ex:TBQty5 Grid.Column="3"/>
+                            <ex:TBQtyCs5RO Grid.Column="4"/>
+                            <ex:TBQtyRt5RO Grid.Column="5"/>
+                            <ex:TBFrameName5RO Grid.Column="6"/>
+                        </Grid>
+                        <Grid Grid.Row="8">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="66"/>
+                                <ColumnDefinition Width="23"/>
+                                <ColumnDefinition Width="156"/>
+                                <ColumnDefinition Width="156"/>
+                                <ColumnDefinition Width="156" />
+                                <ColumnDefinition Width="156" />
+                                <ColumnDefinition Width="258" />
+                            </Grid.ColumnDefinitions>
+                            <Border Style="{StaticResource BorderTitle}" Grid.Column="1">
+                                <TextBlock Text="6" FontFamily="Verdana" FontSize="11" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0"/>
+                            </Border>
+                            <StackPanel Grid.Column="2" Orientation="Horizontal">
+                                <ex:ACBoxCusFrameCode6 Width="136"/>
+                                <ex:ButtonHelpAreaCode/>
+                            </StackPanel>
+                            <ex:TBFrameCode6RO Grid.Column="2"/>
+                            <ex:TBQty6 Grid.Column="3"/>
+                            <ex:TBQtyCs6RO Grid.Column="4"/>
+                            <ex:TBQtyRt6RO Grid.Column="5"/>
+                            <ex:TBFrameName6RO Grid.Column="6"/>
+                        </Grid>
+                        <Grid Grid.Row="9">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="66"/>
+                                <ColumnDefinition Width="23"/>
+                                <ColumnDefinition Width="156"/>
+                                <ColumnDefinition Width="156"/>
+                                <ColumnDefinition Width="156" />
+                                <ColumnDefinition Width="156" />
+                                <ColumnDefinition Width="258" />
+                            </Grid.ColumnDefinitions>
+                            <Border Style="{StaticResource BorderTitle}" Grid.Column="1">
+                                <TextBlock Text="7" FontFamily="Verdana" FontSize="11" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0"/>
+                            </Border>
+                            <StackPanel Grid.Column="2" Orientation="Horizontal">
+                                <ex:ACBoxCusFrameCode7 Width="136"/>
+                                <ex:ButtonHelpAreaCode/>
+                            </StackPanel>
+                            <ex:TBFrameCode7RO Grid.Column="2"/>
+                            <ex:TBQty7 Grid.Column="3"/>
+                            <ex:TBQtyCs7RO Grid.Column="4"/>
+                            <ex:TBQtyRt7RO Grid.Column="5"/>
+                            <ex:TBFrameName7RO Grid.Column="6"/>
+                        </Grid>
+                        <Grid Grid.Row="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="66"/>
+                                <ColumnDefinition Width="23"/>
+                                <ColumnDefinition Width="156"/>
+                                <ColumnDefinition Width="156"/>
+                                <ColumnDefinition Width="156" />
+                                <ColumnDefinition Width="156" />
+                                <ColumnDefinition Width="258" />
+                            </Grid.ColumnDefinitions>
+                            <Border Style="{StaticResource BorderTitle}" Grid.Column="1">
+                                <TextBlock Text="8" FontFamily="Verdana" FontSize="11" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0"/>
+                            </Border>
+                            <StackPanel Grid.Column="2" Orientation="Horizontal">
+                                <ex:ACBoxCusFrameCode8 Width="136"/>
+                                <ex:ButtonHelpAreaCode/>
+                            </StackPanel>
+                            <ex:TBFrameCode8RO Grid.Column="2"/>
+                            <ex:TBQty8 Grid.Column="3"/>
+                            <ex:TBQtyCs8RO Grid.Column="4"/>
+                            <ex:TBQtyRt8RO Grid.Column="5"/>
+                            <ex:TBFrameName8RO Grid.Column="6"/>
+                        </Grid>
+                        <Grid Grid.Row="11">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="66"/>
+                                <ColumnDefinition Width="23"/>
+                                <ColumnDefinition Width="156"/>
+                                <ColumnDefinition Width="156"/>
+                                <ColumnDefinition Width="156" />
+                                <ColumnDefinition Width="156" />
+                                <ColumnDefinition Width="258" />
+                            </Grid.ColumnDefinitions>
+                            <Border Style="{StaticResource BorderTitle}" Grid.Column="1">
+                                <TextBlock Text="9" FontFamily="Verdana" FontSize="11" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0"/>
+                            </Border>
+                            <StackPanel Grid.Column="2" Orientation="Horizontal">
+                                <ex:ACBoxCusFrameCode9 Width="136"/>
+                                <ex:ButtonHelpAreaCode/>
+                            </StackPanel>
+                            <ex:TBFrameCode9RO Grid.Column="2"/>
+                            <ex:TBQty9 Grid.Column="3"/>
+                            <ex:TBQtyCs9RO Grid.Column="4"/>
+                            <ex:TBQtyRt9RO Grid.Column="5"/>
+                            <ex:TBFrameName9RO Grid.Column="6"/>
+                        </Grid>
+                        <Grid Grid.Row="12">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="66"/>
+                                <ColumnDefinition Width="23"/>
+                                <ColumnDefinition Width="156"/>
+                                <ColumnDefinition Width="156"/>
+                                <ColumnDefinition Width="156" />
+                                <ColumnDefinition Width="156" />
+                                <ColumnDefinition Width="258" />
+                            </Grid.ColumnDefinitions>
+                            <Border Style="{StaticResource BorderTitle}" Grid.Column="1">
+                                <TextBlock Text="10" FontFamily="Verdana" FontSize="11" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0"/>
+                            </Border>
+                            <StackPanel Grid.Column="2" Orientation="Horizontal">
+                                <ex:ACBoxCusFrameCode10 Width="136"/>
+                                <ex:ButtonHelpAreaCode/>
+                            </StackPanel>
+                            <ex:TBFrameCode10RO Grid.Column="2"/>
+                            <ex:TBQty10 Grid.Column="3"/>
+                            <ex:TBQtyCs10RO Grid.Column="4"/>
+                            <ex:TBQtyRt10RO Grid.Column="5"/>
+                            <ex:TBFrameName10RO Grid.Column="6"/>
+                        </Grid>
+                        <Grid Grid.Row="13">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="66"/>
+                                <ColumnDefinition Width="23"/>
+                                <ColumnDefinition Width="156"/>
+                                <ColumnDefinition Width="156"/>
+                                <ColumnDefinition Width="156" />
+                                <ColumnDefinition Width="156" />
+                                <ColumnDefinition Width="258" />
+                            </Grid.ColumnDefinitions>
+                            <Border Style="{StaticResource BorderTitle}" Grid.Column="2" Width="78" HorizontalAlignment="Right">
+                                <TextBlock Text="{Binding UIText[ERP_Sum1]}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0"/>
+                            </Border>
+                            <ex:TBSumQtyRO Grid.Column="3"/>
+                            <ex:TBSumQtyRtRO Grid.Column="4"/>
+                            <ex:TBSumQtyRtRO Grid.Column="5"/>
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Row="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="24"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="24"/>
+                            <RowDefinition Height="24"/>
+                        </Grid.RowDefinitions>
+                        <StackPanel Orientation="Horizontal" >
+                            <TextBlock Text="{Binding UIText[Sale_Order_FD3]}" Foreground="{StaticResource SelectedBackgroundBrush}" HorizontalAlignment="Left" Margin="2,0,0,2" Width="100" TextAlignment="Left"/>
+                        </StackPanel>
+                        <ex:BillSeparator Grid.Row="1"/>
+                        <Grid Grid.Row="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="89"/>
+                                <ColumnDefinition Width="156"/>
+                                <ColumnDefinition Width="86"/>
+                                <ColumnDefinition Width="156"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="{Binding UIText[ERP_WhCode]}"/>
+                            <ex:TBWhCode  Grid.Column="1" />
+                            <TextBlock Text="{Binding UIText[ERP_WhName]}" Grid.Column="2"/>
+                            <ex:TBWhNameRO  Grid.Column="3" />
+                        </Grid>
+                    </Grid>
+                </Grid>
+                <!-- 3  -->
+                <ex:BillBottom  Grid.Row="3"/>
+                <!---->
+                <ex:TBFocusCycle TabIndex="40"/>
+                <ex:TBReadOnlyMain x:Name="TB_Falg_RO"/>
+                <ex:TBReadOnlyEdit x:Name="TB_Falg_ROEdit"/>
+            </Grid>
+        </Border>
+    </ex:BusyIndicatorErp>
+</ex:UserControlErp>

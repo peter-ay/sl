@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Columns Frozen="2">
+  <Column  Header="" Binding="" Fheader="1" />
+  <Column  Binding="SubID" Header="ID"  Ffunction="Key" />
+  <Column  Binding="Mnumber" Header="鏡種代碼"   />
+  <Column  Binding="CaiBian" Header="彩邊"  />
+  <Column  Binding="ChaSe" Header="茶色"  />
+  <Column  Binding="CheBian" Header="車邊"  />
+  <Column  Binding="DaoBian" Header="刀邊"  />
+  <Column  Binding="JingJia" Header="鏡架"  />
+  <Column  Binding="JuSe" Header="焗色"  />
+  <Column  Binding="KaiKeng" Header="開坑" />
+  <Column  Binding="MianWan" Header="面灣"  />
+  <Column  Binding="PaoGuang" Header="拋光"  />
+  <Column  Binding="PiHua" Header="批花"  />
+  <Column  Binding="RanSe" Header="染色"  />
+  <Column  Binding="ShuiYin" Header="水銀"  />
+  <Column  Binding="ZuanKong" Header="鑽孔"  />
+  <Column  Binding="UV" Header="UV"  Fbool="1"/>
+  <Column  Binding="Hardened" Header="加硬"  Fbool="1"/>
+  <Column  Binding="OtherProcess" Header="其他加工"  />
+  <Column  Binding="ExtraProcess" Header="額外加工"  />
+  <Column  Binding="IsForce" Header="强制標誌"  Fbool="1"/>
+</Columns>
+
+
+
+
+
+
+

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Columns Frozen="2">
+  <Column  Binding=""   Header="" Fheader="1"/>
+  <Column Binding="KeyCode" Header="编码//編碼//Code"   />
+  <Column Binding="KeyName" Header="名称//名稱//Name"  />
+  <Column Binding="SN" Header="顺序号//順序號//SN"  />
+</Columns>
+
+
+
+
+

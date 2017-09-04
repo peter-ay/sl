@@ -1,0 +1,141 @@
+﻿<ex:UserControlErp
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"
+xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+xmlns:Custom="http://www.galasoft.ch/mvvmlight"
+x:Class="ERP.View.M_User_List"
+xmlns:common="clr-namespace:System.Windows;assembly=System.Windows.Controls"
+xmlns:Command="clr-namespace:GalaSoft.MvvmLight.Command;assembly=GalaSoft.MvvmLight.Extras"
+xmlns:ex="clr-namespace:ERP.View"
+mc:Ignorable="d" 
+DataContext="{Binding M_User_List, Mode=OneWay, Source={StaticResource Locator}}">
+    <Grid Background="{StaticResource FloatingWindowBackgroundBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <!--Title-->
+        <ex:TitleErp/>
+        <!--SearchBar-->
+        <Grid  Grid.Row="1">
+            <toolkit:Expander  Margin="0,0,0,0" HorizontalAlignment="Stretch" 
+                                      Style="{StaticResource GridSearchTitleBar}" VerticalContentAlignment="Stretch" 
+                                      VerticalAlignment="Stretch" ExpandDirection="Down" IsExpanded="False">
+                <toolkit:Expander.Header>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="85"/>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="85"/>
+                            <ColumnDefinition Width="85"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="{Binding UIText[ERP_UserCode]}" />
+                        <ex:TextBoxKeyCode Grid.Column="1"/>
+                        <TextBlock Text="{Binding UIText[ERP_UserName]}"  Grid.Column="2"/>
+                        <ex:TextBoxKeyName Grid.Column="3" Grid.ColumnSpan="2" />
+                        <ex:ButtonSearch Grid.Column="5"/>
+                        <ex:ButtonListNew Grid.Column="6"/>
+                        <ex:ButtonListDelete Grid.Column="7"/>
+                        <ex:ButtonExit Grid.Column="8"/>
+                    </Grid>
+                </toolkit:Expander.Header>
+                <Grid>
+                </Grid>
+            </toolkit:Expander>
+        </Grid>
+        <!-- GridList -->
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <ex:DataGridListErp />
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="26"/>
+                    <RowDefinition Height="26"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="26"/>
+                </Grid.RowDefinitions >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="130"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="{Binding UIText[ERP_SelecctedCode]}" Grid.Column="1"/>
+                    <ex:TBUserCodeListRO Grid.Column="2" />
+                    <ex:TBUserNameListRO Grid.Column="3"/>
+                </Grid>
+
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="{Binding UIText[M_User_List_GroupIncludeInfo]}" Grid.Column="1"/>
+                    <ex:ButtonRefresh2 Grid.Column="2"/>
+                </Grid>
+
+                <ex:BusyIndicatorList2 Grid.Row="2">
+                    <ListBox FontFamily="Verdana" FontSize="13" HorizontalAlignment="Stretch" 
+				VerticalAlignment="Stretch"  ItemsSource="{Binding DContextList2}">
+                        <ListBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <toolkit:WrapPanel Height="{Binding WrapPanelHeigh}"  Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                            </ItemsPanelTemplate>
+                        </ListBox.ItemsPanel>
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <CheckBox IsChecked="{Binding IsSelected, Mode=TwoWay}" Height="16" >
+                                        <i:Interaction.Triggers>
+                                            <i:EventTrigger EventName="Click">
+                                                <Command:EventToCommand Command="{Binding M_User_List.AssignItemCheckClick, Mode=OneWay, Source={StaticResource Locator}}" CommandParameter="{Binding}"/>
+                                            </i:EventTrigger>
+                                        </i:Interaction.Triggers>
+                                    </CheckBox>
+                                    <TextBlock  Text="{Binding GpCode}"  />
+                                    <TextBlock  Text=":" />
+                                    <TextBlock  Text="{Binding GpName}"  />
+                                    <TextBlock  Text="[" />
+                                    <TextBlock  Text="{Binding DBCode}"  />
+                                    <TextBlock  Text="]" />
+                                    <TextBlock  Text="{Binding Msg}"  Foreground="DarkBlue"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </ex:BusyIndicatorList2>
+
+                <StackPanel Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Center" Orientation="Horizontal">
+                    <TextBlock Style="{StaticResource styleTextBlockResult}" x:Name="ConsumeTime" Text="{Binding ResultInfoTime2}"/>
+                    <TextBlock Style="{StaticResource styleTextBlockResult}" x:Name="ResultCount" Text="{Binding ResultInfoCount2}"/>
+                    <ex:DataPagerErp2/>
+                </StackPanel>
+            </Grid>
+
+        </Grid>
+    </Grid>
+</ex:UserControlErp>

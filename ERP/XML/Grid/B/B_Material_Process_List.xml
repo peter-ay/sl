@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Columns Frozen="2">
+  <Column Binding=""   Header="" Fheader="1"/>
+  <Column Binding="ProCode" Header="工序代码//工序代碼//ProCode" Ffunction="Key"/>
+  <Column Binding="ProName" Header="工序名称//工序名稱//ProName" />
+  <Column Binding="ProClass" Header="工序类别//工序類別//ProClass" />
+  <Column Binding="ProClassNameUI" Header="类别名称//類別名稱//Class Name" />
+  <Column Binding="F_RX" Header="车房//車房//RX" Fbool="1" />
+  <Column Binding="F_ST" Header="库存//庫存//ST" Fbool="1"/>
+</Columns>
+
+
+
+
+
+
+

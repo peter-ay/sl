@@ -1,0 +1,453 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ERPModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="ERPModelStoreContainer">
+          <EntitySet Name="V_S_DataBase" EntityType="ERPModel.Store.V_S_DataBase" store:Type="Views" store:Schema="dbo" store:Name="V_S_DataBase">
+            <DefiningQuery>SELECT 
+      [V_S_DataBase].[DBCode] AS [DBCode], 
+      [V_S_DataBase].[DBName] AS [DBName]
+      FROM [dbo].[V_S_DataBase] AS [V_S_DataBase]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_S_Function" EntityType="ERPModel.Store.V_S_Function" store:Type="Views" store:Schema="dbo" store:Name="V_S_Function">
+            <DefiningQuery>SELECT 
+      [V_S_Function].[FunID] AS [FunID], 
+      [V_S_Function].[FunPID] AS [FunPID], 
+      [V_S_Function].[FunCode] AS [FunCode], 
+      [V_S_Function].[FunName] AS [FunName], 
+      [V_S_Function].[FunRight] AS [FunRight], 
+      [V_S_Function].[F_ShowInMenu] AS [F_ShowInMenu], 
+      [V_S_Function].[F_Open] AS [F_Open], 
+      [V_S_Function].[ImageURL] AS [ImageURL]
+      FROM [dbo].[V_S_Function] AS [V_S_Function]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_S_Log" EntityType="ERPModel.Store.V_S_Log" store:Type="Views" store:Schema="dbo" store:Name="V_S_Log">
+            <DefiningQuery>SELECT 
+      [V_S_Log].[LogTime] AS [LogTime], 
+      [V_S_Log].[LogTimeSmall] AS [LogTimeSmall], 
+      [V_S_Log].[UserCode] AS [UserCode], 
+      [V_S_Log].[DBCode] AS [DBCode], 
+      [V_S_Log].[FunCode] AS [FunCode], 
+      [V_S_Log].[IP] AS [IP], 
+      [V_S_Log].[ClientID] AS [ClientID], 
+      [V_S_Log].[UserName] AS [UserName], 
+      [V_S_Log].[DBName] AS [DBName], 
+      [V_S_Log].[FunName] AS [FunName]
+      FROM [dbo].[V_S_Log] AS [V_S_Log]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_S_User" EntityType="ERPModel.Store.V_S_User" store:Type="Views" store:Schema="dbo" store:Name="V_S_User">
+            <DefiningQuery>SELECT 
+      [V_S_User].[UserCode] AS [UserCode], 
+      [V_S_User].[UserName] AS [UserName], 
+      [V_S_User].[UserExplain] AS [UserExplain], 
+      [V_S_User].[UserPassword] AS [UserPassword], 
+      [V_S_User].[UserRight] AS [UserRight], 
+      [V_S_User].[MakeDate] AS [MakeDate], 
+      [V_S_User].[F_Admin] AS [F_Admin], 
+      [V_S_User].[F_Super] AS [F_Super], 
+      [V_S_User].[F_Stop] AS [F_Stop], 
+      [V_S_User].[LastLoginDate] AS [LastLoginDate], 
+      [V_S_User].[LoginDate] AS [LoginDate], 
+      [V_S_User].[UserImage] AS [UserImage]
+      FROM [dbo].[V_S_User] AS [V_S_User]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_S_User_GroupDataBase" EntityType="ERPModel.Store.V_S_User_GroupDataBase" store:Type="Views" store:Schema="dbo" store:Name="V_S_User_GroupDataBase">
+            <DefiningQuery>SELECT 
+      [V_S_User_GroupDataBase].[UserCode] AS [UserCode], 
+      [V_S_User_GroupDataBase].[UserName] AS [UserName], 
+      [V_S_User_GroupDataBase].[GpCode] AS [GpCode], 
+      [V_S_User_GroupDataBase].[GpName] AS [GpName], 
+      [V_S_User_GroupDataBase].[GpID] AS [GpID], 
+      [V_S_User_GroupDataBase].[F_RBCusCode] AS [F_RBCusCode], 
+      [V_S_User_GroupDataBase].[F_RBWhCode] AS [F_RBWhCode], 
+      [V_S_User_GroupDataBase].[F_RUWhCode] AS [F_RUWhCode], 
+      [V_S_User_GroupDataBase].[DBCode] AS [DBCode], 
+      [V_S_User_GroupDataBase].[DBName] AS [DBName], 
+      [V_S_User_GroupDataBase].[SubID] AS [SubID]
+      FROM [dbo].[V_S_User_GroupDataBase] AS [V_S_User_GroupDataBase]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_S_UserGroup" EntityType="ERPModel.Store.V_S_UserGroup" store:Type="Views" store:Schema="dbo" store:Name="V_S_UserGroup">
+            <DefiningQuery>SELECT 
+      [V_S_UserGroup].[GpCode] AS [GpCode], 
+      [V_S_UserGroup].[GpName] AS [GpName], 
+      [V_S_UserGroup].[GpExplain] AS [GpExplain], 
+      [V_S_UserGroup].[GpID] AS [GpID], 
+      [V_S_UserGroup].[DBCode] AS [DBCode], 
+      [V_S_UserGroup].[F_RBCusCode] AS [F_RBCusCode], 
+      [V_S_UserGroup].[F_RBWhCode] AS [F_RBWhCode], 
+      [V_S_UserGroup].[F_RUWhCode] AS [F_RUWhCode], 
+      [V_S_UserGroup].[F_RBDpCode] AS [F_RBDpCode], 
+      [V_S_UserGroup].[F_RBSpCode] AS [F_RBSpCode], 
+      [V_S_UserGroup].[DBName] AS [DBName]
+      FROM [dbo].[V_S_UserGroup] AS [V_S_UserGroup]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_U_ProcessClass" EntityType="ERPModel.Store.V_U_ProcessClass" store:Type="Views" store:Schema="dbo" store:Name="V_U_ProcessClass">
+            <DefiningQuery>SELECT 
+      [V_U_ProcessClass].[KeyCode] AS [KeyCode], 
+      [V_U_ProcessClass].[KeyName] AS [KeyName]
+      FROM [dbo].[V_U_ProcessClass] AS [V_U_ProcessClass]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'HKOERP.dbo.V_S_DataBase' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="V_S_DataBase">
+          <Key>
+            <PropertyRef Name="DBCode" />
+          </Key>
+          <Property Name="DBCode" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="DBName" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'HKOERP.dbo.V_S_Function' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="V_S_Function">
+          <Key>
+            <PropertyRef Name="FunID" />
+          </Key>
+          <Property Name="FunID" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="FunPID" Type="varchar" MaxLength="10" />
+          <Property Name="FunCode" Type="varchar" MaxLength="100" />
+          <Property Name="FunName" Type="nvarchar" MaxLength="100" />
+          <Property Name="FunRight" Type="varchar" MaxLength="1000" />
+          <Property Name="F_ShowInMenu" Type="bit" />
+          <Property Name="F_Open" Type="bit" />
+          <Property Name="ImageURL" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'HKOERP.dbo.V_S_Log' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="V_S_Log">
+          <Key>
+            <PropertyRef Name="LogTime" />
+            <PropertyRef Name="FunCode" />
+          </Key>
+          <Property Name="LogTime" Type="datetime" Nullable="false" />
+          <Property Name="LogTimeSmall" Type="nvarchar" MaxLength="100" />
+          <Property Name="UserCode" Type="varchar" MaxLength="50" />
+          <Property Name="DBCode" Type="varchar" MaxLength="50" />
+          <Property Name="FunCode" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="IP" Type="varchar" MaxLength="50" />
+          <Property Name="ClientID" Type="varchar" MaxLength="50" />
+          <Property Name="UserName" Type="varchar" MaxLength="30" />
+          <Property Name="DBName" Type="nvarchar" MaxLength="30" />
+          <Property Name="FunName" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'HKOERP.dbo.V_S_User' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="V_S_User">
+          <Key>
+            <PropertyRef Name="UserCode" />
+          </Key>
+          <Property Name="UserCode" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="UserName" Type="varchar" MaxLength="30" />
+          <Property Name="UserExplain" Type="varchar" MaxLength="30" />
+          <Property Name="UserPassword" Type="varchar" MaxLength="200" />
+          <Property Name="UserRight" Type="varchar" MaxLength="1000" />
+          <Property Name="MakeDate" Type="date" />
+          <Property Name="F_Admin" Type="bit" />
+          <Property Name="F_Super" Type="bit" />
+          <Property Name="F_Stop" Type="bit" />
+          <Property Name="LastLoginDate" Type="datetime" />
+          <Property Name="LoginDate" Type="datetime" />
+          <Property Name="UserImage" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'HKOERP.dbo.V_S_User_GroupDataBase' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="V_S_User_GroupDataBase">
+          <Key>
+            <PropertyRef Name="UserCode" />
+            <PropertyRef Name="GpID" />
+            <PropertyRef Name="SubID" />
+          </Key>
+          <Property Name="UserCode" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="UserName" Type="varchar" MaxLength="30" />
+          <Property Name="GpCode" Type="varchar" MaxLength="10" />
+          <Property Name="GpName" Type="nvarchar" MaxLength="30" />
+          <Property Name="GpID" Type="int" Nullable="false" />
+          <Property Name="F_RBCusCode" Type="bit" />
+          <Property Name="F_RBWhCode" Type="bit" />
+          <Property Name="F_RUWhCode" Type="bit" />
+          <Property Name="DBCode" Type="varchar" MaxLength="10" />
+          <Property Name="DBName" Type="nvarchar" MaxLength="30" />
+          <Property Name="SubID" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'HKOERP.dbo.V_S_UserGroup' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="V_S_UserGroup">
+          <Key>
+            <PropertyRef Name="GpCode" />
+            <PropertyRef Name="GpID" />
+          </Key>
+          <Property Name="GpCode" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="GpName" Type="nvarchar" MaxLength="30" />
+          <Property Name="GpExplain" Type="nvarchar" MaxLength="50" />
+          <Property Name="GpID" Type="int" Nullable="false" />
+          <Property Name="DBCode" Type="varchar" MaxLength="20" />
+          <Property Name="F_RBCusCode" Type="bit" />
+          <Property Name="F_RBWhCode" Type="bit" />
+          <Property Name="F_RUWhCode" Type="bit" />
+          <Property Name="F_RBDpCode" Type="bit" />
+          <Property Name="F_RBSpCode" Type="bit" />
+          <Property Name="DBName" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'HKOERP.dbo.V_U_ProcessClass' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="V_U_ProcessClass">
+          <Key>
+            <PropertyRef Name="KeyCode" />
+          </Key>
+          <Property Name="KeyCode" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="KeyName" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ERPModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="V_S_Log" EntityType="ERPModel.V_S_Log" />
+          <EntitySet Name="V_S_DataBase" EntityType="ERPModel.V_S_DataBase" />
+          <EntitySet Name="V_S_Function" EntityType="ERPModel.V_S_Function" />
+          <EntitySet Name="V_S_User_GroupDataBase" EntityType="ERPModel.V_S_User_GroupDataBase" />
+          <EntitySet Name="V_S_User" EntityType="ERPModel.V_S_User" />
+          <EntitySet Name="V_S_UserGroup" EntityType="ERPModel.V_S_UserGroup" />
+          <EntitySet Name="V_U_ProcessClass" EntityType="ERPModel.V_U_ProcessClass" />
+        </EntityContainer>
+        <EntityType Name="V_S_Log">
+          <Key>
+            <PropertyRef Name="LogTime" />
+            <PropertyRef Name="FunCode" />
+          </Key>
+          <Property Type="DateTime" Name="LogTime" Nullable="false" />
+          <Property Type="String" Name="LogTimeSmall" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="UserCode" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DBCode" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FunCode" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="IP" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ClientID" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="UserName" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DBName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FunName" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="V_S_DataBase">
+          <Key>
+            <PropertyRef Name="DBCode" />
+          </Key>
+          <Property Type="String" Name="DBCode" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DBName" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="V_S_Function">
+          <Key>
+            <PropertyRef Name="FunID" />
+          </Key>
+          <Property Type="String" Name="FunID" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FunPID" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FunCode" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FunName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FunRight" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="F_ShowInMenu" />
+          <Property Type="Boolean" Name="F_Open" />
+          <Property Type="String" Name="ImageURL" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="V_S_User_GroupDataBase">
+          <Key>
+            <PropertyRef Name="UserCode" />
+            <PropertyRef Name="GpID" />
+            <PropertyRef Name="SubID" />
+          </Key>
+          <Property Type="String" Name="UserCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="UserName" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="GpCode" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="GpName" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="GpID" Nullable="false" />
+          <Property Type="Boolean" Name="F_RBCusCode" />
+          <Property Type="Boolean" Name="F_RBWhCode" />
+          <Property Type="Boolean" Name="F_RUWhCode" />
+          <Property Type="String" Name="DBCode" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DBName" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="SubID" Nullable="false" />
+        </EntityType>
+        <EntityType Name="V_S_User">
+          <Key>
+            <PropertyRef Name="UserCode" />
+          </Key>
+          <Property Type="String" Name="UserCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="UserName" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="UserExplain" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="UserPassword" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="UserRight" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="MakeDate" />
+          <Property Type="Boolean" Name="F_Admin" />
+          <Property Type="Boolean" Name="F_Super" />
+          <Property Type="Boolean" Name="F_Stop" />
+          <Property Type="DateTime" Name="LastLoginDate" />
+          <Property Type="DateTime" Name="LoginDate" />
+          <Property Type="String" Name="UserImage" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="V_S_UserGroup">
+          <Key>
+            <PropertyRef Name="GpCode" />
+            <PropertyRef Name="GpID" />
+          </Key>
+          <Property Type="String" Name="GpCode" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="GpName" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="GpExplain" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="GpID" Nullable="false" />
+          <Property Type="String" Name="DBCode" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="F_RBCusCode" />
+          <Property Type="Boolean" Name="F_RBWhCode" />
+          <Property Type="Boolean" Name="F_RUWhCode" />
+          <Property Type="Boolean" Name="F_RBDpCode" />
+          <Property Type="Boolean" Name="F_RBSpCode" />
+          <Property Type="String" Name="DBName" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="V_U_ProcessClass">
+          <Key>
+            <PropertyRef Name="KeyCode" />
+          </Key>
+          <Property Type="String" Name="KeyCode" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="KeyName" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ERPModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="V_S_Log">
+            <EntityTypeMapping TypeName="ERPModel.V_S_Log">
+              <MappingFragment StoreEntitySet="V_S_Log">
+                <ScalarProperty Name="FunName" ColumnName="FunName" />
+                <ScalarProperty Name="DBName" ColumnName="DBName" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+                <ScalarProperty Name="IP" ColumnName="IP" />
+                <ScalarProperty Name="FunCode" ColumnName="FunCode" />
+                <ScalarProperty Name="DBCode" ColumnName="DBCode" />
+                <ScalarProperty Name="UserCode" ColumnName="UserCode" />
+                <ScalarProperty Name="LogTimeSmall" ColumnName="LogTimeSmall" />
+                <ScalarProperty Name="LogTime" ColumnName="LogTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_S_DataBase">
+            <EntityTypeMapping TypeName="ERPModel.V_S_DataBase">
+              <MappingFragment StoreEntitySet="V_S_DataBase">
+                <ScalarProperty Name="DBName" ColumnName="DBName" />
+                <ScalarProperty Name="DBCode" ColumnName="DBCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_S_Function">
+            <EntityTypeMapping TypeName="ERPModel.V_S_Function">
+              <MappingFragment StoreEntitySet="V_S_Function">
+                <ScalarProperty Name="ImageURL" ColumnName="ImageURL" />
+                <ScalarProperty Name="F_Open" ColumnName="F_Open" />
+                <ScalarProperty Name="F_ShowInMenu" ColumnName="F_ShowInMenu" />
+                <ScalarProperty Name="FunRight" ColumnName="FunRight" />
+                <ScalarProperty Name="FunName" ColumnName="FunName" />
+                <ScalarProperty Name="FunCode" ColumnName="FunCode" />
+                <ScalarProperty Name="FunPID" ColumnName="FunPID" />
+                <ScalarProperty Name="FunID" ColumnName="FunID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_S_User_GroupDataBase">
+            <EntityTypeMapping TypeName="ERPModel.V_S_User_GroupDataBase">
+              <MappingFragment StoreEntitySet="V_S_User_GroupDataBase">
+                <ScalarProperty Name="SubID" ColumnName="SubID" />
+                <ScalarProperty Name="DBName" ColumnName="DBName" />
+                <ScalarProperty Name="DBCode" ColumnName="DBCode" />
+                <ScalarProperty Name="F_RUWhCode" ColumnName="F_RUWhCode" />
+                <ScalarProperty Name="F_RBWhCode" ColumnName="F_RBWhCode" />
+                <ScalarProperty Name="F_RBCusCode" ColumnName="F_RBCusCode" />
+                <ScalarProperty Name="GpID" ColumnName="GpID" />
+                <ScalarProperty Name="GpName" ColumnName="GpName" />
+                <ScalarProperty Name="GpCode" ColumnName="GpCode" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserCode" ColumnName="UserCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_S_User">
+            <EntityTypeMapping TypeName="ERPModel.V_S_User">
+              <MappingFragment StoreEntitySet="V_S_User">
+                <ScalarProperty Name="UserImage" ColumnName="UserImage" />
+                <ScalarProperty Name="LoginDate" ColumnName="LoginDate" />
+                <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+                <ScalarProperty Name="F_Stop" ColumnName="F_Stop" />
+                <ScalarProperty Name="F_Super" ColumnName="F_Super" />
+                <ScalarProperty Name="F_Admin" ColumnName="F_Admin" />
+                <ScalarProperty Name="MakeDate" ColumnName="MakeDate" />
+                <ScalarProperty Name="UserRight" ColumnName="UserRight" />
+                <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+                <ScalarProperty Name="UserExplain" ColumnName="UserExplain" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserCode" ColumnName="UserCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_S_UserGroup">
+            <EntityTypeMapping TypeName="ERPModel.V_S_UserGroup">
+              <MappingFragment StoreEntitySet="V_S_UserGroup">
+                <ScalarProperty Name="DBName" ColumnName="DBName" />
+                <ScalarProperty Name="F_RBSpCode" ColumnName="F_RBSpCode" />
+                <ScalarProperty Name="F_RBDpCode" ColumnName="F_RBDpCode" />
+                <ScalarProperty Name="F_RUWhCode" ColumnName="F_RUWhCode" />
+                <ScalarProperty Name="F_RBWhCode" ColumnName="F_RBWhCode" />
+                <ScalarProperty Name="F_RBCusCode" ColumnName="F_RBCusCode" />
+                <ScalarProperty Name="DBCode" ColumnName="DBCode" />
+                <ScalarProperty Name="GpID" ColumnName="GpID" />
+                <ScalarProperty Name="GpExplain" ColumnName="GpExplain" />
+                <ScalarProperty Name="GpName" ColumnName="GpName" />
+                <ScalarProperty Name="GpCode" ColumnName="GpCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_U_ProcessClass">
+            <EntityTypeMapping TypeName="ERPModel.V_U_ProcessClass">
+              <MappingFragment StoreEntitySet="V_U_ProcessClass">
+                <ScalarProperty Name="KeyName" ColumnName="KeyName" />
+                <ScalarProperty Name="KeyCode" ColumnName="KeyCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="ModelMan" ZoomLevel="98">
+        <EntityTypeShape EntityType="ERPModel.V_S_Log" Width="1.5" PointX="2.75" PointY="0.75" Height="2.9417936197916674" />
+        <EntityTypeShape EntityType="ERPModel.V_S_DataBase" Width="1.5" PointX="0.75" PointY="4.75" Height="1.2636116536458317" />
+        <EntityTypeShape EntityType="ERPModel.V_S_Function" Width="1.5" PointX="2.75" PointY="4.75" Height="2.2496956380208317" />
+        <EntityTypeShape EntityType="ERPModel.V_S_User_GroupDataBase" Width="1.5" PointX="5.75" PointY="0.75" Height="2.7427376302083353" />
+        <EntityTypeShape EntityType="ERPModel.V_S_User" Width="1.5" PointX="0.75" PointY="7.75" Height="2.9070849609374996" />
+        <EntityTypeShape EntityType="ERPModel.V_S_UserGroup" Width="1.5" PointX="5.375" PointY="4.75" Height="2.7427376302083317" />
+        <EntityTypeShape EntityType="ERPModel.V_U_ProcessClass" Width="1.5" PointX="7.375" PointY="4.75" Height="1.2636116536458317" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

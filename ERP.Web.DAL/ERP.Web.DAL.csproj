@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4DCB21B1-13A5-486A-ABD0-33F97F3F8B80}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ERP.Web.DAL</RootNamespace>
+    <AssemblyName>ERP.Web.DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\DB_Material_LensClass_DefaultCoating.cs" />
+    <Compile Include="Base\DB_Customer_Acc.cs" />
+    <Compile Include="Base\DB_Customer_Main.cs" />
+    <Compile Include="Base\DB_Material_Process.cs" />
+    <Compile Include="Base\DB_Material_LensClass_Design.cs" />
+    <Compile Include="Base\DB_Material_LensClass_Focus.cs" />
+    <Compile Include="Base\DB_Material_LensClass_Index.cs" />
+    <Compile Include="Base\DB_Material_LensClass_Materials.cs" />
+    <Compile Include="Base\DB_Material_LensClass_Usage.cs" />
+    <Compile Include="Base\DB_Frame.cs" />
+    <Compile Include="Base\DB_Area.cs" />
+    <Compile Include="Base\DB_Customer.cs" />
+    <Compile Include="Base\DB_Department.cs" />
+    <Compile Include="Base\DB_Material_Lens.cs" />
+    <Compile Include="Base\DB_Material_LensClass_Brand.cs" />
+    <Compile Include="Base\DB_Person.cs" />
+    <Compile Include="Base\DB_Supplier.cs" />
+    <Compile Include="Base\DB_Warehouse.cs" />
+    <Compile Include="DALUtility.cs" />
+    <Compile Include="DALHelper.cs" />
+    <Compile Include="Man\DS_UserGroup.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Man\DS_Log.cs" />
+    <Compile Include="Man\DS_User.cs" />
+    <Compile Include="DALBase.cs" />
+    <Compile Include="Pur\DPur_PriceContract.cs" />
+    <Compile Include="Pur\DPur_PriceContract_SpGroup.cs" />
+    <Compile Include="Pur\DPur_PriceContract_Frame.cs" />
+    <Compile Include="Pur\DPur_PriceContract_FrameSet.cs" />
+    <Compile Include="Pur\DPur_PriceContract_Lens.cs" />
+    <Compile Include="Pur\DPur_PriceContract_Lens_ProCost.cs" />
+    <Compile Include="Pur\DPur_Quote.cs" />
+    <Compile Include="Sale\DSale.cs" />
+    <Compile Include="Sale\DSale_Quote.cs" />
+    <Compile Include="Sale\DSale_PriceContract_CusGroup.cs" />
+    <Compile Include="Sale\DSale_PriceContract_FrameSet.cs" />
+    <Compile Include="Sale\DSale_PriceContract_Frame.cs" />
+    <Compile Include="Sale\DSale_PriceContract_Lens_ProCost.cs" />
+    <Compile Include="Sale\DSale_PriceContract_Lens.cs" />
+    <Compile Include="Sale\DSale_Order.cs" />
+    <Compile Include="Sale\DSale_PriceContract.cs" />
+    <Compile Include="Ware\DWare_Bill_Count.cs" />
+    <Compile Include="Ware\DWare.cs" />
+    <Compile Include="Ware\DWare_Bill_Transfer.cs" />
+    <Compile Include="Ware\DWare_Stocks_Base_Lens.cs" />
+    <Compile Include="Ware\DWare_Bill.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ERP.Web.Common\ERP.Web.Common.csproj">
+      <Project>{5D513428-FD9E-491A-BB51-D53BDC781094}</Project>
+      <Name>ERP.Web.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ERP.Web.DBUtility\ERP.Web.DBUtility.csproj">
+      <Project>{54B7E80F-F9EB-4234-83B4-32D99DA699DD}</Project>
+      <Name>ERP.Web.DBUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ERP.Web.Interface\ERP.Web.Interface.csproj">
+      <Project>{E07E8C76-82F0-4E5A-8293-C9F333856D2F}</Project>
+      <Name>ERP.Web.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ERP.Web.Model\ERP.Web.Model.csproj">
+      <Project>{FFFB764C-8136-49F6-BDB2-9B37042F9592}</Project>
+      <Name>ERP.Web.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

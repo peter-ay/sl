@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{52DB8C3A-61F9-43E5-A8C8-072E7A1E5FBB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ERP.Web.BLL</RootNamespace>
+    <AssemblyName>ERP.Web.BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\BB_Area.cs" />
+    <Compile Include="Base\BB_Customer.cs" />
+    <Compile Include="Base\BB_Department.cs" />
+    <Compile Include="Base\BB_Frame.cs" />
+    <Compile Include="Base\BB_Material_Lens.cs" />
+    <Compile Include="Base\BB_Material_LensClass_Brand.cs" />
+    <Compile Include="Base\BB_Person.cs" />
+    <Compile Include="Base\BB_Supplier.cs" />
+    <Compile Include="Base\BB_Warehouse.cs" />
+    <Compile Include="Base\BB_Material_LensClass_Design.cs" />
+    <Compile Include="Base\BB_Material_LensClass_Focus.cs" />
+    <Compile Include="Base\BB_Material_LensClass_Index.cs" />
+    <Compile Include="Base\BB_Material_LensClass_Materials.cs" />
+    <Compile Include="Base\BB_Material_LensClass_Usage.cs" />
+    <Compile Include="Base\BB_Material_Process.cs" />
+    <Compile Include="Base\BB_Customer_Acc.cs" />
+    <Compile Include="Base\BB_Customer_Main.cs" />
+    <Compile Include="Base\BB_Material_LensClass_DefaultCoating.cs" />
+    <Compile Include="BLLBase.cs" />
+    <Compile Include="Man\BS_UserGroup.cs" />
+    <Compile Include="Man\BS_User.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Man\BS_Log.cs" />
+    <Compile Include="Pur\BPur_PriceContract.cs" />
+    <Compile Include="Pur\BPur_PriceContract_SpGroup.cs" />
+    <Compile Include="Pur\BPur_PriceContract_Frame.cs" />
+    <Compile Include="Pur\BPur_PriceContract_FrameSet.cs" />
+    <Compile Include="Pur\BPur_PriceContract_Lens.cs" />
+    <Compile Include="Pur\BPur_PriceContract_Lens_ProCost.cs" />
+    <Compile Include="Pur\BPur_Quote.cs" />
+    <Compile Include="Sale\BSale_Order.cs" />
+    <Compile Include="Sale\BSale_PriceContract.cs" />
+    <Compile Include="Sale\BSale_PriceContract_Lens.cs" />
+    <Compile Include="Sale\BSale_PriceContract_Lens_ProCost.cs" />
+    <Compile Include="Sale\BSale_PriceContract_Frame.cs" />
+    <Compile Include="Sale\BSale_PriceContract_FrameSet.cs" />
+    <Compile Include="Sale\BSale_PriceContract_CusGroup.cs" />
+    <Compile Include="Sale\BSale_Quote.cs" />
+    <Compile Include="Ware\BWare_Bill.cs" />
+    <Compile Include="Ware\BWare_Stocks_Base_Lens.cs" />
+    <Compile Include="Ware\BWare_Bill_Transfer.cs" />
+    <Compile Include="Ware\BWare_Bill_Count.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ERP.Web.DAL\ERP.Web.DAL.csproj">
+      <Project>{4DCB21B1-13A5-486A-ABD0-33F97F3F8B80}</Project>
+      <Name>ERP.Web.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ERP.Web.Interface\ERP.Web.Interface.csproj">
+      <Project>{E07E8C76-82F0-4E5A-8293-C9F333856D2F}</Project>
+      <Name>ERP.Web.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ERP.Web.Model\ERP.Web.Model.csproj">
+      <Project>{FFFB764C-8136-49F6-BDB2-9B37042F9592}</Project>
+      <Name>ERP.Web.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

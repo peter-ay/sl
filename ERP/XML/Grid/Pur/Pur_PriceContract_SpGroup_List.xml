@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Columns Frozen="1">
+  <Column  Binding=""   Header="" Fheader="1"/>
+  <Column Binding="GpCode" Header="组别//組別//Group"  Ffunction="Key" />
+  <Column Binding="GpName" Header="名称//名稱//Name"  Fwidth="2"/>
+  <Column Binding="SumSpCode" Header="供应商数量//供應商數量//Count" Ffunction="1" />
+</Columns>
+
+
+
+
+

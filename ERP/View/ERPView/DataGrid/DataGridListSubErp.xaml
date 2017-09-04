@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="ERP.View.DataGridListSubErp"
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+xmlns:grid="clr-namespace:DevExpress.AgDataGrid;assembly=DevExpress.AgDataGrid.v8.2">
+    <!--DataSource="{Binding DContextList2}"-->
+    <UserControl.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="TextAlignment" Value="Right"></Setter>
+            <Setter Property="VerticalAlignment" Value="Bottom"></Setter>
+            <Setter Property="FontWeight" Value="Bold"></Setter>
+            <Setter Property="Margin" Value="0,0,0,2"></Setter>
+            <Setter Property="FontFamily" Value="{StaticResource FFN}"/>
+            <Setter Property="FontSize" Value="{StaticResource FSN}"/>
+        </Style>
+    </UserControl.Resources>
+    <grid:AgDataGrid x:Name="SubGrid"  
+                            FontSize="{StaticResource FSV}"  FontFamily="{StaticResource FFV}"  
+                            ColumnsAutoWidth="True" 
+                            AllowColumnSorting="False" AutoGenerateColumns="False"
+                            ChangeOddRowsAppearance="True" FocusFirstRowOnLoad="False"
+                            AllowEditing="False">
+    </grid:AgDataGrid>
+</UserControl>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Columns  >
+  <Column  FieldName="SubID" HeaderContent="序号//序號//No." Fsum="1" Title="项数//項數//Sum"/>
+  <Column  FieldName="SPH" HeaderContent="SPH" />
+  <Column  FieldName="CYL" HeaderContent="CYL"/>
+  <Column  FieldName="X_ADD" HeaderContent="ADD"/>
+  <Column  FieldName="Qty1" HeaderContent="账面数量//賬面數量//Sys Qty" Fsum="1" Title = "合计//合計//Sum"/>
+  <Column  FieldName="Qty2" HeaderContent="实盘数量//實盤數量//Actual Qty" Fsum="1" Title = "合计//合計//Sum"/>
+  <Column  FieldName="Qty" HeaderContent="差异数量//差異數量//Dif Qty" Fsum="1" Title = "合计//合計//Sum"/>
+</Columns>
+
+
+
+
+
+
+

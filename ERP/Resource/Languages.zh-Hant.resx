@@ -1,0 +1,2649 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="B_Area_List_Title" xml:space="preserve">
+    <value>基礎資料--地區資料列表</value>
+  </data>
+  <data name="B_Area_Title" xml:space="preserve">
+    <value>基礎資料--地區資料</value>
+  </data>
+  <data name="B_Customer_Acc_List_CusIncludeInfo" xml:space="preserve">
+    <value>包含客戶:</value>
+  </data>
+  <data name="B_Customer_Acc_List_Title" xml:space="preserve">
+    <value>基礎資料--對賬賬戶資料列表</value>
+  </data>
+  <data name="B_Customer_List_Title" xml:space="preserve">
+    <value>基礎資料--客戶資料列表</value>
+  </data>
+  <data name="B_Customer_Main_List_Title" xml:space="preserve">
+    <value>基礎資料--總店資料列表</value>
+  </data>
+  <data name="B_Customer_Right_Browse_Title" xml:space="preserve">
+    <value>基礎資料--客戶瀏覽權設置</value>
+  </data>
+  <data name="B_Customer_Title" xml:space="preserve">
+    <value>基礎資料--客戶資料</value>
+  </data>
+  <data name="B_Department_List_Title" xml:space="preserve">
+    <value>基礎資料--部門檔案列表</value>
+  </data>
+  <data name="B_Department_Right_Browse_Title" xml:space="preserve">
+    <value>基礎資料--部門瀏覽權設置</value>
+  </data>
+  <data name="B_Department_Title" xml:space="preserve">
+    <value>基礎資料--部門檔案</value>
+  </data>
+  <data name="B_ForeignCurrency_List_Title" xml:space="preserve">
+    <value>基礎資料--幣種資料列表</value>
+  </data>
+  <data name="B_Material_Frame_List_Title" xml:space="preserve">
+    <value>基礎資料--鏡架資料列表</value>
+  </data>
+  <data name="B_Material_Frame_Title" xml:space="preserve">
+    <value>基礎資料--鏡架資料設定</value>
+  </data>
+  <data name="B_Material_LensClass_Brand_List_Title" xml:space="preserve">
+    <value>基礎資料--鏡片分類設置--品牌</value>
+  </data>
+  <data name="B_Material_LensClass_Brand_Title" xml:space="preserve">
+    <value>基礎資料--鏡片分類設置--品牌</value>
+  </data>
+  <data name="B_Material_LensClass_DefaultCoating_List_Title" xml:space="preserve">
+    <value>基礎資料--鏡片分類設置--默認膜層</value>
+  </data>
+  <data name="B_Material_LensClass_DefaultCoating_Title" xml:space="preserve">
+    <value>基礎資料--鏡片分類設置--默認膜層</value>
+  </data>
+  <data name="B_Material_LensClass_Design_List_Title" xml:space="preserve">
+    <value>基礎資料--鏡片分類設置--工藝特點</value>
+  </data>
+  <data name="B_Material_LensClass_Design_Title" xml:space="preserve">
+    <value>基礎資料--鏡片分類設置--工藝特點</value>
+  </data>
+  <data name="B_Material_LensClass_Focus_List_Title" xml:space="preserve">
+    <value>基礎資料--鏡片分類設置--焦點</value>
+  </data>
+  <data name="B_Material_LensClass_Focus_Title" xml:space="preserve">
+    <value>基礎資料--鏡片分類設置--焦點</value>
+  </data>
+  <data name="B_Material_LensClass_Index_List_Title" xml:space="preserve">
+    <value>基礎資料--鏡片分類設置--折射率</value>
+  </data>
+  <data name="B_Material_LensClass_Index_Title" xml:space="preserve">
+    <value>基礎資料--鏡片分類設置--折射率</value>
+  </data>
+  <data name="B_Material_LensClass_Materials_List_Title" xml:space="preserve">
+    <value>基礎資料--鏡片分類設置--材質</value>
+  </data>
+  <data name="B_Material_LensClass_Materials_Title" xml:space="preserve">
+    <value>基礎資料--鏡片分類設置--材質</value>
+  </data>
+  <data name="B_Material_LensClass_Usage_List_Title" xml:space="preserve">
+    <value>基礎資料--鏡片分類設置--特殊應用</value>
+  </data>
+  <data name="B_Material_LensClass_Usage_Title" xml:space="preserve">
+    <value>基礎資料--鏡片分類設置--特殊應用</value>
+  </data>
+  <data name="B_Material_Lens_List_Title" xml:space="preserve">
+    <value>基礎資料--通用鏡片資料列表</value>
+  </data>
+  <data name="B_Material_Lens_Sale_List_Title" xml:space="preserve">
+    <value>基礎資料--銷售鏡片資料列表</value>
+  </data>
+  <data name="B_Material_Lens_Sale_Title" xml:space="preserve">
+    <value>基礎資料--銷售鏡片資料設置</value>
+  </data>
+  <data name="B_Material_Lens_Title" xml:space="preserve">
+    <value>基礎資料--通用鏡片資料設置</value>
+  </data>
+  <data name="B_Material_Process_List_Title" xml:space="preserve">
+    <value>基礎設置--鏡片工序資料</value>
+  </data>
+  <data name="B_Material_Process_Title" xml:space="preserve">
+    <value>基礎設置--鏡片工序資料</value>
+  </data>
+  <data name="B_Person_List_Title" xml:space="preserve">
+    <value>基礎資料--職員資料列表</value>
+  </data>
+  <data name="B_Person_Title" xml:space="preserve">
+    <value>基礎資料--職員資料設置</value>
+  </data>
+  <data name="B_ProcessControl_List_Title" xml:space="preserve">
+    <value>基礎資料--加工控制列表</value>
+  </data>
+  <data name="B_ProcessControl_Title" xml:space="preserve">
+    <value>基礎資料--加工控制資料設置</value>
+  </data>
+  <data name="B_Process_List_Title" xml:space="preserve">
+    <value>基礎資料--工序資料列表</value>
+  </data>
+  <data name="B_Supplier_Default_List_Title" xml:space="preserve">
+    <value>基礎資料--默認供應商設定</value>
+  </data>
+  <data name="B_Supplier_List_Title" xml:space="preserve">
+    <value>基礎資料--供應商資料列表</value>
+  </data>
+  <data name="B_Supplier_Right_Browse_Title" xml:space="preserve">
+    <value>基礎資料--供應商瀏覽權設置</value>
+  </data>
+  <data name="B_Supplier_Title" xml:space="preserve">
+    <value>基礎資料--供應商資料設置</value>
+  </data>
+  <data name="B_Warehouse_List_Title" xml:space="preserve">
+    <value>基礎資料--倉庫資料列表</value>
+  </data>
+  <data name="B_Warehouse_Right_Browse_Title" xml:space="preserve">
+    <value>基礎資料--倉庫瀏覽權設置</value>
+  </data>
+  <data name="B_Warehouse_Right_Use_Title" xml:space="preserve">
+    <value>基礎資料--倉庫使用權設置</value>
+  </data>
+  <data name="B_Warehouse_Title" xml:space="preserve">
+    <value>基礎資料--倉庫資料設置</value>
+  </data>
+  <data name="CH_ApplyCode_Title" xml:space="preserve">
+    <value>系統幫助--鏡種應用選擇</value>
+  </data>
+  <data name="CH_AreaCode_Title" xml:space="preserve">
+    <value>系統幫助--地區選擇</value>
+  </data>
+  <data name="CH_BrandCode" xml:space="preserve">
+    <value>系統幫助--鏡種品牌選擇</value>
+  </data>
+  <data name="CH_CusCode_Title" xml:space="preserve">
+    <value>系統幫助--客戶代碼選擇</value>
+  </data>
+  <data name="CH_CusMnumber_Title" xml:space="preserve">
+    <value>系統幫助--客戶鏡種代碼選擇</value>
+  </data>
+  <data name="CH_DataBase_Title" xml:space="preserve">
+    <value>系統幫助--帳套選擇</value>
+  </data>
+  <data name="CH_DeptCode_Title" xml:space="preserve">
+    <value>系統幫助--部門代碼選擇</value>
+  </data>
+  <data name="CH_FocusCode_Title" xml:space="preserve">
+    <value>系統幫助--鏡種焦點選擇</value>
+  </data>
+  <data name="CH_ForeignCurrency_Title" xml:space="preserve">
+    <value>系統幫助--貨幣選擇</value>
+  </data>
+  <data name="CH_Mnumber_Title" xml:space="preserve">
+    <value>系統幫助--鏡種選擇</value>
+  </data>
+  <data name="CH_PayWay_Title" xml:space="preserve">
+    <value>系統幫助--付款方式選擇</value>
+  </data>
+  <data name="CH_PDChoose_Title" xml:space="preserve">
+    <value>系統幫助--盤點鏡片選擇</value>
+  </data>
+  <data name="CH_Person_Title" xml:space="preserve">
+    <value>系統幫助--員工選擇</value>
+  </data>
+  <data name="CH_RefractionCode_Title" xml:space="preserve">
+    <value>系統幫助--鏡種折射率選擇</value>
+  </data>
+  <data name="CH_SupplierCode_Title" xml:space="preserve">
+    <value>系統幫助--供應商選擇</value>
+  </data>
+  <data name="CH_TechnologyCode_Title" xml:space="preserve">
+    <value>系統幫助--鏡種工藝選擇</value>
+  </data>
+  <data name="CH_TextureCode_Title" xml:space="preserve">
+    <value>系統帮助--鏡種材質選擇</value>
+  </data>
+  <data name="CH_TradeWay_Title" xml:space="preserve">
+    <value>系統幫助--交易方式選擇</value>
+  </data>
+  <data name="CH_TransferWay_Title" xml:space="preserve">
+    <value>系統幫助--貨運方式選擇</value>
+  </data>
+  <data name="CH_WhCodeBrowse_Title" xml:space="preserve">
+    <value>系統幫助--倉庫選擇</value>
+  </data>
+  <data name="ComLogin1" xml:space="preserve">
+    <value>1.普通登陸</value>
+  </data>
+  <data name="ComLogin2" xml:space="preserve">
+    <value>2.後台管理</value>
+  </data>
+  <data name="DSDelete_DeleteNone" xml:space="preserve">
+    <value>沒有對應方法</value>
+  </data>
+  <data name="ERP_Abbe" xml:space="preserve">
+    <value>阿貝數:</value>
+  </data>
+  <data name="ERP_AccCode" xml:space="preserve">
+    <value>對賬賬戶代碼:</value>
+  </data>
+  <data name="ERP_AccCusCode" xml:space="preserve">
+    <value>賬戶代碼:</value>
+  </data>
+  <data name="ERP_AccCusName" xml:space="preserve">
+    <value>賬戶名稱:</value>
+  </data>
+  <data name="ERP_AccEndDate" xml:space="preserve">
+    <value>記賬日:</value>
+  </data>
+  <data name="ERP_AccLimit" xml:space="preserve">
+    <value>額度:</value>
+  </data>
+  <data name="ERP_Address" xml:space="preserve">
+    <value>門店地址:</value>
+  </data>
+  <data name="ERP_All" xml:space="preserve">
+    <value>全部</value>
+  </data>
+  <data name="ERP_AllTo" xml:space="preserve">
+    <value>全部----&gt;&gt;</value>
+  </data>
+  <data name="ERP_AllTo2" xml:space="preserve">
+    <value>&lt;&lt;----全部</value>
+  </data>
+  <data name="ERP_AreaCode" xml:space="preserve">
+    <value>地區代碼:</value>
+  </data>
+  <data name="ERP_AreaName" xml:space="preserve">
+    <value>地區名稱:</value>
+  </data>
+  <data name="ERP_AreaNameBill" xml:space="preserve">
+    <value>地區:</value>
+  </data>
+  <data name="ERP_AssCusCode" xml:space="preserve">
+    <value>分配客戶:</value>
+  </data>
+  <data name="ERP_Assign" xml:space="preserve">
+    <value>分配:</value>
+  </data>
+  <data name="ERP_Attachment1" xml:space="preserve">
+    <value>附件1:</value>
+  </data>
+  <data name="ERP_AuthorityErr" xml:space="preserve">
+    <value>沒有權限!</value>
+  </data>
+  <data name="ERP_Axis" xml:space="preserve">
+    <value>線軸</value>
+  </data>
+  <data name="ERP_AxisL" xml:space="preserve">
+    <value>線軸L:</value>
+  </data>
+  <data name="ERP_AxisR" xml:space="preserve">
+    <value>線軸R:</value>
+  </data>
+  <data name="ERP_Bagcode" xml:space="preserve">
+    <value>鏡袋代碼:</value>
+  </data>
+  <data name="ERP_BankAccount" xml:space="preserve">
+    <value>銀行賬號:</value>
+  </data>
+  <data name="ERP_BarCode" xml:space="preserve">
+    <value>數字代號:</value>
+  </data>
+  <data name="ERP_BarCodeInfo" xml:space="preserve">
+    <value>請掃條碼:</value>
+  </data>
+  <data name="ERP_BarCodeInfoMsg" xml:space="preserve">
+    <value>條碼信息:</value>
+  </data>
+  <data name="ERP_BarCodeLensCodeL" xml:space="preserve">
+    <value>條碼L:</value>
+  </data>
+  <data name="ERP_BarCodeLensCodeR" xml:space="preserve">
+    <value>條碼R:</value>
+  </data>
+  <data name="ERP_BarCodePre" xml:space="preserve">
+    <value>預出庫條碼:</value>
+  </data>
+  <data name="ERP_BarCodeScanInfo" xml:space="preserve">
+    <value>條碼記錄:</value>
+  </data>
+  <data name="ERP_BarCodeSOPre" xml:space="preserve">
+    <value>預出條碼:</value>
+  </data>
+  <data name="ERP_BCode" xml:space="preserve">
+    <value>單據號:</value>
+  </data>
+  <data name="ERP_BCodeSale" xml:space="preserve">
+    <value>銷售訂單號:</value>
+  </data>
+  <data name="ERP_BDate" xml:space="preserve">
+    <value>單據日期:</value>
+  </data>
+  <data name="ERP_BDateSale" xml:space="preserve">
+    <value>訂單日期:</value>
+  </data>
+  <data name="ERP_BegDate" xml:space="preserve">
+    <value>開始日期:</value>
+  </data>
+  <data name="ERP_BenDi" xml:space="preserve">
+    <value>本地</value>
+  </data>
+  <data name="ERP_BillCode" xml:space="preserve">
+    <value>單據號:</value>
+  </data>
+  <data name="ERP_BillDate" xml:space="preserve">
+    <value>單據日期:</value>
+  </data>
+  <data name="ERP_BillMakeInfo" xml:space="preserve">
+    <value>[制單信息]</value>
+  </data>
+  <data name="ERP_BottomInfo" xml:space="preserve">
+    <value>HKO IT R&amp;D TEAM</value>
+  </data>
+  <data name="ERP_Brand" xml:space="preserve">
+    <value>品牌:</value>
+  </data>
+  <data name="ERP_BrandCode" xml:space="preserve">
+    <value>品牌代碼:</value>
+  </data>
+  <data name="ERP_BrandName" xml:space="preserve">
+    <value>名稱:</value>
+  </data>
+  <data name="ERP_Bridge" xml:space="preserve">
+    <value>框高:</value>
+  </data>
+  <data name="ERP_BS" xml:space="preserve">
+    <value>報損</value>
+  </data>
+  <data name="ERP_Btn_Cancel" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="ERP_Btn_OK" xml:space="preserve">
+    <value>確定</value>
+  </data>
+  <data name="ERP_BusyContend" xml:space="preserve">
+    <value>請稍後...</value>
+  </data>
+  <data name="ERP_ButtonAdd" xml:space="preserve">
+    <value>添加</value>
+  </data>
+  <data name="ERP_ButtonAllAssign" xml:space="preserve">
+    <value>全部賦權</value>
+  </data>
+  <data name="ERP_ButtonAllAssignPanel" xml:space="preserve">
+    <value>本頁分配</value>
+  </data>
+  <data name="ERP_ButtonAllUnAssign" xml:space="preserve">
+    <value>全部收回</value>
+  </data>
+  <data name="ERP_ButtonAllUnAssignPanel" xml:space="preserve">
+    <value>本頁排除</value>
+  </data>
+  <data name="ERP_ButtonAssign" xml:space="preserve">
+    <value>分配</value>
+  </data>
+  <data name="ERP_ButtonCheck" xml:space="preserve">
+    <value>審核</value>
+  </data>
+  <data name="ERP_ButtonClear" xml:space="preserve">
+    <value>清除</value>
+  </data>
+  <data name="ERP_ButtonDelete" xml:space="preserve">
+    <value>刪除</value>
+  </data>
+  <data name="ERP_ButtonDrop" xml:space="preserve">
+    <value>放棄</value>
+  </data>
+  <data name="ERP_ButtonEdit" xml:space="preserve">
+    <value>修改</value>
+  </data>
+  <data name="ERP_ButtonEditCusCode" xml:space="preserve">
+    <value>編輯包含客戶</value>
+  </data>
+  <data name="ERP_ButtonEditFrame" xml:space="preserve">
+    <value>編輯鏡架價格</value>
+  </data>
+  <data name="ERP_ButtonEditFrameSet" xml:space="preserve">
+    <value>編輯套餐價格</value>
+  </data>
+  <data name="ERP_ButtonEditLensPrice" xml:space="preserve">
+    <value>銷售價格設定</value>
+  </data>
+  <data name="ERP_ButtonEditLensProControl" xml:space="preserve">
+    <value>鏡片工序控制</value>
+  </data>
+  <data name="ERP_ButtonEditLensProCost" xml:space="preserve">
+    <value>銷售工序費用</value>
+  </data>
+  <data name="ERP_ButtonEditMnumber" xml:space="preserve">
+    <value>編輯鏡片價格</value>
+  </data>
+  <data name="ERP_ButtonEditPriceContractCusCode" xml:space="preserve">
+    <value>包含客戶</value>
+  </data>
+  <data name="ERP_ButtonEditPriceContractFrame" xml:space="preserve">
+    <value>鏡架價格</value>
+  </data>
+  <data name="ERP_ButtonEditPriceContractFrameSet" xml:space="preserve">
+    <value>鏡架套餐</value>
+  </data>
+  <data name="ERP_ButtonEditPriceContractLens" xml:space="preserve">
+    <value>鏡片價格</value>
+  </data>
+  <data name="ERP_ButtonEditPriceContractProCost" xml:space="preserve">
+    <value>加工價格</value>
+  </data>
+  <data name="ERP_ButtonEditPriceContractSpCode" xml:space="preserve">
+    <value>包含供應商</value>
+  </data>
+  <data name="ERP_ButtonEditProcess" xml:space="preserve">
+    <value>編輯加工價格</value>
+  </data>
+  <data name="ERP_ButtonExCludeProcess" xml:space="preserve">
+    <value>排除工序</value>
+  </data>
+  <data name="ERP_ButtonExit" xml:space="preserve">
+    <value>退出</value>
+  </data>
+  <data name="ERP_ButtonExport" xml:space="preserve">
+    <value>導出</value>
+  </data>
+  <data name="ERP_ButtonExportList" xml:space="preserve">
+    <value>導出列表</value>
+  </data>
+  <data name="ERP_ButtonImport" xml:space="preserve">
+    <value>導入</value>
+  </data>
+  <data name="ERP_ButtonInCludeDepartment" xml:space="preserve">
+    <value>包含部門</value>
+  </data>
+  <data name="ERP_ButtonInCludeMnumber" xml:space="preserve">
+    <value>包含鏡種</value>
+  </data>
+  <data name="ERP_ButtonLensLoss" xml:space="preserve">
+    <value>報損</value>
+  </data>
+  <data name="ERP_ButtonListDelete" xml:space="preserve">
+    <value>刪除</value>
+  </data>
+  <data name="ERP_ButtonListNew" xml:space="preserve">
+    <value>新建</value>
+  </data>
+  <data name="ERP_ButtonListNewFD" xml:space="preserve">
+    <value>鏡架</value>
+  </data>
+  <data name="ERP_ButtonListNewFS" xml:space="preserve">
+    <value>套餐</value>
+  </data>
+  <data name="ERP_ButtonListNewPD" xml:space="preserve">
+    <value>批量</value>
+  </data>
+  <data name="ERP_ButtonListNewSD" xml:space="preserve">
+    <value>散訂</value>
+  </data>
+  <data name="ERP_ButtonLoad" xml:space="preserve">
+    <value>加載</value>
+  </data>
+  <data name="ERP_ButtonLocate" xml:space="preserve">
+    <value>定位</value>
+  </data>
+  <data name="ERP_ButtonNew" xml:space="preserve">
+    <value>新建</value>
+  </data>
+  <data name="ERP_ButtonNext" xml:space="preserve">
+    <value>下張</value>
+  </data>
+  <data name="ERP_ButtonPDChoose" xml:space="preserve">
+    <value>選擇</value>
+  </data>
+  <data name="ERP_ButtonPDEnd" xml:space="preserve">
+    <value>結束</value>
+  </data>
+  <data name="ERP_ButtonPDStart" xml:space="preserve">
+    <value>開始</value>
+  </data>
+  <data name="ERP_ButtonPrevious" xml:space="preserve">
+    <value>上張</value>
+  </data>
+  <data name="ERP_ButtonPrint" xml:space="preserve">
+    <value>打印</value>
+  </data>
+  <data name="ERP_ButtonPrintPreview" xml:space="preserve">
+    <value>打印</value>
+  </data>
+  <data name="ERP_ButtonPrintToFactory" xml:space="preserve">
+    <value>列印</value>
+  </data>
+  <data name="ERP_ButtonQuote" xml:space="preserve">
+    <value>取價</value>
+  </data>
+  <data name="ERP_ButtonRCList" xml:space="preserve">
+    <value>收貨列表</value>
+  </data>
+  <data name="ERP_ButtonRCNew" xml:space="preserve">
+    <value>新建收貨</value>
+  </data>
+  <data name="ERP_ButtonRefresh" xml:space="preserve">
+    <value>刷新</value>
+  </data>
+  <data name="ERP_ButtonRefreshSC" xml:space="preserve">
+    <value>刷新矩陣</value>
+  </data>
+  <data name="ERP_ButtonReOrder" xml:space="preserve">
+    <value>重訂</value>
+  </data>
+  <data name="ERP_ButtonSave" xml:space="preserve">
+    <value>保存</value>
+  </data>
+  <data name="ERP_ButtonScanBarCode" xml:space="preserve">
+    <value>掃碼</value>
+  </data>
+  <data name="ERP_ButtonSearch" xml:space="preserve">
+    <value>查詢</value>
+  </data>
+  <data name="ERP_ButtonUnCheck" xml:space="preserve">
+    <value>棄審</value>
+  </data>
+  <data name="ERP_ButtonUnLock" xml:space="preserve">
+    <value>解鎖</value>
+  </data>
+  <data name="ERP_ButtonUpdate" xml:space="preserve">
+    <value>更新</value>
+  </data>
+  <data name="ERP_ButtonUpdateCache" xml:space="preserve">
+    <value>更新緩存</value>
+  </data>
+  <data name="ERP_ButtonUpdatePassword" xml:space="preserve">
+    <value>更改密碼</value>
+  </data>
+  <data name="ERP_CaiBian" xml:space="preserve">
+    <value>彩邊</value>
+  </data>
+  <data name="ERP_CaiBian1" xml:space="preserve">
+    <value>彩邊:</value>
+  </data>
+  <data name="ERP_Canceler" xml:space="preserve">
+    <value>作廢:</value>
+  </data>
+  <data name="ERP_CA_Flag" xml:space="preserve">
+    <value>ADD顯示:</value>
+  </data>
+  <data name="ERP_CGDDStateName" xml:space="preserve">
+    <value>外購狀態:</value>
+  </data>
+  <data name="ERP_ChaSe" xml:space="preserve">
+    <value>茶色</value>
+  </data>
+  <data name="ERP_ChaSe1" xml:space="preserve">
+    <value>茶色:</value>
+  </data>
+  <data name="ERP_CheBian" xml:space="preserve">
+    <value>車邊</value>
+  </data>
+  <data name="ERP_CheBian1" xml:space="preserve">
+    <value>車邊:</value>
+  </data>
+  <data name="ERP_Checker" xml:space="preserve">
+    <value>審核:</value>
+  </data>
+  <data name="ERP_CheckerIn" xml:space="preserve">
+    <value>入審:</value>
+  </data>
+  <data name="ERP_CheckerOut" xml:space="preserve">
+    <value>出審:</value>
+  </data>
+  <data name="ERP_Colour" xml:space="preserve">
+    <value>顏色:</value>
+  </data>
+  <data name="ERP_Comprehensive" xml:space="preserve">
+    <value>綜合供應:</value>
+  </data>
+  <data name="ERP_ConsignDate" xml:space="preserve">
+    <value>擬出貨日期:</value>
+  </data>
+  <data name="ERP_ContactPerson" xml:space="preserve">
+    <value>聯繫人:</value>
+  </data>
+  <data name="ERP_ContractCode" xml:space="preserve">
+    <value>合同號:</value>
+  </data>
+  <data name="ERP_Copy" xml:space="preserve">
+    <value>複製</value>
+  </data>
+  <data name="ERP_CopyConfirm" xml:space="preserve">
+    <value>確定複製:</value>
+  </data>
+  <data name="ERP_CopyRights" xml:space="preserve">
+    <value>複製權限</value>
+  </data>
+  <data name="ERP_CopyRightsConfirm" xml:space="preserve">
+    <value>確定要複製當前選中的組別權限嗎?</value>
+  </data>
+  <data name="ERP_CopySucceed" xml:space="preserve">
+    <value>複製成功</value>
+  </data>
+  <data name="ERP_CorridorLength" xml:space="preserve">
+    <value>漸進帶:</value>
+  </data>
+  <data name="ERP_CreateDate" xml:space="preserve">
+    <value>建立日期:</value>
+  </data>
+  <data name="ERP_Criterion1" xml:space="preserve">
+    <value>執行標準1:</value>
+  </data>
+  <data name="ERP_Criterion2" xml:space="preserve">
+    <value>執行標準2:</value>
+  </data>
+  <data name="ERP_CsDateSale" xml:space="preserve">
+    <value>擬出貨日期:</value>
+  </data>
+  <data name="ERP_CT" xml:space="preserve">
+    <value>中心厚度</value>
+  </data>
+  <data name="ERP_Ctvalue" xml:space="preserve">
+    <value>中心厚度:</value>
+  </data>
+  <data name="ERP_CurShow" xml:space="preserve">
+    <value>當前顯示:</value>
+  </data>
+  <data name="ERP_CusCode" xml:space="preserve">
+    <value>客戶代碼:</value>
+  </data>
+  <data name="ERP_CusGroup" xml:space="preserve">
+    <value>客戶組別:</value>
+  </data>
+  <data name="ERP_CusLens" xml:space="preserve">
+    <value>來片加工</value>
+  </data>
+  <data name="ERP_CusName" xml:space="preserve">
+    <value>客戶名稱:</value>
+  </data>
+  <data name="ERP_Cutting_Type" xml:space="preserve">
+    <value>裁型裝配:</value>
+  </data>
+  <data name="ERP_CX" xml:space="preserve">
+    <value>裁型</value>
+  </data>
+  <data name="ERP_CXFLJ" xml:space="preserve">
+    <value>非來架</value>
+  </data>
+  <data name="ERP_CXLJ" xml:space="preserve">
+    <value>自來架</value>
+  </data>
+  <data name="ERP_CXNone" xml:space="preserve">
+    <value>未指定</value>
+  </data>
+  <data name="ERP_DaoBian" xml:space="preserve">
+    <value>刀邊</value>
+  </data>
+  <data name="ERP_DataBaseCode" xml:space="preserve">
+    <value>所屬帳套:</value>
+  </data>
+  <data name="ERP_DataBaseName" xml:space="preserve">
+    <value>帳套名稱:</value>
+  </data>
+  <data name="ERP_Day" xml:space="preserve">
+    <value>日</value>
+  </data>
+  <data name="ERP_DBName" xml:space="preserve">
+    <value>後台管理</value>
+  </data>
+  <data name="ERP_DDate" xml:space="preserve">
+    <value>交收日期:</value>
+  </data>
+  <data name="ERP_Decenter" xml:space="preserve">
+    <value>移心</value>
+  </data>
+  <data name="ERP_DefaultCoating" xml:space="preserve">
+    <value>默認膜層:</value>
+  </data>
+  <data name="ERP_DefaultCoatingName" xml:space="preserve">
+    <value>名稱:</value>
+  </data>
+  <data name="ERP_DefaultSupplier" xml:space="preserve">
+    <value>默認供應設定:</value>
+  </data>
+  <data name="ERP_Default_Priority" xml:space="preserve">
+    <value>默認優先級:</value>
+  </data>
+  <data name="ERP_Default_SupplierCode" xml:space="preserve">
+    <value>默認供應商:</value>
+  </data>
+  <data name="ERP_DeleteConfirmBill" xml:space="preserve">
+    <value>確定要刪除當前記錄嗎?</value>
+  </data>
+  <data name="ERP_DeleteConfirmList" xml:space="preserve">
+    <value>確定要刪除選中的記錄嗎?</value>
+  </data>
+  <data name="ERP_DeleteNone" xml:space="preserve">
+    <value>未選中任何記錄.</value>
+  </data>
+  <data name="ERP_DeleteSucceed" xml:space="preserve">
+    <value>刪除成功</value>
+  </data>
+  <data name="ERP_Delivery" xml:space="preserve">
+    <value>打單:</value>
+  </data>
+  <data name="ERP_DeliveryAddress" xml:space="preserve">
+    <value>送貨地址:</value>
+  </data>
+  <data name="ERP_DeliveryDate" xml:space="preserve">
+    <value>打單日期:</value>
+  </data>
+  <data name="ERP_DeliveryNum" xml:space="preserve">
+    <value>交收單號:</value>
+  </data>
+  <data name="ERP_Density" xml:space="preserve">
+    <value>密度:</value>
+  </data>
+  <data name="ERP_Design" xml:space="preserve">
+    <value>設計:</value>
+  </data>
+  <data name="ERP_DesignName" xml:space="preserve">
+    <value>名稱:</value>
+  </data>
+  <data name="ERP_Df_SpCode" xml:space="preserve">
+    <value>默認供應商:</value>
+  </data>
+  <data name="ERP_Df_SpName" xml:space="preserve">
+    <value>名稱:</value>
+  </data>
+  <data name="ERP_Dia" xml:space="preserve">
+    <value>直徑</value>
+  </data>
+  <data name="ERP_Dia1" xml:space="preserve">
+    <value>直徑:</value>
+  </data>
+  <data name="ERP_DN" xml:space="preserve">
+    <value>交收單號:</value>
+  </data>
+  <data name="ERP_DNCode" xml:space="preserve">
+    <value>交收單:</value>
+  </data>
+  <data name="ERP_DpAddress" xml:space="preserve">
+    <value>部門地址</value>
+  </data>
+  <data name="ERP_DpCode" xml:space="preserve">
+    <value>部門編碼:</value>
+  </data>
+  <data name="ERP_DpCode1" xml:space="preserve">
+    <value>所屬部門:</value>
+  </data>
+  <data name="ERP_DpCodeCX" xml:space="preserve">
+    <value>裁型部門:</value>
+  </data>
+  <data name="ERP_DpCodeJG" xml:space="preserve">
+    <value>裁型部門</value>
+  </data>
+  <data name="ERP_DpCodeWG" xml:space="preserve">
+    <value>寄送至部門</value>
+  </data>
+  <data name="ERP_DpCX" xml:space="preserve">
+    <value>裁型部門:</value>
+  </data>
+  <data name="ERP_DpName" xml:space="preserve">
+    <value>部門名稱:</value>
+  </data>
+  <data name="ERP_DpName1" xml:space="preserve">
+    <value>部門名稱</value>
+  </data>
+  <data name="ERP_DpNameCX" xml:space="preserve">
+    <value>部門名稱:</value>
+  </data>
+  <data name="ERP_DpNameJG" xml:space="preserve">
+    <value>部門名稱</value>
+  </data>
+  <data name="ERP_DpNameWG" xml:space="preserve">
+    <value>部門名稱</value>
+  </data>
+  <data name="ERP_DpProperty" xml:space="preserve">
+    <value>部門屬性:</value>
+  </data>
+  <data name="ERP_Drop" xml:space="preserve">
+    <value>確定要放棄當前操作嗎?</value>
+  </data>
+  <data name="ERP_Edit" xml:space="preserve">
+    <value>修改</value>
+  </data>
+  <data name="ERP_EditPriceConfirm" xml:space="preserve">
+    <value>確定要更改選中的記錄價格嗎?</value>
+  </data>
+  <data name="ERP_Email" xml:space="preserve">
+    <value>Email:</value>
+  </data>
+  <data name="ERP_EndDate" xml:space="preserve">
+    <value>結束日期:</value>
+  </data>
+  <data name="ERP_Err" xml:space="preserve">
+    <value>错误:</value>
+  </data>
+  <data name="ERP_ErrComBarCodeLens_Invalid" xml:space="preserve">
+    <value>無效的條碼記錄.</value>
+  </data>
+  <data name="ERP_ErrWhCodeRequired" xml:space="preserve">
+    <value>倉庫代碼不能為空.</value>
+  </data>
+  <data name="ERP_Err_NotDataBase" xml:space="preserve">
+    <value>沒有帳套使用權限!</value>
+  </data>
+  <data name="ERP_ExitMsg" xml:space="preserve">
+    <value>是否退出當前工作窗口?</value>
+  </data>
+  <data name="ERP_Export" xml:space="preserve">
+    <value>導出:</value>
+  </data>
+  <data name="ERP_ExportFail" xml:space="preserve">
+    <value>導出失敗!</value>
+  </data>
+  <data name="ERP_ExportSuccecced" xml:space="preserve">
+    <value>導出成功!</value>
+  </data>
+  <data name="ERP_ExtraProcess" xml:space="preserve">
+    <value>額外</value>
+  </data>
+  <data name="ERP_Family" xml:space="preserve">
+    <value>系列:</value>
+  </data>
+  <data name="ERP_Fax" xml:space="preserve">
+    <value>Fax:</value>
+  </data>
+  <data name="ERP_File" xml:space="preserve">
+    <value>文件</value>
+  </data>
+  <data name="ERP_FileInUse" xml:space="preserve">
+    <value>文檔正在使用-請關閉后再試!</value>
+  </data>
+  <data name="ERP_FittingHeight" xml:space="preserve">
+    <value>配鏡高度:</value>
+  </data>
+  <data name="ERP_Focus" xml:space="preserve">
+    <value>焦點:</value>
+  </data>
+  <data name="ERP_FocusName" xml:space="preserve">
+    <value>名稱:</value>
+  </data>
+  <data name="ERP_Font" xml:space="preserve">
+    <value>NSimSun</value>
+  </data>
+  <data name="ERP_FontSize" xml:space="preserve">
+    <value>12.2</value>
+  </data>
+  <data name="ERP_ForeignCurrCode" xml:space="preserve">
+    <value>交易幣別:</value>
+  </data>
+  <data name="ERP_ForeignCurrName" xml:space="preserve">
+    <value>幣別名稱:</value>
+  </data>
+  <data name="ERP_ForeignCurrNameBill" xml:space="preserve">
+    <value>交易幣別:</value>
+  </data>
+  <data name="ERP_FQty" xml:space="preserve">
+    <value>鏡架數量:</value>
+  </data>
+  <data name="ERP_FrameCode" xml:space="preserve">
+    <value>鏡架代碼:</value>
+  </data>
+  <data name="ERP_FrameCode1" xml:space="preserve">
+    <value>鏡架代碼</value>
+  </data>
+  <data name="ERP_FrameName" xml:space="preserve">
+    <value>鏡架名稱:</value>
+  </data>
+  <data name="ERP_FrameName1" xml:space="preserve">
+    <value>鏡架名稱</value>
+  </data>
+  <data name="ERP_Freight" xml:space="preserve">
+    <value>運費:</value>
+  </data>
+  <data name="ERP_Friday" xml:space="preserve">
+    <value>星期五</value>
+  </data>
+  <data name="ERP_FromBillCode" xml:space="preserve">
+    <value>來自單號:</value>
+  </data>
+  <data name="ERP_F_Admin" xml:space="preserve">
+    <value>管理員:</value>
+  </data>
+  <data name="ERP_F_Base" xml:space="preserve">
+    <value>可否面灣:</value>
+  </data>
+  <data name="ERP_F_Coating" xml:space="preserve">
+    <value>可否鍍膜:</value>
+  </data>
+  <data name="ERP_F_Decenter" xml:space="preserve">
+    <value>可否移心:</value>
+  </data>
+  <data name="ERP_F_HardCoat" xml:space="preserve">
+    <value>可否加硬:</value>
+  </data>
+  <data name="ERP_F_Prism" xml:space="preserve">
+    <value>可否棱鏡:</value>
+  </data>
+  <data name="ERP_F_Pur" xml:space="preserve">
+    <value>可否採購:</value>
+  </data>
+  <data name="ERP_F_RBCusCode" xml:space="preserve">
+    <value>客戶瀏覽權:</value>
+  </data>
+  <data name="ERP_F_RBDpCode" xml:space="preserve">
+    <value>部門瀏覽權:</value>
+  </data>
+  <data name="ERP_F_RBSpCode" xml:space="preserve">
+    <value>供應商瀏覽權:</value>
+  </data>
+  <data name="ERP_F_RBWhCode" xml:space="preserve">
+    <value>倉庫瀏覽權:</value>
+  </data>
+  <data name="ERP_F_RUWhCode" xml:space="preserve">
+    <value>倉庫使用權:</value>
+  </data>
+  <data name="ERP_F_RX" xml:space="preserve">
+    <value>車房:</value>
+  </data>
+  <data name="ERP_F_ST" xml:space="preserve">
+    <value>庫存:</value>
+  </data>
+  <data name="ERP_F_Stop" xml:space="preserve">
+    <value>停用:</value>
+  </data>
+  <data name="ERP_F_StopSale" xml:space="preserve">
+    <value>停售:</value>
+  </data>
+  <data name="ERP_F_Super" xml:space="preserve">
+    <value>超級管理員:</value>
+  </data>
+  <data name="ERP_F_Tintage" xml:space="preserve">
+    <value>可否染色:</value>
+  </data>
+  <data name="ERP_Garages" xml:space="preserve">
+    <value>車房片供應:</value>
+  </data>
+  <data name="ERP_Getting" xml:space="preserve">
+    <value>獲取中...</value>
+  </data>
+  <data name="ERP_GpCode" xml:space="preserve">
+    <value>組別代碼:</value>
+  </data>
+  <data name="ERP_GpExplain" xml:space="preserve">
+    <value>組別說明:</value>
+  </data>
+  <data name="ERP_GpName" xml:space="preserve">
+    <value>組別名稱:</value>
+  </data>
+  <data name="ERP_Guarantee" xml:space="preserve">
+    <value>質保卡:</value>
+  </data>
+  <data name="ERP_Hardend" xml:space="preserve">
+    <value>加硬</value>
+  </data>
+  <data name="ERP_Hardend1" xml:space="preserve">
+    <value>加硬:</value>
+  </data>
+  <data name="ERP_HeaderAr" xml:space="preserve">
+    <value>應收系統</value>
+  </data>
+  <data name="ERP_HeaderPur" xml:space="preserve">
+    <value>採購系統</value>
+  </data>
+  <data name="ERP_HeaderSale" xml:space="preserve">
+    <value>銷售系統</value>
+  </data>
+  <data name="ERP_HeaderWare" xml:space="preserve">
+    <value>庫存系統</value>
+  </data>
+  <data name="ERP_Heigh" xml:space="preserve">
+    <value>鼻樑:</value>
+  </data>
+  <data name="ERP_ImportFail" xml:space="preserve">
+    <value>導入失敗!</value>
+  </data>
+  <data name="ERP_ImportSucceed" xml:space="preserve">
+    <value>導入成功!</value>
+  </data>
+  <data name="ERP_In" xml:space="preserve">
+    <value>入</value>
+  </data>
+  <data name="ERP_Incharge" xml:space="preserve">
+    <value>負責人:</value>
+  </data>
+  <data name="ERP_IncludeGroup" xml:space="preserve">
+    <value>已包含用戶組別:</value>
+  </data>
+  <data name="ERP_IncludeUser" xml:space="preserve">
+    <value>已包含用戶:</value>
+  </data>
+  <data name="ERP_Index" xml:space="preserve">
+    <value>折射率:</value>
+  </data>
+  <data name="ERP_IndexName" xml:space="preserve">
+    <value>名稱:</value>
+  </data>
+  <data name="ERP_InvoiceTitle" xml:space="preserve">
+    <value>發票名稱:</value>
+  </data>
+  <data name="ERP_InvoiveCode" xml:space="preserve">
+    <value>發貨單號:</value>
+  </data>
+  <data name="ERP_InvTitle" xml:space="preserve">
+    <value>發票名稱:</value>
+  </data>
+  <data name="ERP_IsCheFang" xml:space="preserve">
+    <value>車房:</value>
+  </data>
+  <data name="ERP_IsNoticeForRepeat" xml:space="preserve">
+    <value>重複提示:</value>
+  </data>
+  <data name="ERP_IsPrintShowPrice" xml:space="preserve">
+    <value>打印價格:</value>
+  </data>
+  <data name="ERP_IsPurchase" xml:space="preserve">
+    <value>採購模塊:</value>
+  </data>
+  <data name="ERP_IsSale" xml:space="preserve">
+    <value>銷售模塊:</value>
+  </data>
+  <data name="ERP_IsSet" xml:space="preserve">
+    <value>組合:</value>
+  </data>
+  <data name="ERP_JingJia" xml:space="preserve">
+    <value>鏡架</value>
+  </data>
+  <data name="ERP_JingJia1" xml:space="preserve">
+    <value>鏡架:</value>
+  </data>
+  <data name="ERP_JuSe" xml:space="preserve">
+    <value>鍍膜</value>
+  </data>
+  <data name="ERP_JuSe1" xml:space="preserve">
+    <value>鍍膜:</value>
+  </data>
+  <data name="ERP_KaiKeng" xml:space="preserve">
+    <value>開坑</value>
+  </data>
+  <data name="ERP_KaiKeng1" xml:space="preserve">
+    <value>開坑:</value>
+  </data>
+  <data name="ERP_KeyCode" xml:space="preserve">
+    <value>編碼:</value>
+  </data>
+  <data name="ERP_KeyName" xml:space="preserve">
+    <value>名稱:</value>
+  </data>
+  <data name="ERP_KFSOStateName" xml:space="preserve">
+    <value>出庫狀態:</value>
+  </data>
+  <data name="ERP_Leg_Length" xml:space="preserve">
+    <value>鏡腿:</value>
+  </data>
+  <data name="ERP_LensCode" xml:space="preserve">
+    <value>鏡種:</value>
+  </data>
+  <data name="ERP_LensCode1" xml:space="preserve">
+    <value>鏡種代碼</value>
+  </data>
+  <data name="ERP_LensCodeBill" xml:space="preserve">
+    <value>訂單鏡種:</value>
+  </data>
+  <data name="ERP_LensCodeGeneral" xml:space="preserve">
+    <value>通用代碼:</value>
+  </data>
+  <data name="ERP_LensCodeSale" xml:space="preserve">
+    <value>訂單鏡種:</value>
+  </data>
+  <data name="ERP_LensCodeSale1" xml:space="preserve">
+    <value>銷售鏡種代碼:</value>
+  </data>
+  <data name="ERP_LensCodeSales" xml:space="preserve">
+    <value>品牌鏡種代碼</value>
+  </data>
+  <data name="ERP_LensCodeSalesBagCode" xml:space="preserve">
+    <value>鏡袋代碼</value>
+  </data>
+  <data name="ERP_LensCodeSalesBrand" xml:space="preserve">
+    <value>所屬品牌</value>
+  </data>
+  <data name="ERP_LensCodeSalesBrandName" xml:space="preserve">
+    <value>品牌名稱</value>
+  </data>
+  <data name="ERP_LensCodeSalesGuarantee" xml:space="preserve">
+    <value>質保卡</value>
+  </data>
+  <data name="ERP_LensCodeSalesModelSelect" xml:space="preserve">
+    <value>鏡袋版本</value>
+  </data>
+  <data name="ERP_LensCodeSalesStop" xml:space="preserve">
+    <value>停售</value>
+  </data>
+  <data name="ERP_LensCodeSO" xml:space="preserve">
+    <value>出庫鏡種:</value>
+  </data>
+  <data name="ERP_LensDetail" xml:space="preserve">
+    <value>[度數明細]</value>
+  </data>
+  <data name="ERP_LensMaterials" xml:space="preserve">
+    <value>基材材料:</value>
+  </data>
+  <data name="ERP_LensName" xml:space="preserve">
+    <value>鏡種名稱:</value>
+  </data>
+  <data name="ERP_LensName1" xml:space="preserve">
+    <value>鏡片名稱</value>
+  </data>
+  <data name="ERP_LensNameSales" xml:space="preserve">
+    <value>品牌鏡種名稱</value>
+  </data>
+  <data name="ERP_LensPrism" xml:space="preserve">
+    <value>棱鏡度:</value>
+  </data>
+  <data name="ERP_LensType" xml:space="preserve">
+    <value>鏡種類型:</value>
+  </data>
+  <data name="ERP_Loading" xml:space="preserve">
+    <value>正在加載...</value>
+  </data>
+  <data name="ERP_LQty" xml:space="preserve">
+    <value>鏡片數量:</value>
+  </data>
+  <data name="ERP_LR" xml:space="preserve">
+    <value>鏡片(R/L):</value>
+  </data>
+  <data name="ERP_LR_Flag" xml:space="preserve">
+    <value>區分左右鏡:</value>
+  </data>
+  <data name="ERP_MainCusCode" xml:space="preserve">
+    <value>總店代碼:</value>
+  </data>
+  <data name="ERP_MainCusName" xml:space="preserve">
+    <value>總店名稱:</value>
+  </data>
+  <data name="ERP_MakeDate" xml:space="preserve">
+    <value>製單日期:</value>
+  </data>
+  <data name="ERP_Maker" xml:space="preserve">
+    <value>制單:</value>
+  </data>
+  <data name="ERP_ManageMan" xml:space="preserve">
+    <value>負責人:</value>
+  </data>
+  <data name="ERP_Material" xml:space="preserve">
+    <value>材質:</value>
+  </data>
+  <data name="ERP_Materials" xml:space="preserve">
+    <value>材質:</value>
+  </data>
+  <data name="ERP_MaterialsName" xml:space="preserve">
+    <value>名稱:</value>
+  </data>
+  <data name="ERP_MianWan" xml:space="preserve">
+    <value>面灣</value>
+  </data>
+  <data name="ERP_MnumberBill" xml:space="preserve">
+    <value>鏡種:</value>
+  </data>
+  <data name="ERP_Modelselect" xml:space="preserve">
+    <value>鏡袋板色:</value>
+  </data>
+  <data name="ERP_Monday" xml:space="preserve">
+    <value>星期一</value>
+  </data>
+  <data name="ERP_Month" xml:space="preserve">
+    <value>月</value>
+  </data>
+  <data name="ERP_Msg" xml:space="preserve">
+    <value>更新...</value>
+  </data>
+  <data name="ERP_N" xml:space="preserve">
+    <value>否</value>
+  </data>
+  <data name="ERP_New" xml:space="preserve">
+    <value>新建</value>
+  </data>
+  <data name="ERP_NoOrderSO" xml:space="preserve">
+    <value>訂單沒有可出庫數量</value>
+  </data>
+  <data name="ERP_NoOrderSOQty" xml:space="preserve">
+    <value>沒有可出庫數量.</value>
+  </data>
+  <data name="ERP_NoRecord" xml:space="preserve">
+    <value>不存在記錄:</value>
+  </data>
+  <data name="ERP_Notes" xml:space="preserve">
+    <value>特別說明:</value>
+  </data>
+  <data name="ERP_NotesSale" xml:space="preserve">
+    <value>訂單特別說明:</value>
+  </data>
+  <data name="ERP_OBCode" xml:space="preserve">
+    <value>原單號:</value>
+  </data>
+  <data name="ERP_OBCodeSale" xml:space="preserve">
+    <value>客戶訂單號:</value>
+  </data>
+  <data name="ERP_OBillCode" xml:space="preserve">
+    <value>客戶訂單號:</value>
+  </data>
+  <data name="ERP_OContractCode" xml:space="preserve">
+    <value>原合同號:</value>
+  </data>
+  <data name="ERP_OGType" xml:space="preserve">
+    <value>出庫方式:</value>
+  </data>
+  <data name="ERP_OpDate" xml:space="preserve">
+    <value>操作日期:</value>
+  </data>
+  <data name="ERP_OrderCode" xml:space="preserve">
+    <value>訂單號:</value>
+  </data>
+  <data name="ERP_OrderDate" xml:space="preserve">
+    <value>訂單日期:</value>
+  </data>
+  <data name="ERP_OrderRemark" xml:space="preserve">
+    <value>訂單備註:</value>
+  </data>
+  <data name="ERP_OrderStateName" xml:space="preserve">
+    <value>訂單狀態:</value>
+  </data>
+  <data name="ERP_Origin" xml:space="preserve">
+    <value>產地:</value>
+  </data>
+  <data name="ERP_OrNewCusGroup" xml:space="preserve">
+    <value>或者新建:</value>
+  </data>
+  <data name="ERP_OrNewSpGroup" xml:space="preserve">
+    <value>或者新建:</value>
+  </data>
+  <data name="ERP_Other" xml:space="preserve">
+    <value>其他</value>
+  </data>
+  <data name="ERP_OtherProcess" xml:space="preserve">
+    <value>其他</value>
+  </data>
+  <data name="ERP_OtherProcess1" xml:space="preserve">
+    <value>其他:</value>
+  </data>
+  <data name="ERP_Out" xml:space="preserve">
+    <value>出</value>
+  </data>
+  <data name="ERP_OutGood" xml:space="preserve">
+    <value>出貨:</value>
+  </data>
+  <data name="ERP_OutGoodType" xml:space="preserve">
+    <value>方式</value>
+  </data>
+  <data name="ERP_P1" xml:space="preserve">
+    <value>片計:</value>
+  </data>
+  <data name="ERP_P1JM" xml:space="preserve">
+    <value>片計寄賣:</value>
+  </data>
+  <data name="ERP_P2" xml:space="preserve">
+    <value>副計:</value>
+  </data>
+  <data name="ERP_P2JM" xml:space="preserve">
+    <value>副計寄賣:</value>
+  </data>
+  <data name="ERP_PaoGuang" xml:space="preserve">
+    <value>拋光</value>
+  </data>
+  <data name="ERP_PaoGuang1" xml:space="preserve">
+    <value>拋光:</value>
+  </data>
+  <data name="ERP_ParentCode" xml:space="preserve">
+    <value>父級代碼:</value>
+  </data>
+  <data name="ERP_PayWayCode" xml:space="preserve">
+    <value>付款方式:</value>
+  </data>
+  <data name="ERP_PayWayName" xml:space="preserve">
+    <value>方式名稱:</value>
+  </data>
+  <data name="ERP_PayWayNameBill" xml:space="preserve">
+    <value>付款方式:</value>
+  </data>
+  <data name="ERP_PCPri0" xml:space="preserve">
+    <value>全部</value>
+  </data>
+  <data name="ERP_PCPri1" xml:space="preserve">
+    <value>普通</value>
+  </data>
+  <data name="ERP_PCPri2" xml:space="preserve">
+    <value>優惠</value>
+  </data>
+  <data name="ERP_PCPri3" xml:space="preserve">
+    <value>促銷</value>
+  </data>
+  <data name="ERP_PCPri4" xml:space="preserve">
+    <value>特殊</value>
+  </data>
+  <data name="ERP_PD1" xml:space="preserve">
+    <value>[訂單信息]</value>
+  </data>
+  <data name="ERP_PD_Tab1" xml:space="preserve">
+    <value>[鏡片信息]</value>
+  </data>
+  <data name="ERP_PD_Tab2" xml:space="preserve">
+    <value>[出貨信息]</value>
+  </data>
+  <data name="ERP_PersonCode" xml:space="preserve">
+    <value>銷售:</value>
+  </data>
+  <data name="ERP_PersonCode1" xml:space="preserve">
+    <value>職員:</value>
+  </data>
+  <data name="ERP_PersonName" xml:space="preserve">
+    <value>销售名稱:</value>
+  </data>
+  <data name="ERP_PersonName1" xml:space="preserve">
+    <value>職員名稱:</value>
+  </data>
+  <data name="ERP_PersonNameBill" xml:space="preserve">
+    <value>銷售:</value>
+  </data>
+  <data name="ERP_PersonProperty" xml:space="preserve">
+    <value>職員屬性:</value>
+  </data>
+  <data name="ERP_Phone" xml:space="preserve">
+    <value>聯繫電話:</value>
+  </data>
+  <data name="ERP_PiHua" xml:space="preserve">
+    <value>批花</value>
+  </data>
+  <data name="ERP_PiHua1" xml:space="preserve">
+    <value>批花:</value>
+  </data>
+  <data name="ERP_Price" xml:space="preserve">
+    <value>單價:</value>
+  </data>
+  <data name="ERP_PriceJM" xml:space="preserve">
+    <value>寄賣單價:</value>
+  </data>
+  <data name="ERP_Price_ProCost" xml:space="preserve">
+    <value>加工價:</value>
+  </data>
+  <data name="ERP_Price_ProCostJM" xml:space="preserve">
+    <value>加工價寄賣:</value>
+  </data>
+  <data name="ERP_PrintCode" xml:space="preserve">
+    <value>打印編碼:</value>
+  </data>
+  <data name="ERP_PrintFormat" xml:space="preserve">
+    <value>格式:</value>
+  </data>
+  <data name="ERP_PrintPreView_PrintCode" xml:space="preserve">
+    <value>打印編碼:</value>
+  </data>
+  <data name="ERP_PrintPreView_SDOBillCode" xml:space="preserve">
+    <value>客戶訂單號(Order Num)</value>
+  </data>
+  <data name="ERP_PrintPreView_SDPrice" xml:space="preserve">
+    <value>價格￥</value>
+  </data>
+  <data name="ERP_PrintPreView_SDQty" xml:space="preserve">
+    <value>數量Qty</value>
+  </data>
+  <data name="ERP_PrintPreView_SDSumMoney" xml:space="preserve">
+    <value>總金額:￥</value>
+  </data>
+  <data name="ERP_PrintPriceYN" xml:space="preserve">
+    <value>價格:</value>
+  </data>
+  <data name="ERP_Prism" xml:space="preserve">
+    <value>棱鏡</value>
+  </data>
+  <data name="ERP_ProcessCode" xml:space="preserve">
+    <value>工序代碼:</value>
+  </data>
+  <data name="ERP_ProcessName" xml:space="preserve">
+    <value>工序名稱:</value>
+  </data>
+  <data name="ERP_ProClass" xml:space="preserve">
+    <value>工序類別:</value>
+  </data>
+  <data name="ERP_ProClassName" xml:space="preserve">
+    <value>名稱:</value>
+  </data>
+  <data name="ERP_ProCode" xml:space="preserve">
+    <value>工序代碼:</value>
+  </data>
+  <data name="ERP_ProName" xml:space="preserve">
+    <value>工序名稱:</value>
+  </data>
+  <data name="ERP_Purpose" xml:space="preserve">
+    <value>用途:</value>
+  </data>
+  <data name="ERP_Qty" xml:space="preserve">
+    <value>數量</value>
+  </data>
+  <data name="ERP_QtyL" xml:space="preserve">
+    <value>數量L:</value>
+  </data>
+  <data name="ERP_QtyR" xml:space="preserve">
+    <value>數量R:</value>
+  </data>
+  <data name="ERP_QuantityL" xml:space="preserve">
+    <value>片數L:</value>
+  </data>
+  <data name="ERP_QuantityR" xml:space="preserve">
+    <value>片數R:</value>
+  </data>
+  <data name="ERP_RadioButtonBillTypeALL" xml:space="preserve">
+    <value>全部</value>
+  </data>
+  <data name="ERP_RadioButtonBillTypeXSFD" xml:space="preserve">
+    <value>鏡架訂單</value>
+  </data>
+  <data name="ERP_RadioButtonBillTypeXSFS" xml:space="preserve">
+    <value>鏡架套餐</value>
+  </data>
+  <data name="ERP_RadioButtonBillTypeXSPD" xml:space="preserve">
+    <value>批量訂單</value>
+  </data>
+  <data name="ERP_RadioButtonBillTypeXSSD" xml:space="preserve">
+    <value>散訂單</value>
+  </data>
+  <data name="ERP_RadioButtonCheck" xml:space="preserve">
+    <value>已審</value>
+  </data>
+  <data name="ERP_RadioButtonCheckALL" xml:space="preserve">
+    <value>全部</value>
+  </data>
+  <data name="ERP_RadioButtonDelivery_DN" xml:space="preserve">
+    <value>已打</value>
+  </data>
+  <data name="ERP_RadioButtonDelivery_UnDN" xml:space="preserve">
+    <value>未打</value>
+  </data>
+  <data name="ERP_RadioButtonIncludeAll" xml:space="preserve">
+    <value>全部</value>
+  </data>
+  <data name="ERP_RadioButtonIncludeWF" xml:space="preserve">
+    <value>未分</value>
+  </data>
+  <data name="ERP_RadioButtonIncludeYF" xml:space="preserve">
+    <value>已分</value>
+  </data>
+  <data name="ERP_RadioButtonIOTypeALL" xml:space="preserve">
+    <value>全部</value>
+  </data>
+  <data name="ERP_RadioButtonIOTypeIn" xml:space="preserve">
+    <value>入庫</value>
+  </data>
+  <data name="ERP_RadioButtonIOTypeOut" xml:space="preserve">
+    <value>出庫</value>
+  </data>
+  <data name="ERP_RadioButtonLensTypeALL" xml:space="preserve">
+    <value>全部</value>
+  </data>
+  <data name="ERP_RadioButtonLensTypeOT" xml:space="preserve">
+    <value>其他</value>
+  </data>
+  <data name="ERP_RadioButtonLensTypeRX" xml:space="preserve">
+    <value>車房</value>
+  </data>
+  <data name="ERP_RadioButtonLensTypeST" xml:space="preserve">
+    <value>庫存</value>
+  </data>
+  <data name="ERP_RadioButtonOG1" xml:space="preserve">
+    <value>本地</value>
+  </data>
+  <data name="ERP_RadioButtonOG2" xml:space="preserve">
+    <value>外購</value>
+  </data>
+  <data name="ERP_RadioButtonOGALL" xml:space="preserve">
+    <value>全部</value>
+  </data>
+  <data name="ERP_RadioButtonPCP1" xml:space="preserve">
+    <value>普通</value>
+  </data>
+  <data name="ERP_RadioButtonPCP2" xml:space="preserve">
+    <value>優惠</value>
+  </data>
+  <data name="ERP_RadioButtonPCP3" xml:space="preserve">
+    <value>促銷</value>
+  </data>
+  <data name="ERP_RadioButtonPCP4" xml:space="preserve">
+    <value>特殊</value>
+  </data>
+  <data name="ERP_RadioButtonPrintBigFormatN" xml:space="preserve">
+    <value>大張</value>
+  </data>
+  <data name="ERP_RadioButtonPrintBigFormatY" xml:space="preserve">
+    <value>單張</value>
+  </data>
+  <data name="ERP_RadioButtonPrintPriceN" xml:space="preserve">
+    <value>無價格</value>
+  </data>
+  <data name="ERP_RadioButtonPrintPriceY" xml:space="preserve">
+    <value>有價格</value>
+  </data>
+  <data name="ERP_RadioButtonPType1" xml:space="preserve">
+    <value>有價格</value>
+  </data>
+  <data name="ERP_RadioButtonPType2" xml:space="preserve">
+    <value>無價格</value>
+  </data>
+  <data name="ERP_RadioButtonRTypeN" xml:space="preserve">
+    <value>無</value>
+  </data>
+  <data name="ERP_RadioButtonRTypeRX" xml:space="preserve">
+    <value>車房毛料</value>
+  </data>
+  <data name="ERP_RadioButtonRTypeST" xml:space="preserve">
+    <value>庫存毛料</value>
+  </data>
+  <data name="ERP_RadioButtonUD1" xml:space="preserve">
+    <value>普通</value>
+  </data>
+  <data name="ERP_RadioButtonUD2" xml:space="preserve">
+    <value>加急</value>
+  </data>
+  <data name="ERP_RadioButtonUD3" xml:space="preserve">
+    <value>大大急</value>
+  </data>
+  <data name="ERP_RadioButtonUDAll" xml:space="preserve">
+    <value>全部</value>
+  </data>
+  <data name="ERP_RadioButtonUnCheck" xml:space="preserve">
+    <value>未審</value>
+  </data>
+  <data name="ERP_RadioButton_PriceContractTypeFrame" xml:space="preserve">
+    <value>鏡架</value>
+  </data>
+  <data name="ERP_RadioButton_PriceContractTypeLens" xml:space="preserve">
+    <value>鏡片</value>
+  </data>
+  <data name="ERP_Ranse" xml:space="preserve">
+    <value>染色</value>
+  </data>
+  <data name="ERP_Ranse1" xml:space="preserve">
+    <value>染色:</value>
+  </data>
+  <data name="ERP_RanseName" xml:space="preserve">
+    <value>色板</value>
+  </data>
+  <data name="ERP_RBBtnExportModel1" xml:space="preserve">
+    <value>當前倉庫</value>
+  </data>
+  <data name="ERP_RBBtnExportModel2" xml:space="preserve">
+    <value>當前勾選</value>
+  </data>
+  <data name="ERP_RCode" xml:space="preserve">
+    <value>毛料代碼:</value>
+  </data>
+  <data name="ERP_ReformulatedPower" xml:space="preserve">
+    <value>修正度數:</value>
+  </data>
+  <data name="ERP_Remark" xml:space="preserve">
+    <value>備註:</value>
+  </data>
+  <data name="ERP_Remarks" xml:space="preserve">
+    <value>備註:</value>
+  </data>
+  <data name="ERP_RemarkSale" xml:space="preserve">
+    <value>訂單備註:</value>
+  </data>
+  <data name="ERP_ReplaceLensCode" xml:space="preserve">
+    <value>替代鏡種:</value>
+  </data>
+  <data name="ERP_ReplaceLensName" xml:space="preserve">
+    <value>鏡種名稱:</value>
+  </data>
+  <data name="ERP_ReplaceMname" xml:space="preserve">
+    <value>鏡種名稱</value>
+  </data>
+  <data name="ERP_ReplaceMnumber" xml:space="preserve">
+    <value>替代鏡種</value>
+  </data>
+  <data name="ERP_ResetPassword" xml:space="preserve">
+    <value>清空密碼</value>
+  </data>
+  <data name="ERP_RIndex_Measured" xml:space="preserve">
+    <value>折射率實測:</value>
+  </data>
+  <data name="ERP_RName" xml:space="preserve">
+    <value>毛料名稱:</value>
+  </data>
+  <data name="ERP_RType" xml:space="preserve">
+    <value>毛料類型:</value>
+  </data>
+  <data name="ERP_SafeQuan" xml:space="preserve">
+    <value>安全庫存:</value>
+  </data>
+  <data name="ERP_Saturday" xml:space="preserve">
+    <value>星期六</value>
+  </data>
+  <data name="ERP_SaveSucceed" xml:space="preserve">
+    <value>保存成功</value>
+  </data>
+  <data name="ERP_Search1" xml:space="preserve">
+    <value>查詢耗時:</value>
+  </data>
+  <data name="ERP_Search2" xml:space="preserve">
+    <value>秒</value>
+  </data>
+  <data name="ERP_Search3" xml:space="preserve">
+    <value>返回記錄:</value>
+  </data>
+  <data name="ERP_Search4" xml:space="preserve">
+    <value>條</value>
+  </data>
+  <data name="ERP_SelecctedCode" xml:space="preserve">
+    <value>當前選擇:</value>
+  </data>
+  <data name="ERP_SelectDataBase" xml:space="preserve">
+    <value>請選擇使用的帳套:</value>
+  </data>
+  <data name="ERP_SelectDataBaseCode" xml:space="preserve">
+    <value>選擇帳套:</value>
+  </data>
+  <data name="ERP_SelectDpCode" xml:space="preserve">
+    <value>選擇部門:</value>
+  </data>
+  <data name="ERP_Selected" xml:space="preserve">
+    <value>選中:</value>
+  </data>
+  <data name="ERP_SelectGpCode" xml:space="preserve">
+    <value>選擇組別:</value>
+  </data>
+  <data name="ERP_Semifinished" xml:space="preserve">
+    <value>毛坯供應:</value>
+  </data>
+  <data name="ERP_SerialNum" xml:space="preserve">
+    <value>流水號:</value>
+  </data>
+  <data name="ERP_Shipping_Confirmation" xml:space="preserve">
+    <value>發貨通知:</value>
+  </data>
+  <data name="ERP_ShuiYin" xml:space="preserve">
+    <value>水銀</value>
+  </data>
+  <data name="ERP_ShuiYin1" xml:space="preserve">
+    <value>水銀:</value>
+  </data>
+  <data name="ERP_SingleTo" xml:space="preserve">
+    <value>單個----&gt;</value>
+  </data>
+  <data name="ERP_SingleTo2" xml:space="preserve">
+    <value>&lt;----單個</value>
+  </data>
+  <data name="ERP_SN" xml:space="preserve">
+    <value>序號:</value>
+  </data>
+  <data name="ERP_Sort1" xml:space="preserve">
+    <value>分類1:</value>
+  </data>
+  <data name="ERP_Sort2" xml:space="preserve">
+    <value>分類2:</value>
+  </data>
+  <data name="ERP_SpCode" xml:space="preserve">
+    <value>供应商代碼:</value>
+  </data>
+  <data name="ERP_SpGroup" xml:space="preserve">
+    <value>供應商組別:</value>
+  </data>
+  <data name="ERP_SpName" xml:space="preserve">
+    <value>供應商名稱:</value>
+  </data>
+  <data name="ERP_StateName" xml:space="preserve">
+    <value>狀態:</value>
+  </data>
+  <data name="ERP_Stock" xml:space="preserve">
+    <value>庫存片供應:</value>
+  </data>
+  <data name="ERP_StockNow" xml:space="preserve">
+    <value>現存量:</value>
+  </data>
+  <data name="ERP_Succeed" xml:space="preserve">
+    <value>操作成功</value>
+  </data>
+  <data name="ERP_Sum" xml:space="preserve">
+    <value>合計</value>
+  </data>
+  <data name="ERP_Sum1" xml:space="preserve">
+    <value>合計:</value>
+  </data>
+  <data name="ERP_Sunday" xml:space="preserve">
+    <value>星期日</value>
+  </data>
+  <data name="ERP_SupplierCode" xml:space="preserve">
+    <value>供應商代碼:</value>
+  </data>
+  <data name="ERP_SupplierCodeBill" xml:space="preserve">
+    <value>外購供應商</value>
+  </data>
+  <data name="ERP_SupplierName" xml:space="preserve">
+    <value>供應商名稱:</value>
+  </data>
+  <data name="ERP_SupplierNameBill" xml:space="preserve">
+    <value>供應商名稱</value>
+  </data>
+  <data name="ERP_SuspendIOType" xml:space="preserve">
+    <value>掛起類型:</value>
+  </data>
+  <data name="ERP_Tab1" xml:space="preserve">
+    <value>確定關閉[</value>
+  </data>
+  <data name="ERP_Tab2" xml:space="preserve">
+    <value>]嗎?</value>
+  </data>
+  <data name="ERP_TabToMany" xml:space="preserve">
+    <value>當前工作窗口過多,請關閉一些工作窗口</value>
+  </data>
+  <data name="ERP_Telephone" xml:space="preserve">
+    <value>聯繫電話:</value>
+  </data>
+  <data name="ERP_TempAddress" xml:space="preserve">
+    <value>指定地址:</value>
+  </data>
+  <data name="ERP_TempDeptCode" xml:space="preserve">
+    <value>指定部門:</value>
+  </data>
+  <data name="ERP_Thursday" xml:space="preserve">
+    <value>星期四</value>
+  </data>
+  <data name="ERP_TimeSpan" xml:space="preserve">
+    <value>操作時段:</value>
+  </data>
+  <data name="ERP_Title" xml:space="preserve">
+    <value>企業資源管理系統 2.0</value>
+  </data>
+  <data name="ERP_Tool" xml:space="preserve">
+    <value>工具</value>
+  </data>
+  <data name="ERP_TradeWayCode" xml:space="preserve">
+    <value>銷售類型:</value>
+  </data>
+  <data name="ERP_TradeWayName" xml:space="preserve">
+    <value>類型名稱:</value>
+  </data>
+  <data name="ERP_TransferWayCode" xml:space="preserve">
+    <value>承運方式:</value>
+  </data>
+  <data name="ERP_TransferWayName" xml:space="preserve">
+    <value>方式名稱:</value>
+  </data>
+  <data name="ERP_TransferWayNameBill" xml:space="preserve">
+    <value>發貨方式:</value>
+  </data>
+  <data name="ERP_Transmistion1" xml:space="preserve">
+    <value>投射比1:</value>
+  </data>
+  <data name="ERP_Transmistion2" xml:space="preserve">
+    <value>投射比2:</value>
+  </data>
+  <data name="ERP_Tuesday" xml:space="preserve">
+    <value>星期二</value>
+  </data>
+  <data name="ERP_Type" xml:space="preserve">
+    <value>類型:</value>
+  </data>
+  <data name="ERP_UnIncludeGroup" xml:space="preserve">
+    <value>未包含用戶組別:</value>
+  </data>
+  <data name="ERP_UnIncludeUser" xml:space="preserve">
+    <value>未包含用戶:</value>
+  </data>
+  <data name="ERP_Unlink" xml:space="preserve">
+    <value>當前鏈接已經斷開,請重新登錄.</value>
+  </data>
+  <data name="ERP_UnLock" xml:space="preserve">
+    <value>解鎖</value>
+  </data>
+  <data name="ERP_UnYN" xml:space="preserve">
+    <value>否</value>
+  </data>
+  <data name="ERP_UpdateMoney" xml:space="preserve">
+    <value>調整金額:</value>
+  </data>
+  <data name="ERP_UpdateMoneyReason" xml:space="preserve">
+    <value>原因:</value>
+  </data>
+  <data name="ERP_UpdateSucceed" xml:space="preserve">
+    <value>更新成功!</value>
+  </data>
+  <data name="ERP_Updating" xml:space="preserve">
+    <value>  更新中...</value>
+  </data>
+  <data name="ERP_UpLoad" xml:space="preserve">
+    <value>[上傳]</value>
+  </data>
+  <data name="ERP_UpLoadImage1" xml:space="preserve">
+    <value>[圖片1上傳]</value>
+  </data>
+  <data name="ERP_UpLoadImage2" xml:space="preserve">
+    <value>[圖片2上傳]</value>
+  </data>
+  <data name="ERP_UpLoadImage3" xml:space="preserve">
+    <value>[圖片3上傳]</value>
+  </data>
+  <data name="ERP_UrgencyDegree" xml:space="preserve">
+    <value>緊急程度:</value>
+  </data>
+  <data name="ERP_Usage" xml:space="preserve">
+    <value>特殊應用:</value>
+  </data>
+  <data name="ERP_UsageName" xml:space="preserve">
+    <value>名稱:</value>
+  </data>
+  <data name="ERP_UserCode" xml:space="preserve">
+    <value>用户代碼:</value>
+  </data>
+  <data name="ERP_UserExplain" xml:space="preserve">
+    <value>用戶說明:</value>
+  </data>
+  <data name="ERP_UserName" xml:space="preserve">
+    <value>用戶名稱:</value>
+  </data>
+  <data name="ERP_UVCutOff" xml:space="preserve">
+    <value>UV吸收值(nm):</value>
+  </data>
+  <data name="ERP_WaiGou" xml:space="preserve">
+    <value>外購</value>
+  </data>
+  <data name="ERP_WDao" xml:space="preserve">
+    <value>未導</value>
+  </data>
+  <data name="ERP_Wednesday" xml:space="preserve">
+    <value>星期三</value>
+  </data>
+  <data name="ERP_WelcomeHome" xml:space="preserve">
+    <value>歡迎使用</value>
+  </data>
+  <data name="ERP_WG" xml:space="preserve">
+    <value>外購</value>
+  </data>
+  <data name="ERP_WG1" xml:space="preserve">
+    <value>外購:</value>
+  </data>
+  <data name="ERP_WhCode" xml:space="preserve">
+    <value>倉庫代碼:</value>
+  </data>
+  <data name="ERP_WhCodeBill" xml:space="preserve">
+    <value>倉庫</value>
+  </data>
+  <data name="ERP_WhCodeIn" xml:space="preserve">
+    <value>入庫倉庫:</value>
+  </data>
+  <data name="ERP_WhCodeOut" xml:space="preserve">
+    <value>出庫倉庫:</value>
+  </data>
+  <data name="ERP_WhName" xml:space="preserve">
+    <value>倉庫名稱:</value>
+  </data>
+  <data name="ERP_WhNameBill" xml:space="preserve">
+    <value>倉庫名稱</value>
+  </data>
+  <data name="ERP_Width" xml:space="preserve">
+    <value>框寬:</value>
+  </data>
+  <data name="ERP_WS" xml:space="preserve">
+    <value>未使用</value>
+  </data>
+  <data name="ERP_XYInPut" xml:space="preserve">
+    <value>錄入</value>
+  </data>
+  <data name="ERP_XYInputWithOutSave" xml:space="preserve">
+    <value>當前修改不會被保存,確定繼續退出操作嗎?</value>
+  </data>
+  <data name="ERP_XYLoad" xml:space="preserve">
+    <value>加載</value>
+  </data>
+  <data name="ERP_Y" xml:space="preserve">
+    <value>是</value>
+  </data>
+  <data name="ERP_YDao" xml:space="preserve">
+    <value>已導</value>
+  </data>
+  <data name="ERP_Year" xml:space="preserve">
+    <value>年</value>
+  </data>
+  <data name="ERP_YFRemainMoney" xml:space="preserve">
+    <value>預付餘額:</value>
+  </data>
+  <data name="ERP_YN" xml:space="preserve">
+    <value>是</value>
+  </data>
+  <data name="ERP_YNAll" xml:space="preserve">
+    <value>未指定</value>
+  </data>
+  <data name="ERP_YS" xml:space="preserve">
+    <value>已使用</value>
+  </data>
+  <data name="ERP_ZuanKong" xml:space="preserve">
+    <value>鑽孔</value>
+  </data>
+  <data name="ERP_ZuanKong1" xml:space="preserve">
+    <value>鑽孔:</value>
+  </data>
+  <data name="Err_CusCodeNull" xml:space="preserve">
+    <value>[客戶代碼]不能為空.</value>
+  </data>
+  <data name="Err_CusGroupNull" xml:space="preserve">
+    <value>客戶組別不能為空</value>
+  </data>
+  <data name="Err_GetCusCodeErr" xml:space="preserve">
+    <value>獲取客戶代碼失敗.</value>
+  </data>
+  <data name="Err_GpCodeNull" xml:space="preserve">
+    <value>用戶組代碼不能為空.</value>
+  </data>
+  <data name="Err_ImageLargeThan1M" xml:space="preserve">
+    <value>系統暫只支持1M大小以下圖片上傳.</value>
+  </data>
+  <data name="Err_LargeThan10M" xml:space="preserve">
+    <value>系統暫只支持10M大小以下文件上傳.</value>
+  </data>
+  <data name="Err_LargeThan20M" xml:space="preserve">
+    <value>系統暫只支持20M大小以下文件上傳.</value>
+  </data>
+  <data name="Err_LensCodeMiss" xml:space="preserve">
+    <value>缺少鏡種基礎信息.</value>
+  </data>
+  <data name="Err_LensCodeNull" xml:space="preserve">
+    <value>鏡種代碼不能為空</value>
+  </data>
+  <data name="Err_MoreThan30" xml:space="preserve">
+    <value>不能多於30條記錄.</value>
+  </data>
+  <data name="Err_PersonCodeNull" xml:space="preserve">
+    <value>職員代碼不能為空.</value>
+  </data>
+  <data name="Err_ProCodeNull" xml:space="preserve">
+    <value>工序代碼不能為空.</value>
+  </data>
+  <data name="Err_RecordNone" xml:space="preserve">
+    <value>沒有相關記錄.</value>
+  </data>
+  <data name="Err_SpGroupNull" xml:space="preserve">
+    <value>供應商組別不能為空</value>
+  </data>
+  <data name="Err_SumQtyLess0" xml:space="preserve">
+    <value>數量不能為0.</value>
+  </data>
+  <data name="Err_ViewErrList" xml:space="preserve">
+    <value>請先更正[紅框]中輸入錯誤.</value>
+  </data>
+  <data name="Err_WhCodeNull" xml:space="preserve">
+    <value>倉庫不能為空.</value>
+  </data>
+  <data name="LoginUserInfo_Title" xml:space="preserve">
+    <value>用戶信息</value>
+  </data>
+  <data name="LoginUserLogined_Logout" xml:space="preserve">
+    <value>|註銷登陸|</value>
+  </data>
+  <data name="LoginUserLogined_LogoutAsk" xml:space="preserve">
+    <value>確定註銷登錄嗎?</value>
+  </data>
+  <data name="LoginUserLogined_SystemInfo" xml:space="preserve">
+    <value>|消息中心|</value>
+  </data>
+  <data name="LoginUserLogined_UserInfo" xml:space="preserve">
+    <value>|用戶信息|</value>
+  </data>
+  <data name="LoginUserLogin_Err_NotManager" xml:space="preserve">
+    <value>沒有管理員權限</value>
+  </data>
+  <data name="LoginUserLogin_Err_Password" xml:space="preserve">
+    <value>密碼錯誤</value>
+  </data>
+  <data name="LoginUserLogin_Err_UserEmpty" xml:space="preserve">
+    <value>用戶代碼不能為空.</value>
+  </data>
+  <data name="LoginUserLogin_Err_UserNone" xml:space="preserve">
+    <value>不存在用戶代碼:</value>
+  </data>
+  <data name="LoginUserLogin_Err_UserStop" xml:space="preserve">
+    <value>用戶已停用.</value>
+  </data>
+  <data name="LoginUserLogin_Language" xml:space="preserve">
+    <value>語言:</value>
+  </data>
+  <data name="LoginUserLogin_Login" xml:space="preserve">
+    <value>登陸</value>
+  </data>
+  <data name="LoginUserLogin_LoginMode" xml:space="preserve">
+    <value>方式:</value>
+  </data>
+  <data name="LoginUserLogin_Password" xml:space="preserve">
+    <value>密碼:</value>
+  </data>
+  <data name="LoginUserLogin_Remember" xml:space="preserve">
+    <value>記住</value>
+  </data>
+  <data name="LoginUserLogin_User" xml:space="preserve">
+    <value>用戶:</value>
+  </data>
+  <data name="MoreThan100" xml:space="preserve">
+    <value>總數量超出100條.</value>
+  </data>
+  <data name="M_Log_List_Title" xml:space="preserve">
+    <value>後臺管理--系統日誌</value>
+  </data>
+  <data name="M_UserGroup_DataBase_List_Title" xml:space="preserve">
+    <value>後台管理--用戶組帳套使用分配</value>
+  </data>
+  <data name="M_UserGroup_List_Title" xml:space="preserve">
+    <value>後臺管理--用戶組檔案列表</value>
+  </data>
+  <data name="M_UserGroup_List_UserIncludeInfo" xml:space="preserve">
+    <value>(包含用戶)</value>
+  </data>
+  <data name="M_UserGroup_Rights_List_CopyInfo" xml:space="preserve">
+    <value>(請勾選下面的組別進行權限複製)</value>
+  </data>
+  <data name="M_UserGroup_Rights_List_SelectDB" xml:space="preserve">
+    <value>選擇帳套:</value>
+  </data>
+  <data name="M_UserGroup_Rights_List_SelectGP" xml:space="preserve">
+    <value>選擇用戶組:</value>
+  </data>
+  <data name="M_UserGroup_Rights_List_Title" xml:space="preserve">
+    <value>後臺管理--用戶組權限分配</value>
+  </data>
+  <data name="M_UserGroup_Title" xml:space="preserve">
+    <value>後臺管理--用戶組檔案</value>
+  </data>
+  <data name="M_UserGroup_User_List_Title" xml:space="preserve">
+    <value>後台管理--用戶組用戶分配</value>
+  </data>
+  <data name="M_User_Group_List_Title" xml:space="preserve">
+    <value>後臺管理--用戶組用戶分配</value>
+  </data>
+  <data name="M_User_List_GroupIncludeInfo" xml:space="preserve">
+    <value>(用戶所屬用戶組)</value>
+  </data>
+  <data name="M_User_List_Title" xml:space="preserve">
+    <value>後臺管理--用戶檔案列表</value>
+  </data>
+  <data name="M_User_ResetPasswordAsk" xml:space="preserve">
+    <value>確定清空密碼?</value>
+  </data>
+  <data name="M_User_Title" xml:space="preserve">
+    <value>後臺管理--用戶檔案</value>
+  </data>
+  <data name="Pur_Order_Lens_List_Title" xml:space="preserve">
+    <value>採購系統--採購訂單列表</value>
+  </data>
+  <data name="Pur_PriceContract_1" xml:space="preserve">
+    <value>[合同信息]</value>
+  </data>
+  <data name="Pur_PriceContract_2" xml:space="preserve">
+    <value>[操作信息]</value>
+  </data>
+  <data name="Pur_PriceContract_FrameSet_List" xml:space="preserve">
+    <value>鏡架套餐價格維護</value>
+  </data>
+  <data name="Pur_PriceContract_FrameSet_List_Title" xml:space="preserve">
+    <value>採購系統--鏡架套餐價格維護</value>
+  </data>
+  <data name="Pur_PriceContract_FrameSet_Title" xml:space="preserve">
+    <value>鏡架套餐合同價格維護</value>
+  </data>
+  <data name="Pur_PriceContract_Frame_List" xml:space="preserve">
+    <value>鏡架價格維護</value>
+  </data>
+  <data name="Pur_PriceContract_Frame_List_Title" xml:space="preserve">
+    <value>採購系統--鏡架價格維護</value>
+  </data>
+  <data name="Pur_PriceContract_Frame_Title" xml:space="preserve">
+    <value>鏡架合同價格維護</value>
+  </data>
+  <data name="Pur_PriceContract_Lens_List" xml:space="preserve">
+    <value>鏡片價格維護</value>
+  </data>
+  <data name="Pur_PriceContract_Lens_List_Title" xml:space="preserve">
+    <value>採購系統--鏡片價格維護</value>
+  </data>
+  <data name="Pur_PriceContract_Lens_ProCost_List" xml:space="preserve">
+    <value>加工價格維護</value>
+  </data>
+  <data name="Pur_PriceContract_Lens_ProCost_List_Title" xml:space="preserve">
+    <value>採購系統--鏡片加工價格維護</value>
+  </data>
+  <data name="Pur_PriceContract_Lens_ProCost_Title" xml:space="preserve">
+    <value>鏡片合同加工費維護</value>
+  </data>
+  <data name="Pur_PriceContract_Lens_Title" xml:space="preserve">
+    <value>鏡片合同價格維護</value>
+  </data>
+  <data name="Pur_PriceContract_List_Title" xml:space="preserve">
+    <value>採購系統--價格合同查詢列表</value>
+  </data>
+  <data name="Pur_PriceContract_Priority" xml:space="preserve">
+    <value>合同優先級:</value>
+  </data>
+  <data name="Pur_PriceContract_SpCode_Title" xml:space="preserve">
+    <value>採購系統--價格合同包含供應商設定</value>
+  </data>
+  <data name="Pur_PriceContract_SpGroup_List_Title" xml:space="preserve">
+    <value>價格供應商組別維護</value>
+  </data>
+  <data name="Pur_PriceContract_SpGroup_Title" xml:space="preserve">
+    <value>價格客戶組別維護</value>
+  </data>
+  <data name="Pur_PriceContract_Title" xml:space="preserve">
+    <value>採購系統--價格合同編制</value>
+  </data>
+  <data name="Sale_Base_Note_List_Title" xml:space="preserve">
+    <value>銷售系統--基礎資料--訂單特別說明列表</value>
+  </data>
+  <data name="Sale_Base_ReOrderReason_List_Title" xml:space="preserve">
+    <value>銷售系統--基礎資料--鏡片重訂原因列表</value>
+  </data>
+  <data name="Sale_Delivery_Lens_List_Title" xml:space="preserve">
+    <value>銷售系統--發貨單列表</value>
+  </data>
+  <data name="Sale_Delivery_ScanPrint_1" xml:space="preserve">
+    <value>[打印信息]</value>
+  </data>
+  <data name="Sale_Delivery_ScanPrint_List_Title" xml:space="preserve">
+    <value>銷售系統--條碼掃描</value>
+  </data>
+  <data name="Sale_InvoiceLens_List_Title" xml:space="preserve">
+    <value>銷售系統--發貨清單</value>
+  </data>
+  <data name="Sale_Invoice_SD" xml:space="preserve">
+    <value>發貨單</value>
+  </data>
+  <data name="Sale_Invoice_SD1" xml:space="preserve">
+    <value>[發貨信息]</value>
+  </data>
+  <data name="Sale_Invoice_SD2" xml:space="preserve">
+    <value>[預覽]</value>
+  </data>
+  <data name="Sale_Invoice_SD_Title" xml:space="preserve">
+    <value>銷售系統--發貨單</value>
+  </data>
+  <data name="Sale_Order_FD1" xml:space="preserve">
+    <value>[客戶信息]</value>
+  </data>
+  <data name="Sale_Order_FD2" xml:space="preserve">
+    <value>[鏡架信息]</value>
+  </data>
+  <data name="Sale_Order_FD3" xml:space="preserve">
+    <value>[出庫信息]</value>
+  </data>
+  <data name="Sale_Order_FD_Title" xml:space="preserve">
+    <value>銷售系統--鏡架訂單編制</value>
+  </data>
+  <data name="Sale_Order_Frame_List_Title" xml:space="preserve">
+    <value>銷售系統--鏡架訂單查詢列表</value>
+  </data>
+  <data name="Sale_Order_JM_List_Title" xml:space="preserve">
+    <value>銷售系統--寄賣訂單列表</value>
+  </data>
+  <data name="Sale_Order_JM_Title" xml:space="preserve">
+    <value>銷售系統--寄賣訂單編制</value>
+  </data>
+  <data name="Sale_Order_Lens_List_Title" xml:space="preserve">
+    <value>銷售系統--鏡片訂單查詢列表</value>
+  </data>
+  <data name="Sale_Order_PD1" xml:space="preserve">
+    <value>[客戶信息]</value>
+  </data>
+  <data name="Sale_Order_PD2" xml:space="preserve">
+    <value>[鏡片信息]</value>
+  </data>
+  <data name="Sale_Order_PD3" xml:space="preserve">
+    <value>[明細信息]</value>
+  </data>
+  <data name="Sale_Order_PD4" xml:space="preserve">
+    <value>[出庫信息]</value>
+  </data>
+  <data name="Sale_Order_PD_Title" xml:space="preserve">
+    <value>銷售系統--批量訂單編制</value>
+  </data>
+  <data name="Sale_Order_SD1" xml:space="preserve">
+    <value>[客戶信息]</value>
+  </data>
+  <data name="Sale_Order_SD2" xml:space="preserve">
+    <value>[處方信息]</value>
+  </data>
+  <data name="Sale_Order_SD3" xml:space="preserve">
+    <value>[生產工序]</value>
+  </data>
+  <data name="Sale_Order_SD4" xml:space="preserve">
+    <value>[裁型工序]</value>
+  </data>
+  <data name="Sale_Order_SD5" xml:space="preserve">
+    <value>[出庫信息]</value>
+  </data>
+  <data name="Sale_Order_SD7" xml:space="preserve">
+    <value>[附加服務]</value>
+  </data>
+  <data name="Sale_Order_SDPrintPreView_Title" xml:space="preserve">
+    <value>銷售系統--散訂單打印預覽</value>
+  </data>
+  <data name="Sale_Order_SDReplace" xml:space="preserve">
+    <value>[替換信息]</value>
+  </data>
+  <data name="Sale_Order_SD_Err_ADDL25" xml:space="preserve">
+    <value>[ADDL]必需是[25]的倍數.</value>
+  </data>
+  <data name="Sale_Order_SD_Err_ADDR25" xml:space="preserve">
+    <value>[ADDR]必需是[25]的倍數.</value>
+  </data>
+  <data name="Sale_Order_SD_Err_CYLL25" xml:space="preserve">
+    <value>[CYLL]必需是[25]的倍數.</value>
+  </data>
+  <data name="Sale_Order_SD_Err_CYLR25" xml:space="preserve">
+    <value>[CYLR]必需是[25]的倍數.</value>
+  </data>
+  <data name="Sale_Order_SD_Err_L" xml:space="preserve">
+    <value>左片</value>
+  </data>
+  <data name="Sale_Order_SD_Err_LensCodeLNull" xml:space="preserve">
+    <value>當左片數量不為[0]時,必须指定一個鏡種.</value>
+  </data>
+  <data name="Sale_Order_SD_Err_LensCodeRNull" xml:space="preserve">
+    <value>當右片數量不為[0]時,必须指定一個鏡種.</value>
+  </data>
+  <data name="Sale_Order_SD_Err_OBillCodeSame" xml:space="preserve">
+    <value>系統檢測到當前有相同的客戶訂單號記錄:</value>
+  </data>
+  <data name="Sale_Order_SD_Err_PDNotNull" xml:space="preserve">
+    <value>裁型訂單PD不能為空.</value>
+  </data>
+  <data name="Sale_Order_SD_Err_Qty0" xml:space="preserve">
+    <value>的數量為[0],確定繼續保存訂單嗎?</value>
+  </data>
+  <data name="Sale_Order_SD_Err_Qty1" xml:space="preserve">
+    <value>的數量多於[1]片,確定繼續保存訂單嗎?</value>
+  </data>
+  <data name="Sale_Order_SD_Err_QtyLess" xml:space="preserve">
+    <value>訂單數量不能小於[0]片.</value>
+  </data>
+  <data name="Sale_Order_SD_Err_R" xml:space="preserve">
+    <value>右片</value>
+  </data>
+  <data name="Sale_Order_SD_Err_RanseNameNull" xml:space="preserve">
+    <value>當指定[染色代碼]的同時必須指定[染色名稱].</value>
+  </data>
+  <data name="Sale_Order_SD_Err_SpCode" xml:space="preserve">
+    <value>供應商不能為空.</value>
+  </data>
+  <data name="Sale_Order_SD_Err_SPHL25" xml:space="preserve">
+    <value>[SPHL]必需是[25]的倍數.</value>
+  </data>
+  <data name="Sale_Order_SD_Err_SPHR25" xml:space="preserve">
+    <value>[SPHR]必需是[25]的倍數.</value>
+  </data>
+  <data name="Sale_Order_SD_Err_SumQtyLess" xml:space="preserve">
+    <value>訂單總數量不能小於等於[0]片.</value>
+  </data>
+  <data name="Sale_Order_SD_Err_UpdateMoneyReasonNull" xml:space="preserve">
+    <value>請填寫調整金額原因.</value>
+  </data>
+  <data name="Sale_Order_SD_Err_WGandWhCode" xml:space="preserve">
+    <value>不能同時指定鏡種屬於[外購]與[本地出庫].</value>
+  </data>
+  <data name="Sale_Order_SD_Err_WGorWhCode" xml:space="preserve">
+    <value>必須指定鏡種是[外購]或[本地出庫].</value>
+  </data>
+  <data name="Sale_Order_SD_Err_WhCode" xml:space="preserve">
+    <value>倉庫不能為空.</value>
+  </data>
+  <data name="Sale_Order_SD_Title" xml:space="preserve">
+    <value>銷售系統--訂單編制</value>
+  </data>
+  <data name="Sale_Order_Status_List_Title" xml:space="preserve">
+    <value>銷售系統--訂單狀態跟蹤</value>
+  </data>
+  <data name="Sale_OrdeSDr6" xml:space="preserve">
+    <value>[特殊要求]</value>
+  </data>
+  <data name="Sale_PriceContract_1" xml:space="preserve">
+    <value>[合同信息]</value>
+  </data>
+  <data name="Sale_PriceContract_2" xml:space="preserve">
+    <value>[操作信息]</value>
+  </data>
+  <data name="Sale_PriceContract_CusCode_Title" xml:space="preserve">
+    <value>銷售系統--價格合同包含客戶設定</value>
+  </data>
+  <data name="Sale_PriceContract_CusGroup_List_Title" xml:space="preserve">
+    <value>價格客戶組別維護</value>
+  </data>
+  <data name="Sale_PriceContract_CusGroup_Title" xml:space="preserve">
+    <value>销售系統--價格組別維護</value>
+  </data>
+  <data name="Sale_PriceContract_Err_ContractTypeErr" xml:space="preserve">
+    <value>合同類型出錯.</value>
+  </data>
+  <data name="Sale_PriceContract_Err_CustTypeNull" xml:space="preserve">
+    <value>合同類別不能為空.</value>
+  </data>
+  <data name="Sale_PriceContract_FrameSet_List" xml:space="preserve">
+    <value>鏡架套餐價格維護</value>
+  </data>
+  <data name="Sale_PriceContract_FrameSet_List_Title" xml:space="preserve">
+    <value>銷售系統--鏡架套餐價格維護</value>
+  </data>
+  <data name="Sale_PriceContract_FrameSet_Title" xml:space="preserve">
+    <value>鏡架套餐合同價格維護</value>
+  </data>
+  <data name="Sale_PriceContract_Frame_List" xml:space="preserve">
+    <value>鏡架價格維護</value>
+  </data>
+  <data name="Sale_PriceContract_Frame_List_Title" xml:space="preserve">
+    <value>銷售系統--鏡架價格維護</value>
+  </data>
+  <data name="Sale_PriceContract_Frame_Title" xml:space="preserve">
+    <value>鏡架合同價格維護</value>
+  </data>
+  <data name="Sale_PriceContract_Lens_List" xml:space="preserve">
+    <value>鏡片價格維護</value>
+  </data>
+  <data name="Sale_PriceContract_Lens_List_Title" xml:space="preserve">
+    <value>銷售系統--鏡片價格維護</value>
+  </data>
+  <data name="Sale_PriceContract_Lens_ProCost_List" xml:space="preserve">
+    <value>加工價格維護</value>
+  </data>
+  <data name="Sale_PriceContract_Lens_ProCost_List_Title" xml:space="preserve">
+    <value>銷售系統--鏡片加工價格維護</value>
+  </data>
+  <data name="Sale_PriceContract_Lens_ProCost_Title" xml:space="preserve">
+    <value>鏡片合同加工費維護</value>
+  </data>
+  <data name="Sale_PriceContract_Lens_Title" xml:space="preserve">
+    <value>鏡片合同價格維護</value>
+  </data>
+  <data name="Sale_PriceContract_List_Title" xml:space="preserve">
+    <value>銷售系統--價格合同查詢列表</value>
+  </data>
+  <data name="Sale_PriceContract_Priority" xml:space="preserve">
+    <value>合同優先級:</value>
+  </data>
+  <data name="Sale_PriceContract_Title" xml:space="preserve">
+    <value>銷售系統--價格合同編制</value>
+  </data>
+  <data name="Sale_PriceContract_Type" xml:space="preserve">
+    <value>合同類別:</value>
+  </data>
+  <data name="Sale_PriceTemplate_LensRecord_List_Title" xml:space="preserve">
+    <value>銷售系統--鏡片模板列表</value>
+  </data>
+  <data name="Sale_PriceTemplate_Lens_List_Title" xml:space="preserve">
+    <value>銷售系統--鏡片價格模板</value>
+  </data>
+  <data name="Sale_PriceTemplate_Lens_ProCost_List_Title" xml:space="preserve">
+    <value>銷售系統--鏡片加工費用模板</value>
+  </data>
+  <data name="Sale_Quote_Title" xml:space="preserve">
+    <value>銷售系統--鏡片詢價</value>
+  </data>
+  <data name="Sale_Rec_Lens_List_Title" xml:space="preserve">
+    <value>銷售系統--批量收貨出庫單列表</value>
+  </data>
+  <data name="Sale_Rec_PD" xml:space="preserve">
+    <value>批量收貨</value>
+  </data>
+  <data name="Sale_Rec_PD_Title" xml:space="preserve">
+    <value>銷售系統--批量收貨出庫單</value>
+  </data>
+  <data name="Ware_Bill_BCI_Lens_List_Title" xml:space="preserve">
+    <value>庫存系統--條碼入庫單列表</value>
+  </data>
+  <data name="Ware_Bill_Count_Lens_1" xml:space="preserve">
+    <value>[盤點信息]</value>
+  </data>
+  <data name="Ware_Bill_Count_Lens_List_Title" xml:space="preserve">
+    <value>庫存系統--盤點記錄</value>
+  </data>
+  <data name="Ware_Bill_Count_Lens_Title" xml:space="preserve">
+    <value>庫存系統--盤點單</value>
+  </data>
+  <data name="Ware_Bill_OI_Lens_1" xml:space="preserve">
+    <value>[單據信息]</value>
+  </data>
+  <data name="Ware_Bill_OI_Lens_List_Title" xml:space="preserve">
+    <value>庫存系統--其他入庫單</value>
+  </data>
+  <data name="Ware_Bill_OI_Lens_Title" xml:space="preserve">
+    <value>庫存系統--鏡片其他入庫單</value>
+  </data>
+  <data name="Ware_Bill_PendingSO_PD_List_SOBillType" xml:space="preserve">
+    <value>訂單類型:</value>
+  </data>
+  <data name="Ware_Bill_SO_Lens_List_SOBillType" xml:space="preserve">
+    <value>訂單類型:</value>
+  </data>
+  <data name="Ware_Bill_SO_Lens_List_Title" xml:space="preserve">
+    <value>庫存管理--鏡片銷售出庫單列表</value>
+  </data>
+  <data name="Ware_Bill_SO_PD" xml:space="preserve">
+    <value>銷售出庫單</value>
+  </data>
+  <data name="Ware_Bill_SO_PD_1" xml:space="preserve">
+    <value>[單據信息]</value>
+  </data>
+  <data name="Ware_Bill_SO_PD_2" xml:space="preserve">
+    <value>[銷售訂單信息]</value>
+  </data>
+  <data name="Ware_Bill_SO_PD_3" xml:space="preserve">
+    <value>[鏡種信息]</value>
+  </data>
+  <data name="Ware_Bill_SO_PD_4" xml:space="preserve">
+    <value>[出庫信息]</value>
+  </data>
+  <data name="Ware_Bill_SO_PD_Title" xml:space="preserve">
+    <value>庫存管理--批量銷售出庫單</value>
+  </data>
+  <data name="Ware_Bill_SO_Pending_PD_List" xml:space="preserve">
+    <value>庫存管理--批量訂單剩餘待出庫列表</value>
+  </data>
+  <data name="Ware_Bill_SO_Pre_Lens_List_Title" xml:space="preserve">
+    <value>庫存系統--預出庫單列表</value>
+  </data>
+  <data name="Ware_Bill_SO_Pre_SD_Title" xml:space="preserve">
+    <value>庫存系統--預出庫單編制</value>
+  </data>
+  <data name="Ware_Bill_SO_SD" xml:space="preserve">
+    <value>銷售出庫單</value>
+  </data>
+  <data name="Ware_Bill_SO_SD_1" xml:space="preserve">
+    <value>[單據信息]</value>
+  </data>
+  <data name="Ware_Bill_SO_SD_2" xml:space="preserve">
+    <value>[銷售訂單信息]</value>
+  </data>
+  <data name="Ware_Bill_SO_SD_3" xml:space="preserve">
+    <value>[訂單鏡種信息]</value>
+  </data>
+  <data name="Ware_Bill_SO_SD_4" xml:space="preserve">
+    <value>[出庫信息]</value>
+  </data>
+  <data name="Ware_Bill_SO_SD_5" xml:space="preserve">
+    <value>[鏡袋信息]</value>
+  </data>
+  <data name="Ware_Bill_SO_SD_Title" xml:space="preserve">
+    <value>庫存管理--銷售出庫單</value>
+  </data>
+  <data name="Ware_Bill_Transfer_Lens_1" xml:space="preserve">
+    <value>[調撥信息]</value>
+  </data>
+  <data name="Ware_Bill_Transfer_Lens_List_Title" xml:space="preserve">
+    <value>庫存系統--鏡片調撥單列表</value>
+  </data>
+  <data name="Ware_Bill_Transfer_Lens_Title" xml:space="preserve">
+    <value>庫存系統--鏡片調撥單</value>
+  </data>
+  <data name="Ware_Report_IO_Lens_List_Title" xml:space="preserve">
+    <value>庫存系統--鏡片流水賬</value>
+  </data>
+  <data name="Ware_Report_Stocks_Lens_Detail_List_Title" xml:space="preserve">
+    <value>庫存系統--鏡片現存量度數明細</value>
+  </data>
+  <data name="Ware_Report_Stocks_Lens_List_Title" xml:space="preserve">
+    <value>庫存系統--鏡片現存量</value>
+  </data>
+  <data name="Ware_Report_Stocks_Lens_LR_List_Title" xml:space="preserve">
+    <value>庫存系統--鏡片現存量區分左右</value>
+  </data>
+  <data name="Ware_Report_Stocks_Lens_XY_List_Title" xml:space="preserve">
+    <value>庫存系統--鏡片現存量矩陣表</value>
+  </data>
+  <data name="Ware_Stocks_Base_Lens_1" xml:space="preserve">
+    <value>[單據信息]</value>
+  </data>
+  <data name="Ware_Stocks_Base_Lens_List_Title" xml:space="preserve">
+    <value>庫存系統--鏡片基本庫存</value>
+  </data>
+  <data name="Ware_Stocks_Base_Lens_Title" xml:space="preserve">
+    <value>庫存系統--鏡片基本庫存</value>
+  </data>
+  <data name="Ware_Suspend_Lens_List_Title" xml:space="preserve">
+    <value>庫存系統--鏡片掛起記錄</value>
+  </data>
+  <data name="XYInput_Title" xml:space="preserve">
+    <value>系統幫助--XY表錄入</value>
+  </data>
+  <data name="Sale_Delivery_ScanPrint_List_Err_DeliveryNotExit" xml:space="preserve">
+    <value>訂單號不存在或者該訂單不具備發貨狀態.</value>
+  </data>
+  <data name="ERP_RightErr" xml:space="preserve">
+    <value>沒有權限.</value>
+  </data>
+  <data name="ERP_ButtonDeleteAll" xml:space="preserve">
+    <value>刪除全部</value>
+  </data>
+  <data name="ERP_ButtonDeleteSelected" xml:space="preserve">
+    <value>刪除選中</value>
+  </data>
+  <data name="ERP_DeleteOption" xml:space="preserve">
+    <value>刪除選項:</value>
+  </data>
+  <data name="Sale_Delivery_ScanPrint_List_DeleteAllAsk" xml:space="preserve">
+    <value>清空當前訂單記錄?</value>
+  </data>
+  <data name="ERP_ButtonCancel" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="ERP_ReOrderDate" xml:space="preserve">
+    <value>重訂日期</value>
+  </data>
+  <data name="Sale_Order_SD_ReOrder" xml:space="preserve">
+    <value>重訂單</value>
+  </data>
+  <data name="Sale_Order_SD_ReOrder_Title" xml:space="preserve">
+    <value>重訂單</value>
+  </data>
+  <data name="ERP_RadioButtonBillTypeXSCD" xml:space="preserve">
+    <value>重訂</value>
+  </data>
+  <data name="ERP_IsShowMoney" xml:space="preserve">
+    <value>顯示價格:</value>
+  </data>
+  <data name="Sale_Order_SD_PrintPreView_Title" xml:space="preserve">
+    <value>銷售系統--打印價格設定</value>
+  </data>
+</root>

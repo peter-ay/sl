@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Columns Frozen="1">
+  <Column  Binding=""   Header="" Fheader="Key"/>
+  <Column  Binding="ProcessCode" Header="工序代碼"  />
+  <Column  Binding="ProcessName" Header="工序名稱" />
+  <Column  Binding="Remark" Header="備註"  />
+  <Column  Binding="CF_Flag" Header="是否允許車房片使用"  Fbool="1"/>
+  <Column  Binding="KF_Flag" Header="是否允許庫存片使用"  Fbool="1"/>
+</Columns>
+
+
+
+
+
+
+

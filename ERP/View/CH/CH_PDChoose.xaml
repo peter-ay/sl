@@ -1,0 +1,90 @@
+﻿<ex:ChildWindowErp
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+xmlns:ex="clr-namespace:ERP.View"
+x:Class="ERP.View.CH_PDChoose"
+HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10"
+xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+xmlns:Command="clr-namespace:GalaSoft.MvvmLight.Command;assembly=GalaSoft.MvvmLight.Extras"
+xmlns:common="clr-namespace:System.Windows;assembly=System.Windows.Controls"
+DataContext="{Binding CH_PDChoose, Mode=OneWay, Source={StaticResource Locator}}">
+    <Grid x:Name="LayoutRoot" Background="{StaticResource FloatingWindowBackgroundBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="95"/>
+                <ColumnDefinition Width="250"/>
+                <ColumnDefinition Width="75"/>
+                <ColumnDefinition Width="75"/>
+                <ColumnDefinition Width="75"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="{Binding UIText[ERP_Selected]}"/>
+            <ex:TBSelectItem2 x:Name="TB_SelectedItem"  Grid.Column="1"/>
+            <ex:ButtonCWOK  Grid.Column="2" HorizontalAlignment="Right"/>
+            <ex:ButtonCWCancel  Grid.Column="3" HorizontalAlignment="Right"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="24"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="95"/>
+                    <ColumnDefinition Width="250"/>
+                    <ColumnDefinition Width="95"/>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="75"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="{Binding UIText[ERP_WhCode]}" Grid.Column="0" />
+                <ex:ComBoxWhCode x:Name="CB_WhCode" Grid.Column="1" HorizontalAlignment="Stretch" MinWidth="250" SelectedIndex="{Binding SIndexWhCode,Mode=TwoWay}">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="SelectionChanged">
+                            <Command:EventToCommand Command="{Binding CmdComBoxWhCodeChange, Mode=OneWay}" CommandParameter="{Binding SelectedItem, ElementName=CB_WhCode}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </ex:ComBoxWhCode>
+                <TextBlock Text="{Binding UIText[ERP_LensCode]}" Grid.Column="2"/>
+                <ex:TBLensCodeList Grid.Column="3"/>
+                <ex:ButtonSearch  Grid.Column="4"/>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="2">
+            <controls:TreeView x:Name="MyTreeView" MinWidth="200"
+					BorderThickness="0" HorizontalAlignment="Stretch" 
+					HorizontalContentAlignment="Left" 
+					VerticalAlignment="Stretch"  
+					Style="{StaticResource MyTreeView}"
+					ItemContainerStyle="{StaticResource MyTreeViewItem}" 	
+                    FontFamily="{StaticResource FFV}" FontSize="{StaticResource FSV}"
+                    Padding="0" 
+					ItemsSource="{Binding SourceTree}">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="KeyDown">
+                        <Command:EventToCommand Command="{Binding CmdTreeViewKeyDown, Mode=OneWay}" PassEventArgsToCommand="True"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+                <controls:TreeView.ItemTemplate>
+                    <common:HierarchicalDataTemplate
+							ItemsSource="{Binding Children}"
+							ItemContainerStyle="{StaticResource MyTreeViewItem}">
+                        <StackPanel Orientation="Horizontal">
+                            <HyperlinkButton VerticalAlignment="Center" Foreground="Black" Content="{Binding MsgShow}">
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="Click">
+                                        <Command:EventToCommand  Command="{Binding CH_PDChoose.CmdShowXYDetail, Mode=OneWay,Source={StaticResource Locator}}" CommandParameter="{Binding}"/>
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </HyperlinkButton>
+                        </StackPanel>
+                    </common:HierarchicalDataTemplate>
+                </controls:TreeView.ItemTemplate>
+            </controls:TreeView>
+        </Grid>
+    </Grid>
+</ex:ChildWindowErp>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Columns Frozen="2">
+  <Column  Binding="" Header=""  Fheader="1"/>
+  <Column Binding="FrameCode" Header="编码//編碼//Code" Ffunction="Key"/>
+  <Column Binding="FrameName" Header="镜架名称//鏡架名稱//Name"   />
+  <Column Binding="Width" Header="框宽//框寬//Width"   />
+  <Column Binding="Heigh" Header="框高//框高//Heigh"   />
+  <Column Binding="Bridge" Header="鼻梁//鼻梁//Bridge"   />
+  <Column Binding="Leg_Length" Header="镜退//鏡腿//Leg"   />
+  <Column Binding="Colour" Header="颜色//顏色//Colour"   />
+  <Column Binding="Brand" Header="品牌//品牌//Brand"   />
+  <Column Binding="Family" Header="系列//系列//Family"   />
+  <Column Binding="Material" Header="材质//材質//Material"   />
+  <Column Binding="Origin" Header="产地//產地//Origin"   />
+</Columns>
+
+
+
+
+
+
+
+
+
+

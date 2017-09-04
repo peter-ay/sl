@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Columns Frozen="2">
+  <Column  Binding=""   Header="" Fheader="1"/>
+  <Column  Binding="BCode" Header="订单号//訂單號//ID" Ffunction="ID"/>
+  <Column  Binding="OBCode" Header="客户单号//客戶單號//Original Code" />
+  <Column  Binding="BDate" Header="订单日期//訂單日期//Bill Date" Ftime="1"/>
+  <Column  Binding="CusCode" Header="客户代码//客戶代碼//CusCode"/>
+  <Column  Binding="CusName" Header="客户名称//客戶名稱//CusName"/> 
+  <Column  Binding="DN" Header="交收单//交收單//DN"  Fwidth="3"/>
+  <Column  Binding="DDate" Header="交收日期//交收日期//DN Date"  Ftime="1"/>
+  <Column  Binding="Maker" Header="制单//制單//Maker"  />
+  <Column  Binding="Checker" Header="审核//審核//Checker"  />
+  <Column  Binding="Notes" Header="特别说明//特別說明//Note"  Fwidth="2"/>
+  <Column  Binding="Remark" Header="备注//備註//Remark"  Fwidth="2"/>
+  <Column  Binding="StNameUI" Header="状态//狀態//State"  />
+  <Column  Binding="SumQty" Header="订单总数量//訂單總數量//SumQty"  />
+  <Column  Binding="FrameCode" Header="镜架代码//鏡架代碼//Frame"  />
+  <Column  Binding="BType" Header="订单类型//訂單類型//Type"  />
+</Columns>
+
+
+
+
+
+
+

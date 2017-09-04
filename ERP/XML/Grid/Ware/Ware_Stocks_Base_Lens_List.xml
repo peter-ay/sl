@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Columns Frozen="2">
+  <Column  Binding=""   Header="" Fheader="1"/>
+  <Column  Binding="BCode" Header="编号//編號//Code" Ffunction="ID"/>
+  <Column  Binding="BDate" Header="制作日期//製作日期//Date" Ftime="1"/>
+  <Column  Binding="WhCode" Header="仓库//仓库//WhCode"/>
+  <Column  Binding="LensCode" Header="镜种//鏡種//Lens"  />
+  <Column  Binding="SumQty" Header="总数量//總數量//Sum Number"  />
+  <Column  Binding="StNameUI" Header="状态//狀態//State"  />
+  <Column  Binding="WhName" Header="仓库名称//倉庫名稱//WhName"/>
+  <Column  Binding="LensName" Header="镜种名称//鏡種名稱//Lens Name"  Fwidth="2"/>
+  <Column  Binding="Maker" Header="制单//制單//Maker"  />
+  <Column  Binding="Checker" Header="审核//審核//Checker"  />
+</Columns>
+
+
+
+
+
+
+

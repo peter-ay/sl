@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Columns Frozen="2">
+  <Column  Binding=""   Header="" Fheader="1"/> 
+  <Column  Binding="FrameCode" Header="鏡架代碼"  />
+  <Column  Binding="FQuantity" Header="鏡架數量"  />
+  <Column  Binding="Mnumber" Header="鏡種代碼"  />
+  <Column  Binding="MQuantity" Header="鏡種數量"  />
+  <Column  Binding="Price" Header="單價"  />
+  <Column  Binding="Price_Process" Header="鏡片加工費"  />
+  <Column  Binding="InvoiceTitle" Header="發票顯示名稱" />
+</Columns>
+
+
+
+

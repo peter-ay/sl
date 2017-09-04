@@ -1,0 +1,37 @@
+﻿<ex:ChildWindowErp
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+x:Class="ERP.View.Sale_ContractBill_ChooseByNew" 
+Width="380"
+xmlns:ex="clr-namespace:ERP.View" 
+DataContext="{Binding Sale_ContractBill_ChooseByNew, Mode=OneWay, Source={StaticResource Locator}}" >
+    <Grid x:Name="LayoutRoot" Background="{StaticResource FloatingWindowBackgroundBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel >
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,5,5,0">
+                <TextBlock Text="{Binding UIText[ERP_CusType]}" Margin="0,0,3,0"/>
+                <ex:TextBoxErp Text="{Binding CustType, Mode=TwoWay, ValidatesOnNotifyDataErrors=False,UpdateSourceTrigger=PropertyChanged}"  Width="110"/>
+            </StackPanel>
+            <ex:BillSeparator Grid.Row="2" />
+            <StackPanel HorizontalAlignment="Center" Margin="5,5,0,5" VerticalAlignment="Top">
+                <ex:RadioButtonContractTypeXSCA Margin="0,0,0,5" IsChecked="True"/>
+                <ex:RadioButtonContractTypeXSCB Margin="0,0,0,5" />
+                <ex:RadioButtonContractTypeXSCC Margin="0,0,0,5" IsEnabled="False"/>
+                <ex:RadioButtonContractTypeXSCD Margin="0,0,0,5" />
+                <ex:RadioButtonContractTypeXSCE Margin="0,0,0,5" />
+                <ex:RadioButtonContractTypeXSCF Margin="0,0,0,5" />
+            </StackPanel>
+        </StackPanel>
+
+        <ex:BillSeparator Grid.Row="1" />
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+            <ex:ButtonErp x:Name="Btn_OK"  Margin="0,3,5,0"  Content="{Binding UIText[ERP_Btn_OK]}"  Width="60"/>
+            <ex:ButtonErp x:Name="Btn_Cancel" Margin="0,3,0,0"  Content="{Binding UIText[ERP_Btn_Cancel]}"  Width="60"/>
+        </StackPanel>
+    </Grid>
+</ex:ChildWindowErp>

@@ -1,0 +1,551 @@
+﻿<ex:UserControlErp x:Class="ERP.View.Sale_Bill_Mnumber_SD"
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"
+xmlns:ignore="http://www.ignore.com"
+xmlns:ex="clr-namespace:ERP.View"
+xmlns:bhv="clr-namespace:ERP.Behavior"
+mc:Ignorable="d"
+HorizontalAlignment="Center" VerticalAlignment="Top"
+DataContext="{Binding Sale_Bill_Mnumber_SD, Mode=OneWay, Source={StaticResource Locator}}">
+    <ex:BusyIndicatorErp>
+        <Border Padding="1,1,1,1" Background="{StaticResource DisabledBackgroundBrush}">
+            <Grid Background="{StaticResource FloatingWindowBackgroundBrush}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <!--1-->
+                    <RowDefinition Height="Auto" />
+                    <!--2-->
+                    <RowDefinition Height="Auto" />
+                    <!--3-->
+                    <RowDefinition Height="Auto" />
+                    <!--4-->
+                    <RowDefinition Height="Auto" />
+                    <!--5-->
+                    <RowDefinition Height="Auto" />
+                    <!--6-->
+                    <RowDefinition Height="Auto" />
+                    <!--7-->
+                    <RowDefinition Height="Auto" />
+                    <!--8-->
+                    <RowDefinition Height="Auto" />
+                    <!--9-->
+                    <RowDefinition Height="Auto" />
+                    <!--10-->
+                    <RowDefinition Height="Auto" />
+                    <!--11-->
+                    <RowDefinition Height="Auto" />
+                    <!--12-->
+                    <RowDefinition Height="Auto" />
+                    <!--13-->
+                    <RowDefinition Height="Auto" />
+                    <!--14-->
+                    <RowDefinition Height="Auto" />
+                    <!--15-->
+                    <RowDefinition Height="Auto" />
+                    <!--16-->
+                    <RowDefinition Height="Auto" />
+                    <!--17-->
+                    <RowDefinition Height="Auto" />
+                    <!--18-->
+                    <RowDefinition Height="Auto" />
+                    <!--19-->
+                    <RowDefinition Height="Auto" />
+                    <!--20-->
+                    <RowDefinition Height="Auto" />
+                    <!--21-->
+                    <RowDefinition Height="Auto" />
+                    <!--22-->
+                    <RowDefinition Height="Auto" />
+                    <!--23-->
+                    <RowDefinition Height="Auto" />
+                    <!--24-->
+                    <RowDefinition Height="Auto" />
+                    <!--25-->
+                </Grid.RowDefinitions>
+                <!--0Title-->
+                <ex:TitleErp/>
+                <!--1menu-->
+                <!-- 2button  -->
+                <StackPanel Grid.Row="2" Orientation="Horizontal" Background="{StaticResource DocumentTabNormalBackgroundBrush}" Height="30">
+                    <ex:ButtonPrint Margin="4,0"/>
+                    <ex:ButtonPrintToFactory Margin="4,0"/>
+                    <ex:ButtonExport Margin="4,0"/>
+                    <ex:ButtonNew Margin="4,0"/>
+                    <ex:ButtonSave Margin="4,0" />
+                    <ex:ButtonEdit Margin="4,0" />
+                    <ex:ButtonDrop Margin="4,0"  />
+                    <ex:ButtonCheck Margin="4,0"/>
+                    <ex:ButtonUnCheck Margin="4,0"/>
+                    <ex:ButtonPrevious Margin="4,0"/>
+                    <ex:ButtonNext Margin="4,0"  TabIndex="76"/>
+                    <ex:ButtonDelete Margin="4,0" TabIndex="77"/>
+                    <ex:ButtonUnLock Margin="4,0" TabIndex="78"/>
+                    <ex:ButtonReOrder Margin="4,0" TabIndex="79"/>
+                    <ex:ButtonExit Margin="4,0"  TabIndex="80"/>
+                </StackPanel>
+                <!-- 3-->
+                <Canvas Grid.Row="3" Height="24">
+                    <ex:CBFlag_UnLock Canvas.Left="834" Canvas.Top="6"/>
+                    <TextBlock Text="{Binding UIText[ERP_UnLock]}" Canvas.Left="851" Canvas.Top="7" Foreground="{StaticResource NormalBrush}"/>
+                    <ex:CBFlag_ReOrder Canvas.Left="904" Canvas.Top="6"/>
+                    <TextBlock Text="{Binding UIText[ERP_BS]}" Canvas.Left="921" Canvas.Top="7" Foreground="DarkRed" />
+                    <ex:CBFlag_CX Canvas.Left="968" Canvas.Top="6" TabIndex="65"/>
+                    <TextBlock Text="{Binding UIText[ERP_CX]}" Canvas.Left="984" Canvas.Top="7" Foreground="#FF5D046C" />
+                    <TextBlock Text="{Binding UIText[ERP_SD1]}" Foreground="{StaticResource SelectedBackgroundBrush}" Canvas.Top="9" Padding="0" Canvas.Left="3"/>
+                </Canvas>
+                <!--4 -->
+                <ex:BillSeparator Grid.Row="4"/>
+                <!--5 -->
+                <Grid Grid.Row="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="24" />
+                        <RowDefinition Height="24" />
+                        <RowDefinition Height="24" />
+                        <RowDefinition Height="24" />
+                        <RowDefinition Height="24" />
+                        <RowDefinition Height="24" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="84"/>
+                        <ColumnDefinition Width="170"/>
+                        <ColumnDefinition Width="84"/>
+                        <ColumnDefinition Width="170"/>
+                        <ColumnDefinition Width="84"/>
+                        <ColumnDefinition Width="170"/>
+                        <ColumnDefinition Width="84"/>
+                        <ColumnDefinition Width="170"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="{Binding UIText[ERP_OrderCode]}" />
+                    <ex:TBBillCodeRO Grid.Column="1"/>
+                    <TextBlock Text="{Binding UIText[ERP_OBillCode]}" Grid.Row="1" />
+                    <ex:TBOBillCode x:Name="TB_Falg_RO" Grid.Column="1" Grid.Row="1" IsReadOnly="{Binding IsReadOnlyMain}" bhv:BhFocusTBox.IsFocused="{Binding IsFocusMain}" TabIndex="0"/>
+                    <TextBlock Text="{Binding UIText[ERP_BillDate]}" Grid.Column="4" />
+                    <ex:DatePickerBillDate Grid.Column="5" />
+                    <TextBlock Text="{Binding UIText[ERP_ConsignDate]}"  Grid.Column="6" />
+                    <ex:DatePickerConsignDate Grid.Column="7" />
+
+                    <TextBlock Text="{Binding UIText[ERP_DeliveryDate]}" Grid.Row="1" Grid.Column="6"/>
+                    <ex:TBDeliveryDateRO Grid.Row="1" Grid.Column="7"/>
+                    <TextBlock Text="{Binding UIText[ERP_DeliveryNum]}" Grid.Row="2" Grid.Column="6" />
+                    <ex:TBDeliveryNumRO Grid.Column="7" Grid.Row="2"/>
+
+                    <TextBlock Text="{Binding UIText[ERP_CusCode]}" Grid.Column="2" Grid.Row="1" />
+                    <StackPanel Grid.Column="3" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                        <ex:TBCusCodeRO Width="150" />
+                        <ex:ACBoxCusCode  Width="150" TabIndex="1" />
+                        <ex:ButtonHelpCusCode/>
+                    </StackPanel>
+
+                    <TextBlock Text="{Binding UIText[ERP_CusName]}" Grid.Row="1" Grid.Column="4" />
+                    <ex:TBCusNameRO Grid.Row="1" Grid.Column="5"/>
+
+
+                    <TextBlock Text="{Binding UIText[ERP_Notes]}" Grid.Row="2" />
+                    <StackPanel Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3" VerticalAlignment="Center">
+                        <ex:TBNotes TabIndex="2" />
+                        <ex:ACBoxNotes/>
+                    </StackPanel>
+
+                    <TextBlock Text="{Binding UIText[ERP_OrderRemark]}" Grid.Row="3" />
+                    <ex:TBRemark Grid.ColumnSpan="3" Grid.Row="3" Grid.Column="1" TabIndex="3" />
+
+                    <ex:TBOut_Good Grid.Column="3" Visibility="Collapsed"/>
+
+                    <TextBlock Text="{Binding UIText[ERP_OrderStateName]}" Grid.Column="2" />
+                    <ex:TBStateNameUI Grid.Column="3" />
+
+                    <TextBlock Text="{Binding UIText[ERP_SerialNum]}" Grid.Column="4" Grid.Row="3" />
+                    <ex:TBSerialNumRO Grid.Column="5" Grid.Row="3" />
+                    <TextBlock Text="{Binding UIText[ERP_FromBillCode]}" Grid.Row="2" Grid.Column="4" />
+                    <ex:TBFromBillCodeRO Grid.Row="2" Grid.Column="5"/>
+
+                    <TextBlock Text="{Binding UIText[ERP_DeptCode1]}" Grid.Column="4"  Grid.Row="4" />
+                    <ex:TBDeptNameRO Grid.Column="5" Grid.Row="4" />
+
+                    <TextBlock Text="{Binding UIText[ERP_DeliveryAddress]}" Grid.Row="4" />
+                    <ex:TBDeliveryAddressRO Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="3" />
+
+                    <TextBlock Text="{Binding UIText[ERP_TempDeptCode]}" Grid.Row="5" Grid.Column="4"/>
+                    <StackPanel Grid.Row="5" Grid.Column="5" Orientation="Horizontal">
+                        <ex:TBTempDeptCode Width="150" TabIndex="5"/>
+                        <ex:ButtonHelpTempDeptCode />
+                    </StackPanel>
+                    <TextBlock Text="{Binding UIText[ERP_TempAddress]}" Grid.Row="5" />
+                    <ex:TBTempAddress Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="3" TabIndex="4" />
+
+                    <TextBlock Text="{Binding UIText[ERP_UpdateMoney]}" Grid.Column="6" Grid.Row="4" />
+                    <ex:TBUpdateMoney Grid.Column="7" Grid.Row="4"/>
+                    <TextBlock Text="{Binding UIText[ERP_UpdateMoneyReason]}" Grid.Column="6" Grid.Row="5"/>
+                    <ex:TBUpdateMoneyReason Grid.Column="7" Grid.Row="5"/>
+
+                </Grid>
+                <!--6 -->
+                <Canvas Grid.Row="6" Height="24">
+                    <TextBlock Text="{Binding UIText[ERP_SD2]}" Foreground="{StaticResource SelectedBackgroundBrush}" Canvas.Top="9" Padding="0" Canvas.Left="3"/>
+                </Canvas>
+                <!-- 7-->
+                <ex:BillSeparator Grid.Row="7"/>
+                <!--8 -->
+                <Grid Grid.Row="8">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="24" />
+                        <RowDefinition Height="24" />
+                        <RowDefinition Height="24" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="84" />
+                        <ColumnDefinition Width="70" />
+                        <ColumnDefinition Width="68" />
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="52" />
+                        <ColumnDefinition Width="70" />
+                        <ColumnDefinition Width="52" />
+                        <ColumnDefinition Width="70" />
+                        <ColumnDefinition Width="52" />
+                        <ColumnDefinition Width="70" />
+                        <ColumnDefinition Width="52" />
+                        <ColumnDefinition Width="70" />
+                        <ColumnDefinition Width="52" />
+                        <ColumnDefinition Width="70" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <!--Row 0 -->
+                    <!--Row 0 end-->
+                    <!--Row 1 -->
+                    <Canvas Grid.ColumnSpan="15" >
+                        <TextBlock Text="PD:" Canvas.Left="64" Margin="0" Canvas.Top="8"/>
+                        <ex:TBPD Canvas.Left="84" Canvas.Top="1" Width="139" TabIndex="6" />
+                        <TextBlock Text="PH:" Canvas.Left="247" Margin="0" Canvas.Top="8"/>
+                        <ex:TBPH Canvas.Left="267" Canvas.Top="1" Width="139" />
+                    </Canvas>
+                    <!--Row 1 emd-->
+                    <!--Row 2 -->
+                    <TextBlock Text="{Binding UIText[ERP_DiameterR]}" Grid.Row="1" />
+                    <ex:TBDiameterR Grid.Column="1" TabIndex="7" Grid.Row="1" />
+                    <TextBlock Text="{Binding UIText[ERP_MnumberR]}" Grid.Column="2" Grid.Row="1" />
+                    <StackPanel Grid.Column="3" Orientation="Horizontal" VerticalAlignment="Center" Grid.Row="1">
+                        <ex:TBMnumberRRO Width="164"/>
+                        <ex:ACBoxMnumberR Width="164" TabIndex="8"/>
+                        <ex:ButtonHelpCusMnumberR />
+                    </StackPanel>
+
+                    <TextBlock Text="SPHR:" Grid.Column="4" Grid.Row="1" />
+                    <ex:TBSPHR Grid.Column="5" TabIndex="9" Grid.Row="1" />
+                    <TextBlock Text="CYLR:" Grid.Column="6" Grid.Row="1" />
+                    <ex:TBCYLR Grid.Column="7" TabIndex="10" Grid.Row="1" />
+                    <TextBlock Text="{Binding UIText[ERP_AxisR]}" Grid.Column="8" Grid.Row="1" />
+                    <ex:TBAxisR Grid.Column="9" TabIndex="11" Grid.Row="1" />
+
+                    <TextBlock Text="ADDR:" Grid.Column="10" Grid.Row="1" />
+                    <ex:TBX_ADDR Grid.Column="11" TabIndex="12" Grid.Row="1" />
+                    <TextBlock Text="{Binding UIText[ERP_QuantityR]}" Grid.Column="12" Grid.Row="1" />
+                    <ex:TBQuantityR Grid.Column="13" TabIndex="13" Grid.Row="1" />
+                    <!--Row 2 end-->
+                    <!--Row 3 -->
+                    <TextBlock Text="{Binding UIText[ERP_DiameterL]}" Grid.Row="2" />
+                    <ex:TBDiameterL Grid.Column="1" TabIndex="14" Grid.Row="2" />
+                    <TextBlock Text="{Binding UIText[ERP_MnumberL]}" Grid.Column="2" Grid.Row="2" />
+                    <StackPanel Grid.Column="3" Orientation="Horizontal" VerticalAlignment="Center" Grid.Row="2">
+                        <ex:TBMnumberLRO Width="164"/>
+                        <ex:ACBoxMnumberL Width="164" TabIndex="15"/>
+                        <ex:ButtonHelpCusMnumberL />
+                    </StackPanel>
+
+                    <TextBlock Text="SPHL:" Grid.Column="4" Grid.Row="2" />
+                    <ex:TBSPHL Grid.Column="5" TabIndex="16" Grid.Row="2" />
+                    <TextBlock Text="CYLL:" Grid.Column="6" Grid.Row="2" />
+                    <ex:TBCYLL Grid.Column="7" TabIndex="17" Grid.Row="2" />
+                    <TextBlock Text="{Binding UIText[ERP_AxisL]}" Grid.Column="8" Grid.Row="2" />
+                    <ex:TBAxisL Grid.Column="9" TabIndex="18" Grid.Row="2" />
+                    <TextBlock Text="ADDL:" Grid.Column="10" Grid.Row="2" />
+                    <ex:TBX_ADDL Grid.Column="11" TabIndex="19" Grid.Row="2" />
+                    <TextBlock Text="{Binding UIText[ERP_QuantityL]}" Grid.Column="12" Grid.Row="2" />
+                    <ex:TBQuantityL Grid.Column="13" TabIndex="20" Grid.Row="2" />
+                    <!--Row 3 end-->
+                </Grid>
+                <!-- 9-->
+                <Canvas Grid.Row="9" Height="24">
+                    <TextBlock Text="{Binding UIText[ERP_SD3]}" Foreground="{StaticResource SelectedBackgroundBrush}" Canvas.Top="9" Padding="0"/>
+                </Canvas>
+                <!-- 10-->
+                <ex:BillSeparator Grid.Row="10"/>
+                <!-- 11-->
+                <Grid Grid.Row="11">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="24" />
+                        <RowDefinition Height="24" />
+                        <RowDefinition Height="24" />
+                        <RowDefinition Height="24" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="84" />
+                        <ColumnDefinition Width="70" />
+                        <ColumnDefinition Width="68" />
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="174" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <!--Row 0 -->
+                    <TextBlock Text="{Binding UIText[ERP_ReplaceMnumberR]}" Grid.Column="2" />
+                    <StackPanel Grid.Column="3" Orientation="Horizontal" VerticalAlignment="Center">
+                        <ex:TBMnumber_ReplaceRRO Width="164"/>
+                        <ex:ACBoxMnumberReplaceR Width="164" TabIndex="21"/>
+                        <ex:ButtonHelpCusMnumber_ReplaceR/>
+                    </StackPanel>
+
+                    <TextBlock Grid.Column="4" Text="{Binding UIText[ERP_WG]}"/>
+                    <StackPanel Grid.Column="5" Orientation="Horizontal" VerticalAlignment="Center">
+                        <ex:TBSupplierCode Width="102" TabIndex="23" />
+                        <ex:ButtonHelpSupplierCode/>
+                        <ex:TBSupplierNameRO Width="192"/>
+                    </StackPanel>
+
+                    <!--Row 0 end-->
+
+                    <!--Row 1 -->
+                    <TextBlock Text="{Binding UIText[ERP_ReplaceMnumberL]}" Grid.Row="1" Grid.Column="2" />
+                    <StackPanel Grid.Column="3" Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" >
+                        <ex:TBMnumber_ReplaceLRO Width="164"/>
+                        <ex:ACBoxMnumberReplaceL Width="164" TabIndex="22"/>
+                        <ex:ButtonHelpCusMnumber_ReplaceL/>
+                    </StackPanel>
+
+                    <TextBlock Text="{Binding UIText[ERP_WhCodeBill]}" Grid.Column="4" Grid.Row="1"/>
+                    <StackPanel Grid.Column="5" Orientation="Horizontal" VerticalAlignment="Center" Grid.Row="1">
+                        <ex:TBWhCode Width="102" TabIndex="24" />
+                        <ex:ButtonHelpWhCodeBrowseSD/>
+                        <ex:TBWhNameRO Width="192" />
+                    </StackPanel>
+                    <!--Row 1 end-->
+
+                    <!--Row 2 -->
+                    <TextBlock Text="{Binding UIText[ERP_MnameR]}" Grid.Row="2" />
+                    <ex:TBMnameReplaceRRO Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3" />
+                    <TextBlock Text="{Binding UIText[ERP_ReplaceMnameR]}" Grid.Column="4" Grid.Row="2" />
+                    <ex:TBMnameRRO Grid.Column="5" Grid.Row="2" Width="314" HorizontalAlignment="Left"/>
+                    <!--Row 2 end-->
+
+                    <!--Row 3 -->
+                    <TextBlock Text="{Binding UIText[ERP_MnameL]}" Grid.Row="3" />
+                    <ex:TBMnameReplaceLRO Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3"/>
+                    <TextBlock Text="{Binding UIText[ERP_ReplaceMnameL]}" Grid.Column="4" Grid.Row="3" />
+                    <ex:TBMnameLRO Grid.Column="5" Grid.Row="3" Width="314" HorizontalAlignment="Left"/>
+                    <!--Row 3 end-->
+
+
+
+
+                </Grid>
+
+                <!-- 12-->
+                <Canvas Grid.Row="12" Height="24" >
+                    <TextBlock Text="{Binding UIText[ERP_SD4]}" Foreground="{StaticResource SelectedBackgroundBrush}" Canvas.Top="9" Padding="0"/>
+                </Canvas>
+                <!-- 13-->
+                <ex:BillSeparator Grid.Row="13"/>
+                <!-- 14-->
+                <Grid Grid.Row="14">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="24" />
+                        <RowDefinition Height="24" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="72" />
+                        <ColumnDefinition Width="50" />
+                        <ColumnDefinition Width="50" />
+                        <ColumnDefinition Width="95" />
+                        <ColumnDefinition Width="55" />
+                        <ColumnDefinition Width="16" />
+                        <ColumnDefinition Width="59" />
+                        <ColumnDefinition Width="80" />
+                        <ColumnDefinition Width="60" />
+                        <ColumnDefinition Width="80" />
+                        <ColumnDefinition Width="60" />
+                        <ColumnDefinition Width="59" />
+                        <ColumnDefinition Width="80" />
+                        <ColumnDefinition Width="60" />
+                        <ColumnDefinition Width="80" />
+                        <ColumnDefinition Width="60" />
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="{Binding UIText[ERP_Center_ThicknessR]}" />
+                    <ex:TBCenter_ThicknessR Grid.Column="1" TabIndex="25" />
+                    <TextBlock Text="{Binding UIText[ERP_MianWanR]}" Grid.Column="2" />
+
+                    <ex:TBMianWanRRO Grid.Column="3"/>
+                    <ex:ACBoxMianWanR_CF Grid.Column="3" TabIndex="26" />
+                    <ex:ACBoxMianWanR_KF Grid.Column="3" TabIndex="26" />
+
+                    <TextBlock Text="{Binding UIText[ERP_DaoBianR]}" Grid.Column="4" />
+                    <ex:CBDaoBianR Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,2,0,0" TabIndex="27" />
+                    <TextBlock Text="{Binding UIText[ERP_DecenterR]}" Grid.Column="6" />
+
+                    <ex:TBDecenter1RRO Grid.Column="7"/>
+                    <ex:ACBoxMCR1 Grid.Column="7" TabIndex="28"/>
+                    <ex:TBDecenter2R Grid.Column="8" TabIndex="29" />
+                    <ex:TBDecenter3RRO Grid.Column="9"/>
+                    <ex:ACBoxMCR2 Grid.Column="9" TabIndex="30" />
+                    <ex:TBDecenter4R Grid.Column="10" TabIndex="31"/>
+
+                    <TextBlock Text="{Binding UIText[ERP_PrismR]}" Grid.Column="11" />
+
+                    <ex:TBPrism1RRO Grid.Column="12"/>
+                    <ex:ACBoxMCR3 Grid.Column="12" TabIndex="32"/>
+                    <ex:TBPrism2R Grid.Column="13" TabIndex="33"/>
+                    <ex:TBPrism3RRO Grid.Column="14"/>
+                    <ex:ACBoxMCR4 Grid.Column="14" TabIndex="34"/>
+                    <ex:TBPrism4R Grid.Column="15" TabIndex="35"/>
+                    <TextBlock Text="{Binding UIText[ERP_PrismL]}" Grid.Column="11" Grid.Row="1" />
+
+                    <ex:TBPrism1LRO Grid.Column="12" Grid.Row="1"/>
+                    <ex:ACBoxMCL3 Grid.Column="12" Grid.Row="1" TabIndex="43"/>
+                    <ex:TBPrism2L Grid.Column="13" Grid.Row="1" TabIndex="44"/>
+                    <ex:TBPrism3LRO  Grid.Column="14" Grid.Row="1"/>
+                    <ex:ACBoxMCL4 Grid.Column="14" Grid.Row="1" TabIndex="45"/>
+                    <ex:TBPrism4L Grid.Column="15" Grid.Row="1" TabIndex="46"/>
+
+                    <TextBlock Text="{Binding UIText[ERP_Center_ThicknessL]}" Grid.Row="1" />
+                    <ex:TBCenter_ThicknessL Grid.Column="1" Grid.Row="1" TabIndex="36" />
+                    <TextBlock Text="{Binding UIText[ERP_MianWanL]}" Grid.Column="2" Grid.Row="1" />
+
+                    <ex:TBMianWanLRO  Grid.Column="3" Grid.Row="1"/>
+                    <ex:ACBoxMianWanL_CF Grid.Column="3" Grid.Row="1" TabIndex="37"/>
+                    <ex:ACBoxMianWanL_KF Grid.Column="3" Grid.Row="1" TabIndex="37"/>
+
+                    <TextBlock Text="{Binding UIText[ERP_DaoBianL]}" Grid.Column="4" Grid.Row="1" />
+                    <ex:CBDaoBianL Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="1" Margin="0,2,0,0" TabIndex="38"/>
+                    <TextBlock Text="{Binding UIText[ERP_DecenterL]}" Grid.Column="6" Grid.Row="1" />
+
+                    <ex:TBDecenter1LRO Grid.Column="7" Grid.Row="1"/>
+                    <ex:ACBoxMCL1 Grid.Column="7" Grid.Row="1" TabIndex="39"/>
+                    <ex:TBDecenter2L Grid.Column="8" Grid.Row="1" TabIndex="40"/>
+                    <ex:TBDecenter3LRO  Grid.Column="9" Grid.Row="1"/>
+                    <ex:ACBoxMCL2  Grid.Column="9" Grid.Row="1" TabIndex="41"/>
+                    <ex:TBDecenter4L Grid.Column="10" Grid.Row="1" TabIndex="42"/>
+
+                </Grid>
+                <!-- 15-->
+                <Canvas Grid.Row="15" Height="24">
+                    <TextBlock Text="{Binding UIText[ERP_SD5]}" Foreground="{StaticResource SelectedBackgroundBrush}" Canvas.Top="9" Padding="0"/>
+                </Canvas>
+                <!-- 16-->
+                <ex:BillSeparator Grid.Row="16"/>
+                <!-- 17-->
+                <Grid Grid.Row="17">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="24" />
+                        <RowDefinition Height="24" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="44"/>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="44"/>
+                        <ColumnDefinition Width="92"/>
+                        <ColumnDefinition Width="44"/>
+                        <ColumnDefinition Width="92"/>
+                        <ColumnDefinition Width="44"/>
+                        <ColumnDefinition Width="92"/>
+                        <ColumnDefinition Width="44"/>
+                        <ColumnDefinition Width="92"/>
+                        <ColumnDefinition Width="44"/>
+                        <ColumnDefinition Width="92"/>
+                        <ColumnDefinition Width="44"/>
+                        <ColumnDefinition Width="92"/>
+                        <ColumnDefinition Width="44"/>
+                        <ColumnDefinition Width="92" />
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="{Binding UIText[ERP_Hardend]}" />
+                    <ex:CBHardened Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,2,0,0" TabIndex="47"/>
+                    <TextBlock Text="UV:" Grid.Row="1" />
+                    <ex:CBUV Grid.Column="1"  HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="1" Margin="0,2,0,0" TabIndex="55"/>
+                    <TextBlock Text="{Binding UIText[ERP_ChaSe]}" Grid.Column="2" />
+                    <ex:TBChaSeRO Grid.Column="3"/>
+                    <ex:ACBoxChaSe_CF Grid.Column="3" TabIndex="48"/>
+                    <ex:ACBoxChaSe_KF Grid.Column="3" TabIndex="48"/>
+
+                    <TextBlock Text="{Binding UIText[ERP_JuSe]}" Grid.Column="4" />
+                    <ex:TBJuSeRO Grid.Column="5"/>
+                    <ex:ACBoxJuSe_CF Grid.Column="5" TabIndex="49"/>
+                    <ex:ACBoxJuSe_KF Grid.Column="5" TabIndex="49"/>
+
+                    <TextBlock Text="{Binding UIText[ERP_ZuanKong]}" Grid.Column="6" />
+                    <ex:TBZuanKongRO  Grid.Column="7" />
+                    <ex:ACBoxZuanKong_CF Grid.Column="7" TabIndex="50"/>
+                    <ex:ACBoxZuanKong_KF Grid.Column="7" TabIndex="50"/>
+
+                    <TextBlock Text="{Binding UIText[ERP_CheBian]}" Grid.Column="8" />
+                    <ex:TBCheBianRO Grid.Column="9"/>
+                    <ex:ACBoxCheBian_CF Grid.Column="9" TabIndex="51"/>
+                    <ex:ACBoxCheBian_KF Grid.Column="9" TabIndex="51"/>
+
+                    <TextBlock Text="{Binding UIText[ERP_PiHua]}" Grid.Column="10" />
+                    <ex:TBPiHuaRO  Grid.Column="11"/>
+                    <ex:ACBoxPiHua_CF Grid.Column="11" TabIndex="52"/>
+                    <ex:ACBoxPiHua_KF Grid.Column="11" TabIndex="52"/>
+
+                    <TextBlock Text="{Binding UIText[ERP_KaiKeng]}" Grid.Column="12" />
+                    <ex:TBKaiKengRO  Grid.Column="13"/>
+                    <ex:ACBoxKaiKeng_CF Grid.Column="13"  TabIndex="53"/>
+                    <ex:ACBoxKaiKeng_KF Grid.Column="13" TabIndex="53"/>
+
+                    <TextBlock Text="{Binding UIText[ERP_OtherProcess]}" Grid.Column="14" />
+                    <ex:TBOtherProcessRO  Grid.Column="15"/>
+                    <ex:ACBoxOtherProcess_CF Grid.Column="15" TabIndex="54"/>
+                    <ex:ACBoxOtherProcess_KF Grid.Column="15" TabIndex="54"/>
+
+                    <TextBlock Text="{Binding UIText[ERP_Ranse]}" Grid.Column="2" Grid.Row="1" />
+                    <ex:TBRanSeRO Grid.Row="1" Grid.Column="3" />
+                    <ex:ACBoxRanSe_CF Grid.Row="1" Grid.Column="3" TabIndex="56"/>
+                    <ex:ACBoxRanSe_KF Grid.Row="1" Grid.Column="3" TabIndex="56"/>
+
+                    <TextBlock Text="{Binding UIText[ERP_RanseName]}" Grid.Column="4" Grid.Row="1" />
+                    <ex:TBRanSeNameRO Grid.Column="5" Grid.Row="1"/>
+                    <ex:ACBoxRanSe_Name_CF Grid.Column="5" Grid.Row="1" TabIndex="57"/>
+                    <ex:ACBoxRanSe_Name_KF Grid.Column="5" Grid.Row="1" TabIndex="57"/>
+
+                    <TextBlock Text="{Binding UIText[ERP_ShuiYin]}" Grid.Column="6" Grid.Row="1" />
+                    <ex:TBShuiYinRO Grid.Column="7" Grid.Row="1"/>
+                    <ex:ACBoxShuiYin_CF Grid.Column="7" Grid.Row="1" TabIndex="58"/>
+                    <ex:ACBoxShuiYin_KF Grid.Column="7" Grid.Row="1" TabIndex="58"/>
+
+                    <TextBlock Text="{Binding UIText[ERP_PaoGuang]}" Grid.Column="8" Grid.Row="1" />
+                    <ex:TBPaoGuangRO Grid.Column="9" Grid.Row="1"/>
+                    <ex:ACBoxPaoGuang_CF Grid.Column="9" Grid.Row="1" TabIndex="59"/>
+                    <ex:ACBoxPaoGuang_KF Grid.Column="9" Grid.Row="1" TabIndex="59"/>
+
+                    <TextBlock Text="{Binding UIText[ERP_JingJia]}" Grid.Column="10" Grid.Row="1" />
+                    <ex:TBJingJiaRO Grid.Column="11" Grid.Row="1" />
+                    <ex:ACBoxJingJia_CF Grid.Column="11" Grid.Row="1" TabIndex="60"/>
+                    <ex:ACBoxJingJia_KF Grid.Column="11" Grid.Row="1" TabIndex="60"/>
+
+                    <TextBlock Text="{Binding UIText[ERP_CaiBian]}" Grid.Column="12" Grid.Row="1" />
+                    <ex:TBCaiBianRO Grid.Column="13" Grid.Row="1" />
+                    <ex:ACBoxCaiBian_CF Grid.Column="13" Grid.Row="1" TabIndex="61"/>
+                    <ex:ACBoxCaiBian_KF Grid.Column="13" Grid.Row="1" TabIndex="61"/>
+
+                    <TextBlock Text="{Binding UIText[ERP_ExtraProcess]}" Grid.Column="14" Grid.Row="1" />
+                    <ex:TBExtraProcessRO Grid.Column="15" Grid.Row="1"/>
+                    <ex:ACBoxExtraProcess_CF Grid.Column="15" Grid.Row="1" TabIndex="62"/>
+                    <ex:ACBoxExtraProcess_KF Grid.Column="15" Grid.Row="1" TabIndex="62"/>
+
+                </Grid>
+                <!-- 18-->
+                <Canvas Grid.Row="18" Height="24">
+                    <TextBlock Text="{Binding UIText[ERP_BillMakeInfo]}" Foreground="{StaticResource SelectedBackgroundBrush}" Canvas.Top="9" Padding="0"/>
+                </Canvas>
+                <!-- 19-->
+                <ex:BillSeparator Grid.Row="19"/>
+                <!-- 20-->
+                <!-- 25-->
+                <ex:BillBottom  Grid.Row="25"/>
+                <ex:TBFocus  TabIndex="66"/>
+            </Grid>
+        </Border>
+    </ex:BusyIndicatorErp>
+</ex:UserControlErp>
